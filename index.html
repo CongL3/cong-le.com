@@ -1,133 +1,678 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cong Le | iOS Engineer</title>
-    <meta
-      name="description"
-      content="Cong Le builds clean, fast iOS apps with Swift and SwiftUI."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/styles.css" />
-  </head>
-  <body>
-    <div class="bg-glow"></div>
-    <header class="site-header container">
-      <a class="brand" href="#top">Cong Le</a>
-      <nav>
-        <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<!DOCTYPE HTML>
+<!--
+	Portfolio by Cong Le
+	Based on Massively by HTML5 UP (html5up.net | @ajlkn)
+-->
+<html>
+	<head>
+		<title>Cong Le | iOS Developer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Cong Le - iOS Developer specializing in Swift and SwiftUI development" />
+		<meta name="keywords" content="iOS Developer, Swift, SwiftUI, Mobile Apps, Apple, Software Engineer" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			:root {
+				--accent-color: #4F9CF9;
+			}
+			.tags {
+				display: flex;
+				flex-wrap: wrap;
+				padding: 0;
+				margin: 0.5rem 0 1rem 0;
+				list-style: none;
+			}
+			.tags li {
+				margin: 0.25rem 0.5rem 0.25rem 0;
+				padding: 0.35rem 0.75rem;
+				font-size: 0.8rem;
+				border-radius: 25px;
+				background-color: rgba(79, 156, 249, 0.1);
+				color: var(--accent-color);
+				font-weight: 600;
+			}
+			.skill-section {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				gap: 1rem;
+				margin-bottom: 2rem;
+			}
+			.skill-category {
+				flex: 1 1 300px;
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 8px;
+				padding: 1.5rem;
+				margin-bottom: 1rem;
+			}
+			.skill-category h3 {
+				margin-bottom: 1rem;
+				color: var(--accent-color);
+			}
+			.experience-item {
+				padding-bottom: 1.5rem;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				margin-bottom: 1.5rem;
+			}
+			.experience-item:last-child {
+				border-bottom: none;
+			}
+			.experience-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				flex-wrap: wrap;
+				margin-bottom: 0.5rem;
+			}
+			.experience-title {
+				font-weight: 600;
+				margin-bottom: 0.25rem;
+			}
+			.experience-company {
+				color: var(--accent-color);
+			}
+			.experience-date {
+				font-style: italic;
+				opacity: 0.7;
+			}
+			.contact-form {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 2rem;
+				border-radius: 8px;
+			}
+			#wrapper {
+				transition: background-color 0.3s ease;
+			}
+			.image.fit {
+				position: relative;
+				overflow: hidden;
+				border-radius: 8px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			.image.fit:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+			}
+			.image.fit img {
+				transition: transform 0.5s ease;
+			}
+			.image.fit:hover img {
+				transform: scale(1.05);
+			}
+			.overlay-text {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				background-color: rgba(0, 0, 0, 0.7);
+				color: white;
+				padding: 0.5rem 1rem;
+				border-radius: 4px;
+				font-weight: 600;
+				font-size: 0.9rem;
+				z-index: 2;
+			}
+			.posts article {
+				margin-bottom: 2rem;
+			}
+			.content {
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.03);
+				border-radius: 0 0 8px 8px;
+				margin-top: -5px;
+			}
+			.actions {
+				display: flex;
+				gap: 1rem;
+				margin-top: 1.5rem;
+			}
+			.button {
+				border-radius: 4px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-size: 0.9rem;
+				font-weight: 600;
+				transition: all 0.3s ease;
+			}
+			.button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+			#nav ul.links li a::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				height: 2px;
+				background-color: var(--accent-color);
+				transition: width 0.3s ease;
+			}
+			#nav ul.links li a:hover::after,
+			#nav ul.links li.active a::after {
+				width: 100%;
+			}
+			@media (prefers-color-scheme: light) {
+				body {
+					background-color: #f5f5f5;
+					color: #333;
+				}
+				#wrapper {
+					background-color: #fff;
+				}
+				.tags li {
+					background-color: rgba(79, 156, 249, 0.2);
+				}
+				.skill-category {
+					background: rgba(0, 0, 0, 0.03);
+				}
+				.experience-item {
+					border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+				}
+				.contact-form {
+					background: rgba(0, 0, 0, 0.03);
+				}
+				.content {
+					background: rgba(0, 0, 0, 0.02);
+				}
+				.overlay-text {
+					background-color: rgba(79, 156, 249, 0.9);
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
 
-    <main id="top" class="container">
-      <section class="hero reveal">
-        <p class="eyebrow">iOS Engineer</p>
-        <h1>Simple products. Fast execution. Clean Swift code.</h1>
-        <p class="lead">
-          I build mobile apps that are useful, stable, and easy to maintain.
-          Focus: Swift, SwiftUI, architecture, and App Store delivery.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://github.com/CongL3" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/cong-le-ios/" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-      </section>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Cong Le</a>
+					</header>
 
-      <section class="stats reveal" aria-label="Highlights">
-        <article>
-          <p class="value">65K+</p>
-          <p class="label">Downloads (Anniversary Tracker)</p>
-        </article>
-        <article>
-          <p class="value">800K+</p>
-          <p class="label">Sessions</p>
-        </article>
-        <article>
-          <p class="value">4.7</p>
-          <p class="label">Average App Rating</p>
-        </article>
-      </section>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="#about">About</a></li>
+							<li><a href="#skills">Skills</a></li>
+							<li><a href="#projects">Projects</a></li>
+							<li><a href="#experience">Experience</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li><a href="json-viewer.html">JSON Parser</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://twitter.com/congle" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/in/cong-le-ios/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CongL3" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
 
-      <section id="work" class="section reveal">
-        <div class="section-head">
-          <h2>Selected Work</h2>
-          <a href="https://apps.apple.com/jp/developer/cong-le/id954373766?l=en-US" target="_blank" rel="noreferrer">View full App Store profile</a>
-        </div>
+				<!-- Main -->
+					<div id="main">
 
-        <div class="cards">
-          <article class="card">
-            <h3>Anniversary Tracker</h3>
-            <p>
-              Relationship milestone tracking with reminders, personalization,
-              and a focused UI.
-            </p>
-            <p class="meta">SwiftUI · Core Data · WidgetKit</p>
-            <a href="https://apps.apple.com/us/app/anniversary-tracker-no-ads/id1570714816" target="_blank" rel="noreferrer">Open on App Store</a>
-          </article>
+						<!-- About Section -->
+						<section id="about">
+							<header class="major">
+									<h2>About Me</h2>
+									<p>iOS Developer with a focus on creating elegant, user-friendly mobile applications using Swift and SwiftUI. With a background spanning iOS engineering, world travel, and even teaching, I bring a unique perspective to mobile development that combines technical expertise with a deep understanding of user needs.</p>
+									<p>Currently focused on building innovative iOS applications with clean architecture, modern Swift practices, and exceptional user experiences.</p>
+									<div class="actions">
+										<a href="files/CV.pdf" class="button icon solid fa-download">Download CV</a>
+										<a href="#contact" class="button primary">Get In Touch</a>
+									</div>
+							</header>
+						</section>
 
-          <article class="card">
-            <h3>Water Them Plants</h3>
-            <p>
-              Plant care companion with reminder scheduling and simple health
-              tracking.
-            </p>
-            <p class="meta">Swift · UIKit · Local Notifications</p>
-            <a href="https://apps.apple.com/us/app/water-them-plants/id1573313539" target="_blank" rel="noreferrer">Open on App Store</a>
-          </article>
+						<!-- Skills Section -->
+						<section id="skills">
+							<header class="major">
+								<h2>Skills & Expertise</h2>
+							</header>
+							<div class="skill-section">
+								<div class="skill-category">
+									<h3>iOS Development</h3>
+									<ul class="tags">
+										<li>Swift</li>
+										<li>SwiftUI</li>
+										<li>UIKit</li>
+										<li>Combine</li>
+										<li>Core Data</li>
+										<li>CloudKit</li>
+										<li>Push Notifications</li>
+										<li>WidgetKit</li>
+									</ul>
+								</div>
+								<div class="skill-category">
+									<h3>Architecture</h3>
+									<ul class="tags">
+										<li>MVVM</li>
+										<li>MVC</li>
+										<li>Clean Architecture</li>
+										<li>TCA</li>
+										<li>Design Patterns</li>
+										<li>Protocol-Oriented Programming</li>
+									</ul>
+								</div>
+								<div class="skill-category">
+									<h3>Tools & Technologies</h3>
+									<ul class="tags">
+										<li>Xcode</li>
+										<li>Git</li>
+										<li>SPM</li>
+										<li>CocoaPods</li>
+										<li>CI/CD</li>
+										<li>App Store Connect</li>
+										<li>TestFlight</li>
+										<li>Firebase</li>
+									</ul>
+								</div>
+							</div>
+						</section>
 
-          <article class="card">
-            <h3>Fish Run</h3>
-            <p>
-              Fast arcade-style runner game. Lightweight mechanics and high
-              replay loops.
-            </p>
-            <p class="meta">Unity · C# · Game Design</p>
-            <a href="https://apps.apple.com/us/app/fish-run-collect-stars/id1580103922" target="_blank" rel="noreferrer">Open on App Store</a>
-          </article>
-        </div>
-      </section>
+						<!-- Projects Section -->
+						<section id="projects">
+							<header class="major">
+								<h2>Featured Projects</h2>
+								<p>A selection of my published apps and personal projects</p>
+							</header>
 
-      <section id="skills" class="section reveal">
-        <div class="section-head">
-          <h2>Skills</h2>
-        </div>
-        <div class="pills">
-          <span>Swift</span>
-          <span>SwiftUI</span>
-          <span>UIKit</span>
-          <span>MVVM</span>
-          <span>Clean Architecture</span>
-          <span>Core Data</span>
-          <span>CI/CD</span>
-          <span>App Store Connect</span>
-          <span>Firebase</span>
-          <span>Git</span>
-        </div>
-      </section>
+							<section class="posts">
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="images/anniversaryicon.png" class="app-icon" alt="Anniversary Tracker Icon" />
+												<span style="vertical-align: middle;">Anniversary Tracker<a href="https://apps.apple.com/us/app/anniversary-tracker-no-ads/id1570714816" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="image fit">
+										<img src="images/anniversarytracker.png" alt="Anniversary Tracker App Screenshot" />
+									</div>
+									<div class="content">
+										<p><strong>65,000+ Downloads</strong> • <strong>800,000+ Sessions</strong> • <strong>4.7★ (1,000+ Ratings)</strong></p>
+										<p>An elegant app for tracking relationship milestones and special dates. Features a clean interface, custom notifications, and personalized celebration messages.</p>
+										<ul class="tags">
+											<li>SwiftUI</li>
+											<li>Core Data</li>
+											<li>MVVM</li>
+											<li>Local Notifications</li>
+											<li>WidgetKit</li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="images/waterthemplantsicon.png" class="app-icon" alt="Water Them Plants Icon" />
+												<span style="vertical-align: middle;">Water Them Plants<a href="https://apps.apple.com/us/app/water-them-plants/id1573313539" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="image fit">
+										<img src="images/waterthemplants.png" alt="Water Them Plants App Screenshot" />
+									</div>
+									<div class="content">
+										<p><strong>1,000+ Downloads</strong></p>
+										<p>A plant care companion app that helps users maintain healthy plants with timely watering reminders. Features custom schedules, photo integration, and plant care tips.</p>
+										<ul class="tags">
+											<li>Swift</li>
+											<li>UIKit</li>
+											<li>Local Notifications</li>
+											<li>Collection Views</li>
+											<li>Core Data</li>
+											<li>MVVM</li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<header>
+									<h2>
+										<div>
+											<img src="images/FishRunIcon.png" class="app-icon" alt="Fish Run Icon" />
+											<span style="vertical-align: middle;">Fish Run<a href="https://apps.apple.com/us/app/fish-run-collect-stars/id1580103922" style="color: var(--accent-color);"> (App Store) </a></span>
+										</div>
+									</h2>
+									</header>
+									<div class="image fit">
+										<img src="images/fishrun.png" alt="Fish Run Game Screenshot" />
+									</div>
+									<div class="content">
+										<p>An addictive 2D infinite runner game with simple controls and engaging gameplay. My first published Unity game, inspired by classics like Flappy Bird.</p>
+										<ul class="tags">
+											<li>Unity</li>
+											<li>C#</li>
+											<li>Game Design</li>
+											<li>Aseprite</li>
+											<li>Mobile Gaming</li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="images/RunRunRunIcon.png" class="app-icon" alt="Run Run Run Icon" />
+												<span style="vertical-align: middle;">Run Run Run<a href="https://apps.apple.com/us/app/run-run-run/id1582701318" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="image fit">
+										<img src="images/runrunrun.png" alt="Run Run Run Game Screenshot" />
+									</div>
+									<div class="content">
+										<p>A Canabalt-style infinite runner game with dynamically generated obstacles and increasing difficulty. My second Unity project focusing on polished mobile gameplay.</p>
+										<ul class="tags">
+											<li>Unity</li>
+											<li>C#</li>
+											<li>Game Physics</li>
+											<li>Aseprite</li>
+											<li>Level Design</li>
+										</ul>
+									</div>
+								</article>
+							</section>
+						
+							<header class="major">
+								<h2>Open Source & Demo Projects</h2>
+								<p>Coding samples showcasing my technical skills and approach to software development. 
+									<a href="https://github.com/CongL3/Project-overview" style="color: var(--accent-color);"> View all on GitHub</a>
+								</p>
+							</header>
 
-      <section id="contact" class="section reveal">
-        <div class="section-head">
-          <h2>Contact</h2>
-        </div>
-        <p>
-          For freelance or full-time iOS opportunities, email
-          <a href="mailto:congle11@gmail.com">congle11@gmail.com</a>
-        </p>
-      </section>
-    </main>
+							<section class="demo-projects">
+								<article>
+									<a href="https://github.com/CongL3/IMDBViewer" class="image fit overlay-container">
+										<img src="images/IMDBApp.gif" alt="IMDB App Demo" />
+										<div class="overlay-text">IMDB Viewer</div>
+										<div class="overlay-gradient"></div>
+									</a>
+								</article>
+								<article>
+									<a href="https://github.com/CongL3/InstagramClone" class="image fit overlay-container">
+										<img src="images/instagram1.gif" alt="Instagram Clone Demo" />
+										<div class="overlay-text">Instagram Clone</div>
+										<div class="overlay-gradient"></div>
+									</a>
+								</article>
+								<article>
+									<a href="https://github.com/CongL3/Project-overview/tree/main/NationalGeo" class="image fit overlay-container">
+										<img src="images/NatGeo.png" alt="National Geographic App" />
+										<div class="overlay-text">National Geographic UI</div>
+										<div class="overlay-gradient"></div>
+									</a>
+								</article>
+								<article>
+									<a href="https://github.com/CongL3/News" class="image fit overlay-container">
+										<img src="images/news.gif" alt="News App Demo" />
+										<div class="overlay-text">News Reader</div>
+										<div class="overlay-gradient"></div>
+									</a>
+								</article>
+							</section>
+							
+							<header class="major">
+								<h2>More Published Apps</h2>
+								<p>Additional iOS applications available on the <a href="https://apps.apple.com/jp/developer/cong-le/id954373766?l=en-US" style="color: var(--accent-color);">App Store</a></p>
+							</header>
+							
+							<section class="posts">
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="https://via.placeholder.com/60" class="app-icon" alt="Sunrise & Sunset tracker Icon" />
+												<span style="vertical-align: middle;">Sunrise & Sunset Tracker<a href="https://apps.apple.com/jp/developer/cong-le/id954373766?l=en-US" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="content">
+										<p>Track sunrise and sunset times anywhere in the world with accurate predictions and beautiful visualizations.</p>
+										<ul class="tags">
+											<li>SwiftUI</li>
+											<li>Location Services</li>
+											<li>Core Data</li>
+											<li>Widgets</li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="https://via.placeholder.com/60" class="app-icon" alt="VidCompression Icon" />
+												<span style="vertical-align: middle;">VidCompression<a href="https://apps.apple.com/jp/developer/cong-le/id954373766?l=en-US" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="content">
+										<p>Compress video files with customizable quality settings to save storage space while maintaining visual quality.</p>
+										<ul class="tags">
+											<li>Swift</li>
+											<li>AVFoundation</li>
+											<li>File Management</li>
+											<li>Video Processing</li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="https://via.placeholder.com/60" class="app-icon" alt="Photo Image Compression Icon" />
+												<span style="vertical-align: middle;">Photo Image Compression<a href="https://apps.apple.com/jp/developer/cong-le/id954373766?l=en-US" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="content">
+										<p>Efficiently compress images while preserving quality, with batch processing capabilities and custom settings.</p>
+										<ul class="tags">
+											<li>Swift</li>
+											<li>UIKit</li>
+											<li>CoreImage</li>
+											<li>Photos Framework</li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="https://via.placeholder.com/60" class="app-icon" alt="Birthday Tracker Icon" />
+												<span style="vertical-align: middle;">Birthday Tracker<a href="https://apps.apple.com/jp/developer/cong-le/id954373766?l=en-US" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="content">
+										<p>Never miss a birthday again with customizable reminders, contact integration, and gift tracking features.</p>
+										<ul class="tags">
+											<li>Swift</li>
+											<li>Contacts</li>
+											<li>Local Notifications</li>
+											<li>Core Data</li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="https://via.placeholder.com/60" class="app-icon" alt="Lullaby Pal Icon" />
+												<span style="vertical-align: middle;">Lullaby Pal - White Noise<a href="https://apps.apple.com/jp/developer/cong-le/id954373766?l=en-US" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="content">
+										<p>Soothing white noise and lullabies to help babies and adults fall asleep, featuring timers and background play.</p>
+										<ul class="tags">
+											<li>Swift</li>
+											<li>AVFoundation</li>
+											<li>Background Audio</li>
+											<li>Timer Controls</li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<header>
+										<h2>
+											<div>
+												<img src="https://via.placeholder.com/60" class="app-icon" alt="Couple Days Counter Icon" />
+												<span style="vertical-align: middle;">Couple Days Counter<a href="https://apps.apple.com/jp/developer/cong-le/id954373766?l=en-US" style="color: var(--accent-color);"> (App Store) </a></span>
+											</div>
+										</h2>
+									</header>
+									<div class="content">
+										<p>Track relationship milestones with personalized themes, photo memories, and custom milestone notifications.</p>
+										<ul class="tags">
+											<li>Swift</li>
+											<li>SwiftUI</li>
+											<li>UserDefaults</li>
+											<li>Notifications</li>
+										</ul>
+									</div>
+								</article>
+							</section>
+						</section>
 
-    <footer class="container site-footer">
-      <p>© <span id="year"></span> Cong Le</p>
-    </footer>
+						<!-- Experience Section -->
+						<section id="experience">
+							<header class="major">
+								<h2>Professional Experience</h2>
+							</header>
+							
+							<div class="experience-list">
+								<div class="experience-item">
+									<div class="experience-header">
+										<div>
+											<div class="experience-title">iOS Developer</div>
+											<div class="experience-company">Independent Developer</div>
+										</div>
+										<div class="experience-date">2021 - Present</div>
+									</div>
+									<ul>
+										<li>Developed and published multiple iOS applications on the Apple App Store</li>
+										<li>Created Anniversary Tracker with over 65,000 downloads and 4.7-star rating</li>
+										<li>Implemented modern Swift and SwiftUI practices for responsive, engaging UIs</li>
+										<li>Managed the entire development lifecycle from concept to deployment</li>
+									</ul>
+								</div>
+								
+								<div class="experience-item">
+									<div class="experience-header">
+										<div>
+											<div class="experience-title">English Teacher</div>
+											<div class="experience-company">International Experience</div>
+										</div>
+										<div class="experience-date">2018 - 2021</div>
+									</div>
+									<ul>
+										<li>Developed strong communication and presentation skills</li>
+										<li>Created engaging educational materials and curriculum</li>
+										<li>Adapted teaching methods to different learning styles and cultural contexts</li>
+										<li>Maintained focus on iOS development through personal projects</li>
+									</ul>
+								</div>
+								
+								<div class="experience-item">
+									<div class="experience-header">
+										<div>
+											<div class="experience-title">iOS Engineer</div>
+											<div class="experience-company">Previous Tech Roles</div>
+										</div>
+										<div class="experience-date">Prior to 2018</div>
+									</div>
+									<ul>
+										<li>Worked on consumer-facing iOS applications using Swift and Objective-C</li>
+										<li>Collaborated with cross-functional teams to deliver high-quality mobile experiences</li>
+										<li>Implemented best practices for performance optimization and code maintainability</li>
+										<li>Participated in code reviews and mentored junior developers</li>
+									</ul>
+								</div>
+							</div>
+						</section>
 
-    <script src="./assets/site.js"></script>
-  </body>
+						<!-- Contact Section -->
+						<section id="contact">
+							<header class="major">
+								<h2>Get In Touch</h2>
+								<p>Interested in working together? Send me a message!</p>
+							</header>
+							
+							<div class="contact-form">
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="email" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="subject">Subject</label>
+											<input type="text" name="subject" id="subject" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+							</div>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://twitter.com/congle" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.linkedin.com/in/cong-le-ios/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/CongL3" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="mailto:contact@your-email.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>
+							<li>&copy; Cong Le 2024</li>
+							<li>iOS Developer & Software Engineer</li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				// Smooth scrolling for in-page navigation
+				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+					anchor.addEventListener('click', function (e) {
+						e.preventDefault();
+						document.querySelector(this.getAttribute('href')).scrollIntoView({
+							behavior: 'smooth'
+						});
+					});
+				});
+			</script>
+	</body>
 </html>
