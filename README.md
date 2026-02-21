@@ -1,49 +1,20 @@
-# Cong Le Personal Site v2
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-Simple, dark-first static personal site.
+# Run and deploy your AI Studio app
 
-## Deploy model (GitHub Pages, free)
+This contains everything you need to run your app locally.
 
-After one-time setup, deploy is automatic on every push to `main`.
+View your app in AI Studio: https://ai.studio/apps/drive/1GzGCI6bShu3uuLy6ZThCs7fJJeIlCTBC
 
-## One-time setup
+## Run Locally
 
-1. Create a new GitHub repo (for example: `cong-le.com`).
-2. Put this project at the repo root.
-3. Push to `main`.
-4. In GitHub repo settings:
-   - Open `Settings -> Pages`.
-   - Under `Build and deployment`, choose `GitHub Actions`.
-5. Keep `CNAME` file as:
-   - `cong-le.com`
-6. In Cloudflare DNS for `cong-le.com`, add:
-   - `A  @  185.199.108.153`
-   - `A  @  185.199.109.153`
-   - `A  @  185.199.110.153`
-   - `A  @  185.199.111.153`
-   - `CNAME  www  <your-github-username>.github.io`
+**Prerequisites:**  Node.js
 
-## Daily deploy command
 
-```bash
-git add . && git commit -m "update site" && git push
-```
-
-Push triggers `.github/workflows/deploy-pages.yml` and publishes automatically.
-
-## Local preview
-
-```bash
-python3 -m http.server 8080
-```
-
-Open `http://localhost:8080`.
-
-## Project files
-
-- `index.html`
-- `assets/styles.css`
-- `assets/site.js`
-- `CNAME`
-- `.github/workflows/deploy-pages.yml`
-# cong-le.com
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
