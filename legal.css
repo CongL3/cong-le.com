@@ -1,0 +1,115 @@
+:root {
+  --bg: #0b0f18;
+  --surface: #131a28;
+  --surface-2: #1a2234;
+  --text: #e7edf9;
+  --muted: #9eabc4;
+  --line: #2a3550;
+  --accent: #7ab7ff;
+  --ok: #7ce5b6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, rgba(122, 183, 255, 0.14), transparent 30%), var(--bg);
+  line-height: 1.65;
+}
+
+a { color: var(--accent); }
+
+a:hover { opacity: 0.9; }
+
+.page {
+  width: min(920px, calc(100vw - 2rem));
+  margin: 2rem auto 4rem;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.2rem 1.1rem;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 0.7rem; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+h2 { font-size: clamp(1.2rem, 2.2vw, 1.55rem); margin-top: 0.7rem; }
+h3 { font-size: 1.04rem; margin-top: 0.8rem; }
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  margin-right: 0.45rem;
+  margin-bottom: 0.45rem;
+  border: 1px solid rgba(124, 229, 182, 0.45);
+  border-radius: 999px;
+  padding: 0.15rem 0.58rem;
+  color: var(--ok);
+  font-size: 0.84rem;
+}
+
+ul, ol { margin: 0.25rem 0 0.85rem 1.2rem; }
+li { margin: 0.2rem 0; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.6rem 0.55rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.navlinks {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.navlinks a {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.33rem 0.66rem;
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
+}
+
+.small { color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 640px) {
+  .topbar { flex-direction: column; align-items: flex-start; }
+}
