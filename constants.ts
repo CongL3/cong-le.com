@@ -74,7 +74,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/1570714816/icon.jpg",
     isFeatured: true,
     url: "https://apps.apple.com/gb/developer/cong-le/id954373766",
-    screenshots: ["/images/apps/1570714816/screenshot-1.jpg"]
+    screenshots: ["/images/apps/1570714816/screenshot-1.jpg", "/images/apps/1570714816/screenshot-2.jpg"]
   },
   {
     id: "cardvalue",
