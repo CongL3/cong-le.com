@@ -2,41 +2,11 @@ import React from 'react';
 import { Heart, Star, ChevronRight } from 'lucide-react';
 import { APPS } from '../constants';
 
-const AppIconCard: React.FC<{
-  app: (typeof APPS)[number];
-}> = ({ app }) => (
-  <a
-    href={app.url || '#'}
-    target="_blank"
-    rel="noreferrer"
-    className="bg-gray-900/60 dark:bg-gray-900/50 rounded-3xl p-8 border border-gray-800 hover:border-gray-600 transition-all duration-300 flex flex-col items-center text-center group backdrop-blur-sm hover:bg-gray-800/60 hover:-translate-y-1"
-  >
-    <div className="w-24 h-24 rounded-[1.25rem] overflow-hidden mb-6 shadow-xl ring-1 ring-white/10 group-hover:scale-105 group-hover:ring-white/20 transition-all duration-300">
-      {app.iconUrl ? (
-        <img
-          src={app.iconUrl}
-          alt={app.name}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      ) : (
-        <div className={`w-full h-full ${app.iconColor}`} />
-      )}
-    </div>
-    <h3 className="text-lg font-semibold mb-2 text-white leading-tight">{app.name}</h3>
-    <p className="text-gray-400 text-sm mb-5 flex-1 leading-relaxed">{app.description}</p>
-    <span className="text-blue-400 text-sm font-medium group-hover:text-blue-300 flex items-center justify-center gap-1 transition-colors">
-      View on App Store
-      <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-    </span>
-  </a>
-);
-
 const FeaturedApp: React.FC = () => {
   const anniversaryApp = APPS.find(app => app.id === 'anniversary');
-  const linkSaverApp = APPS.find(app => app.id === 'link-saver');
-  const cardValueApp = APPS.find(app => app.id === 'cardvalue');
-  const sunriseApp = APPS.find(app => app.id === 'sunrise');
+  const todoApp = APPS.find(app => app.id === 'to-do-list');
+  const waterApp = APPS.find(app => app.id === 'water-plants');
+  const babyKicksApp = APPS.find(app => app.id === 'baby-kicks');
 
   if (!anniversaryApp) return null;
 
@@ -97,12 +67,8 @@ const FeaturedApp: React.FC = () => {
 
             {/* Right: Screenshots fan */}
             <div className="order-1 lg:order-2 flex justify-center items-center relative min-h-[340px]">
-              {/* Ambient glow */}
               <div className="absolute inset-0 bg-rose-500/15 blur-3xl rounded-full scale-75 pointer-events-none" />
-
-              {/* Screenshot fan layout */}
               <div className="relative flex items-end justify-center w-full">
-                {/* Back screenshot (screenshot-2) — tilted left */}
                 {screenshot2 && (
                   <div className="absolute right-[52%] bottom-0 w-[44%] max-w-[200px] z-0 transform -rotate-6 origin-bottom hover:rotate-0 hover:z-20 transition-all duration-500 ease-out cursor-pointer">
                     <img
@@ -113,8 +79,6 @@ const FeaturedApp: React.FC = () => {
                     />
                   </div>
                 )}
-
-                {/* Front screenshot (screenshot-1) — slightly right, tilted right */}
                 {screenshot1 && (
                   <div className="relative w-[48%] max-w-[220px] z-10 transform rotate-3 origin-bottom hover:rotate-0 transition-all duration-500 ease-out ml-16">
                     <img
@@ -125,13 +89,6 @@ const FeaturedApp: React.FC = () => {
                     />
                   </div>
                 )}
-
-                {/* Fallback if no screenshots */}
-                {!screenshot1 && !screenshot2 && (
-                  <div className="w-40 h-64 bg-gray-700 rounded-2xl flex items-center justify-center text-gray-500 text-sm">
-                    No preview
-                  </div>
-                )}
               </div>
             </div>
 
@@ -140,9 +97,42 @@ const FeaturedApp: React.FC = () => {
 
         {/* Secondary Features Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {linkSaverApp && <AppIconCard app={linkSaverApp} />}
-          {cardValueApp && <AppIconCard app={cardValueApp} />}
-          {sunriseApp && <AppIconCard app={sunriseApp} />}
+          {[todoApp, waterApp, babyKicksApp].filter(Boolean).map((app) => (
+            <a
+              key={app!.id}
+              href={app!.url || '#'}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-gray-900/60 dark:bg-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 group hover:-translate-y-1 flex flex-col"
+            >
+              {/* Screenshot */}
+              {app!.screenshots?.[0] ? (
+                <div className="w-full aspect-[9/16] max-h-64 overflow-hidden">
+                  <img
+                    src={app!.screenshots[0]}
+                    alt={app!.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div className="flex justify-center pt-8 pb-2">
+                  <div className="w-20 h-20 rounded-[1.25rem] overflow-hidden shadow-xl ring-1 ring-white/10">
+                    <img src={app!.iconUrl} alt={app!.name} className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                </div>
+              )}
+              {/* Info */}
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-white mb-1">{app!.name}</h3>
+                <p className="text-gray-400 text-sm mb-4 flex-1 leading-relaxed">{app!.description}</p>
+                <span className="text-blue-400 text-sm font-medium group-hover:text-blue-300 flex items-center gap-1 transition-colors">
+                  View on App Store
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
 
       </div>

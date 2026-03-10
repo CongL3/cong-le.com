@@ -74,7 +74,12 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/1570714816/icon.jpg",
     isFeatured: true,
     url: "https://apps.apple.com/gb/developer/cong-le/id954373766",
-    screenshots: ["/images/apps/1570714816/screenshot-1.jpg", "/images/apps/1570714816/screenshot-2.jpg"]
+    screenshots: [
+      "/images/apps/1570714816/screenshot-1.jpg",
+      "/images/apps/1570714816/screenshot-2.jpg",
+      "/images/apps/1570714816/screenshot-3.jpg",
+      "/images/apps/1570714816/screenshot-4.jpg",
+    ]
   },
   {
     id: "cardvalue",
@@ -176,14 +181,21 @@ export const APPS: AppData[] = [
     url: "https://apps.apple.com/gb/developer/cong-le/id954373766"
   }
 
-  ,{
+  {
     id: "to-do-list",
     name: "To Do List - One focus",
     category: AppCategory.PRODUCTIVITY,
     description: "Minimal task manager focused on one thing at a time.",
     iconColor: "bg-slate-500",
     iconUrl: "/images/apps/1633843163/icon.jpg",
-    url: "https://apps.apple.com/gb/app/id1633843163"
+    url: "https://apps.apple.com/gb/app/id1633843163",
+    screenshots: [
+      "/images/apps/1633843163/screenshot-1.jpg",
+      "/images/apps/1633843163/screenshot-2.jpg",
+      "/images/apps/1633843163/screenshot-3.jpg",
+      "/images/apps/1633843163/screenshot-4.jpg",
+      "/images/apps/1633843163/screenshot-5.jpg",
+    ]
   },
   {
     id: "couple-days",
@@ -192,7 +204,14 @@ export const APPS: AppData[] = [
     description: "Track relationship milestones and day counts.",
     iconColor: "bg-rose-400",
     iconUrl: "/images/apps/1634973558/icon.jpg",
-    url: "https://apps.apple.com/gb/app/id1634973558"
+    url: "https://apps.apple.com/gb/app/id1634973558",
+    screenshots: [
+      "/images/apps/1634973558/screenshot-1.jpg",
+      "/images/apps/1634973558/screenshot-2.jpg",
+      "/images/apps/1634973558/screenshot-3.jpg",
+      "/images/apps/1634973558/screenshot-4.jpg",
+      "/images/apps/1634973558/screenshot-5.jpg",
+    ]
   },
   {
     id: "water-plants",
@@ -201,7 +220,12 @@ export const APPS: AppData[] = [
     description: "Plant care reminders and watering schedules.",
     iconColor: "bg-green-500",
     iconUrl: "/images/apps/1573313539/icon.jpg",
-    url: "https://apps.apple.com/gb/app/id1573313539"
+    url: "https://apps.apple.com/gb/app/id1573313539",
+    screenshots: [
+      "/images/apps/1573313539/screenshot-1.jpg",
+      "/images/apps/1573313539/screenshot-2.jpg",
+      "/images/apps/1573313539/screenshot-3.jpg",
+    ]
   },
   {
     id: "run-run-run",
@@ -210,7 +234,13 @@ export const APPS: AppData[] = [
     description: "Arcade runner game with fast-paced gameplay.",
     iconColor: "bg-orange-500",
     iconUrl: "/images/apps/1582701318/icon.jpg",
-    url: "https://apps.apple.com/gb/app/id1582701318"
+    url: "https://apps.apple.com/gb/app/id1582701318",
+    screenshots: [
+      "/images/apps/1582701318/screenshot-1.jpg",
+      "/images/apps/1582701318/screenshot-2.jpg",
+      "/images/apps/1582701318/screenshot-3.jpg",
+      "/images/apps/1582701318/screenshot-4.jpg",
+    ]
   },
   {
     id: "fish-run",
@@ -219,7 +249,13 @@ export const APPS: AppData[] = [
     description: "Casual game: collect stars and avoid obstacles.",
     iconColor: "bg-cyan-500",
     iconUrl: "/images/apps/1580103922/icon.jpg",
-    url: "https://apps.apple.com/gb/app/id1580103922"
+    url: "https://apps.apple.com/gb/app/id1580103922",
+    screenshots: [
+      "/images/apps/1580103922/screenshot-1.jpg",
+      "/images/apps/1580103922/screenshot-2.jpg",
+      "/images/apps/1580103922/screenshot-3.jpg",
+      "/images/apps/1580103922/screenshot-4.jpg",
+    ]
   },
   {
     id: "baby-kicks",
@@ -228,7 +264,14 @@ export const APPS: AppData[] = [
     description: "Track baby kick sessions with simple logs and timing.",
     iconColor: "bg-pink-400",
     iconUrl: "/images/apps/6563145060/icon.jpg",
-    url: "https://apps.apple.com/gb/app/id6563145060"
+    url: "https://apps.apple.com/gb/app/id6563145060",
+    screenshots: [
+      "/images/apps/6563145060/screenshot-1.jpg",
+      "/images/apps/6563145060/screenshot-2.jpg",
+      "/images/apps/6563145060/screenshot-3.jpg",
+      "/images/apps/6563145060/screenshot-4.jpg",
+      "/images/apps/6563145060/screenshot-5.jpg",
+    ]
   },
   {
     id: "simple-timer",
@@ -246,7 +289,12 @@ export const APPS: AppData[] = [
     description: "Classic strategy board game implementation.",
     iconColor: "bg-neutral-600",
     iconUrl: "/images/apps/1590705319/icon.jpg",
-    url: "https://apps.apple.com/gb/app/id1590705319"
+    url: "https://apps.apple.com/gb/app/id1590705319",
+    screenshots: [
+      "/images/apps/1590705319/screenshot-1.jpg",
+      "/images/apps/1590705319/screenshot-2.jpg",
+      "/images/apps/1590705319/screenshot-3.jpg",
+    ]
   },
   {
     id: "solitaire",
@@ -255,6 +303,11 @@ export const APPS: AppData[] = [
     description: "Classic solitaire card game for quick sessions.",
     iconColor: "bg-emerald-600",
     iconUrl: "/images/apps/1582328906/icon.jpg",
-    url: "https://apps.apple.com/gb/app/id1582328906"
+    url: "https://apps.apple.com/gb/app/id1582328906",
+    screenshots: [
+      "/images/apps/1582328906/screenshot-1.jpg",
+      "/images/apps/1582328906/screenshot-2.jpg",
+      "/images/apps/1582328906/screenshot-3.jpg",
+    ]
   }
 ];

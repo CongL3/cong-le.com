@@ -40,6 +40,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
             <button onClick={() => scrollToSection('featured')} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Featured</button>
+            <button onClick={() => scrollToSection('gallery')} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Gallery</button>
             <button onClick={() => scrollToSection('apps')} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Apps</button>
             <button onClick={() => scrollToSection('career')} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Career</button>
             
@@ -76,6 +77,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 absolute w-full shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
             <button onClick={() => scrollToSection('featured')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 text-left">Featured</button>
+            <button onClick={() => scrollToSection('gallery')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 text-left">Gallery</button>
             <button onClick={() => scrollToSection('apps')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 text-left">Apps</button>
             <button onClick={() => scrollToSection('career')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 text-left">Career</button>
             <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 mt-2 rounded-md text-base font-medium bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400">Contact Me</button>
