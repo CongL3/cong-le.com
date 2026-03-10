@@ -2,6 +2,10 @@ import React from 'react';
 import { ArrowRight, Github, Linkedin, Globe, Twitter } from 'lucide-react';
 import { HERO_CONTENT, STATS } from '../constants';
 
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+};
+
 const Hero: React.FC = () => {
   return (
     <section id="hero" className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -55,13 +59,13 @@ const Hero: React.FC = () => {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <a
-            href="#featured"
+          <button
+            onClick={() => scrollTo('featured')}
             className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-full hover:bg-black dark:hover:bg-gray-200 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             View Flagship App
             <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
+          </button>
           <a
             href={HERO_CONTENT.appStoreLink}
             target="_blank"

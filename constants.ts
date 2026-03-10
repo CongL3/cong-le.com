@@ -4,7 +4,7 @@ import { Smartphone, Code2, Download, Trophy } from 'lucide-react';
 export const HERO_CONTENT = {
   name: "Cong Le",
   title: "Principal iOS Engineer",
-  subtitle: "Principal iOS Engineer at Capital One. 10+ years building intuitive, high-impact mobile products.",
+  subtitle: "Principal iOS Engineer at Capital One. 11+ years building intuitive, high-impact mobile products.",
   blurb: "I build iOS products that are clean, fast, and genuinely useful — from enterprise banking experiences to indie utilities used by 500k+ people.",
   profileImage: "https://github.com/CongL3.png",
   email: "support@cong-le.com",

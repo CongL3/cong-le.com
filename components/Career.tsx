@@ -11,7 +11,7 @@ const Career: React.FC = () => {
             Professional Journey
             </h2>
             <p className="text-lg text-gray-500 dark:text-gray-400">
-                10+ years across iOS engineering, architecture leadership, and product delivery.
+                11+ years across iOS engineering, architecture leadership, and product delivery.
             </p>
         </div>
 
@@ -81,7 +81,7 @@ const Career: React.FC = () => {
         <div className="mt-16 text-center">
              {/* Instructions: Place your resume file named 'cv.pdf' in the root public directory */}
              <a 
-                href="./CV.pdf" 
+                href="/CV.pdf"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
