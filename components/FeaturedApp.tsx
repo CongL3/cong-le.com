@@ -4,9 +4,9 @@ import { APPS } from '../constants';
 
 const FeaturedApp: React.FC = () => {
   const anniversaryApp = APPS.find(app => app.id === 'anniversary');
-  const todoApp = APPS.find(app => app.id === 'to-do-list');
-  const waterApp = APPS.find(app => app.id === 'water-plants');
-  const babyKicksApp = APPS.find(app => app.id === 'baby-kicks');
+  const cardValueApp = APPS.find(app => app.id === 'cardvalue');
+  const kidsTimerApp = APPS.find(app => app.id === 'kids-timer');
+  const sunriseApp = APPS.find(app => app.id === 'sunrise');
 
   if (!anniversaryApp) return null;
 
@@ -97,7 +97,7 @@ const FeaturedApp: React.FC = () => {
 
         {/* Secondary Features Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {[todoApp, waterApp, babyKicksApp].filter(Boolean).map((app) => (
+          {[cardValueApp, kidsTimerApp, sunriseApp].filter(Boolean).map((app) => (
             <a
               key={app!.id}
               href={app!.url || '#'}

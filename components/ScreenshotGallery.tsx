@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { APPS } from '../constants';
 
-const appsWithScreenshots = APPS.filter(app => app.screenshots && app.screenshots.length > 0);
+const EXCLUDED_IDS = new Set(['to-do-list', 'couple-days', 'water-plants', 'othello', 'solitaire']);
+const appsWithScreenshots = APPS.filter(
+  app => app.screenshots && app.screenshots.length > 0 && !EXCLUDED_IDS.has(app.id)
+);
 
 const ScreenshotGallery: React.FC = () => {
   const [lightbox, setLightbox] = useState<{ appIdx: number; imgIdx: number } | null>(null);
