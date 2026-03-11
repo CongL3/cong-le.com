@@ -179,8 +179,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-orange-500",
     iconUrl: "/images/apps/6744445553/icon.jpg",
     url: "https://apps.apple.com/gb/developer/cong-le/id954373766"
-  }
-
+  },
   {
     id: "to-do-list",
     name: "To Do List - One focus",

@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cong Le - Principal iOS Developer</title>
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <meta name="description" content="Portfolio of Cong Le, Principal iOS Developer at Capital One. Creator of Anniversary Tracker." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,17 +55,7 @@
 
 
 
-    <script type="importmap">
-    {
-      "imports": {
-        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "react/": "https://aistudiocdn.com/react@^19.2.0/",
-        "react": "https://aistudiocdn.com/react@^19.2.0"
-      }
-    }
-    </script>
-    <script type="module" crossorigin src="/assets/index-XequrB6S.js"></script>
+    <script type="module" crossorigin src="/assets/index-1EEZaJlV.js"></script>
   </head>
   <body class="bg-gray-50 text-gray-900 dark:bg-black dark:text-white transition-colors duration-300">
     <div id="root"></div>
