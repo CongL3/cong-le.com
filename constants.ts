@@ -309,4 +309,13 @@ export const APPS: AppData[] = [
       "/images/apps/1582328906/screenshot-3.jpg",
     ]
   }
+  ,{
+    id: "bible-prayer-companion",
+    name: "Bible Prayer Companion",
+    category: AppCategory.EDUCATION,
+    description: "Daily Scripture Companion is a quiet, offline prayer and Scripture app built for simple daily consistency.",
+    iconColor: "bg-red-400",
+    iconUrl: "/images/apps/6759859294/icon.jpg",
+    url: "https://apps.apple.com/gb/app/bible-prayer-companion/id6759859294?uo=4",
+  }
 ];

@@ -8,7 +8,9 @@
       "icon": "/images/apps/1570714816/icon.jpg",
       "screenshots": [
         "/images/apps/1570714816/screenshot-1.jpg",
-        "/images/apps/1570714816/screenshot-2.jpg"
+        "/images/apps/1570714816/screenshot-2.jpg",
+        "/images/apps/1570714816/screenshot-3.jpg",
+        "/images/apps/1570714816/screenshot-4.jpg"
       ]
     },
     {
@@ -19,7 +21,10 @@
       "icon": "/images/apps/1634973558/icon.jpg",
       "screenshots": [
         "/images/apps/1634973558/screenshot-1.jpg",
-        "/images/apps/1634973558/screenshot-2.jpg"
+        "/images/apps/1634973558/screenshot-2.jpg",
+        "/images/apps/1634973558/screenshot-3.jpg",
+        "/images/apps/1634973558/screenshot-4.jpg",
+        "/images/apps/1634973558/screenshot-5.jpg"
       ]
     },
     {
@@ -46,7 +51,8 @@
       "icon": "/images/apps/1573313539/icon.jpg",
       "screenshots": [
         "/images/apps/1573313539/screenshot-1.jpg",
-        "/images/apps/1573313539/screenshot-2.jpg"
+        "/images/apps/1573313539/screenshot-2.jpg",
+        "/images/apps/1573313539/screenshot-3.jpg"
       ]
     },
     {
@@ -65,7 +71,10 @@
       "icon": "/images/apps/1633843163/icon.jpg",
       "screenshots": [
         "/images/apps/1633843163/screenshot-1.jpg",
-        "/images/apps/1633843163/screenshot-2.jpg"
+        "/images/apps/1633843163/screenshot-2.jpg",
+        "/images/apps/1633843163/screenshot-3.jpg",
+        "/images/apps/1633843163/screenshot-4.jpg",
+        "/images/apps/1633843163/screenshot-5.jpg"
       ]
     },
     {
@@ -76,7 +85,10 @@
       "icon": "/images/apps/6563145060/icon.jpg",
       "screenshots": [
         "/images/apps/6563145060/screenshot-1.jpg",
-        "/images/apps/6563145060/screenshot-2.jpg"
+        "/images/apps/6563145060/screenshot-2.jpg",
+        "/images/apps/6563145060/screenshot-3.jpg",
+        "/images/apps/6563145060/screenshot-4.jpg",
+        "/images/apps/6563145060/screenshot-5.jpg"
       ]
     },
     {
@@ -129,7 +141,7 @@
     },
     {
       "trackId": 6746223793,
-      "trackName": "Fish Finder \u00b7 AI Identifier",
+      "trackName": "Fish Finder · AI Identifier",
       "bundleId": "com.congle.fishscanner",
       "appStoreUrl": "https://apps.apple.com/gb/app/fish-finder-ai-identifier/id6746223793?uo=4",
       "icon": "/images/apps/6746223793/icon.jpg",
@@ -143,7 +155,9 @@
       "icon": "/images/apps/1580103922/icon.jpg",
       "screenshots": [
         "/images/apps/1580103922/screenshot-1.jpg",
-        "/images/apps/1580103922/screenshot-2.jpg"
+        "/images/apps/1580103922/screenshot-2.jpg",
+        "/images/apps/1580103922/screenshot-3.jpg",
+        "/images/apps/1580103922/screenshot-4.jpg"
       ]
     },
     {
@@ -154,7 +168,9 @@
       "icon": "/images/apps/1582701318/icon.jpg",
       "screenshots": [
         "/images/apps/1582701318/screenshot-1.jpg",
-        "/images/apps/1582701318/screenshot-2.jpg"
+        "/images/apps/1582701318/screenshot-2.jpg",
+        "/images/apps/1582701318/screenshot-3.jpg",
+        "/images/apps/1582701318/screenshot-4.jpg"
       ]
     },
     {
@@ -165,7 +181,8 @@
       "icon": "/images/apps/1582328906/icon.jpg",
       "screenshots": [
         "/images/apps/1582328906/screenshot-1.jpg",
-        "/images/apps/1582328906/screenshot-2.jpg"
+        "/images/apps/1582328906/screenshot-2.jpg",
+        "/images/apps/1582328906/screenshot-3.jpg"
       ]
     },
     {
@@ -192,8 +209,17 @@
       "icon": "/images/apps/1590705319/icon.jpg",
       "screenshots": [
         "/images/apps/1590705319/screenshot-1.jpg",
-        "/images/apps/1590705319/screenshot-2.jpg"
+        "/images/apps/1590705319/screenshot-2.jpg",
+        "/images/apps/1590705319/screenshot-3.jpg"
       ]
+    },
+    {
+      "trackId": 6759859294,
+      "trackName": "Bible Prayer Companion",
+      "bundleId": "com.congle.TEAMCONG.Bible",
+      "appStoreUrl": "https://apps.apple.com/gb/app/bible-prayer-companion/id6759859294?uo=4",
+      "icon": "/images/apps/6759859294/icon.jpg",
+      "screenshots": []
     }
   ]
 }
