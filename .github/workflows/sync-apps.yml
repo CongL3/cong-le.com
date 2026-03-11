@@ -34,7 +34,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "chore: sync App Store listings [skip ci]
+          git commit -m "chore: sync App Store listings
 
           Auto-updated icons, screenshots, and app data from iTunes API."
           git push
