@@ -97,7 +97,7 @@ export const APPS: AppData[] = [
     description: "Visual routine timers designed to help kids stay focused and independent.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6747147301/icon.jpg",
-    url: "https://apps.apple.com/gb/developer/cong-le/id954373766"
+    url: "/apps/kids-timer/"
   },
   {
     id: "sunrise",
@@ -133,7 +133,7 @@ export const APPS: AppData[] = [
     description: "Smart birthday reminders with countdowns so important dates never slip.",
     iconColor: "bg-pink-500",
     iconUrl: "/images/apps/6739454115/icon.jpg",
-    url: "https://apps.apple.com/gb/developer/cong-le/id954373766"
+    url: "/apps/birthday-reminder/"
   },
   {
     id: "link-saver",
@@ -151,7 +151,7 @@ export const APPS: AppData[] = [
     description: "Calming white noise and ambient sounds for sleep and focus.",
     iconColor: "bg-sky-500",
     iconUrl: "/images/apps/6739187522/icon.jpg",
-    url: "https://apps.apple.com/gb/developer/cong-le/id954373766"
+    url: "/apps/lullaby-pal/"
   },
   {
     id: "learn-japanese",
@@ -169,7 +169,7 @@ export const APPS: AppData[] = [
     description: "Identify fish species with AI and keep useful details close while outdoors.",
     iconColor: "bg-cyan-600",
     iconUrl: "/images/apps/6746223793/icon.jpg",
-    url: "https://apps.apple.com/gb/developer/cong-le/id954373766"
+    url: "/apps/fish-finder/"
   },
   {
     id: "pomodoro",
@@ -310,12 +310,30 @@ export const APPS: AppData[] = [
     ]
   }
   ,{
+    id: "baby-names",
+    name: "Baby Names: Swipe & Pick",
+    category: AppCategory.LIFESTYLE,
+    description: "Swipe through 10,000+ baby names from 60+ cultural origins. Match with your partner and find names you both love.",
+    iconColor: "bg-pink-500",
+    iconUrl: "/apps/baby-names/images/app-icon.png",
+    url: "/apps/baby-names/",
+  },
+  {
+    id: "coloring",
+    name: "Coloring Book for Kids",
+    category: AppCategory.ENTERTAINMENT,
+    description: "Easy-to-use coloring app for children with bundled line-art pages, brush/fill tools. Fully offline.",
+    iconColor: "bg-violet-500",
+    iconUrl: "/apps/coloring/images/app-icon.png",
+    url: "/apps/coloring/",
+  },
+  {
     id: "bible-prayer-companion",
     name: "Bible Prayer Companion",
     category: AppCategory.EDUCATION,
     description: "Daily Scripture Companion is a quiet, offline prayer and Scripture app built for simple daily consistency.",
     iconColor: "bg-red-400",
     iconUrl: "/images/apps/6759859294/icon.jpg",
-    url: "https://apps.apple.com/gb/app/bible-prayer-companion/id6759859294?uo=4",
+    url: "/apps/bible-prayer/",
   }
 ];

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Coloring Book for Kids - Easy Coloring Pages & Drawing Tools | Free iOS App</title>
+  <meta name="description" content="Easy-to-use coloring app for children with dozens of line-art pages, brush and fill tools. Fully offline, iPad optimized. Free for iPhone and iPad.">
+  <link rel="canonical" href="https://www.cong-le.com/apps/coloring/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Coloring Book for Kids - Easy Coloring Pages & Drawing Tools">
+  <meta property="og:description" content="Easy-to-use coloring app for children with dozens of line-art pages, brush and fill tools. Fully offline, iPad optimized.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cong-le.com/apps/coloring/">
+  <meta property="og:image" content="https://www.cong-le.com/apps/coloring/images/gallery.png">
+  <meta property="og:site_name" content="Cong Le Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Coloring Book for Kids - Easy Coloring Pages & Drawing Tools">
+  <meta name="twitter:description" content="Easy-to-use coloring app for children with dozens of line-art pages, brush and fill tools. Fully offline.">
+  <meta name="twitter:image" content="https://www.cong-le.com/apps/coloring/images/gallery.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Coloring Book for Kids",
+    "operatingSystem": "iOS",
+    "applicationCategory": "EntertainmentApplication",
+    "description": "Easy-to-use coloring app for children with bundled line-art pages, brush and fill tools. Fully offline, iOS 18+. iPad optimized.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Cong Le",
+      "url": "https://www.cong-le.com"
+    }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple: {
+              DEFAULT: '#8B5CF6',
+              dark: '#3D2E5C',
+              muted: '#6B5590',
+            }
+          },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Image cards */
+    .image-card {
+      border-radius: 20px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+      overflow: hidden;
+      max-width: 500px;
+      width: 100%;
+    }
+    .image-card img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Scroll animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Category pills */
+    .category-pill {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 9999px;
+      background: rgba(61,46,92,0.1);
+      color: #3D2E5C;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Navbar transition */
+    .navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .navbar.scrolled {
+      background-color: rgba(240, 230, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(61,46,92,0.1);
+    }
+  </style>
+</head>
+<body class="font-body" style="background: linear-gradient(180deg, #F0E6FF 0%, #FFE6F0 50%, #F0E6FF 100%); background-attachment: fixed; color: #3D2E5C;">
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="images/app-icon.png" alt="Coloring Book for Kids icon" class="w-10 h-10 rounded-xl">
+        <span class="font-display text-lg" style="color: #3D2E5C;">Coloring Book for Kids</span>
+      </div>
+      <a href="https://apps.apple.com/gb/developer/cong-le/id954373766" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm hover:opacity-90 transition-colors" style="background: #8B5CF6; color: white;">
+        <svg class="w-4 h-4" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-up">
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6">
+          Color, Create &amp; Have Fun
+        </h1>
+        <p class="text-xl md:text-2xl mb-8" style="color: #6B5590;">
+          Dozens of coloring pages with easy-to-use tools. Perfect for kids of all ages.
+        </p>
+        <a href="https://apps.apple.com/gb/developer/cong-le/id954373766" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-colors shadow-lg" style="background: #8B5CF6; color: white;">
+          <svg class="w-6 h-6" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download Free on the App Store
+        </a>
+      </div>
+      <div class="fade-up flex justify-center">
+        <div class="image-card">
+          <img src="images/gallery.png" alt="Gallery of coloring pages including animals, princesses, and heroes" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: Easy Coloring Tools (text left, image right) -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="fade-up order-2 lg:order-1">
+        <h2 class="font-display text-4xl md:text-5xl mb-6">Easy Coloring Tools</h2>
+        <p class="text-xl" style="color: #6B5590;">
+          Brush, fill, pencil, and eraser. Large buttons made for little fingers.
+        </p>
+      </div>
+      <div class="fade-up flex justify-center order-1 lg:order-2">
+        <div class="image-card">
+          <img src="images/coloring_tools.png" alt="Coloring tools interface showing brush, fill, pencil and eraser options" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: Bring Art to Life (image left, text right) -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="fade-up flex justify-center">
+        <div class="image-card">
+          <img src="images/coloring_filled.png" alt="A completed coloring page with vibrant colors" loading="lazy">
+        </div>
+      </div>
+      <div class="fade-up">
+        <h2 class="font-display text-4xl md:text-5xl mb-6">Bring Art to Life</h2>
+        <p class="text-xl" style="color: #6B5590;">
+          Watch blank pages transform into colorful masterpieces.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Pills: Categories -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-6 text-center fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Pages for Every Imagination</h2>
+      <p class="text-xl mb-10" style="color: #6B5590;">
+        Choose from a wide variety of coloring categories.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="category-pill">Animals</span>
+        <span class="category-pill">Princesses</span>
+        <span class="category-pill">Heroes</span>
+        <span class="category-pill">Nature</span>
+        <span class="category-pill">Vehicles</span>
+        <span class="category-pill">Fantasy</span>
+        <span class="category-pill">Dinosaurs</span>
+        <span class="category-pill">Under the Sea</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 lg:py-32 text-center">
+    <div class="max-w-3xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-5xl md:text-6xl mb-6">Ready to Start Coloring?</h2>
+      <p class="text-xl mb-10" style="color: #6B5590;">
+        Download now and let the creativity begin.
+      </p>
+      <a href="https://apps.apple.com/gb/developer/cong-le/id954373766" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 font-bold px-10 py-5 rounded-full text-xl hover:opacity-90 transition-colors shadow-xl" style="background: #8B5CF6; color: white;">
+        <svg class="w-7 h-7" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download on the App Store
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12" style="background-color: #E0D4F5;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="images/app-icon.png" alt="Coloring Book for Kids" class="w-8 h-8 rounded-lg">
+          <span class="font-display text-lg" style="color: #3D2E5C;">Coloring Book for Kids</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 text-sm" style="color: #6B5590;">
+          <a href="/privacy.html" class="hover:opacity-70 transition-colors">Privacy Policy</a>
+          <a href="/terms.html" class="hover:opacity-70 transition-colors">Terms</a>
+          <a href="/developer.html" class="hover:opacity-70 transition-colors">Support</a>
+          <a href="/" class="hover:opacity-70 transition-colors">More apps by Cong Le</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-sm" style="color: #8B7AA8;">
+        &copy; 2025 Cong Le. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JS: Scroll animations + navbar -->
+  <script>
+    // IntersectionObserver for fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fish Finder - AI Fish Species Identifier | Free iOS App</title>
+  <meta name="description" content="Identify fish species with AI. Snap a photo and get instant species identification with details about habitat, size, and more. Free for iPhone.">
+  <link rel="canonical" href="https://www.cong-le.com/apps/fish-finder/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fish Finder - AI Fish Species Identifier">
+  <meta property="og:description" content="Identify fish species with AI. Snap a photo and get instant species identification with details about habitat, size, and more. Free for iPhone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cong-le.com/apps/fish-finder/">
+  <meta property="og:image" content="https://www.cong-le.com/apps/fish-finder/images/app-icon.jpg">
+  <meta property="og:site_name" content="Cong Le Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fish Finder - AI Fish Species Identifier">
+  <meta name="twitter:description" content="Identify fish species with AI. Snap a photo and get instant identification with habitat, size, and more.">
+  <meta name="twitter:image" content="https://www.cong-le.com/apps/fish-finder/images/app-icon.jpg">
+
+  <!-- Apple Smart App Banner (uncomment when App Store ID is known) -->
+  <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Fish Finder - AI Identifier",
+    "operatingSystem": "iOS",
+    "applicationCategory": "LifestyleApplication",
+    "description": "Identify fish species with AI. Snap a photo and get instant species identification with details about habitat, size, and more.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Cong Le",
+      "url": "https://www.cong-le.com"
+    }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: {
+              DEFAULT: '#0D9488',
+              dark: '#0B7C72',
+              light: '#14B8A6',
+            }
+          },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: linear-gradient(180deg, #E0F5F5 0%, #C8EBE8 50%, #B0E0DB 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    /* Fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating animation for decorative elements */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes float-delayed {
+      0%, 100% { transform: translateY(0) rotate(-8deg); }
+      50% { transform: translateY(-10px) rotate(8deg); }
+    }
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0) rotate(5deg); }
+      50% { transform: translateY(-8px) rotate(-5deg); }
+    }
+    .float { animation: float 3s ease-in-out infinite; }
+    .float-delayed { animation: float-delayed 3.5s ease-in-out infinite 0.5s; }
+    .float-slow { animation: float-slow 4s ease-in-out infinite 1s; }
+
+    /* Navbar scroll state */
+    .navbar {
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(224, 245, 245, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+
+    /* Subtle bubble decorations */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(13, 148, 136, 0.06);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="font-body text-[#1A3C3C]">
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="images/app-icon.jpg" alt="Fish Finder app icon" class="w-10 h-10 rounded-xl shadow-md">
+        <span class="font-display text-xl text-[#1A3C3C]">Fish Finder</span>
+      </div>
+      <a href="https://apps.apple.com/gb/developer/cong-le/id954373766"
+         target="_blank" rel="noopener"
+         class="bg-[#0D9488] hover:bg-[#0B7C72] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors shadow-md">
+        Download
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-up">
+      <h1 class="font-display text-5xl md:text-6xl text-[#1A3C3C] leading-tight mb-6">
+        Identify Any Fish Instantly
+      </h1>
+      <p class="text-lg md:text-xl text-[#3D6B6B] max-w-xl mx-auto mb-10 leading-relaxed">
+        Snap a photo and let AI tell you the species, habitat, and key details. Your pocket field guide.
+      </p>
+      <a href="https://apps.apple.com/gb/developer/cong-le/id954373766"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-[#0D9488] hover:bg-[#0B7C72] text-white font-semibold text-lg px-8 py-4 rounded-full transition-colors shadow-lg hover:shadow-xl">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download Free on App Store
+      </a>
+
+      <!-- Decorative emoji cluster -->
+      <div class="relative mt-16 mb-4 flex items-center justify-center" style="height: 160px;">
+        <span class="text-8xl float select-none" role="img" aria-label="Fish">🐟</span>
+        <span class="absolute -top-2 -left-4 md:left-16 text-4xl float-delayed select-none" role="img" aria-label="Camera">📸</span>
+        <span class="absolute -bottom-2 -right-4 md:right-16 text-4xl float-slow select-none" role="img" aria-label="Magnifying glass">🔍</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Cards Grid (3 cards) -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="fade-up bg-[rgba(26,60,60,0.06)] rounded-2xl p-8 text-center hover:bg-[rgba(26,60,60,0.10)] transition-colors">
+        <span class="text-5xl mb-5 block select-none">📷</span>
+        <h3 class="font-display text-xl mb-3 text-[#1A3C3C]">AI Photo ID</h3>
+        <p class="text-[#3D6B6B] leading-relaxed">Point your camera at any fish and get instant identification</p>
+      </div>
+
+      <div class="fade-up bg-[rgba(26,60,60,0.06)] rounded-2xl p-8 text-center hover:bg-[rgba(26,60,60,0.10)] transition-colors" style="transition-delay: 0.1s;">
+        <span class="text-5xl mb-5 block select-none">📚</span>
+        <h3 class="font-display text-xl mb-3 text-[#1A3C3C]">Species Database</h3>
+        <p class="text-[#3D6B6B] leading-relaxed">Detailed info on habitat, size, diet, and season</p>
+      </div>
+
+      <div class="fade-up bg-[rgba(26,60,60,0.06)] rounded-2xl p-8 text-center hover:bg-[rgba(26,60,60,0.10)] transition-colors" style="transition-delay: 0.2s;">
+        <span class="text-5xl mb-5 block select-none">📍</span>
+        <h3 class="font-display text-xl mb-3 text-[#1A3C3C]">Catch Log</h3>
+        <p class="text-[#3D6B6B] leading-relaxed">Save your catches with photos, location, and notes</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Centered Feature -->
+  <section class="py-20 px-6">
+    <div class="max-w-2xl mx-auto text-center fade-up">
+      <h2 class="font-display text-3xl md:text-4xl text-[#1A3C3C] mb-5">
+        Built for Anglers &amp; Nature Lovers
+      </h2>
+      <p class="text-lg text-[#3D6B6B] leading-relaxed">
+        Whether you're fishing, snorkeling, or just curious about the fish in your local lake.
+      </p>
+    </div>
+  </section>
+
+  <!-- Two More Feature Cards -->
+  <section class="py-12 px-6">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="fade-up bg-[rgba(26,60,60,0.06)] rounded-2xl p-8 text-center hover:bg-[rgba(26,60,60,0.10)] transition-colors">
+        <span class="text-5xl mb-5 block select-none">🌐</span>
+        <h3 class="font-display text-xl mb-3 text-[#1A3C3C]">Works Anywhere</h3>
+        <p class="text-[#3D6B6B] leading-relaxed">Identify freshwater and saltwater species worldwide</p>
+      </div>
+
+      <div class="fade-up bg-[rgba(26,60,60,0.06)] rounded-2xl p-8 text-center hover:bg-[rgba(26,60,60,0.10)] transition-colors" style="transition-delay: 0.1s;">
+        <span class="text-5xl mb-5 block select-none">⚡</span>
+        <h3 class="font-display text-xl mb-3 text-[#1A3C3C]">Fast &amp; Accurate</h3>
+        <p class="text-[#3D6B6B] leading-relaxed">AI-powered recognition in seconds</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 px-6">
+    <div class="max-w-2xl mx-auto text-center fade-up">
+      <h2 class="font-display text-3xl md:text-4xl text-[#1A3C3C] mb-6">
+        Ready to ID Your Next Catch?
+      </h2>
+      <a href="https://apps.apple.com/gb/developer/cong-le/id954373766"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-[#0D9488] hover:bg-[#0B7C72] text-white font-semibold text-lg px-8 py-4 rounded-full transition-colors shadow-lg hover:shadow-xl">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download Free on App Store
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6" style="background: #A8D5D0;">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#1A3C3C]">
+      <div class="flex items-center gap-2">
+        <img src="images/app-icon.jpg" alt="Fish Finder" class="w-8 h-8 rounded-lg">
+        <span class="font-display text-lg">Fish Finder</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="https://www.cong-le.com/privacy.html" class="hover:underline text-[#3D6B6B]">Privacy Policy</a>
+        <a href="https://www.cong-le.com/developer.html" class="hover:underline text-[#3D6B6B]">Support</a>
+        <a href="https://www.cong-le.com" class="hover:underline text-[#3D6B6B]">More Apps</a>
+      </div>
+      <p class="text-[#3D6B6B]">&copy; 2025 Cong Le. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Sticky navbar background on scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // IntersectionObserver fade-up
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
