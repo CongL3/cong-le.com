@@ -336,4 +336,13 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6759859294/icon.jpg",
     url: "/apps/bible-prayer/",
   }
+  ,{
+    id: "carddex-tcg-scanner-price",
+    name: "CardDex: TCG Scanner & Price",
+    category: AppCategory.UTILITIES,
+    description: "Your Ultimate Pokemon Card Collecting Companion",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6743774763/icon.jpg",
+    url: "https://apps.apple.com/gb/app/carddex-tcg-scanner-price/id6743774763?uo=4",
+  }
 ];
