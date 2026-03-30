@@ -345,4 +345,31 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6743774763/icon.jpg",
     url: "https://apps.apple.com/gb/app/carddex-tcg-scanner-price/id6743774763?uo=4",
   }
+  ,{
+    id: "poop-tracker-gut-health",
+    name: "Poop Tracker & Gut Health",
+    category: AppCategory.LIFESTYLE,
+    description: "Track your gut health in seconds.",
+    iconColor: "bg-rose-400",
+    iconUrl: "/images/apps/6760222884/icon.jpg",
+    url: "https://apps.apple.com/gb/app/poop-tracker-gut-health/id6760222884?uo=4",
+  }
+  ,{
+    id: "kids-coloring-book-draw",
+    name: "Kids Coloring Book & Draw",
+    category: AppCategory.EDUCATION,
+    description: "Colour, draw, and create with a kids-first colouring app.",
+    iconColor: "bg-red-400",
+    iconUrl: "/images/apps/6759912464/icon.jpg",
+    url: "https://apps.apple.com/gb/app/kids-coloring-book-draw/id6759912464?uo=4",
+  }
+  ,{
+    id: "",
+    name: "お返し - 内祝い・香典返し管理",
+    category: AppCategory.UTILITIES,
+    description: "結婚・出産・香典・快気祝いなど、日本の贈答マナーに沿ったお返しの期限と金額を自動計算。",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6760551450/icon.jpg",
+    url: "https://apps.apple.com/gb/app/%E3%81%8A%E8%BF%94%E3%81%97-%E5%86%85%E7%A5%9D%E3%81%84-%E9%A6%99%E5%85%B8%E8%BF%94%E3%81%97%E7%AE%A1%E7%90%86/id6760551450?uo=4",
+  }
 ];
