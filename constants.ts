@@ -3,7 +3,7 @@ import { Smartphone, Code2, Download, Trophy } from 'lucide-react';
 
 export const HERO_CONTENT = {
   name: "Cong Le",
-  title: "Principal iOS Engineer · Capital One",
+  title: "Principal iOS Engineer @ Capital One",
   subtitle: "11+ years in iOS. Enterprise banking by day, indie apps by night. Gravitating towards the positive.",
   blurb: "",
   signalSentence: "",
