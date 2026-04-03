@@ -37,26 +37,11 @@ const Hero: React.FC = () => {
         <p className="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-6">
           {HERO_CONTENT.subtitle}
         </p>
-        <p className="mt-2 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
-          {HERO_CONTENT.blurb}
-        </p>
-
-        {/* What I'm Good At */}
-        <div className="max-w-xl mx-auto mb-8 text-left">
-          <ul className="space-y-2">
-            {HERO_CONTENT.strengths.map((s, i) => (
-              <li key={i} className="flex items-start text-sm text-gray-600 dark:text-gray-400">
-                <span className="mr-2.5 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0" />
-                {s}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Signal Sentence */}
-        <p className="text-sm font-medium text-gray-500 dark:text-gray-400 italic max-w-2xl mx-auto mb-8">
-          {HERO_CONTENT.signalSentence}
-        </p>
+        {HERO_CONTENT.blurb && (
+          <p className="mt-2 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
+            {HERO_CONTENT.blurb}
+          </p>
+        )}
 
         {/* Social Links */}
         <div className="flex space-x-4 mb-10">
