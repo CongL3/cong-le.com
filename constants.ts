@@ -3,9 +3,17 @@ import { Smartphone, Code2, Download, Trophy } from 'lucide-react';
 
 export const HERO_CONTENT = {
   name: "Cong Le",
-  title: "Principal iOS Engineer",
-  subtitle: "Principal iOS Engineer at Capital One. 11+ years building intuitive, high-impact mobile products.",
-  blurb: "I build iOS products that are clean, fast, and genuinely useful — from enterprise banking experiences to indie utilities used by 500k+ people.",
+  title: "Principal iOS Engineer · Capital One",
+  subtitle: "I architect large-scale iOS systems by day and ship indie apps to 500k+ users by night.",
+  blurb: "11+ years deep in iOS — from leading architecture modernization on a regulated banking app to building and launching 20+ indie apps on the App Store. I operate across the full stack of product engineering: system design, delivery, developer experience, and growth.",
+  signalSentence: "I own the technical direction of a banking iOS platform and independently built a portfolio that crossed half a million downloads.",
+  strengths: [
+    "Defining and evolving mobile architecture for large, long-lived codebases",
+    "Shipping end-to-end — from system design through App Store release",
+    "Bridging engineering, product, and design in regulated environments",
+    "Building reusable infrastructure that compounds across teams and projects",
+    "Turning side projects into real products with real retention",
+  ],
   profileImage: "https://github.com/CongL3.png",
   email: "support@cong-le.com",
   appStoreLink: "https://apps.apple.com/gb/developer/cong-le/id954373766",
@@ -15,8 +23,8 @@ export const HERO_CONTENT = {
 };
 
 export const STATS: StatData[] = [
-  { label: "Experience", value: "10+ Years", icon: Code2, description: "iOS Engineering" },
-  { label: "Apps", value: "11+", icon: Smartphone, description: "Live on App Store" },
+  { label: "Experience", value: "11+ Years", icon: Code2, description: "iOS Engineering" },
+  { label: "Apps", value: "20+", icon: Smartphone, description: "Live on App Store" },
   { label: "Downloads", value: "500k+", icon: Download, description: "Portfolio-wide" },
   { label: "Flagship", value: "250k+", icon: Trophy, description: "Anniversary Tracker" },
 ];

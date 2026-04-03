@@ -41,6 +41,23 @@ const Hero: React.FC = () => {
           {HERO_CONTENT.blurb}
         </p>
 
+        {/* What I'm Good At */}
+        <div className="max-w-xl mx-auto mb-8 text-left">
+          <ul className="space-y-2">
+            {HERO_CONTENT.strengths.map((s, i) => (
+              <li key={i} className="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                <span className="mr-2.5 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0" />
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Signal Sentence */}
+        <p className="text-sm font-medium text-gray-500 dark:text-gray-400 italic max-w-2xl mx-auto mb-8">
+          {HERO_CONTENT.signalSentence}
+        </p>
+
         {/* Social Links */}
         <div className="flex space-x-4 mb-10">
            <a href={HERO_CONTENT.githubLink} target="_blank" rel="noreferrer" className="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-all">
