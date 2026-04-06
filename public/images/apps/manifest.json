@@ -2,9 +2,9 @@
   "apps": [
     {
       "trackId": 1570714816,
-      "trackName": "Anniversary Tracker",
+      "trackName": "Love Counter - Days Together",
       "bundleId": "com.congle.TEAMCONG.AnniversaryTrackerNoAds",
-      "appStoreUrl": "https://apps.apple.com/gb/app/anniversary-tracker/id1570714816?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/love-counter-days-together/id1570714816?uo=4",
       "icon": "/images/apps/1570714816/icon.jpg",
       "screenshots": [
         "/images/apps/1570714816/screenshot-1.jpg",
@@ -243,6 +243,22 @@
       "bundleId": "com.congle.TEAMCONG.Okaeshi",
       "appStoreUrl": "https://apps.apple.com/gb/app/%E3%81%8A%E8%BF%94%E3%81%97-%E5%86%85%E7%A5%9D%E3%81%84-%E9%A6%99%E5%85%B8%E8%BF%94%E3%81%97%E7%AE%A1%E7%90%86/id6760551450?uo=4",
       "icon": "/images/apps/6760551450/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761100038,
+      "trackName": "Life Countdown: Time in Weeks",
+      "bundleId": "com.congle.TEAMCONG.LifeCountdown",
+      "appStoreUrl": "https://apps.apple.com/gb/app/life-countdown-time-in-weeks/id6761100038?uo=4",
+      "icon": "/images/apps/6761100038/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761291886,
+      "trackName": "LovePet - Couples Companion",
+      "bundleId": "com.congle.TEAMCONG.LovePet",
+      "appStoreUrl": "https://apps.apple.com/gb/app/lovepet-couples-companion/id6761291886?uo=4",
+      "icon": "/images/apps/6761291886/icon.jpg",
       "screenshots": []
     }
   ]

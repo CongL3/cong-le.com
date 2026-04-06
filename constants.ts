@@ -374,4 +374,37 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6760551450/icon.jpg",
     url: "https://apps.apple.com/gb/app/%E3%81%8A%E8%BF%94%E3%81%97-%E5%86%85%E7%A5%9D%E3%81%84-%E9%A6%99%E5%85%B8%E8%BF%94%E3%81%97%E7%AE%A1%E7%90%86/id6760551450?uo=4",
   }
+  ,{
+    id: "love-counter-days-together",
+    name: "Love Counter - Days Together",
+    category: AppCategory.UTILITIES,
+    description: "Every day together is worth celebrating. Anniversary Tracker helps you count, customise, and never forget the moments th",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/1570714816/icon.jpg",
+    url: "https://apps.apple.com/gb/app/love-counter-days-together/id1570714816?uo=4",
+    screenshots: [
+      "/images/apps/1570714816/screenshot-1.jpg",
+      "/images/apps/1570714816/screenshot-2.jpg",
+      "/images/apps/1570714816/screenshot-3.jpg",
+      "/images/apps/1570714816/screenshot-4.jpg",
+    ]
+  }
+  ,{
+    id: "life-countdown-time-in-weeks",
+    name: "Life Countdown: Time in Weeks",
+    category: AppCategory.UTILITIES,
+    description: "How many weeks do you have left?",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6761100038/icon.jpg",
+    url: "https://apps.apple.com/gb/app/life-countdown-time-in-weeks/id6761100038?uo=4",
+  }
+  ,{
+    id: "lovepet-couples-companion",
+    name: "LovePet - Couples Companion",
+    category: AppCategory.LIFESTYLE,
+    description: "Stay connected with your partner through shared virtual pets, mood tracking, and daily love notes — all in one private, ",
+    iconColor: "bg-rose-400",
+    iconUrl: "/images/apps/6761291886/icon.jpg",
+    url: "https://apps.apple.com/gb/app/lovepet-couples-companion/id6761291886?uo=4",
+  }
 ];
