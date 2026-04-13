@@ -2,9 +2,9 @@
   "apps": [
     {
       "trackId": 1570714816,
-      "trackName": "Love Counter - Days Together",
+      "trackName": "Anniversary Tracker",
       "bundleId": "com.congle.TEAMCONG.AnniversaryTrackerNoAds",
-      "appStoreUrl": "https://apps.apple.com/gb/app/love-counter-days-together/id1570714816?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/anniversary-tracker/id1570714816?uo=4",
       "icon": "/images/apps/1570714816/icon.jpg",
       "screenshots": [
         "/images/apps/1570714816/screenshot-1.jpg",
@@ -247,18 +247,58 @@
     },
     {
       "trackId": 6761100038,
-      "trackName": "Life Countdown: Time in Weeks",
+      "trackName": "Life Countdown: Age Calculator",
       "bundleId": "com.congle.TEAMCONG.LifeCountdown",
-      "appStoreUrl": "https://apps.apple.com/gb/app/life-countdown-time-in-weeks/id6761100038?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/life-countdown-age-calculator/id6761100038?uo=4",
       "icon": "/images/apps/6761100038/icon.jpg",
       "screenshots": []
     },
     {
       "trackId": 6761291886,
-      "trackName": "LovePet - Couples Companion",
+      "trackName": "LovePet - Games for Couples",
       "bundleId": "com.congle.TEAMCONG.LovePet",
-      "appStoreUrl": "https://apps.apple.com/gb/app/lovepet-couples-companion/id6761291886?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/lovepet-games-for-couples/id6761291886?uo=4",
       "icon": "/images/apps/6761291886/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760255587,
+      "trackName": "Baby Names : Swipe & Pick",
+      "bundleId": "com.congle.TEAMCONG.babynamesv2",
+      "appStoreUrl": "https://apps.apple.com/gb/app/baby-names-swipe-pick/id6760255587?uo=4",
+      "icon": "/images/apps/6760255587/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761863969,
+      "trackName": "PrivateChat AI: Ollama & LLM",
+      "bundleId": "com.congle.TEAMCONG.PrivateChatAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/privatechat-ai-ollama-llm/id6761863969?uo=4",
+      "icon": "/images/apps/6761863969/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760960498,
+      "trackName": "UV Index - Burn Time Tracker",
+      "bundleId": "com.congle.TEAMCONG.UVIndex",
+      "appStoreUrl": "https://apps.apple.com/gb/app/uv-index-burn-time-tracker/id6760960498?uo=4",
+      "icon": "/images/apps/6760960498/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760960439,
+      "trackName": "Golden Hour: Light Planner",
+      "bundleId": "com.congle.TEAMCONG.PhotographersLight",
+      "appStoreUrl": "https://apps.apple.com/gb/app/golden-hour-light-planner/id6760960439?uo=4",
+      "icon": "/images/apps/6760960439/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760960543,
+      "trackName": "Solunar: Best Fishing Times",
+      "bundleId": "com.congle.TEAMCONG.SolunarFishing",
+      "appStoreUrl": "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?uo=4",
+      "icon": "/images/apps/6760960543/icon.jpg",
       "screenshots": []
     }
   ]

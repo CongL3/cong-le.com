@@ -407,4 +407,40 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6761291886/icon.jpg",
     url: "https://apps.apple.com/gb/app/lovepet-couples-companion/id6761291886?uo=4",
   }
+  ,{
+    id: "privatechat-ai-ollama-llm",
+    name: "PrivateChat AI: Ollama & LLM",
+    category: AppCategory.ENTERTAINMENT,
+    description: "Chat with AI — 100% private, 100% on your device.",
+    iconColor: "bg-purple-500",
+    iconUrl: "/images/apps/6761863969/icon.jpg",
+    url: "https://apps.apple.com/gb/app/privatechat-ai-ollama-llm/id6761863969?uo=4",
+  }
+  ,{
+    id: "uv-index-burn-time-tracker",
+    name: "UV Index - Burn Time Tracker",
+    category: AppCategory.WEATHER,
+    description: "Know your personal burn time before you step outside. UV Index computes clear-sky ultraviolet levels from the sun's posi",
+    iconColor: "bg-amber-500",
+    iconUrl: "/images/apps/6760960498/icon.jpg",
+    url: "https://apps.apple.com/gb/app/uv-index-burn-time-tracker/id6760960498?uo=4",
+  }
+  ,{
+    id: "golden-hour-light-planner",
+    name: "Golden Hour: Light Planner",
+    category: AppCategory.PHOTO_VIDEO,
+    description: "Know exactly when the light gets good. Photographer's Light gives you every light window a photographer needs — golden h",
+    iconColor: "bg-indigo-500",
+    iconUrl: "/images/apps/6760960439/icon.jpg",
+    url: "https://apps.apple.com/gb/app/golden-hour-light-planner/id6760960439?uo=4",
+  }
+  ,{
+    id: "solunar-best-fishing-times",
+    name: "Solunar: Best Fishing Times",
+    category: AppCategory.UTILITIES,
+    description: "Know exactly when the fish are biting. Solunar Fishing Times uses proven solunar theory to predict major and minor feedi",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6760960543/icon.jpg",
+    url: "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?uo=4",
+  }
 ];
