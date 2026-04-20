@@ -125,9 +125,9 @@
     },
     {
       "trackId": 6740165217,
-      "trackName": "Photo Image Compression",
+      "trackName": "Photo Cleaner & Compressor",
       "bundleId": "com.congle.TEAMCONG.CompressImages",
-      "appStoreUrl": "https://apps.apple.com/gb/app/photo-image-compression/id6740165217?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/photo-cleaner-compressor/id6740165217?uo=4",
       "icon": "/images/apps/6740165217/icon.jpg",
       "screenshots": []
     },
@@ -299,6 +299,14 @@
       "bundleId": "com.congle.TEAMCONG.SolunarFishing",
       "appStoreUrl": "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?uo=4",
       "icon": "/images/apps/6760960543/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761860910,
+      "trackName": "NoLo Inspiration",
+      "bundleId": "com.LorePeeters.noloinspiration",
+      "appStoreUrl": "https://apps.apple.com/gb/app/nolo-inspiration/id6761860910?uo=4",
+      "icon": "/images/apps/6761860910/icon.jpg",
       "screenshots": []
     }
   ]

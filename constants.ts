@@ -443,4 +443,22 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6760960543/icon.jpg",
     url: "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?uo=4",
   }
+  ,{
+    id: "nolo-inspiration",
+    name: "NoLo Inspiration",
+    category: AppCategory.UTILITIES,
+    description: "NoLo Inspiration – Scan, Discover & Rate No-Alcohol and Low-Alcohol Drinks",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6761860910/icon.jpg",
+    url: "https://apps.apple.com/gb/app/nolo-inspiration/id6761860910?uo=4",
+  }
+  ,{
+    id: "photo-cleaner-compressor",
+    name: "Photo Cleaner & Compressor",
+    category: AppCategory.PHOTO_VIDEO,
+    description: "Clean up your photo library and reclaim storage space — all processed privately on your device.",
+    iconColor: "bg-indigo-500",
+    iconUrl: "/images/apps/6740165217/icon.jpg",
+    url: "https://apps.apple.com/gb/app/photo-cleaner-compressor/id6740165217?uo=4",
+  }
 ];
