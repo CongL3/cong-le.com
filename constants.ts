@@ -461,4 +461,31 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6740165217/icon.jpg",
     url: "https://apps.apple.com/gb/app/photo-cleaner-compressor/id6740165217?uo=4",
   }
+  ,{
+    id: "baby-screen-lock-kid-safe",
+    name: "Baby Screen Lock: Kid Safe",
+    category: AppCategory.ENTERTAINMENT,
+    description: "Baby Screen Lock keeps your little one entertained with age-appropriate interactive activities while locking the screen ",
+    iconColor: "bg-purple-500",
+    iconUrl: "/images/apps/6761378897/icon.jpg",
+    url: "https://apps.apple.com/gb/app/baby-screen-lock-kid-safe/id6761378897?uo=4",
+  }
+  ,{
+    id: "moon-phases-lunar-tracker",
+    name: "Moon Phases: Lunar Tracker",
+    category: AppCategory.UTILITIES,
+    description: "Want to know what the moon is doing right now? Moon Phases gives you the answer in under a second — no internet required",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6760960352/icon.jpg",
+    url: "https://apps.apple.com/gb/app/moon-phases-lunar-tracker/id6760960352?uo=4",
+  }
+  ,{
+    id: "passport-photo-visa-id",
+    name: "Passport Photo: Visa & ID",
+    category: AppCategory.PHOTO_VIDEO,
+    description: "Create perfect passport photos, visa photos, and ID photos that meet official government standards — all processed on yo",
+    iconColor: "bg-indigo-500",
+    iconUrl: "/images/apps/6747094958/icon.jpg",
+    url: "https://apps.apple.com/gb/app/passport-photo-visa-id/id6747094958?uo=4",
+  }
 ];
