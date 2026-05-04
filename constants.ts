@@ -488,4 +488,13 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6747094958/icon.jpg",
     url: "https://apps.apple.com/gb/app/passport-photo-visa-id/id6747094958?uo=4",
   }
+  ,{
+    id: "lovepet-pookie-couple-app",
+    name: "LovePet: Pookie & Couple App",
+    category: AppCategory.LIFESTYLE,
+    description: "Stay connected with your partner through shared virtual pets, mood tracking, and daily love notes — all in one private, ",
+    iconColor: "bg-rose-400",
+    iconUrl: "/images/apps/6761291886/icon.jpg",
+    url: "https://apps.apple.com/gb/app/lovepet-pookie-couple-app/id6761291886?uo=4",
+  }
 ];
