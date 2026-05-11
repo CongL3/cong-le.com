@@ -117,9 +117,9 @@
     },
     {
       "trackId": 6740433779,
-      "trackName": "Sunrise & Sunset tracker",
+      "trackName": "Sun Times: Sunrise & Sunset",
       "bundleId": "com.teamcong.sunsupsunsdown",
-      "appStoreUrl": "https://apps.apple.com/gb/app/sunrise-sunset-tracker/id6740433779?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/sun-times-sunrise-sunset/id6740433779?uo=4",
       "icon": "/images/apps/6740433779/icon.jpg",
       "screenshots": []
     },
@@ -331,6 +331,14 @@
       "bundleId": "com.congle.TEAMCONG.PassportGenerator",
       "appStoreUrl": "https://apps.apple.com/gb/app/passport-photo-visa-id/id6747094958?uo=4",
       "icon": "/images/apps/6747094958/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6766366146,
+      "trackName": "Frankly AI: Uncensored Chat",
+      "bundleId": "com.congle.TEAMCONG.FranklyAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/frankly-ai-uncensored-chat/id6766366146?uo=4",
+      "icon": "/images/apps/6766366146/icon.jpg",
       "screenshots": []
     }
   ]

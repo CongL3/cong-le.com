@@ -497,4 +497,22 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6761291886/icon.jpg",
     url: "https://apps.apple.com/gb/app/lovepet-pookie-couple-app/id6761291886?uo=4",
   }
+  ,{
+    id: "frankly-ai-uncensored-chat",
+    name: "Frankly AI: Uncensored Chat",
+    category: AppCategory.UTILITIES,
+    description: "Chat with AI — frank, uncensored, 100% on your device.",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6766366146/icon.jpg",
+    url: "https://apps.apple.com/gb/app/frankly-ai-uncensored-chat/id6766366146?uo=4",
+  }
+  ,{
+    id: "sun-times-sunrise-sunset",
+    name: "Sun Times: Sunrise & Sunset",
+    category: AppCategory.WEATHER,
+    description: "Know exactly when the sun rises and sets — to the minute, offline, anywhere on Earth. No loading. No network. Just accur",
+    iconColor: "bg-amber-500",
+    iconUrl: "/images/apps/6740433779/icon.jpg",
+    url: "https://apps.apple.com/gb/app/sun-times-sunrise-sunset/id6740433779?uo=4",
+  }
 ];
