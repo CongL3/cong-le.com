@@ -340,6 +340,22 @@
       "appStoreUrl": "https://apps.apple.com/gb/app/frankly-ai-uncensored-chat/id6766366146?uo=4",
       "icon": "/images/apps/6766366146/icon.jpg",
       "screenshots": []
+    },
+    {
+      "trackId": 6765780052,
+      "trackName": "Captions: Auto Video Subtitles",
+      "bundleId": "com.congle.TEAMCONG.CaptionCreator",
+      "appStoreUrl": "https://apps.apple.com/gb/app/captions-auto-video-subtitles/id6765780052?uo=4",
+      "icon": "/images/apps/6765780052/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761440158,
+      "trackName": "CardKeeper – Wallet Passes",
+      "bundleId": "com.congle.TEAMCONG.CardKeeper",
+      "appStoreUrl": "https://apps.apple.com/gb/app/cardkeeper-wallet-passes/id6761440158?uo=4",
+      "icon": "/images/apps/6761440158/icon.jpg",
+      "screenshots": []
     }
   ]
 }

@@ -515,4 +515,22 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6740433779/icon.jpg",
     url: "https://apps.apple.com/gb/app/sun-times-sunrise-sunset/id6740433779?uo=4",
   }
+  ,{
+    id: "captions-auto-video-subtitles",
+    name: "Captions: Auto Video Subtitles",
+    category: AppCategory.PHOTO_VIDEO,
+    description: "Captions double your watch time — and they should take 30 seconds, not 30 minutes. Caption Creator transcribes your vide",
+    iconColor: "bg-indigo-500",
+    iconUrl: "/images/apps/6765780052/icon.jpg",
+    url: "https://apps.apple.com/gb/app/captions-auto-video-subtitles/id6765780052?uo=4",
+  }
+  ,{
+    id: "cardkeeper-wallet-passes",
+    name: "CardKeeper – Wallet Passes",
+    category: AppCategory.UTILITIES,
+    description: "CardKeeper is the privacy-first way to create and manage Apple Wallet passes. Digitise your loyalty cards, membership ca",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6761440158/icon.jpg",
+    url: "https://apps.apple.com/gb/app/cardkeeper-wallet-passes/id6761440158?uo=4",
+  }
 ];
