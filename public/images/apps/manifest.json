@@ -356,6 +356,22 @@
       "appStoreUrl": "https://apps.apple.com/gb/app/cardkeeper-wallet-passes/id6761440158?uo=4",
       "icon": "/images/apps/6761440158/icon.jpg",
       "screenshots": []
+    },
+    {
+      "trackId": 6769891596,
+      "trackName": "Ollama Connect",
+      "bundleId": "com.congle.TEAMCONG.OllamaConnect",
+      "appStoreUrl": "https://apps.apple.com/gb/app/ollama-connect/id6769891596?uo=4",
+      "icon": "/images/apps/6769891596/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6769176993,
+      "trackName": "DocScanner: Sign Documents",
+      "bundleId": "com.congle.TEAMCONG.DocScanner",
+      "appStoreUrl": "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?uo=4",
+      "icon": "/images/apps/6769176993/icon.jpg",
+      "screenshots": []
     }
   ]
 }

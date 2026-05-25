@@ -533,4 +533,22 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6761440158/icon.jpg",
     url: "https://apps.apple.com/gb/app/cardkeeper-wallet-passes/id6761440158?uo=4",
   }
+  ,{
+    id: "ollama-connect",
+    name: "Ollama Connect",
+    category: AppCategory.UTILITIES,
+    description: "Ollama Connect is a private chat client for Ollama on iPhone.",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6769891596/icon.jpg",
+    url: "https://apps.apple.com/gb/app/ollama-connect/id6769891596?uo=4",
+  }
+  ,{
+    id: "docscanner-sign-documents",
+    name: "DocScanner: Sign Documents",
+    category: AppCategory.PRODUCTIVITY,
+    description: "DocScanner is the all-in-one document scanner that works completely offline. No account needed. No subscription. Just sc",
+    iconColor: "bg-slate-500",
+    iconUrl: "/images/apps/6769176993/icon.jpg",
+    url: "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?uo=4",
+  }
 ];
