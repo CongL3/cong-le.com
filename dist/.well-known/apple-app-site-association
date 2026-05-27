@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "9URT9YH7AX.com.congle.TEAMCONG.PackPlanner",
+        "paths": [
+          "/packplanner/join",
+          "/packplanner/join/",
+          "/packplanner/join/*"
+        ]
+      }
+    ]
+  }
+}

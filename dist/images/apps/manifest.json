@@ -29,9 +29,9 @@
     },
     {
       "trackId": 6743774763,
-      "trackName": "Card Value Tracker for Pokemon",
+      "trackName": "CardDex: TCG Scanner & Price",
       "bundleId": "com.congle.TEAMCONG.PokemonCardValueTracker",
-      "appStoreUrl": "https://apps.apple.com/gb/app/card-value-tracker-for-pokemon/id6743774763?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/carddex-tcg-scanner-price/id6743774763?uo=4",
       "icon": "/images/apps/6743774763/icon.jpg",
       "screenshots": []
     },
@@ -117,17 +117,17 @@
     },
     {
       "trackId": 6740433779,
-      "trackName": "Sunrise & Sunset tracker",
+      "trackName": "Sun Times: Sunrise & Sunset",
       "bundleId": "com.teamcong.sunsupsunsdown",
-      "appStoreUrl": "https://apps.apple.com/gb/app/sunrise-sunset-tracker/id6740433779?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/sun-times-sunrise-sunset/id6740433779?uo=4",
       "icon": "/images/apps/6740433779/icon.jpg",
       "screenshots": []
     },
     {
       "trackId": 6740165217,
-      "trackName": "Photo Image Compression",
+      "trackName": "Photo Cleaner & Compressor",
       "bundleId": "com.congle.TEAMCONG.CompressImages",
-      "appStoreUrl": "https://apps.apple.com/gb/app/photo-image-compression/id6740165217?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/photo-cleaner-compressor/id6740165217?uo=4",
       "icon": "/images/apps/6740165217/icon.jpg",
       "screenshots": []
     },
@@ -219,6 +219,158 @@
       "bundleId": "com.congle.TEAMCONG.Bible",
       "appStoreUrl": "https://apps.apple.com/gb/app/bible-prayer-companion/id6759859294?uo=4",
       "icon": "/images/apps/6759859294/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760222884,
+      "trackName": "Poop Tracker & Gut Health",
+      "bundleId": "com.congle.TEAMCONG.PoopTracker",
+      "appStoreUrl": "https://apps.apple.com/gb/app/poop-tracker-gut-health/id6760222884?uo=4",
+      "icon": "/images/apps/6760222884/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6759912464,
+      "trackName": "Kids Coloring Book & Draw",
+      "bundleId": "com.congle.TEAMCONG.Coloring",
+      "appStoreUrl": "https://apps.apple.com/gb/app/kids-coloring-book-draw/id6759912464?uo=4",
+      "icon": "/images/apps/6759912464/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760551450,
+      "trackName": "お返し - 内祝い・香典返し管理",
+      "bundleId": "com.congle.TEAMCONG.Okaeshi",
+      "appStoreUrl": "https://apps.apple.com/gb/app/%E3%81%8A%E8%BF%94%E3%81%97-%E5%86%85%E7%A5%9D%E3%81%84-%E9%A6%99%E5%85%B8%E8%BF%94%E3%81%97%E7%AE%A1%E7%90%86/id6760551450?uo=4",
+      "icon": "/images/apps/6760551450/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761100038,
+      "trackName": "Life Countdown: Age Calculator",
+      "bundleId": "com.congle.TEAMCONG.LifeCountdown",
+      "appStoreUrl": "https://apps.apple.com/gb/app/life-countdown-age-calculator/id6761100038?uo=4",
+      "icon": "/images/apps/6761100038/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761291886,
+      "trackName": "LovePet: Pookie & Couple App",
+      "bundleId": "com.congle.TEAMCONG.LovePet",
+      "appStoreUrl": "https://apps.apple.com/gb/app/lovepet-pookie-couple-app/id6761291886?uo=4",
+      "icon": "/images/apps/6761291886/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760255587,
+      "trackName": "Baby Names : Swipe & Pick",
+      "bundleId": "com.congle.TEAMCONG.babynamesv2",
+      "appStoreUrl": "https://apps.apple.com/gb/app/baby-names-swipe-pick/id6760255587?uo=4",
+      "icon": "/images/apps/6760255587/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761863969,
+      "trackName": "PrivateChat AI: Ollama & LLM",
+      "bundleId": "com.congle.TEAMCONG.PrivateChatAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/privatechat-ai-ollama-llm/id6761863969?uo=4",
+      "icon": "/images/apps/6761863969/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760960498,
+      "trackName": "UV Index - Burn Time Tracker",
+      "bundleId": "com.congle.TEAMCONG.UVIndex",
+      "appStoreUrl": "https://apps.apple.com/gb/app/uv-index-burn-time-tracker/id6760960498?uo=4",
+      "icon": "/images/apps/6760960498/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760960439,
+      "trackName": "Golden Hour: Light Planner",
+      "bundleId": "com.congle.TEAMCONG.PhotographersLight",
+      "appStoreUrl": "https://apps.apple.com/gb/app/golden-hour-light-planner/id6760960439?uo=4",
+      "icon": "/images/apps/6760960439/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760960543,
+      "trackName": "Solunar: Best Fishing Times",
+      "bundleId": "com.congle.TEAMCONG.SolunarFishing",
+      "appStoreUrl": "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?uo=4",
+      "icon": "/images/apps/6760960543/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761860910,
+      "trackName": "NoLo Inspiration",
+      "bundleId": "com.LorePeeters.noloinspiration",
+      "appStoreUrl": "https://apps.apple.com/gb/app/nolo-inspiration/id6761860910?uo=4",
+      "icon": "/images/apps/6761860910/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761378897,
+      "trackName": "Baby Screen Lock: Kid Safe",
+      "bundleId": "com.congle.TEAMCONG.BabyScreenLock",
+      "appStoreUrl": "https://apps.apple.com/gb/app/baby-screen-lock-kid-safe/id6761378897?uo=4",
+      "icon": "/images/apps/6761378897/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6760960352,
+      "trackName": "Moon Phases: Lunar Tracker",
+      "bundleId": "com.congle.TEAMCONG.MoonPhases",
+      "appStoreUrl": "https://apps.apple.com/gb/app/moon-phases-lunar-tracker/id6760960352?uo=4",
+      "icon": "/images/apps/6760960352/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6747094958,
+      "trackName": "Passport Photo: Visa & ID",
+      "bundleId": "com.congle.TEAMCONG.PassportGenerator",
+      "appStoreUrl": "https://apps.apple.com/gb/app/passport-photo-visa-id/id6747094958?uo=4",
+      "icon": "/images/apps/6747094958/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6766366146,
+      "trackName": "Frankly AI: Uncensored Chat",
+      "bundleId": "com.congle.TEAMCONG.FranklyAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/frankly-ai-uncensored-chat/id6766366146?uo=4",
+      "icon": "/images/apps/6766366146/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6765780052,
+      "trackName": "Captions: Auto Video Subtitles",
+      "bundleId": "com.congle.TEAMCONG.CaptionCreator",
+      "appStoreUrl": "https://apps.apple.com/gb/app/captions-auto-video-subtitles/id6765780052?uo=4",
+      "icon": "/images/apps/6765780052/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6761440158,
+      "trackName": "CardKeeper – Wallet Passes",
+      "bundleId": "com.congle.TEAMCONG.CardKeeper",
+      "appStoreUrl": "https://apps.apple.com/gb/app/cardkeeper-wallet-passes/id6761440158?uo=4",
+      "icon": "/images/apps/6761440158/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6769891596,
+      "trackName": "Ollama Connect",
+      "bundleId": "com.congle.TEAMCONG.OllamaConnect",
+      "appStoreUrl": "https://apps.apple.com/gb/app/ollama-connect/id6769891596?uo=4",
+      "icon": "/images/apps/6769891596/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6769176993,
+      "trackName": "DocScanner: Sign Documents",
+      "bundleId": "com.congle.TEAMCONG.DocScanner",
+      "appStoreUrl": "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?uo=4",
+      "icon": "/images/apps/6769176993/icon.jpg",
       "screenshots": []
     }
   ]
