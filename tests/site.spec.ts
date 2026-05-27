@@ -44,12 +44,14 @@ test.describe('Featured section', () => {
     expect(src).toContain('screenshot-');
   });
 
-  test('secondary cards show real screenshots, not placeholders', async ({ page }) => {
+  test('secondary cards show real imagery, not placeholders', async ({ page }) => {
     await page.goto('/');
     await page.locator('#featured').scrollIntoViewIfNeeded();
-    // Secondary grid cards should have screenshot images
-    const secondaryImgs = page.locator('#featured .grid a img[src*="screenshot"]');
+    const secondaryImgs = page.locator('#featured .grid a img');
     await expect(secondaryImgs).toHaveCount(3);
+    for (const src of await secondaryImgs.evaluateAll((imgs) => imgs.map((img) => img.getAttribute('src') || ''))) {
+      expect(src).not.toContain('placeholder');
+    }
   });
 });
 
@@ -98,6 +100,26 @@ test.describe('CV download', () => {
   test('CV.pdf returns 200', async ({ page }) => {
     const response = await page.request.get('/CV.pdf');
     expect(response.status()).toBe(200);
+  });
+});
+
+test.describe('Pack Planner universal links', () => {
+  test('apple app site association advertises PackPlanner invite paths', async ({ page }) => {
+    const response = await page.request.get('/.well-known/apple-app-site-association');
+    expect(response.status()).toBe(200);
+    const body = await response.json();
+    const details = body.applinks.details[0];
+    expect(details.appID).toBe('9URT9YH7AX.com.congle.TEAMCONG.PackPlanner');
+    expect(details.paths).toContain('/packplanner/join');
+    expect(details.paths).toContain('/packplanner/join/');
+    expect(details.paths).toContain('/packplanner/join/*');
+  });
+
+  test('invite fallback page exposes code and app link', async ({ page }) => {
+    await page.goto('/packplanner/join/?code=ab12-cd34');
+    await expect(page.getByRole('heading', { name: 'Join this Pack Planner trip' })).toBeVisible();
+    await expect(page.locator('#inviteCode')).toHaveText('AB12CD34');
+    await expect(page.locator('#openApp')).toHaveAttribute('href', 'packplanner://join?code=AB12CD34');
   });
 });
 

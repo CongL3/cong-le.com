@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join Pack Planner Trip</title>
+  <meta name="description" content="Open a Pack Planner group packing invite." />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f3ee;
+      --card: #fffaf2;
+      --text: #1f2933;
+      --muted: #65717f;
+      --border: #ded6ca;
+      --accent: #2e7d66;
+      --accent-strong: #22604e;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111315;
+        --card: #1b1f22;
+        --text: #f2f3f4;
+        --muted: #a6afb8;
+        --border: #2e353a;
+        --accent: #7bc9ad;
+        --accent-strong: #9fddc7;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100%, 440px);
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: 0 18px 54px rgb(0 0 0 / 0.12);
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 18px;
+      background: var(--accent);
+      color: white;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .code {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 20px 0;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--bg) 74%, transparent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      word-break: break-word;
+    }
+
+    button,
+    a.button {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      margin-top: 10px;
+      padding: 12px 16px;
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      background: var(--accent);
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    a.button.secondary,
+    button.secondary {
+      background: transparent;
+      color: var(--accent-strong);
+    }
+
+    .small {
+      margin-top: 16px;
+      margin-bottom: 0;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="icon" aria-hidden="true">P</div>
+    <h1>Join this Pack Planner trip</h1>
+    <p>Open the invite in Pack Planner to join the shared packing list. If the app is not installed yet, get it from the App Store and enter the code below.</p>
+    <div class="code" id="inviteCode">NO CODE</div>
+    <a class="button" id="openApp" href="packplanner://join">Open in Pack Planner</a>
+    <a class="button secondary" href="https://apps.apple.com/app/id6773508857">Get Pack Planner</a>
+    <button class="secondary" id="copyCode" type="button">Copy Invite Code</button>
+    <p class="small" id="status">This page does not store invite codes.</p>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const rawCode = params.get('code') || pathParts[2] || '';
+    const code = rawCode.replace(/[\s-]/g, '').toUpperCase();
+    const codeElement = document.getElementById('inviteCode');
+    const openApp = document.getElementById('openApp');
+    const copyCode = document.getElementById('copyCode');
+    const status = document.getElementById('status');
+
+    if (code) {
+      codeElement.textContent = code;
+      openApp.href = `packplanner://join?code=${encodeURIComponent(code)}`;
+    } else {
+      status.textContent = 'Ask the sender for the invite code, then enter it in Pack Planner.';
+      copyCode.disabled = true;
+    }
+
+    copyCode.addEventListener('click', async () => {
+      if (!code || !navigator.clipboard) {
+        return;
+      }
+      await navigator.clipboard.writeText(code);
+      status.textContent = 'Invite code copied.';
+    });
+  </script>
+</body>
+</html>
