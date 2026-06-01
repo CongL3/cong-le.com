@@ -372,6 +372,30 @@
       "appStoreUrl": "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?uo=4",
       "icon": "/images/apps/6769176993/icon.jpg",
       "screenshots": []
+    },
+    {
+      "trackId": 6768801666,
+      "trackName": "Persona AI: Story Chat",
+      "bundleId": "com.congle.TEAMCONG.FranklyAI.Roleplay",
+      "appStoreUrl": "https://apps.apple.com/gb/app/persona-ai-story-chat/id6768801666?uo=4",
+      "icon": "/images/apps/6768801666/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6772685450,
+      "trackName": "SoapCraft: Soap Calculator",
+      "bundleId": "com.congle.TEAMCONG.SoapCraftCalc",
+      "appStoreUrl": "https://apps.apple.com/gb/app/soapcraft-soap-calculator/id6772685450?uo=4",
+      "icon": "/images/apps/6772685450/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6771269878,
+      "trackName": "Jump Rope Timer & Tracker",
+      "bundleId": "com.congle.TEAMCONG.JumpRopeTimer",
+      "appStoreUrl": "https://apps.apple.com/gb/app/jump-rope-timer-tracker/id6771269878?uo=4",
+      "icon": "/images/apps/6771269878/icon.jpg",
+      "screenshots": []
     }
   ]
 }

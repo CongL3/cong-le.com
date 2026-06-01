@@ -551,4 +551,31 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6769176993/icon.jpg",
     url: "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?uo=4",
   }
+  ,{
+    id: "persona-ai-story-chat",
+    name: "Persona AI: Story Chat",
+    category: AppCategory.ENTERTAINMENT,
+    description: "Persona AI: Story Chat is a private AI writing and story chat app for scenes, dialogue, prompts, and recurring creative ",
+    iconColor: "bg-purple-500",
+    iconUrl: "/images/apps/6768801666/icon.jpg",
+    url: "https://apps.apple.com/gb/app/persona-ai-story-chat/id6768801666?uo=4",
+  }
+  ,{
+    id: "soapcraft-soap-calculator",
+    name: "SoapCraft: Soap Calculator",
+    category: AppCategory.UTILITIES,
+    description: "SoapCraft is a clean soap and lye calculator for handmade soap makers who want clear numbers without a cluttered worksho",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6772685450/icon.jpg",
+    url: "https://apps.apple.com/gb/app/soapcraft-soap-calculator/id6772685450?uo=4",
+  }
+  ,{
+    id: "jump-rope-timer-tracker",
+    name: "Jump Rope Timer & Tracker",
+    category: AppCategory.LIFESTYLE,
+    description: "Jump Rope Timer is a clean interval timer and workout log built specifically for skipping and jump rope training.",
+    iconColor: "bg-rose-400",
+    iconUrl: "/images/apps/6771269878/icon.jpg",
+    url: "https://apps.apple.com/gb/app/jump-rope-timer-tracker/id6771269878?uo=4",
+  }
 ];
