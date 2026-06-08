@@ -396,6 +396,38 @@
       "appStoreUrl": "https://apps.apple.com/gb/app/jump-rope-timer-tracker/id6771269878?uo=4",
       "icon": "/images/apps/6771269878/icon.jpg",
       "screenshots": []
+    },
+    {
+      "trackId": 6772072727,
+      "trackName": "Anime Chat: Private AI",
+      "bundleId": "com.congle.TEAMCONG.AnimeCompanionAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/anime-chat-private-ai/id6772072727?uo=4",
+      "icon": "/images/apps/6772072727/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6768466507,
+      "trackName": "CodingChat AI",
+      "bundleId": "com.congle.TEAMCONG.CodingChatAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/codingchat-ai/id6768466507?uo=4",
+      "icon": "/images/apps/6768466507/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6770217651,
+      "trackName": "Age Calculator: How Old Am I",
+      "bundleId": "com.congle.TEAMCONG.AgeCalculator",
+      "appStoreUrl": "https://apps.apple.com/gb/app/age-calculator-how-old-am-i/id6770217651?uo=4",
+      "icon": "/images/apps/6770217651/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6772686797,
+      "trackName": "Tiny Table: BLW Ideas & Purees",
+      "bundleId": "com.congle.TEAMCONG.TinyTable",
+      "appStoreUrl": "https://apps.apple.com/gb/app/tiny-table-blw-ideas-purees/id6772686797?uo=4",
+      "icon": "/images/apps/6772686797/icon.jpg",
+      "screenshots": []
     }
   ]
 }

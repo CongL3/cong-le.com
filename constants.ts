@@ -578,4 +578,40 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6771269878/icon.jpg",
     url: "https://apps.apple.com/gb/app/jump-rope-timer-tracker/id6771269878?uo=4",
   }
+  ,{
+    id: "anime-chat-private-ai",
+    name: "Anime Chat: Private AI",
+    category: AppCategory.ENTERTAINMENT,
+    description: "Anime Chat: Private AI is a private anime chat app that runs on your iPhone.",
+    iconColor: "bg-purple-500",
+    iconUrl: "/images/apps/6772072727/icon.jpg",
+    url: "https://apps.apple.com/gb/app/anime-chat-private-ai/id6772072727?uo=4",
+  }
+  ,{
+    id: "codingchat-ai",
+    name: "CodingChat AI",
+    category: AppCategory.EDUCATION,
+    description: "CodingChat AI is a private AI code assistant that runs on your iPhone.",
+    iconColor: "bg-red-400",
+    iconUrl: "/images/apps/6768466507/icon.jpg",
+    url: "https://apps.apple.com/gb/app/codingchat-ai/id6768466507?uo=4",
+  }
+  ,{
+    id: "age-calculator-how-old-am-i",
+    name: "Age Calculator: How Old Am I",
+    category: AppCategory.UTILITIES,
+    description: "Age Calculator helps you see your age clearly, not approximately. Open the app and get your exact age in years, months, ",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6770217651/icon.jpg",
+    url: "https://apps.apple.com/gb/app/age-calculator-how-old-am-i/id6770217651?uo=4",
+  }
+  ,{
+    id: "tiny-table-blw-ideas-purees",
+    name: "Tiny Table: BLW Ideas & Purees",
+    category: AppCategory.UTILITIES,
+    description: "Tiny Table helps parents start solids with practical baby-led weaning (BLW), puree, and finger-food prep ideas, plus all",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6772686797/icon.jpg",
+    url: "https://apps.apple.com/gb/app/tiny-table-blw-ideas-purees/id6772686797?uo=4",
+  }
 ];
