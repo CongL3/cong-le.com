@@ -614,4 +614,31 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6772686797/icon.jpg",
     url: "https://apps.apple.com/gb/app/tiny-table-blw-ideas-purees/id6772686797?uo=4",
   }
+  ,{
+    id: "hoop-quest-basketball-sim",
+    name: "Hoop Quest: Basketball Sim",
+    category: AppCategory.ENTERTAINMENT,
+    description: "Build a basketball career from backyard prospect to pro league legend.",
+    iconColor: "bg-purple-500",
+    iconUrl: "/images/apps/6775279715/icon.jpg",
+    url: "https://apps.apple.com/gb/app/hoop-quest-basketball-sim/id6775279715?uo=4",
+  }
+  ,{
+    id: "local-ai-image-generator",
+    name: "Local AI Image Generator",
+    category: AppCategory.UTILITIES,
+    description: "Local AI Image Generator is designed for private, offline image generation on iPhone.",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6776417249/icon.jpg",
+    url: "https://apps.apple.com/gb/app/local-ai-image-generator/id6776417249?uo=4",
+  }
+  ,{
+    id: "householdvault-id-docs",
+    name: "HouseholdVault: ID Docs",
+    category: AppCategory.UTILITIES,
+    description: "HouseholdVault: ID Docs is a private document scanner wallet for the records your household needs when timing matters.",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6776387674/icon.jpg",
+    url: "https://apps.apple.com/gb/app/householdvault-id-docs/id6776387674?uo=4",
+  }
 ];

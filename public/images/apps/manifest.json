@@ -428,6 +428,30 @@
       "appStoreUrl": "https://apps.apple.com/gb/app/tiny-table-blw-ideas-purees/id6772686797?uo=4",
       "icon": "/images/apps/6772686797/icon.jpg",
       "screenshots": []
+    },
+    {
+      "trackId": 6775279715,
+      "trackName": "Hoop Quest: Basketball Sim",
+      "bundleId": "com.congle.TEAMCONG.HoopQuestRPG",
+      "appStoreUrl": "https://apps.apple.com/gb/app/hoop-quest-basketball-sim/id6775279715?uo=4",
+      "icon": "/images/apps/6775279715/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6776417249,
+      "trackName": "Local AI Image Generator",
+      "bundleId": "com.congle.TEAMCONG.PrivateImageAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/local-ai-image-generator/id6776417249?uo=4",
+      "icon": "/images/apps/6776417249/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6776387674,
+      "trackName": "HouseholdVault: ID Docs",
+      "bundleId": "com.congle.TEAMCONG.HouseholdVault",
+      "appStoreUrl": "https://apps.apple.com/gb/app/householdvault-id-docs/id6776387674?uo=4",
+      "icon": "/images/apps/6776387674/icon.jpg",
+      "screenshots": []
     }
   ]
 }
