@@ -641,4 +641,13 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6776387674/icon.jpg",
     url: "https://apps.apple.com/gb/app/householdvault-id-docs/id6776387674?uo=4",
   }
+  ,{
+    id: "football-career-quest",
+    name: "Football Career Quest",
+    category: AppCategory.ENTERTAINMENT,
+    description: "Build a full football career from first prospect to club legend.",
+    iconColor: "bg-purple-500",
+    iconUrl: "/images/apps/6777125671/icon.jpg",
+    url: "https://apps.apple.com/gb/app/football-career-quest/id6777125671?uo=4",
+  }
 ];
