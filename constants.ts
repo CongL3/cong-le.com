@@ -650,4 +650,13 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6777125671/icon.jpg",
     url: "https://apps.apple.com/gb/app/football-career-quest/id6777125671?uo=4",
   }
+  ,{
+    id: "pack-planner-group-lists",
+    name: "Pack Planner: Group Lists",
+    category: AppCategory.UTILITIES,
+    description: "Pack Planner helps families, friends, and travel groups pack together from one shared checklist.",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6773508857/icon.jpg",
+    url: "https://apps.apple.com/gb/app/pack-planner-group-lists/id6773508857?uo=4",
+  }
 ];

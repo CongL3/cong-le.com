@@ -460,6 +460,14 @@
       "appStoreUrl": "https://apps.apple.com/gb/app/football-career-quest/id6777125671?uo=4",
       "icon": "/images/apps/6777125671/icon.jpg",
       "screenshots": []
+    },
+    {
+      "trackId": 6773508857,
+      "trackName": "Pack Planner: Group Lists",
+      "bundleId": "com.congle.TEAMCONG.PackPlanner",
+      "appStoreUrl": "https://apps.apple.com/gb/app/pack-planner-group-lists/id6773508857?uo=4",
+      "icon": "/images/apps/6773508857/icon.jpg",
+      "screenshots": []
     }
   ]
 }
