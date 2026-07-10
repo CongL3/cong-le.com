@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog | Cong Le Apps</title>
+  <meta name="description" content="Guides, tips, and updates for Cong Le apps — fishing, AI chat, parenting, and more.">
+  <link rel="canonical" href="https://www.cong-le.com/blog/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog | Cong Le Apps">
+  <meta property="og:description" content="Guides, tips, and updates for Cong Le apps — fishing, AI chat, parenting, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cong-le.com/blog/">
+  <meta property="og:image" content="https://www.cong-le.com/images/apps/1570714816/icon.jpg">
+  <meta property="og:site_name" content="Cong Le Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | Cong Le Apps">
+  <meta name="twitter:description" content="Guides, tips, and updates for Cong Le apps — fishing, AI chat, parenting, and more.">
+  <meta name="twitter:image" content="https://www.cong-le.com/images/apps/1570714816/icon.jpg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Cong Le Apps Blog",
+  "url": "https://www.cong-le.com/blog/",
+  "author": {
+    "@type": "Person",
+    "name": "Cong Le",
+    "url": "https://www.cong-le.com"
+  }
+}
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { sky: { cta: '#3B82F6' } },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    .navbar.scrolled {
+      background-color: rgba(230, 243, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(46,61,92,0.1);
+    }
+    /* Readable article prose */
+    .prose { color: #3A4A63; font-size: 1.075rem; line-height: 1.8; }
+    .prose h2 {
+      font-family: '"DM Serif Display"', Georgia, serif;
+      font-size: 1.9rem; color: #2E3D5C;
+      margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.25;
+    }
+    .prose h3 {
+      font-family: Inter, system-ui, sans-serif; font-weight: 700;
+      font-size: 1.3rem; color: #2E3D5C;
+      margin-top: 1.75rem; margin-bottom: 0.6rem;
+    }
+    .prose p { margin-bottom: 1.25rem; }
+    .prose ul, .prose ol { margin: 1rem 0 1.5rem 1.25rem; }
+    .prose ul { list-style: disc; }
+    .prose ol { list-style: decimal; }
+    .prose li { margin-bottom: 0.5rem; padding-left: 0.25rem; }
+    .prose a { color: #2563EB; text-decoration: underline; }
+    .prose a:hover { opacity: 0.8; }
+    .prose strong { color: #2E3D5C; }
+    .prose blockquote {
+      border-left: 4px solid #93C5FD; padding-left: 1.25rem;
+      margin: 1.5rem 0; color: #557090; font-style: italic;
+    }
+    .prose code {
+      background: rgba(46,61,92,0.08); padding: 0.15em 0.4em;
+      border-radius: 6px; font-size: 0.9em;
+    }
+    .prose pre {
+      background: #1E293B; color: #E2E8F0; padding: 1.1rem 1.25rem;
+      border-radius: 12px; overflow-x: auto; margin: 1.5rem 0;
+    }
+    .prose pre code { background: none; padding: 0; color: inherit; }
+    .prose img { max-width: 100%; border-radius: 12px; }
+    .prose h2:first-child { margin-top: 0; }
+  </style>
+</head>
+<body class="font-body" style="background: linear-gradient(180deg, #E6F3FF 0%, #E6FFF3 100%); background-attachment: fixed; color: #2E3D5C;">
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/blog/" class="font-display text-lg" style="color: #2E3D5C;">Cong Le Apps &mdash; Blog</a>
+      <a href="/" class="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm hover:opacity-90 transition-colors" style="background: #3B82F6; color: white;">
+        All Apps
+      </a>
+    </div>
+  </nav>
+
+  <header class="max-w-4xl mx-auto px-6 pt-32 pb-10 text-center fade-up">
+    <h1 class="font-display text-5xl md:text-6xl leading-tight mb-4" style="color: #2E3D5C;">The Blog</h1>
+    <p class="text-xl" style="color: #557090;">Guides, tips, and updates from the apps I build.</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-8">
+    <ul class="grid gap-6">
+      <li class="fade-up">
+        <a href="/blog/best-time-to-fish-today/" class="block rounded-3xl p-6 sm:p-8 hover:opacity-95 transition" style="background: rgba(46,61,92,0.05);">
+          <span class="block text-xs uppercase tracking-wide mb-2" style="color: #7A9AB5;">10 July 2026 &middot; Solunar: Best Fishing Times</span>
+          <span class="block font-display text-2xl mb-2" style="color: #2E3D5C;">What Is the Best Time to Fish Today?</span>
+          <span class="block" style="color: #557090;">Find the best time to fish today using major and minor feeding windows, moon position, and a simple daily rating anglers actually trust.</span>
+        </a>
+      </li>
+      <li class="fade-up">
+        <a href="/blog/how-to-chat-with-ollama-from-your-iphone/" class="block rounded-3xl p-6 sm:p-8 hover:opacity-95 transition" style="background: rgba(46,61,92,0.05);">
+          <span class="block text-xs uppercase tracking-wide mb-2" style="color: #7A9AB5;">10 July 2026 &middot; Ollama Connect</span>
+          <span class="block font-display text-2xl mb-2" style="color: #2E3D5C;">How to Chat with Ollama from Your iPhone</span>
+          <span class="block" style="color: #557090;">Set up an Ollama iPhone client in minutes: run Ollama on your Mac or PC, expose it on your network, and chat with your local models on the go.</span>
+        </a>
+      </li>
+      <li class="fade-up">
+        <a href="/blog/lock-iphone-screen-for-baby/" class="block rounded-3xl p-6 sm:p-8 hover:opacity-95 transition" style="background: rgba(46,61,92,0.05);">
+          <span class="block text-xs uppercase tracking-wide mb-2" style="color: #7A9AB5;">10 July 2026 &middot; Baby Screen Lock: Kid Safe</span>
+          <span class="block font-display text-2xl mb-2" style="color: #2E3D5C;">How to Lock Your iPhone Screen for a Baby</span>
+          <span class="block" style="color: #557090;">Learn how to lock your iPhone screen for a baby using Guided Access, plus a faster app-based alternative that keeps little fingers from causing chaos.</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="py-12 mt-16" style="background-color: #D4E8F5;">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="/blog/" class="font-display text-lg" style="color: #2E3D5C;">Cong Le Apps &mdash; Blog</a>
+        <div class="flex flex-wrap items-center gap-6 text-sm" style="color: #557090;">
+          <a href="/blog/" class="hover:opacity-70 transition-colors">All posts</a>
+          <a href="/privacy.html" class="hover:opacity-70 transition-colors">Privacy Policy</a>
+          <a href="/terms.html" class="hover:opacity-70 transition-colors">Terms</a>
+          <a href="/developer.html" class="hover:opacity-70 transition-colors">Support</a>
+          <a href="/" class="hover:opacity-70 transition-colors">More apps by Cong Le</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-sm" style="color: #7A9AB5;">
+        &copy; 2026 Cong Le. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

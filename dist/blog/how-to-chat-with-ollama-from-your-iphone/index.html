@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How to Chat with Ollama from Your iPhone | Cong Le Apps</title>
+  <meta name="description" content="Set up an Ollama iPhone client in minutes: run Ollama on your Mac or PC, expose it on your network, and chat with your local models on the go.">
+  <link rel="canonical" href="https://www.cong-le.com/blog/how-to-chat-with-ollama-from-your-iphone/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How to Chat with Ollama from Your iPhone | Cong Le Apps">
+  <meta property="og:description" content="Set up an Ollama iPhone client in minutes: run Ollama on your Mac or PC, expose it on your network, and chat with your local models on the go.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.cong-le.com/blog/how-to-chat-with-ollama-from-your-iphone/">
+  <meta property="og:image" content="https://www.cong-le.com/images/apps/6769891596/icon.jpg">
+  <meta property="og:site_name" content="Cong Le Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Chat with Ollama from Your iPhone | Cong Le Apps">
+  <meta name="twitter:description" content="Set up an Ollama iPhone client in minutes: run Ollama on your Mac or PC, expose it on your network, and chat with your local models on the go.">
+  <meta name="twitter:image" content="https://www.cong-le.com/images/apps/6769891596/icon.jpg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Chat with Ollama from Your iPhone",
+  "description": "Set up an Ollama iPhone client in minutes: run Ollama on your Mac or PC, expose it on your network, and chat with your local models on the go.",
+  "datePublished": "2026-07-10",
+  "dateModified": "2026-07-10",
+  "keywords": "ollama iphone client, chat with ollama on iphone, ollama mobile app",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cong-le.com/blog/how-to-chat-with-ollama-from-your-iphone/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Cong Le",
+    "url": "https://www.cong-le.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cong Le Apps",
+    "url": "https://www.cong-le.com"
+  },
+  "image": "https://www.cong-le.com/images/apps/6769891596/icon.jpg"
+}
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { sky: { cta: '#3B82F6' } },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    .navbar.scrolled {
+      background-color: rgba(230, 243, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(46,61,92,0.1);
+    }
+    /* Readable article prose */
+    .prose { color: #3A4A63; font-size: 1.075rem; line-height: 1.8; }
+    .prose h2 {
+      font-family: '"DM Serif Display"', Georgia, serif;
+      font-size: 1.9rem; color: #2E3D5C;
+      margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.25;
+    }
+    .prose h3 {
+      font-family: Inter, system-ui, sans-serif; font-weight: 700;
+      font-size: 1.3rem; color: #2E3D5C;
+      margin-top: 1.75rem; margin-bottom: 0.6rem;
+    }
+    .prose p { margin-bottom: 1.25rem; }
+    .prose ul, .prose ol { margin: 1rem 0 1.5rem 1.25rem; }
+    .prose ul { list-style: disc; }
+    .prose ol { list-style: decimal; }
+    .prose li { margin-bottom: 0.5rem; padding-left: 0.25rem; }
+    .prose a { color: #2563EB; text-decoration: underline; }
+    .prose a:hover { opacity: 0.8; }
+    .prose strong { color: #2E3D5C; }
+    .prose blockquote {
+      border-left: 4px solid #93C5FD; padding-left: 1.25rem;
+      margin: 1.5rem 0; color: #557090; font-style: italic;
+    }
+    .prose code {
+      background: rgba(46,61,92,0.08); padding: 0.15em 0.4em;
+      border-radius: 6px; font-size: 0.9em;
+    }
+    .prose pre {
+      background: #1E293B; color: #E2E8F0; padding: 1.1rem 1.25rem;
+      border-radius: 12px; overflow-x: auto; margin: 1.5rem 0;
+    }
+    .prose pre code { background: none; padding: 0; color: inherit; }
+    .prose img { max-width: 100%; border-radius: 12px; }
+    .prose h2:first-child { margin-top: 0; }
+  </style>
+</head>
+<body class="font-body" style="background: linear-gradient(180deg, #E6F3FF 0%, #E6FFF3 100%); background-attachment: fixed; color: #2E3D5C;">
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/blog/" class="font-display text-lg" style="color: #2E3D5C;">Cong Le Apps &mdash; Blog</a>
+      <a href="/" class="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm hover:opacity-90 transition-colors" style="background: #3B82F6; color: white;">
+        All Apps
+      </a>
+    </div>
+  </nav>
+
+  <main class="max-w-2xl mx-auto px-6 pt-28 pb-4">
+    <article>
+      <header class="fade-up mb-10">
+        <a href="/blog/" class="text-sm font-semibold" style="color: #2563EB;">&larr; All posts</a>
+        <h1 class="font-display text-4xl md:text-5xl leading-tight mt-4 mb-4" style="color: #2E3D5C;">How to Chat with Ollama from Your iPhone</h1>
+        <p class="text-sm" style="color: #7A9AB5;">Published 10 July 2026 &middot; <a href="/apps/ollama-connect/" style="color:#557090;">Ollama Connect</a></p>
+      </header>
+      <div class="prose fade-up">
+<p>If you already run Ollama on your Mac or home server, you have a capable local AI sitting on your desk. The problem is that it stays on your desk. When you are on the couch, in the kitchen, or out of the house, that model may as well not exist. This guide walks through connecting to your existing Ollama server from your iPhone so you can chat with your own models from anywhere on your network.</p>
+<p>The whole setup takes about ten minutes and requires no cloud service, no account, and no third party sitting between you and your model.</p>
+<h2>What you need first</h2>
+<p>Before touching your phone, make sure the desktop side is in order:</p>
+<ul>
+<li>A computer running <strong>Ollama</strong> (macOS, Linux, or Windows).</li>
+<li>At least one model pulled locally. If you have not done this yet, grab a small one:</li>
+</ul>
+<pre><code class="language-bash">ollama pull llama3.2
+</code></pre>
+<ul>
+<li>Your Mac/PC and your iPhone on the <strong>same Wi-Fi network</strong>.</li>
+</ul>
+<p>You can confirm Ollama is working locally by running a quick chat in the terminal:</p>
+<pre><code class="language-bash">ollama run llama3.2 &quot;Say hello in one sentence.&quot;
+</code></pre>
+<p>If that streams back a response, the engine is healthy. Now we just need to make it reachable from the phone.</p>
+<h2>Step 1: Expose Ollama on your network</h2>
+<p>By default, Ollama only listens on <code>127.0.0.1</code> (localhost). That is deliberately private, but it means nothing outside the machine itself can reach it, including your phone. To open it up to your local network, set the <code>OLLAMA_HOST</code> environment variable and restart the server.</p>
+<p>Stop any running Ollama instance first (quit the menu bar app on macOS), then start it bound to all interfaces:</p>
+<pre><code class="language-bash">OLLAMA_HOST=0.0.0.0 ollama serve
+</code></pre>
+<p><code>0.0.0.0</code> tells Ollama to listen on every network interface rather than just localhost. It will now accept connections on its default port, <strong>11434</strong>.</p>
+<p>On macOS, if you prefer the background service to always bind this way, set it persistently and relaunch:</p>
+<pre><code class="language-bash">launchctl setenv OLLAMA_HOST &quot;0.0.0.0&quot;
+</code></pre>
+<p>Then quit and reopen the Ollama app so it picks up the variable.</p>
+<h2>Step 2: Find your computer&#39;s local IP address</h2>
+<p>Your phone needs the machine&#39;s address on the network. On macOS:</p>
+<pre><code class="language-bash">ipconfig getifaddr en0
+</code></pre>
+<p>On Linux:</p>
+<pre><code class="language-bash">hostname -I | awk &#39;{print $1}&#39;
+</code></pre>
+<p>You will get something like <code>192.168.1.42</code>. Write it down. That plus the port gives you the full endpoint your phone will use: <code>http://192.168.1.42:11434</code>.</p>
+<h2>Step 3: Verify it works before touching your phone</h2>
+<p>This step saves a lot of frustration. From <strong>another device</strong> on the same network (or even the same Mac using the IP instead of localhost), confirm the server answers:</p>
+<pre><code class="language-bash">curl http://192.168.1.42:11434/api/tags
+</code></pre>
+<p>If you get back a JSON list of your installed models, the server is reachable across the network and you are ready to connect. If the request hangs or is refused, jump to the troubleshooting section below before going further.</p>
+<h2>Step 4: Connect from Ollama Connect on iPhone</h2>
+<p>Install <a href="/apps/ollama-connect/">Ollama Connect</a> and open it. The app is a private chat client that talks directly to your own Ollama host. There are two ways to get connected:</p>
+<p><strong>Automatic discovery.</strong> Ollama Connect can search your local network for nearby Ollama servers. If your machine is on the same Wi-Fi and bound to <code>0.0.0.0</code>, it should appear in the list. Tap it to save it as a host.</p>
+<p><strong>Manual entry.</strong> If you prefer, add the host by hand using the address from Step 2, for example <code>http://192.168.1.42:11434</code>. The app supports multiple saved hosts, so you can keep your desktop, a home server, and a travel setup all configured and switch between them.</p>
+<p>Once a host is saved, Ollama Connect shows connection diagnostics so you can confirm it is actually reachable. Pick a model, start a chat, and you will get fast streaming replies rendered with proper Markdown and code formatting. Your chats and settings stay on the phone, and nothing is routed through anyone else&#39;s servers.</p>
+<h2>Step 5: Pick a model per chat</h2>
+<p>One nice detail: model selection is per chat. You can run a small, fast model like <code>llama3.2</code> for quick questions and switch to something heavier for a coding session, each in its own conversation with its own history. For supported vision models, you can also attach a photo or a text file directly in the chat.</p>
+<p>If you want help choosing which models to run at home, see our roundup of the <a href="/blog/best-small-llms-to-run-on-home-mac-with-ollama/">best small LLMs to run on a home Mac</a>.</p>
+<h2>Troubleshooting</h2>
+<p><strong>The phone can&#39;t find or reach the server.</strong></p>
+<ul>
+<li>Confirm both devices are on the same network and not on a &quot;guest&quot; Wi-Fi that isolates clients.</li>
+<li>Re-check that you actually restarted Ollama after setting <code>OLLAMA_HOST=0.0.0.0</code>. The variable only takes effect on a fresh start.</li>
+<li>Test with <code>curl</code> from another device (Step 3). If curl fails, the problem is on the server/network side, not the app.</li>
+</ul>
+<p><strong>Connection refused.</strong>
+Your Mac or PC firewall may be blocking port 11434. On macOS, check System Settings, Network, Firewall, and allow incoming connections for Ollama. A deeper walkthrough of firewall and network config lives in our <a href="/blog/ollama-setup-guide-serving-models-on-local-network/">Ollama network setup guide</a>.</p>
+<p><strong>It works at home but not elsewhere.</strong>
+This setup exposes Ollama on your <em>local</em> network only. Reaching it from outside your home requires a VPN back into your network, which is the safe way to do it. Do not port-forward 11434 to the open internet, since the API has no authentication.</p>
+<h2>FAQ</h2>
+<h3>Do I need a paid cloud subscription to use this?</h3>
+<p>No. Everything runs on hardware you already own. Ollama is free and open source, the model runs on your computer, and Ollama Connect talks straight to it over your local network with no account required.</p>
+<h3>Is my data sent to any server?</h3>
+<p>Only to the Ollama host you choose. Your chats and settings stay on your iPhone, and the prompts you send go to your own machine, not through any third-party cloud.</p>
+<h3>What port does Ollama use?</h3>
+<p>Ollama listens on port <strong>11434</strong> by default. Combined with your computer&#39;s local IP, the full endpoint looks like <code>http://192.168.1.42:11434</code>.</p>
+<h3>Can I connect over cellular when I&#39;m away from home?</h3>
+<p>Not directly, and you should not expose the port to the public internet. The correct approach is to run a VPN into your home network, after which your phone behaves as if it were on your local Wi-Fi.</p>
+<h3>Why can&#39;t the app see my server even though Ollama is running?</h3>
+<p>The most common cause is that Ollama is still bound to localhost. Restart it with <code>OLLAMA_HOST=0.0.0.0 ollama serve</code> and verify from another device with <code>curl</code> before trying the app again.</p>
+
+      </div>
+  <aside class="fade-up mt-12 rounded-3xl p-6 sm:p-8" style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.18);">
+    <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+      <img src="/images/apps/6769891596/icon.jpg" alt="Ollama Connect icon" class="w-20 h-20 rounded-2xl shadow-md flex-shrink-0">
+      <div class="flex-1">
+        <h3 class="font-display text-2xl mb-1" style="color: #2E3D5C;"><a href="/apps/ollama-connect/" style="color:#2E3D5C; text-decoration:none;">Ollama Connect</a></h3>
+        <p class="mb-4" style="color: #557090;">Run local Ollama models from your iPhone — private, fast, offline-friendly.</p>
+        <a href="https://apps.apple.com/app/id6769891596?ct=congle-web-ollama-connect&amp;mt=8" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 font-bold px-6 py-3 rounded-full text-base hover:opacity-90 transition-colors shadow-lg" style="background: #3B82F6; color: white;">
+          <svg class="w-6 h-6" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download on the App Store
+        </a>
+      </div>
+    </div>
+  </aside>
+  <section class="fade-up mt-14">
+    <h2 class="font-display text-2xl mb-5" style="color: #2E3D5C;">Related posts</h2>
+    <ul class="grid gap-4">
+      <li>
+        <a href="/blog/best-time-to-fish-today/" class="block rounded-2xl p-5 hover:opacity-90 transition" style="background: rgba(46,61,92,0.05);">
+          <span class="block font-semibold mb-1" style="color: #2E3D5C;">What Is the Best Time to Fish Today?</span>
+          <span class="block text-sm" style="color: #557090;">Find the best time to fish today using major and minor feeding windows, moon position, and a simple daily rating anglers actually trust.</span>
+        </a>
+      </li>
+      <li>
+        <a href="/blog/lock-iphone-screen-for-baby/" class="block rounded-2xl p-5 hover:opacity-90 transition" style="background: rgba(46,61,92,0.05);">
+          <span class="block font-semibold mb-1" style="color: #2E3D5C;">How to Lock Your iPhone Screen for a Baby</span>
+          <span class="block text-sm" style="color: #557090;">Learn how to lock your iPhone screen for a baby using Guided Access, plus a faster app-based alternative that keeps little fingers from causing chaos.</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+    </article>
+  </main>
+
+  <footer class="py-12 mt-16" style="background-color: #D4E8F5;">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="/blog/" class="font-display text-lg" style="color: #2E3D5C;">Cong Le Apps &mdash; Blog</a>
+        <div class="flex flex-wrap items-center gap-6 text-sm" style="color: #557090;">
+          <a href="/blog/" class="hover:opacity-70 transition-colors">All posts</a>
+          <a href="/privacy.html" class="hover:opacity-70 transition-colors">Privacy Policy</a>
+          <a href="/terms.html" class="hover:opacity-70 transition-colors">Terms</a>
+          <a href="/developer.html" class="hover:opacity-70 transition-colors">Support</a>
+          <a href="/" class="hover:opacity-70 transition-colors">More apps by Cong Le</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-sm" style="color: #7A9AB5;">
+        &copy; 2026 Cong Le. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

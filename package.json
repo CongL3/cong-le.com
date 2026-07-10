@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/build-blog.mjs && node scripts/generate-sitemap.mjs",
     "build": "vite build",
     "preview": "vite preview",
-    "sync": "node scripts/sync-apps.mjs"
+    "sync": "node scripts/sync-apps.mjs",
+    "blog:build": "node scripts/build-blog.mjs",
+    "blog:publish": "node scripts/publish-next.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.554.0",
@@ -18,6 +21,7 @@
     "@playwright/test": "^1.58.2",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "marked": "^18.0.6",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

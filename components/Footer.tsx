@@ -48,6 +48,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-gray-100">Legal & Support</h4>
             <ul className="space-y-3">
+                <li><a href="/blog/" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
                 <li><a href="/developer.html" className="text-gray-400 hover:text-white transition-colors">Developer Support</a></li>
                 <li><a href="/privacy.html" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
                 <li><a href="/terms.html" className="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>

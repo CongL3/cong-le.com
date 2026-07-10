@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frankly AI — Unfiltered AI Chat &amp; Roleplay for iPhone</title>
+  <meta name="description" content="Frankly AI is an unfiltered, private AI chat companion for iPhone. Open-weight models run on your device with 8 candid personas for advice, creative writing, and roleplay. No accounts, fully offline. Free.">
+  <link rel="canonical" href="https://www.cong-le.com/apps/frankly-ai/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Frankly AI — Unfiltered AI Chat &amp; Roleplay for iPhone">
+  <meta property="og:description" content="AI that tells it straight. Open-weight models run on-device with 8 candid personas for honest advice, creative writing, and roleplay. Private by default.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cong-le.com/apps/frankly-ai/">
+  <meta property="og:image" content="https://www.cong-le.com/images/apps/6766366146/icon.jpg">
+  <meta property="og:site_name" content="Cong Le Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Frankly AI — Unfiltered AI Chat &amp; Roleplay for iPhone">
+  <meta name="twitter:description" content="An unfiltered, on-device AI companion. 8 candid personas, streaming replies, voice mode, and total privacy. No accounts, works offline.">
+  <meta name="twitter:image" content="https://www.cong-le.com/images/apps/6766366146/icon.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Frankly AI: Uncensored Chat",
+    "operatingSystem": "iOS",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Frankly AI is a private, unfiltered AI chat app that runs open-weight language models directly on your iPhone. Eight candid personas cover honest advice, creative writing, and roleplay. Your conversations never leave your device.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Cong Le",
+      "url": "https://www.cong-le.com"
+    }
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What makes Frankly AI different?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Frankly AI runs open-weight language models directly on your iPhone — models chosen for directness rather than compliance. There are no corporate content policies and no server-side moderation, so you get candid answers on topics other AI apps tend to dodge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the personas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are 8 frank personas, each tuned for directness: The Straight Talker, Creative Writing Partner, Devil's Advocate, Frank Doctor, Relationship Realist, Philosophy Sparring Partner, Code Reviewer, and The Historian. Tap one and start chatting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Your conversations never leave your device. There is zero data collection, no accounts or sign-ups, and no analytics or tracking. Everything runs on your device, and the app is fully offline after setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The free tier gives you all 8 personas, full conversation history, and 10 free messages per day using Apple Foundation Models on iOS 26+ or Mistral 7B. Pro unlocks unlimited messages, four curated models, custom system prompts, chat export, and removes ads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which models can I use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pro includes curated models such as Dolphin-Mistral, Dolphin-Llama 3, and Lexi-Llama 3. You can also import any compatible GGUF model directly from Hugging Face."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it support voice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Voice Mode offers speech-to-text and optional Kokoro voice replies. Voice replies use a separate Kokoro voice download, and voice mode is English-only right now."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { frank: { cta: '#A855F7', accent: '#E879F9' } },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    .navbar.scrolled { background-color: rgba(24, 16, 33, 0.9) !important; backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .hero-icon { width: 240px; height: 240px; border-radius: 54px; box-shadow: 0 30px 80px rgba(168,85,247,0.35); animation: float 5s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+    .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(232,121,249,0.14); border-radius: 20px; padding: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(168,85,247,0.2); }
+  </style>
+</head>
+<body class="font-body" style="background: linear-gradient(180deg, #180F21 0%, #1E1330 60%, #241539 100%); background-attachment: fixed; color: #EDE9F5;">
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/images/apps/6766366146/icon.jpg" alt="Frankly AI icon" class="w-10 h-10 rounded-xl">
+        <span class="font-display text-lg" style="color: #F5F3FA;">Frankly AI</span>
+      </div>
+      <a href="https://apps.apple.com/app/id6766366146?ct=congle-web-frankly-ai&mt=8" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm hover:opacity-90 transition-colors" style="background: #A855F7; color: white;">
+        <svg class="w-4 h-4" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-up">
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6" style="color: #F5F3FA;">
+          Frankly AI &mdash; Unfiltered AI Chat &amp; Roleplay for iPhone
+        </h1>
+        <p class="text-xl md:text-2xl mb-8" style="color: #C4B5D8;">
+          AI that tells it straight. Open-weight models run directly on your iPhone with 8 candid personas for honest advice, creative writing, and roleplay &mdash; and your conversations never leave your device.
+        </p>
+        <a href="https://apps.apple.com/app/id6766366146?ct=congle-web-frankly-ai&mt=8" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-colors shadow-lg" style="background: #A855F7; color: white;">
+          <svg class="w-6 h-6" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download Free on the App Store
+        </a>
+      </div>
+      <div class="fade-up flex justify-center">
+        <img src="/images/apps/6766366146/icon.jpg" alt="Frankly AI app icon" class="hero-icon">
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #F5F3FA;">Candid answers, not corporate hedging</h2>
+      <p class="text-xl" style="color: #C4B5D8;">
+        No corporate content policies. No server-side moderation. No accounts. Frankly AI runs open-weight models chosen for directness rather than compliance, so you can ask the questions other AI apps dodge and get honest, thoughtful answers on the topics that matter to you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature Cards Grid -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F3AD;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #F5F3FA;">8 Frank Personas</h3>
+          <p style="color: #C4B5D8;">Tap a persona and start &mdash; from The Straight Talker and Creative Writing Partner to Relationship Realist and The Historian.</p>
+        </div>
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F512;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #F5F3FA;">Private &amp; On-Device</h3>
+          <p style="color: #C4B5D8;">Zero data collection, no sign-ups, no tracking. Everything runs on your device and works fully offline after setup.</p>
+        </div>
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F5E3;&#xFE0F;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #F5F3FA;">Voice Mode</h3>
+          <p style="color: #C4B5D8;">Speech-to-text plus optional Kokoro voice replies, with streaming responses in real time as the model writes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: personas detail -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #F5F3FA;">A companion for every kind of conversation</h2>
+      <p class="text-lg mb-4" style="color: #C4B5D8;">
+        Each persona is tuned for a different kind of directness. The Straight Talker cuts the fluff. The Creative Writing Partner brings mature, uncensored fiction to your stories and roleplay. Devil's Advocate steelmans unpopular positions, Frank Doctor gives medical context without liability hedging, and the Relationship Realist is honest rather than merely validating.
+      </p>
+      <p class="text-lg" style="color: #C4B5D8;">
+        Round it out with the Philosophy Sparring Partner, a brutally honest Code Reviewer, and The Historian for unvarnished history. Frankly AI can be genuinely useful, but it isn't a substitute for professional advice.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section: capabilities -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F9E9;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #F5F3FA;">Bring your own model</h3>
+          <p style="color: #C4B5D8;">Import any compatible GGUF model directly from Hugging Face, alongside curated models like Dolphin-Mistral, Dolphin-Llama 3, and Lexi-Llama 3.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F4DA;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #F5F3FA;">Prompt library &amp; memory</h3>
+          <p style="color: #C4B5D8;">A unified prompt library with custom prompts and starters, plus AI Memory for facts that persist across conversations.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F5E8;&#xFE0F;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #F5F3FA;">Siri Shortcuts</h3>
+          <p style="color: #C4B5D8;">Siri Shortcut suggestions let you jump straight into a chat without opening the app first.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F4E4;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #F5F3FA;">Export your chats</h3>
+          <p style="color: #C4B5D8;">Pro adds chat export to Markdown and plain text from both the chat and history views.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: free vs pro -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6 text-center fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #F5F3FA;">Free to start, Pro to go further</h2>
+      <p class="text-lg mb-4" style="color: #C4B5D8;">
+        The free tier gives you all 8 personas, full conversation history, and 10 messages per day using Apple Foundation Models on iOS 26+ or Mistral 7B with minimal guardrails.
+      </p>
+      <p class="text-lg" style="color: #C4B5D8;">
+        Pro unlocks unlimited messages, all four curated models, custom system prompts per conversation, chat export, and removes ads &mdash; all while keeping every conversation on your device.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section: privacy first -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #F5F3FA;">Private by design, candid by default</h2>
+      <p class="text-lg mb-4" style="color: #C4B5D8;">
+        The best conversations are the ones you can have honestly, without worrying about who's reading over your shoulder. Frankly AI keeps everything on your device: there are no accounts to create, no analytics quietly collecting your prompts, and no servers relaying your words. After the initial setup, it runs fully offline &mdash; on a flight, off the grid, or simply with the network switched off, your companion is still right there.
+      </p>
+      <p class="text-lg mb-4" style="color: #C4B5D8;">
+        That privacy is what makes the candour useful. Talk through a tough relationship decision with the Relationship Realist, pressure-test an argument with Devil's Advocate, get straight technical feedback from the Code Reviewer, or spin up mature, uncensored fiction and roleplay with the Creative Writing Partner. Because the model runs locally and isn't wrapped in server-side moderation, you get direct, thoughtful answers instead of deflections &mdash; useful, honest, and yours alone.
+      </p>
+      <p class="text-lg" style="color: #C4B5D8;">
+        You stay in control of the experience, too. Import your own GGUF models from Hugging Face, save prompts and starters in the unified library, let AI Memory carry key facts between chats, and jump straight into a conversation with a Siri Shortcut. Frankly AI can be genuinely helpful across a huge range of topics &mdash; but it's a candid companion, not a replacement for professional medical, legal, or financial advice.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-4xl md:text-5xl mb-10 text-center fade-up" style="color: #F5F3FA;">Frequently asked questions</h2>
+      <div class="space-y-6">
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #F5F3FA;">What makes Frankly AI different?</h3>
+          <p style="color: #C4B5D8;">It runs open-weight models directly on your iPhone &mdash; models chosen for directness rather than compliance. No corporate content policies and no server-side moderation, so you get candid answers on topics other AI apps tend to dodge.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #F5F3FA;">What are the personas?</h3>
+          <p style="color: #C4B5D8;">Eight frank personas, each tuned for directness: The Straight Talker, Creative Writing Partner, Devil's Advocate, Frank Doctor, Relationship Realist, Philosophy Sparring Partner, Code Reviewer, and The Historian.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #F5F3FA;">Is it private?</h3>
+          <p style="color: #C4B5D8;">Yes. Your conversations never leave your device. Zero data collection, no accounts or sign-ups, no analytics or tracking, and fully offline after setup.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #F5F3FA;">How much does it cost?</h3>
+          <p style="color: #C4B5D8;">Free gives you all 8 personas, full history, and 10 messages per day using Apple Foundation Models on iOS 26+ or Mistral 7B. Pro unlocks unlimited messages, four curated models, custom system prompts, chat export, and removes ads.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #F5F3FA;">Which models can I use?</h3>
+          <p style="color: #C4B5D8;">Pro includes curated models such as Dolphin-Mistral, Dolphin-Llama 3, and Lexi-Llama 3. You can also import any compatible GGUF model directly from Hugging Face.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #F5F3FA;">Does it support voice?</h3>
+          <p style="color: #C4B5D8;">Yes. Voice Mode offers speech-to-text and optional Kokoro voice replies. Voice replies use a separate Kokoro voice download, and voice mode is English-only right now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 lg:py-32 text-center">
+    <div class="max-w-3xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-5xl md:text-6xl mb-6" style="color: #F5F3FA;">Get an AI that levels with you</h2>
+      <p class="text-xl mb-10" style="color: #C4B5D8;">
+        Private, unfiltered, and free to download. Pick a persona and start a conversation that stays entirely on your device.
+      </p>
+      <a href="https://apps.apple.com/app/id6766366146?ct=congle-web-frankly-ai&mt=8" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 font-bold px-10 py-5 rounded-full text-xl hover:opacity-90 transition-colors shadow-xl" style="background: #A855F7; color: white;">
+        <svg class="w-7 h-7" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download on the App Store
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12" style="background-color: #150D1E;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="/images/apps/6766366146/icon.jpg" alt="Frankly AI" class="w-8 h-8 rounded-lg">
+          <span class="font-display text-lg" style="color: #F5F3FA;">Frankly AI: Uncensored Chat</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 text-sm" style="color: #C4B5D8;">
+          <a href="https://www.cong-le.com" class="hover:opacity-70 transition-colors">Home</a>
+          <a href="/blog/" class="hover:opacity-70 transition-colors">Blog</a>
+          <a href="/privacy.html" class="hover:opacity-70 transition-colors">Privacy Policy</a>
+          <a href="/terms.html" class="hover:opacity-70 transition-colors">Terms</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-sm" style="color: #7C6B90;">
+        &copy; 2026 Cong Le. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

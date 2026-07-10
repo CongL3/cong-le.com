@@ -372,6 +372,102 @@
       "appStoreUrl": "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?uo=4",
       "icon": "/images/apps/6769176993/icon.jpg",
       "screenshots": []
+    },
+    {
+      "trackId": 6768801666,
+      "trackName": "Persona AI: Story Chat",
+      "bundleId": "com.congle.TEAMCONG.FranklyAI.Roleplay",
+      "appStoreUrl": "https://apps.apple.com/gb/app/persona-ai-story-chat/id6768801666?uo=4",
+      "icon": "/images/apps/6768801666/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6772685450,
+      "trackName": "SoapCraft: Soap Calculator",
+      "bundleId": "com.congle.TEAMCONG.SoapCraftCalc",
+      "appStoreUrl": "https://apps.apple.com/gb/app/soapcraft-soap-calculator/id6772685450?uo=4",
+      "icon": "/images/apps/6772685450/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6771269878,
+      "trackName": "Jump Rope Timer & Tracker",
+      "bundleId": "com.congle.TEAMCONG.JumpRopeTimer",
+      "appStoreUrl": "https://apps.apple.com/gb/app/jump-rope-timer-tracker/id6771269878?uo=4",
+      "icon": "/images/apps/6771269878/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6772072727,
+      "trackName": "Anime Chat: Private AI",
+      "bundleId": "com.congle.TEAMCONG.AnimeCompanionAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/anime-chat-private-ai/id6772072727?uo=4",
+      "icon": "/images/apps/6772072727/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6768466507,
+      "trackName": "CodingChat AI",
+      "bundleId": "com.congle.TEAMCONG.CodingChatAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/codingchat-ai/id6768466507?uo=4",
+      "icon": "/images/apps/6768466507/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6770217651,
+      "trackName": "Age Calculator: How Old Am I",
+      "bundleId": "com.congle.TEAMCONG.AgeCalculator",
+      "appStoreUrl": "https://apps.apple.com/gb/app/age-calculator-how-old-am-i/id6770217651?uo=4",
+      "icon": "/images/apps/6770217651/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6772686797,
+      "trackName": "Tiny Table: BLW Ideas & Purees",
+      "bundleId": "com.congle.TEAMCONG.TinyTable",
+      "appStoreUrl": "https://apps.apple.com/gb/app/tiny-table-blw-ideas-purees/id6772686797?uo=4",
+      "icon": "/images/apps/6772686797/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6775279715,
+      "trackName": "Hoop Quest: Basketball Sim",
+      "bundleId": "com.congle.TEAMCONG.HoopQuestRPG",
+      "appStoreUrl": "https://apps.apple.com/gb/app/hoop-quest-basketball-sim/id6775279715?uo=4",
+      "icon": "/images/apps/6775279715/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6776417249,
+      "trackName": "Local AI Image Generator",
+      "bundleId": "com.congle.TEAMCONG.PrivateImageAI",
+      "appStoreUrl": "https://apps.apple.com/gb/app/local-ai-image-generator/id6776417249?uo=4",
+      "icon": "/images/apps/6776417249/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6776387674,
+      "trackName": "HouseholdVault: ID Docs",
+      "bundleId": "com.congle.TEAMCONG.HouseholdVault",
+      "appStoreUrl": "https://apps.apple.com/gb/app/householdvault-id-docs/id6776387674?uo=4",
+      "icon": "/images/apps/6776387674/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6777125671,
+      "trackName": "Football Career Quest",
+      "bundleId": "com.congle.TEAMCONG.FootballQuestRPG",
+      "appStoreUrl": "https://apps.apple.com/gb/app/football-career-quest/id6777125671?uo=4",
+      "icon": "/images/apps/6777125671/icon.jpg",
+      "screenshots": []
+    },
+    {
+      "trackId": 6773508857,
+      "trackName": "Pack Planner: Group Lists",
+      "bundleId": "com.congle.TEAMCONG.PackPlanner",
+      "appStoreUrl": "https://apps.apple.com/gb/app/pack-planner-group-lists/id6773508857?uo=4",
+      "icon": "/images/apps/6773508857/icon.jpg",
+      "screenshots": []
     }
   ]
 }

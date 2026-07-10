@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Anniversary Tracker — Never Forget an Important Date | iOS App</title>
+  <meta name="description" content="Anniversary Tracker counts every day together and reminds you before every important date — anniversaries, birthdays, milestones, and more. Trusted by over 80,000 couples. Free for iPhone.">
+  <link rel="canonical" href="https://www.cong-le.com/apps/anniversary-tracker/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anniversary Tracker — Never Forget an Important Date">
+  <meta property="og:description" content="Count, customise, and never forget the moments that matter — from your first day together to your 10,000th. Smart reminders, day counter, and built-in milestones.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cong-le.com/apps/anniversary-tracker/">
+  <meta property="og:image" content="https://www.cong-le.com/images/apps/1570714816/icon.jpg">
+  <meta property="og:site_name" content="Cong Le Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anniversary Tracker — Never Forget an Important Date">
+  <meta name="twitter:description" content="Count your days together and get smart reminders before every anniversary, birthday, and milestone. Trusted by over 80,000 couples.">
+  <meta name="twitter:image" content="https://www.cong-le.com/images/apps/1570714816/icon.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Anniversary Tracker",
+    "operatingSystem": "iOS",
+    "applicationCategory": "LifestyleApplication",
+    "description": "Anniversary Tracker helps you count, customise, and never forget the moments that matter most — from your very first day together to your 10,000th. Includes an automatic day counter, smart reminders, and built-in milestones.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "73"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Cong Le",
+      "url": "https://www.cong-le.com"
+    }
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does Anniversary Tracker do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It automatically counts how many days, months, and years you've been together and helps you never forget an important date. You can add unlimited anniversaries, birthdays, and special dates, and get reminders before each one."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I choose when Day 1 starts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can choose whether Day 1 starts on your anniversary date itself or the day after, so the count matches how you like to measure your time together."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will it remind me before important dates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Smart Reminders let you set notifications days in advance so you never forget an important date again. Built-in milestones like 100, 200, 500, and 1,000 days, monthly anniversaries, Valentine's Day, and Christmas Eve are generated for you automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it only for couples?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Anniversary Tracker works for anything you care about — a wedding anniversary, a pet's adoption day, a favourite idol's birthday, an upcoming exam, or a countdown to a special event. If the date matters to you, it belongs here."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I personalise how it looks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Add profile photos, choose from aesthetic theme backgrounds, and independently change fonts, colours, and sizes on titles, names, and the day counter. Tap the heart between your photos for a surprise animation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many people use it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anniversary Tracker is trusted by over 80,000 couples and counting, and holds a 4.8-star average rating on the App Store."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { rose: { cta: '#E11D6E', accent: '#F472B6' } },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    .navbar.scrolled { background-color: rgba(255, 235, 244, 0.95) !important; backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(136,19,66,0.12); }
+    .hero-icon { width: 240px; height: 240px; border-radius: 54px; box-shadow: 0 30px 70px rgba(225,29,110,0.3); animation: heartbeat 2.6s ease-in-out infinite; }
+    @keyframes heartbeat { 0%,100% { transform: scale(1); } 40% { transform: scale(1.05); } 55% { transform: scale(1.0); } }
+    .feature-card { background: rgba(136,19,66,0.05); border-radius: 20px; padding: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(136,19,66,0.12); }
+  </style>
+</head>
+<body class="font-body" style="background: linear-gradient(180deg, #FFEBF4 0%, #FFF0F6 55%, #FFE4EF 100%); background-attachment: fixed; color: #7A0F3B;">
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/images/apps/1570714816/icon.jpg" alt="Anniversary Tracker icon" class="w-10 h-10 rounded-xl">
+        <span class="font-display text-lg" style="color: #7A0F3B;">Anniversary Tracker</span>
+      </div>
+      <a href="https://apps.apple.com/app/id1570714816?ct=congle-web-anniversary-tracker&mt=8" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm hover:opacity-90 transition-colors" style="background: #E11D6E; color: white;">
+        <svg class="w-4 h-4" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-up">
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6" style="color: #7A0F3B;">
+          Anniversary Tracker &mdash; Never Forget an Important Date
+        </h1>
+        <p class="text-xl md:text-2xl mb-8" style="color: #A03A62;">
+          Every day together is worth celebrating. Count, customise, and never forget the moments that matter most &mdash; from your very first day together to your 10,000th.
+        </p>
+        <div class="flex items-center gap-3 mb-8" style="color: #A03A62;">
+          <span class="text-lg" style="color: #E11D6E;">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span>
+          <span class="text-base font-medium">4.8 stars &middot; trusted by over 80,000 couples</span>
+        </div>
+        <a href="https://apps.apple.com/app/id1570714816?ct=congle-web-anniversary-tracker&mt=8" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-colors shadow-lg" style="background: #E11D6E; color: white;">
+          <svg class="w-6 h-6" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download Free on the App Store
+        </a>
+      </div>
+      <div class="fade-up flex justify-center">
+        <img src="/images/apps/1570714816/icon.jpg" alt="Anniversary Tracker app icon" class="hero-icon">
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #7A0F3B;">Your love story, your way</h2>
+      <p class="text-xl" style="color: #A03A62;">
+        See exactly how many days, months, and years you've been together with an automatic day counter, then make it truly yours with photos, themes, and full customisation. Trusted by over 80,000 couples and counting.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature Cards Grid -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F4C5;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7A0F3B;">Automatic Day Counter</h3>
+          <p style="color: #A03A62;">See exactly how many days, months, and years you've been together. Choose whether Day 1 starts on your anniversary or the day after.</p>
+        </div>
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F514;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7A0F3B;">Smart Reminders</h3>
+          <p style="color: #A03A62;">Set notifications days in advance so you never forget an important date again &mdash; anniversaries, birthdays, and special occasions.</p>
+        </div>
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F3AF;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7A0F3B;">Built-in Milestones</h3>
+          <p style="color: #A03A62;">100, 200, 500, and 1,000 days, monthly anniversaries, Valentine's Day, Christmas Eve, and more are generated for you automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: customisation -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #7A0F3B;">Make it truly yours</h2>
+      <p class="text-lg mb-4" style="color: #A03A62;">
+        Add profile photos of you and your partner, your pet, or your favourite idol. Change fonts, colours, and sizes on titles, names, and the day counter independently, and choose from a collection of cute, aesthetic theme backgrounds.
+      </p>
+      <p class="text-lg" style="color: #A03A62;">
+        There's a little delight built in, too &mdash; tap the heart between your photos for a surprise animation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section: calendar + not just couples -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F5D3;&#xFE0F;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7A0F3B;">Anniversary Calendar</h3>
+          <p style="color: #A03A62;">Add unlimited personal anniversaries, birthdays, and special dates in a simple list view. Swipe to remove any you no longer need.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F49D;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7A0F3B;">Not just for couples</h3>
+          <p style="color: #A03A62;">A wedding anniversary, a pet's adoption day, an idol's birthday, an exam, or a countdown to a special event &mdash; if the date matters, it belongs here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: social proof -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6 text-center fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #7A0F3B;">Loved by couples everywhere</h2>
+      <p class="text-lg" style="color: #A03A62;">
+        Anniversary Tracker holds a 4.8-star average rating and is trusted by over 80,000 couples counting the days that matter most. Start counting your moments today.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section: never forget -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #7A0F3B;">Never forget a date that matters again</h2>
+      <p class="text-lg mb-4" style="color: #A03A62;">
+        Life gets busy, and the dates that mean the most are the easiest to let slip. Anniversary Tracker exists so that never happens. It quietly counts your days, months, and years together in the background, and gives you a gentle nudge before every occasion &mdash; days ahead, not the morning of &mdash; so you always have time to plan something thoughtful. Set a reminder once and the app carries the rest.
+      </p>
+      <p class="text-lg mb-4" style="color: #A03A62;">
+        The built-in milestones make it effortless. The moment you add your anniversary, the app generates the ones worth celebrating: 100, 200, 500, and 1,000 days, every monthly anniversary, plus Valentine's Day, Christmas Eve, and more. Add your own unlimited dates &mdash; birthdays, first dates, the day you moved in together &mdash; in a simple list, and swipe away anything you no longer need. Every date you care about lives in one place, counting up and counting down.
+      </p>
+      <p class="text-lg" style="color: #A03A62;">
+        Then make it yours. Add photos of you and your partner, your pet, or your favourite idol; choose an aesthetic theme background; and fine-tune the fonts, colours, and sizes of your titles, names, and day counter until it feels exactly right. Tap the heart between your photos for a little surprise. It's no wonder more than 80,000 couples trust Anniversary Tracker to hold the moments that matter most.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-4xl md:text-5xl mb-10 text-center fade-up" style="color: #7A0F3B;">Frequently asked questions</h2>
+      <div class="space-y-6">
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7A0F3B;">What does Anniversary Tracker do?</h3>
+          <p style="color: #A03A62;">It automatically counts how many days, months, and years you've been together and helps you never forget an important date. Add unlimited anniversaries, birthdays, and special dates, and get reminders before each one.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7A0F3B;">Can I choose when Day 1 starts?</h3>
+          <p style="color: #A03A62;">Yes. Choose whether Day 1 starts on your anniversary date itself or the day after, so the count matches how you like to measure your time together.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7A0F3B;">Will it remind me before important dates?</h3>
+          <p style="color: #A03A62;">Yes. Smart Reminders let you set notifications days in advance. Built-in milestones like 100, 200, 500, and 1,000 days, monthly anniversaries, Valentine's Day, and Christmas Eve are generated for you automatically.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7A0F3B;">Is it only for couples?</h3>
+          <p style="color: #A03A62;">No. It works for anything you care about &mdash; a wedding anniversary, a pet's adoption day, a favourite idol's birthday, an upcoming exam, or a countdown to a special event.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7A0F3B;">Can I personalise how it looks?</h3>
+          <p style="color: #A03A62;">Yes. Add profile photos, choose from aesthetic theme backgrounds, and independently change fonts, colours, and sizes on titles, names, and the day counter. Tap the heart between your photos for a surprise animation.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7A0F3B;">How many people use it?</h3>
+          <p style="color: #A03A62;">Anniversary Tracker is trusted by over 80,000 couples and counting, and holds a 4.8-star average rating on the App Store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 lg:py-32 text-center">
+    <div class="max-w-3xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-5xl md:text-6xl mb-6" style="color: #7A0F3B;">Start counting your moments today</h2>
+      <p class="text-xl mb-10" style="color: #A03A62;">
+        Every day together is worth celebrating. Anniversary Tracker is free to download &mdash; never miss a date that matters again.
+      </p>
+      <a href="https://apps.apple.com/app/id1570714816?ct=congle-web-anniversary-tracker&mt=8" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 font-bold px-10 py-5 rounded-full text-xl hover:opacity-90 transition-colors shadow-xl" style="background: #E11D6E; color: white;">
+        <svg class="w-7 h-7" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download on the App Store
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12" style="background-color: #FBD3E4;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="/images/apps/1570714816/icon.jpg" alt="Anniversary Tracker" class="w-8 h-8 rounded-lg">
+          <span class="font-display text-lg" style="color: #7A0F3B;">Anniversary Tracker</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 text-sm" style="color: #A03A62;">
+          <a href="https://www.cong-le.com" class="hover:opacity-70 transition-colors">Home</a>
+          <a href="/blog/" class="hover:opacity-70 transition-colors">Blog</a>
+          <a href="/privacy.html" class="hover:opacity-70 transition-colors">Privacy Policy</a>
+          <a href="/terms.html" class="hover:opacity-70 transition-colors">Terms</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-sm" style="color: #C06588;">
+        &copy; 2026 Cong Le. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

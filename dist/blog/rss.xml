@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cong Le Apps Blog</title>
+    <link>https://www.cong-le.com/blog/</link>
+    <atom:link href="https://www.cong-le.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Guides, tips, and updates from the apps built by Cong Le.</description>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Jul 2026 20:24:47 GMT</lastBuildDate>
+    <item>
+      <title>What Is the Best Time to Fish Today?</title>
+      <link>https://www.cong-le.com/blog/best-time-to-fish-today/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/best-time-to-fish-today/</guid>
+      <description>Find the best time to fish today using major and minor feeding windows, moon position, and a simple daily rating anglers actually trust.</description>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>How to Chat with Ollama from Your iPhone</title>
+      <link>https://www.cong-le.com/blog/how-to-chat-with-ollama-from-your-iphone/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/how-to-chat-with-ollama-from-your-iphone/</guid>
+      <description>Set up an Ollama iPhone client in minutes: run Ollama on your Mac or PC, expose it on your network, and chat with your local models on the go.</description>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>How to Lock Your iPhone Screen for a Baby</title>
+      <link>https://www.cong-le.com/blog/lock-iphone-screen-for-baby/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/lock-iphone-screen-for-baby/</guid>
+      <description>Learn how to lock your iPhone screen for a baby using Guided Access, plus a faster app-based alternative that keeps little fingers from causing chaos.</description>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

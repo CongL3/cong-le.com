@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lock Your iPhone Screen for Babies &amp; Toddlers | Baby Screen Lock</title>
+  <meta name="description" content="Baby Screen Lock keeps little ones entertained with 33 age-appropriate games while locking the screen so they can't call, delete, or exit. Parent lock, session timer, and offline play. Free for iPhone.">
+  <link rel="canonical" href="https://www.cong-le.com/apps/baby-screen-lock/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lock Your iPhone Screen for Babies &amp; Toddlers">
+  <meta property="og:description" content="33 age-appropriate games with a parent lock that hides every exit control — so your toddler can't call your boss or delete your photos. Free for iPhone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cong-le.com/apps/baby-screen-lock/">
+  <meta property="og:image" content="https://www.cong-le.com/images/apps/6761378897/icon.jpg">
+  <meta property="og:site_name" content="Cong Le Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lock Your iPhone Screen for Babies &amp; Toddlers">
+  <meta name="twitter:description" content="33 age-appropriate games with a parent lock that actually works. Hand your phone over with confidence. Free for iPhone.">
+  <meta name="twitter:image" content="https://www.cong-le.com/images/apps/6761378897/icon.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Baby Screen Lock: Kid Safe",
+    "operatingSystem": "iOS",
+    "applicationCategory": "GameApplication",
+    "description": "Baby Screen Lock keeps your little one entertained with 33 age-appropriate interactive games while locking the screen so they can't accidentally call, delete photos, or exit. Includes a parent lock, session timer, and offline play.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Cong Le",
+      "url": "https://www.cong-le.com"
+    }
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the screen lock work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The built-in parent lock hides all exit controls so a child can't leave the activity. Only you can unlock, using a secret gesture and a math problem. For extra protection, an in-app Guided Access setup wizard walks you through blocking hardware buttons too."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many games are included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are 33 interactive activities, from tapping bouncing animals and popping bubbles to a xylophone, a pretend phone with a realistic dialer, whack-a-mole, memory match, connect-the-dots, and a counting number train."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it suitable for my child's age?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Content adapts to your child's developmental stage: high-contrast black and white for under 1, full vivid colors for 1-2 years, more detail and patterns for 2-3 years, and the full palette with complex activities for 3+ years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I limit how long my child plays?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Session Timer lets you set a 5 to 30 minute limit that ends with a gentle wind-down animation. There is also a Watch Mode that auto-plays games without tapping, ideal for calm-down time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe and private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no data collection, no tracking, no ads, and no internet required. The app is designed to meet App Store Kids category and COPPA guidelines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it cost anything?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baby Screen Lock is free to download. It offers an auto-renewable subscription that renews unless cancelled at least 24 hours before the period ends, which you can manage in your Apple ID settings."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { play: { cta: '#F97316', pink: '#EC4899', purple: '#8B5CF6' } },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    .navbar.scrolled { background-color: rgba(255, 241, 230, 0.95) !important; backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(124,45,18,0.12); }
+    .hero-icon { width: 240px; height: 240px; border-radius: 54px; box-shadow: 0 30px 70px rgba(249,115,22,0.35); animation: wiggle 4s ease-in-out infinite; }
+    @keyframes wiggle { 0%,100% { transform: rotate(-3deg) translateY(0); } 50% { transform: rotate(3deg) translateY(-14px); } }
+    .feature-card { background: rgba(124,45,18,0.05); border-radius: 20px; padding: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(124,45,18,0.12); }
+  </style>
+</head>
+<body class="font-body" style="background: linear-gradient(180deg, #FFF1E6 0%, #FFE4F0 55%, #F3E8FF 100%); background-attachment: fixed; color: #7C2D12;">
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/images/apps/6761378897/icon.jpg" alt="Baby Screen Lock icon" class="w-10 h-10 rounded-xl">
+        <span class="font-display text-lg" style="color: #7C2D12;">Baby Screen Lock</span>
+      </div>
+      <a href="https://apps.apple.com/app/id6761378897?ct=congle-web-baby-screen-lock&mt=8" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm hover:opacity-90 transition-colors" style="background: #F97316; color: white;">
+        <svg class="w-4 h-4" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-up">
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6" style="color: #7C2D12;">
+          Lock Your iPhone Screen for Babies &amp; Toddlers
+        </h1>
+        <p class="text-xl md:text-2xl mb-8" style="color: #B45309;">
+          Hand your phone to your little one with confidence. 33 age-appropriate games keep them entertained while a real parent lock stops them calling your boss or deleting your photos.
+        </p>
+        <a href="https://apps.apple.com/app/id6761378897?ct=congle-web-baby-screen-lock&mt=8" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-colors shadow-lg" style="background: #F97316; color: white;">
+          <svg class="w-6 h-6" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download Free on the App Store
+        </a>
+      </div>
+      <div class="fade-up flex justify-center">
+        <img src="/images/apps/6761378897/icon.jpg" alt="Baby Screen Lock app icon" class="hero-icon">
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #7C2D12;">A screen lock that actually works</h2>
+      <p class="text-xl" style="color: #B45309;">
+        Built by a parent who was tired of apps that claim to lock the screen but don't. Perfect for restaurants, car rides, waiting rooms, or any time you need a few minutes of peace.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature Cards Grid -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F512;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7C2D12;">Parent Lock</h3>
+          <p style="color: #B45309;">The lock hides every exit control. Only you can unlock, with a secret gesture and a math problem toddlers can't solve.</p>
+        </div>
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F3AE;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7C2D12;">33 Interactive Games</h3>
+          <p style="color: #B45309;">Bouncing animals, floating bubbles, a xylophone, a pretend phone, whack-a-mole, memory match, and a counting number train.</p>
+        </div>
+        <div class="feature-card fade-up text-center">
+          <div class="text-6xl mb-4">&#x1F6DC;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7C2D12;">Private &amp; Offline</h3>
+          <p style="color: #B45309;">No data collection, no tracking, no ads, and no internet required &mdash; designed to meet the Kids category and COPPA guidelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: age-appropriate -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #7C2D12;">Content that grows with your child</h2>
+      <p class="text-lg mb-4" style="color: #B45309;">
+        Every activity adapts to your child's developmental stage. Under 1 sees high-contrast black and white with emerging vivid colors. From 1&ndash;2 years, full vivid colors and simple interactions. From 2&ndash;3 years, more detail, patterns, and variety. And 3+ gets the full palette including pastels and more complex activities.
+      </p>
+      <p class="text-lg" style="color: #B45309;">
+        Three play modes tune the intensity to the moment: Infant for gentle, quiet play with soft haptics; Medium for balanced everyday engagement; and Fun for lively play with strong feedback.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section: parent features -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x23F1;&#xFE0F;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7C2D12;">Session Timer</h3>
+          <p style="color: #B45309;">Set a 5&ndash;30 minute limit that ends with a gentle wind-down animation instead of an abrupt cut-off.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F440;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7C2D12;">Watch Mode</h3>
+          <p style="color: #B45309;">Auto-plays games without tapping &mdash; perfect for calming down before a nap or at the end of a long day.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F4CA;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7C2D12;">Play History</h3>
+          <p style="color: #B45309;">Track session duration, games played, and tap counts so you can see what your child enjoys most.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="text-5xl mb-4">&#x1F6E1;&#xFE0F;</div>
+          <h3 class="font-display text-2xl mb-3" style="color: #7C2D12;">Guided Access Wizard</h3>
+          <p style="color: #B45309;">An in-app setup wizard walks you through blocking hardware buttons for an extra layer of protection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: who it's for -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #7C2D12;">Made for real parenting moments</h2>
+      <p class="text-lg mb-4" style="color: #B45309;">
+        Every parent knows the situation: you're at a restaurant, in a waiting room, or halfway through a long car ride, and you need a few calm minutes. You hand over your phone &mdash; and a moment later your child has dialled a contact, opened your camera roll, or backed out into an app you never wanted them in. Baby Screen Lock was built by a parent who lived that frustration and was tired of apps that promised a screen lock but didn't deliver one.
+      </p>
+      <p class="text-lg mb-4" style="color: #B45309;">
+        Here, the lock genuinely holds. Once you hand the phone over, there is no visible exit &mdash; no home indicator to swipe, no menu to escape through. Your child taps, pops, paints, and plays their way through 33 gentle activities, while everything else on your phone stays untouched. When you're ready, a secret gesture and a quick math problem bring you back out, and the optional Guided Access wizard locks down the hardware buttons for the times you want zero surprises.
+      </p>
+      <p class="text-lg" style="color: #B45309;">
+        Just as importantly, it's a calm, private space. No ads interrupt play, nothing tries to upsell your toddler, and no data leaves the device. The content, colours, and intensity all scale to your child's age, so a six-month-old sees soothing high-contrast shapes while a three-year-old gets richer patterns and more to explore. It's screen time you can actually feel good about handing over.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-4xl md:text-5xl mb-10 text-center fade-up" style="color: #7C2D12;">Frequently asked questions</h2>
+      <div class="space-y-6">
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7C2D12;">How does the screen lock work?</h3>
+          <p style="color: #B45309;">The parent lock hides all exit controls so a child can't leave the activity. Only you can unlock, using a secret gesture and a math problem. A Guided Access setup wizard can block hardware buttons too.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7C2D12;">How many games are included?</h3>
+          <p style="color: #B45309;">33 interactive activities, from tapping bouncing animals and popping bubbles to a xylophone, a pretend phone with a realistic dialer, whack-a-mole, memory match, connect-the-dots, and a counting number train.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7C2D12;">Is it suitable for my child's age?</h3>
+          <p style="color: #B45309;">Yes. Content adapts to the developmental stage: high-contrast black and white for under 1, full vivid colors for 1&ndash;2 years, more detail for 2&ndash;3 years, and the full palette with complex activities for 3+ years.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7C2D12;">Can I limit how long my child plays?</h3>
+          <p style="color: #B45309;">Yes. The Session Timer sets a 5&ndash;30 minute limit ending in a gentle wind-down animation. Watch Mode auto-plays games without tapping, ideal for calm-down time.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7C2D12;">Is it safe and private?</h3>
+          <p style="color: #B45309;">There is no data collection, no tracking, no ads, and no internet required. The app is designed to meet App Store Kids category and COPPA guidelines.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <h3 class="font-display text-xl mb-2" style="color: #7C2D12;">Does it cost anything?</h3>
+          <p style="color: #B45309;">Baby Screen Lock is free to download and offers an auto-renewable subscription that renews unless cancelled at least 24 hours before the period ends. Manage it any time in your Apple ID settings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 lg:py-32 text-center">
+    <div class="max-w-3xl mx-auto px-6 fade-up">
+      <h2 class="font-display text-5xl md:text-6xl mb-6" style="color: #7C2D12;">A few minutes of peace, safely</h2>
+      <p class="text-xl mb-10" style="color: #B45309;">
+        Restaurants, car rides, waiting rooms &mdash; hand over your phone knowing your child stays in, and everything else stays out.
+      </p>
+      <a href="https://apps.apple.com/app/id6761378897?ct=congle-web-baby-screen-lock&mt=8" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 font-bold px-10 py-5 rounded-full text-xl hover:opacity-90 transition-colors shadow-xl" style="background: #F97316; color: white;">
+        <svg class="w-7 h-7" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download on the App Store
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12" style="background-color: #FCE0CC;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="/images/apps/6761378897/icon.jpg" alt="Baby Screen Lock" class="w-8 h-8 rounded-lg">
+          <span class="font-display text-lg" style="color: #7C2D12;">Baby Screen Lock: Kid Safe</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 text-sm" style="color: #B45309;">
+          <a href="https://www.cong-le.com" class="hover:opacity-70 transition-colors">Home</a>
+          <a href="/blog/" class="hover:opacity-70 transition-colors">Blog</a>
+          <a href="/privacy.html" class="hover:opacity-70 transition-colors">Privacy Policy</a>
+          <a href="/terms.html" class="hover:opacity-70 transition-colors">Terms</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-sm" style="color: #C2703B;">
+        &copy; 2026 Cong Le. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>
