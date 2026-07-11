@@ -1,0 +1,35 @@
+name: Weekly search report
+
+on:
+  schedule:
+    - cron: '0 8 * * 5'   # Fridays 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate report
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: node scripts/gsc-weekly-report.mjs
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add seo-reports/
+          git diff --cached --quiet || git commit -m "chore: weekly search console report"
+          git push
