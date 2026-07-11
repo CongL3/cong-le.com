@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** To toddler-proof your iPhone, turn on Guided Access (Settings > Accessibility > Guided Access) to lock the phone to one app, then open Settings > Screen Time > Content & Privacy Restrictions and set In-app Purchases to Don't Allow with Require Password on Always Require. In the same place, set Deleting Apps to Don't Allow and lock down Account and Passcode changes. Add Screen Time app limits, restrict Control Center on the lock screen, cap the volume, and use a genuinely kid-safe app as the landing spot inside those fences.
+
 Toddlers treat a phone like a toy with infinite buttons, and every button does something. Left unprotected, a two-year-old can rack up an in-app purchase, delete photos, dial a contact, or change settings you didn't know existed. The good news: iOS has plenty of built-in guardrails. You just have to turn them on.
 
 Here are seven settings that toddler-proof your iPhone, from quick toggles to full lockdowns. Set these up once and hand over your phone with a lot less anxiety.

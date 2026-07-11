@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** To add an anniversary countdown widget on iPhone, touch and hold an empty area of your home screen until the icons jiggle, tap the plus button, find the app in the widget gallery, swipe to pick a size, and tap Add Widget — then touch and hold the placed widget and choose Edit Widget to set which date it counts. For the lock screen, touch and hold the lock screen, tap Customize, choose Lock Screen, tap the slot below the clock, and select the app's widget. Lock screen widgets are small and glanceable, ideal for a count you want always in view.
+
 A countdown you have to open an app to see is a countdown you will forget about. The whole point of a widget is to remove that step — to put your day count right on the home or lock screen so it greets you every time you pick up the phone. No tapping, no searching, just a passive glance that keeps the date top of mind.
 
 This guide covers how iPhone widgets work, how to add one, and how to get the most out of an anniversary countdown specifically. The mechanics are the same across most widget-enabled apps, so once you learn the pattern you can place widgets confidently anywhere.
@@ -19,7 +21,7 @@ iPhone gives you two places to put a widget, and they suit different habits.
 
 **Home screen widgets** are larger and can show more — a photo, a title, a big day count, extra context. They live among your app icons and are great if you unlock straight to your home screen and browse it often.
 
-**Lock screen widgets** are small and glanceable, sitting above or below the clock. You see them *before* you even unlock, dozens of times a day, every time you check the time or a notification. For a countdown you want constantly in the corner of your eye, the lock screen is hard to beat.
+**Lock screen widgets** are small and glanceable, sitting above or below the clock. You see them *before* you even unlock, dozens of times a day, every time you check the time or a notification. Apple introduced home screen widgets in iOS 14 and added lock screen widgets in iOS 16, and iOS 17's StandBy mode turns a charging iPhone on its side into a full-screen glanceable display — all of which make a countdown one of the easiest things to keep permanently in view. For a countdown you want constantly in the corner of your eye, the lock screen is hard to beat.
 
 You do not have to choose just one. Many people put a rich home screen widget for the detail and a tiny lock screen widget for the constant reminder.
 

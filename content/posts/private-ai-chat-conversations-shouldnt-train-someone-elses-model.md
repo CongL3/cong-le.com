@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** The only way to guarantee your AI conversations aren't logged or used to train someone else's model is to use an app that never sends them off your device. On-device apps like Frankly AI run the language model directly on your iPhone, so prompts and responses never cross the network, meaning there is no server to log them and no training pipeline to opt out of. Cloud assistants' privacy depends on policies you have to trust; on-device privacy depends on nothing.
+
 Every time you type into a cloud AI assistant, you are handing a stranger a copy of your thoughts. Most of the time this feels harmless, and often it is. But the aggregate of everything you have ever asked an AI, your health worries, your work problems, your relationships, your half-formed ideas, is one of the most revealing datasets about you that exists. This post is about why that matters, how cloud assistants actually use your conversations, and why the strongest answer is not a better privacy policy but a different architecture entirely.
 
 ## What happens to your words in the cloud
@@ -19,7 +21,7 @@ When you use a typical hosted AI assistant, your prompt does not stay with you. 
 - It may be **reviewed by humans** for quality or safety purposes.
 - It may be **used to train future models**, meaning your conversation becomes part of the raw material that shapes the next version of the product.
 
-That last point is the one people underestimate. "Used to train the model" sounds abstract until you consider what it means: the specific, personal things you typed are folded into a system that other people will use. Providers take steps to reduce direct memorization, and many now offer settings to opt out of training. But you are relying on that setting being honored, on the retention policy, and on the provider's security, all for text you never needed to send anywhere in the first place.
+That last point is the one people underestimate. "Used to train the model" sounds abstract until you consider what it means: the specific, personal things you typed are folded into a system that other people will use. This is not hypothetical: OpenAI's own help documentation states that ChatGPT conversations may be used to train its models unless you turn the setting off, and Anthropic similarly asks consumer users to opt in before Claude chats are used for training. Providers take steps to reduce direct memorization, and many now offer settings to opt out of training. But you are relying on that setting being honored, on the retention policy, and on the provider's security, all for text you never needed to send anywhere in the first place.
 
 ## "We don't train on your data" is a promise, not a guarantee
 

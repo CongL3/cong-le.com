@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** To never forget an anniversary again, stop relying on memory and build a small system: centralize every date in one dedicated place, layer at least three reminders (about two weeks out to plan, a few days out to confirm, and the morning of), and keep a countdown widget somewhere you already look daily. The layered nudges catch you even if you miss one, and the passive widget keeps the date permanently in view. A purpose-built tracker like Anniversary Tracker handles all three at once.
+
 Forgetting an anniversary is rarely a memory problem. You know the date. You have known it for years. The failure is almost always a *systems* problem: nothing put the date in front of you at a moment when you could act on it. Willpower and good intentions are not a system. A calendar entry you set once and never see again is barely one either.
 
 The fix is to stop relying on your brain to volunteer the date at the right time and instead build a small, boring machine that surfaces it for you — early enough to do something, and repeatedly enough that you cannot scroll past it. Here is how to build that machine.

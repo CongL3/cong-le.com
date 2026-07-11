@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** "Uncensored" AI chat apps use models fine-tuned to hedge and refuse less, with no server-side moderation blocking answers, but it does not mean the model will produce anything on demand. When choosing one, the most important factor is where the model runs: on-device apps like Frankly AI keep your candid conversations on your phone, while cloud apps send them to a server. Treat direct answers on medical or legal topics as a starting point, not authoritative advice.
+
 If you have used a mainstream AI assistant for anything beyond the obvious, you have probably hit a wall. You ask a direct medical question and get a paragraph of hedging and a suggestion to see a doctor. You ask it to argue an unpopular position and it refuses to engage. You ask for mature or dark creative fiction and it declines. For a lot of people this is the single most frustrating thing about modern AI, and it has created real interest in "uncensored" or "unfiltered" chat apps. This post explains what that actually means, why the big assistants behave the way they do, and what genuinely matters when you evaluate a less-filtered option.
 
 ## Why mainstream assistants refuse things

@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** For a home Mac, the best small LLMs to run with Ollama are Llama 3.2 (1B/3B) or Llama 3.1 (8B) as the safe default, Qwen2.5 and Qwen2.5-Coder for reasoning and code, and Mistral 7B, Phi-3, or Gemma 2 as strong alternatives. Match size to memory: 8 GB RAM suits 1B-3B models, 16 GB runs 7B-8B comfortably, 32 GB handles 13B-14B, and 64 GB+ reaches 30B-class models. Pull two or three with `ollama pull` and test them on your own prompts, since the right pick depends on your hardware and tasks.
+
 The nice thing about running models locally is that trying a new one costs a download, not a subscription. The confusing thing is that there are dozens of options and every week someone claims a new one is "the best." This roundup skips the leaderboard hype and gives qualitative, practical guidance on which small models are worth pulling on a home Mac, and how to match a model to the memory you actually have. I am not going to quote benchmark numbers, because for local use what matters is how a model feels on your hardware and your tasks, which you can test in minutes.
 
 ## How to think about model size
@@ -28,7 +30,7 @@ Bigger is not automatically better for your use case. A well-chosen 7B model tha
 
 ### Llama 3.x (Meta)
 
-The Llama 3 family, including the 3.1 and 3.2 releases, is the sensible default. The small versions punch above their weight for general chat, writing, and reasoning, and the ecosystem support is excellent. The 3.2 line includes very small 1B and 3B variants that run on modest machines and are genuinely useful for quick tasks.
+The Llama 3 family, including the 3.1 and 3.2 releases, is the sensible default. The small versions punch above their weight for general chat, writing, and reasoning, and the ecosystem support is excellent. The 3.2 line includes very small 1B and 3B variants that run on modest machines and are genuinely useful for quick tasks; Meta's own Llama 3.2 model card lists the 1B and 3B text models as designed for on-device and edge use.
 
 ```bash
 ollama pull llama3.2      # small, fast, great starting point

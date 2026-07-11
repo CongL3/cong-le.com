@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** The days around the new moon are often the best for fishing because strong spring tides combine with dark nights that push feeding into daylight. Full moons also bring strong spring tides but bright nights, which can slow the daytime bite, so fish early, late, or after dark. Quarter moons produce weaker neap tides and calmer, moderate conditions. To plan a month, mark the new and full moons (plus two to three days on either side) as priority windows, then use daily solunar ratings to pin down the best hours.
+
 Moon phase is the part of solunar fishing that people latch onto first, probably because it's the easiest to see. You look up, the moon's full, and you figure the fishing should be good. It's not quite that simple, but moon phase genuinely matters, and once you understand how each phase changes the bite you can build a fishing calendar around it.
 
 This is the practical version: what each phase does, and how to plan trips around the lunar cycle without overthinking it.

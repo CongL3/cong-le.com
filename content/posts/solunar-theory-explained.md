@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** Solunar theory, published by American outdoorsman John Alden Knight in 1926, predicts that fish feed most aggressively at four times a day tied to the moon's position: two major periods (moon overhead and underfoot) and two minor periods (moonrise and moonset). Formal scientific studies are limited and mixed, so it isn't proven, but the cues it tracks, especially tidal movement and moonlight, genuinely influence fish behavior. Treat it as one planning input that stacks the odds, weighted most heavily in tidal saltwater, not as a guarantee.
+
 Every angler eventually hears some version of "fish bite better when the moon's right." It sounds like superstition sitting next to lucky hats and spitting on your bait. But solunar theory is a specific, testable idea with a name, a date, and a mechanism. Whether it deserves a spot in your planning is worth taking seriously.
 
 Let's walk through what solunar theory actually claims, where it came from, and how much confidence it deserves.

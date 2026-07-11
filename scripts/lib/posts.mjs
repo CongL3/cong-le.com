@@ -12,6 +12,7 @@
  *   queue: 1               integer
  *   status: queued         string (queued | published)
  *   publishDate: 2026-01-01  string (may be empty)
+ *   updated: 2026-01-01    string (may be empty — last-modified date)
  */
 
 import { readFileSync, readdirSync } from 'fs';
@@ -94,6 +95,7 @@ export function parsePost(raw, filename) {
     queue: 0,
     status: 'queued',
     publishDate: '',
+    updated: '',
   };
   for (const line of split.frontmatterLines) {
     if (!line.trim() || line.trim().startsWith('#')) continue;
@@ -114,6 +116,7 @@ export function parsePost(raw, filename) {
       case 'app':
       case 'status':
       case 'publishDate':
+      case 'updated':
         data[key] = unquote(rawVal);
         break;
       default:

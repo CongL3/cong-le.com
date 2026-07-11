@@ -7,7 +7,10 @@ keywords: ["lock iphone screen for baby", "baby lock iphone", "child lock iphone
 queue: 2
 status: published
 publishDate: 2026-07-10
+updated: 2026-07-11
 ---
+
+> **Quick answer:** To lock your iPhone screen for a baby, use Apple's free Guided Access: open Settings > Accessibility > Guided Access, toggle it on, and set a passcode. Then open the app you want, triple-click the side button (or home button on older iPhones), and tap Start to pin the phone to that one app; triple-click and enter your passcode to exit. For a faster, safer option, a dedicated baby-lock app provides age-appropriate activities and hides every exit control behind a parent-only gesture, so little fingers have nothing to escape into.
 
 You hand your phone to your one-year-old to buy ninety seconds of peace, and in that time they've called your boss, opened seventeen apps, muted the family group chat, and somehow started a screen recording. Every parent knows this scramble. The fix is to lock the screen so a baby can tap and swipe freely without escaping into the parts of your phone that matter.
 

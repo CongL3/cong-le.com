@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** Prime fishing hours shift with the seasons because fish are cold-blooded and feed most when the water sits in their comfort range. In spring, fish late morning through afternoon early on, shifting toward dawn and dusk as the water warms. In summer, fish the early morning and late evening and skip the midday heat. In fall, most of the day works during the pre-winter feed-up. In winter, target the warmest part of the day, roughly late morning to mid-afternoon.
+
 The best time of day to fish isn't fixed. It slides with the seasons because the thing that governs fish behavior more than anything else is water temperature, and that changes across the year. A pattern that fills the boat in October will leave you skunked in July if you don't adjust.
 
 Here's how the prime hours shift through spring, summer, fall, and winter, and how to pair that seasonal picture with daily feeding windows so you're out at the right time all year.

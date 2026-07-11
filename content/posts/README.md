@@ -73,3 +73,17 @@ npm run blog:publish -- --dry-run   # show which post would publish next
 npm run blog:publish            # publish the next queued post locally
 npm run build                   # prebuild regenerates blog + sitemap, then vite build
 ```
+
+## Answer-first opening (required since 2026-07-11)
+
+Every post body must OPEN (immediately after the frontmatter) with a direct-answer blockquote:
+
+```markdown
+> **Quick answer:** Two to four self-contained sentences that fully answer the
+> post's target query, with concrete specifics. Quotable on its own.
+```
+
+The build styles the first blockquote as a highlighted "Quick answer" callout, and AI answer
+engines weigh the opening ~200 words most heavily. Also: prefer 1–2 real, attributable facts
+with named sources per post; never invent statistics. When revising a published post, set
+`updated: YYYY-MM-DD` in the frontmatter (renders an Updated byline + dateModified schema).

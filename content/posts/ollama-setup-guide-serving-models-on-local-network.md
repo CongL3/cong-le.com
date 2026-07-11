@@ -9,11 +9,13 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** To serve Ollama on your local network, set `OLLAMA_HOST=0.0.0.0` and restart the server (`OLLAMA_HOST=0.0.0.0 ollama serve`) so it listens on every interface instead of only localhost, then allow inbound TCP on port 11434 through your firewall. Verify from another device with `curl http://YOUR_IP:11434/api/tags`; a JSON list of models confirms it works. The API has no authentication, so keep it on your LAN and use a VPN for remote access rather than exposing port 11434 to the internet.
+
 Out of the box, Ollama is a single-machine tool. It listens only on localhost, which is perfect for privacy but useless the moment you want to reach your models from another device. This guide covers the full path to serving Ollama on your local network: binding the server correctly with `OLLAMA_HOST`, getting through the firewall, verifying the endpoint with `curl`, and finally connecting from an iPhone. Each step includes how to confirm it actually worked, so you are never guessing.
 
 ## The one variable that matters: OLLAMA_HOST
 
-Ollama's network behavior is controlled by the `OLLAMA_HOST` environment variable. By default it is effectively `127.0.0.1:11434`, meaning it only accepts connections originating from the same machine. To serve other devices, you bind it to all network interfaces:
+Ollama's network behavior is controlled by the `OLLAMA_HOST` environment variable. By default it is effectively `127.0.0.1:11434`, meaning it only accepts connections originating from the same machine. This binding and the `OLLAMA_HOST` override are both documented in Ollama's official FAQ under "How can I expose Ollama on my network?" To serve other devices, you bind it to all network interfaces:
 
 ```bash
 OLLAMA_HOST=0.0.0.0 ollama serve

@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** Arcade basketball is about reflexes and the feel of individual plays, with short, self-contained sessions; simulation basketball is about decisions and consequences that compound over a long career, where the payoff is the whole arc rather than a single moment. Choose arcade if you play in short gaps and chase the thrill of one great play; choose sim if you want the ongoing story of a career you build over time. Hybrids like Hoop Quest blend the two, letting you play live possessions or sim full weeks so you can dial the intensity to your mood.
+
 Two people can both say "I love basketball games" and mean completely different things. One wants to feel the flick of a wrist on a buzzer-beating three. The other wants to build a player over fifteen fictional seasons and retire them into a hall of fame. Both are having a great time. They are also playing genres that barely resemble each other.
 
 If you have ever downloaded a basketball game that got glowing reviews and bounced off it in ten minutes, the problem probably was not the game. It was a mismatch between what you wanted and which of these two worlds it belonged to. Here is how to tell them apart and figure out which is for you.

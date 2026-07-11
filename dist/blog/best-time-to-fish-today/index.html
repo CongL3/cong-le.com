@@ -30,7 +30,7 @@
   "headline": "What Is the Best Time to Fish Today?",
   "description": "Find the best time to fish today using major and minor feeding windows, moon position, and a simple daily rating anglers actually trust.",
   "datePublished": "2026-07-10",
-  "dateModified": "2026-07-10",
+  "dateModified": "2026-07-11",
   "keywords": "best time to fish today, solunar feeding times, when to go fishing",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -47,6 +47,54 @@
     "url": "https://www.cong-le.com"
   },
   "image": "https://www.cong-le.com/images/apps/6760960543/icon.jpg"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the single best time to fish today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually the major feeding window (moon overhead or underfoot) that falls closest to sunrise or sunset. That overlap of strong lunar timing and low light is the peak most days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is early morning or evening better for fishing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both are strong because of low light and cooler water. The tiebreaker is which one lines up with a major or minor solunar window today. If a major hits at dawn, mornings win; if it hits at dusk, fish the evening."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a full moon mean better fishing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. Full and new moons often produce stronger feeding windows because of tidal and lunar influence, but a well-positioned major window on a quarter moon can beat a poorly-timed full moon day. Check the daily rating rather than the phase alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need internet to check the best fishing time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Solunar calculations are pure astronomy based on date, time, and location, so an app like Solunar can compute your feeding windows fully offline, which is exactly when you need it most."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a feeding window last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Major windows run about two hours centered on moon transit or anti-transit. Minor windows are shorter, around an hour, centered on moonrise and moonset."
+      }
+    }
+  ]
 }
   </script>
 
@@ -112,6 +160,22 @@
       margin: 1.5rem 0; color: #6b7280; font-style: italic;
     }
     .dark .prose blockquote { border-left-color: #3b82f6; color: #9ca3af; }
+    /* First-blockquote "Quick answer" callout card — highlighted for AI answer engines. */
+    .prose blockquote.quick-answer {
+      border: 1px solid #bfdbfe; border-left: 4px solid #2563eb;
+      background: #eff6ff; border-radius: 12px;
+      padding: 1.1rem 1.35rem 1.1rem 1.5rem; margin: 0 0 2rem;
+      color: #1e3a5f; font-style: normal;
+    }
+    .dark .prose blockquote.quick-answer {
+      border-color: rgba(59,130,246,0.35); border-left-color: #3b82f6;
+      background: rgba(37,99,235,0.12); color: #dbeafe;
+    }
+    /* Accent + emphasise the "Quick answer:" lead-in the post supplies. */
+    .prose blockquote.quick-answer strong { color: #1d4ed8; font-weight: 800; }
+    .dark .prose blockquote.quick-answer strong { color: #93c5fd; }
+    .prose blockquote.quick-answer p { margin-bottom: 0; }
+    .prose blockquote.quick-answer p:not(:last-child) { margin-bottom: 0.75rem; }
     .prose code {
       background: rgba(17,24,39,0.08); padding: 0.15em 0.4em;
       border-radius: 6px; font-size: 0.9em;
@@ -146,9 +210,12 @@
       <header class="fade-up mb-10">
         <a href="/blog/" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">&larr; All posts</a>
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">What Is the Best Time to Fish Today?</h1>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Published 10 July 2026 &middot; <a href="/apps/solunar-fishing/" class="text-blue-600 dark:text-blue-400 hover:opacity-80">Solunar: Best Fishing Times</a></p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Published 10 July 2026 &middot; <span class="text-gray-600 dark:text-gray-300">Updated 11 July 2026</span> &middot; <a href="/apps/solunar-fishing/" class="text-blue-600 dark:text-blue-400 hover:opacity-80">Solunar: Best Fishing Times</a></p>
       </header>
       <div class="prose fade-up">
+<blockquote class="quick-answer">
+<p><strong>Quick answer:</strong> The best time to fish today is during a major solunar feeding window (when the moon is directly overhead or directly underfoot) that lands closest to sunrise or sunset. Major windows last about two hours; the minor windows at moonrise and moonset run about an hour. If you can grab only one slot, fish the first or last hour of daylight, and prioritize days rated 4 or 5 on a 1-to-5 solunar scale.</p>
+</blockquote>
 <p>If you only have a couple of hours to get on the water, the question that matters is simple: is right now a good time to fish, or should you wait? The honest answer is that fish don&#39;t bite evenly across the day. They feed in bursts, and those bursts line up with predictable natural cues. Once you know how to read them, you stop guessing and start showing up when the fish are already active.</p>
 <p>Here&#39;s how to figure out the best time to fish today without a weather subscription or a tackle-shop rumor.</p>
 <h2>Fish Feed in Windows, Not All Day</h2>
@@ -161,7 +228,7 @@
 <p><strong>Minor windows</strong> happen at moonrise and moonset. They&#39;re shorter, roughly an hour, and generally weaker than the majors, but they still concentrate feeding activity in a way you can plan around.</p>
 <p>The magic happens when these lunar windows overlap with sunrise or sunset. A major feeding period that lands right at dawn is about as good as a day gets. When you hear an experienced angler say &quot;be there at first light tomorrow,&quot; they&#39;ve often already checked that the timing lines up.</p>
 <h2>How to Read a Daily Fishing Rating</h2>
-<p>Calculating moon transit times, illumination, and lunar distance by hand is tedious, which is why anglers have used printed solunar tables for nearly a century. Today an app does the math instantly for your exact location.</p>
+<p>Calculating moon transit times, illumination, and lunar distance by hand is tedious, which is why anglers have used printed solunar tables since American outdoorsman John Alden Knight introduced them in 1926. Today an app does the math instantly for your exact location.</p>
 <p>A daily rating boils all those factors into one number, usually on a 1 to 5 scale. A 5 means the feeding windows are strong and well-positioned; a 1 means today is a grind and you might save your energy for tomorrow. The rating blends how favorable the moon position is, the current moon phase, and how those windows stack against sunrise and sunset.</p>
 <p>The <a href="/apps/solunar-fishing/">Solunar: Best Fishing Times</a> app is built around exactly this question. It gives you today&#39;s 1 to 5 rating at a glance, then shows all four feeding windows overlaid on a 24-hour timeline with the sunrise and sunset bands, so you can see instantly whether a major window falls in prime low-light time. Because every calculation runs on your device using astronomical math, it still works on the boat with no signal or in airplane mode at the lake.</p>
 <h2>A Simple Routine for Today</h2>

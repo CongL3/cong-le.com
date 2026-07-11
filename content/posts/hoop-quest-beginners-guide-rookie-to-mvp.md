@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** To go from rookie to MVP in Hoop Quest, build your player around one clear identity, then treat every age-by-age choice as an investment in the ratings, money, popularity, and trust that serve it. Pick a school program that fits your build, play the games that move your career forward while simming the filler, manage stamina, and spend money on upgrades that reinforce your strengths. Consistent, identity-driven choices across the school, campus, and top-tier stages build the legacy score that turns a rookie into a legend.
+
 Starting a new career in [Hoop Quest](/apps/hoop-quest/) is a bit like standing at the top of a long staircase you cannot see the bottom of. You create a player, pick a position, and suddenly there are ratings, money, popularity, trust, a draft board, a whole generated league world moving around you. Where do you even begin?
 
 This guide walks you through the early game so your first save is not the one you throw away. The good news: Hoop Quest keeps your career data on the device, needs no account for core play, and lets you sim quickly, so experimenting is cheap. The better news is that a few habits early on compound into a much stronger legend later.

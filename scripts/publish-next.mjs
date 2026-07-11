@@ -16,6 +16,10 @@ import path from 'path';
 import { loadPosts, splitFrontmatter, POSTS_DIR } from './lib/posts.mjs';
 import { buildBlog } from './build-blog.mjs';
 import { generateSitemap } from './generate-sitemap.mjs';
+import { updateLandingLinks } from './update-landing-links.mjs';
+import { pingIndexNow } from './lib/indexnow.mjs';
+
+const SITE_URL = 'https://www.cong-le.com';
 
 const DRY_RUN = process.argv.includes('--dry-run');
 
@@ -63,7 +67,7 @@ export function rewriteFrontmatter(raw, { status, publishDate }) {
   return lines.join('\n');
 }
 
-function main() {
+async function main() {
   const posts = loadPosts();
   const queued = posts
     .filter((p) => p.data.status === 'queued')
@@ -74,6 +78,7 @@ function main() {
     if (!DRY_RUN) {
       // Still refresh derived output so committed state stays consistent.
       buildBlog();
+      updateLandingLinks();
       generateSitemap();
     }
     return;
@@ -101,9 +106,18 @@ function main() {
   console.log(`publish-next: published "${next.data.title}" (${next.filename}) on ${date}`);
 
   buildBlog();
+  updateLandingLinks();
   generateSitemap();
+
+  // Fire-and-forget IndexNow ping so answer engines pick up the new post fast.
+  // Never allowed to fail the run (cron-safe): pingIndexNow swallows errors.
+  const postUrl = `${SITE_URL}/blog/${next.data.slug}/`;
+  await pingIndexNow([postUrl, `${SITE_URL}/blog/`, `${SITE_URL}/sitemap.xml`]);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  main();
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 }

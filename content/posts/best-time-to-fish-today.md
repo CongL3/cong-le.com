@@ -7,7 +7,10 @@ keywords: ["best time to fish today", "solunar feeding times", "when to go fishi
 queue: 1
 status: published
 publishDate: 2026-07-10
+updated: 2026-07-11
 ---
+
+> **Quick answer:** The best time to fish today is during a major solunar feeding window (when the moon is directly overhead or directly underfoot) that lands closest to sunrise or sunset. Major windows last about two hours; the minor windows at moonrise and moonset run about an hour. If you can grab only one slot, fish the first or last hour of daylight, and prioritize days rated 4 or 5 on a 1-to-5 solunar scale.
 
 If you only have a couple of hours to get on the water, the question that matters is simple: is right now a good time to fish, or should you wait? The honest answer is that fish don't bite evenly across the day. They feed in bursts, and those bursts line up with predictable natural cues. Once you know how to read them, you stop guessing and start showing up when the fish are already active.
 
@@ -33,7 +36,7 @@ The magic happens when these lunar windows overlap with sunrise or sunset. A maj
 
 ## How to Read a Daily Fishing Rating
 
-Calculating moon transit times, illumination, and lunar distance by hand is tedious, which is why anglers have used printed solunar tables for nearly a century. Today an app does the math instantly for your exact location.
+Calculating moon transit times, illumination, and lunar distance by hand is tedious, which is why anglers have used printed solunar tables since American outdoorsman John Alden Knight introduced them in 1926. Today an app does the math instantly for your exact location.
 
 A daily rating boils all those factors into one number, usually on a 1 to 5 scale. A 5 means the feeding windows are strong and well-positioned; a 1 means today is a grind and you might save your energy for tomorrow. The rating blends how favorable the moon position is, the current moon phase, and how those windows stack against sunrise and sunset.
 

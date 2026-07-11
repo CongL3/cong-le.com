@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** AI companion apps in 2026 span emotional-support companions, character and roleplay tools, and candid conversational assistants. Used as a supplement rather than a substitute for human relationships, they are a flexible tool for conversation, creativity, and support, but they are not a replacement for professional mental-health care. The biggest differentiator between them is privacy: on-device apps like Frankly AI keep your personal conversations on your phone instead of a company's servers.
+
 AI companion apps have gone from a niche curiosity to a mainstream category. In 2026 there is a wide spectrum of them, from apps designed for emotional support and daily conversation to character and roleplay tools to candid, no-nonsense assistants. This overview cuts through the marketing to explain what these apps actually are, how to use them in a healthy way, the tradeoffs worth understanding, and where a privacy-first, on-device option fits into the picture.
 
 ## What "AI companion" actually covers

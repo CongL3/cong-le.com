@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** A basketball career simulator lets you control one created player across an entire lifetime — from unknown prospect to hall-of-fame legend — through decisions, stat growth, and passing seasons, rather than managing a whole roster or playing quick arcade matches. On iPhone, the best fit depends on how much storage and time you want to give it: licensed 3D ports deliver photorealistic action but are large and demanding, while compact retro-sim hybrids like Hoop Quest deliver the full career arc in a small, offline-friendly package.
+
 If you have ever finished a real basketball game and immediately wanted to *become* the player instead of coach the team, you are looking for a career simulator. Not a management sim where you juggle a roster and a salary cap, and not a twitchy arcade dunk-fest. Something in between: one player, one lifetime, from unknown prospect to name-in-the-rafters legend.
 
 That is a surprisingly specific genre, and the App Store is crowded with things that call themselves "basketball games" without actually being it. This roundup is about what separates a genuine basketball career simulator from everything else, and which kind of app is worth your time on iPhone.

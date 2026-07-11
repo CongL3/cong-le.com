@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** Beyond birthdays and anniversaries, dates worth tracking include relationship firsts (first date, the day you became official, moving in together), family moments (a child's birthday, the day you brought a baby home, adoption or "gotcha" days), pet milestones, personal-growth markers (sobriety dates, quit-smoking day, a marathon finish), career anniversaries, and home dates like a move-in or mortgage payoff. Any date that carries meaning is worth recording so it resurfaces every year — and a day counter can even flag round milestones like 100, 500, and 1,000 days.
+
 Birthdays and wedding anniversaries get all the attention, but they are a tiny slice of the dates that actually shape a life. The day you moved into your first apartment. The morning you brought the dog home. The year you quit something that was hurting you. These moments matter just as much — we just rarely write them down, so they blur together and get lost.
 
 Here are fifty dates worth tracking, organized by theme. You will not want all of them, but scanning the list is a reliable way to remember the ones you *do* care about and would kick yourself for forgetting. Anything on here can live in a single tracker so it resurfaces at the right time every year.

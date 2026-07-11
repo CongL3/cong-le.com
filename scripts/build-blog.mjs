@@ -33,6 +33,85 @@ function escAttr(str = '') {
   return esc(str).replace(/"/g, '&quot;');
 }
 
+/** Reduce inline markdown to plain text for JSON-LD answer fields. */
+function mdToPlainText(md = '') {
+  return String(md)
+    // images: ![alt](url) -> alt  (before links)
+    .replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')
+    // links: [text](url) -> text
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    // bold/italic markers **, __, *, _
+    .replace(/(\*\*|__)(.*?)\1/g, '$2')
+    .replace(/(\*|_)(.*?)\1/g, '$2')
+    // inline code `code` -> code
+    .replace(/`([^`]*)`/g, '$1')
+    // collapse all whitespace (incl. newlines) to single spaces
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Extract a schema.org FAQPage from a post body's `## FAQ` section.
+ * Each `### question` heading maps to a Question; its following markdown
+ * (until the next `###`/`##`/EOF) becomes the answer as plain text.
+ * Returns null when there is no FAQ section or no valid Q/A pairs.
+ */
+function buildFaqPage(body = '') {
+  const lines = String(body).split('\n');
+  // Locate the `## FAQ` heading (exactly level 2, case-insensitive).
+  let start = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (/^##\s+FAQ\s*$/i.test(lines[i])) {
+      start = i + 1;
+      break;
+    }
+  }
+  if (start === -1) return null;
+
+  const mainEntity = [];
+  let question = null;
+  let answerLines = [];
+
+  const flush = () => {
+    if (question) {
+      const answer = mdToPlainText(answerLines.join('\n'));
+      if (question && answer) {
+        mainEntity.push({
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: { '@type': 'Answer', text: answer },
+        });
+      }
+    }
+    question = null;
+    answerLines = [];
+  };
+
+  for (let i = start; i < lines.length; i++) {
+    const line = lines[i];
+    // A new `##` (or deeper `#`, but not `###`) ends the FAQ section.
+    if (/^##\s+/.test(line) && !/^###/.test(line)) {
+      flush();
+      break;
+    }
+    const q = line.match(/^###\s+(.*\S)\s*$/);
+    if (q) {
+      flush();
+      question = mdToPlainText(q[1]);
+      continue;
+    }
+    if (question) answerLines.push(line);
+  }
+  flush();
+
+  if (mainEntity.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity,
+  };
+}
+
 /** Escape a string for embedding inside a JSON-LD <script> block. */
 function jsonLd(obj) {
   // JSON.stringify handles quoting; guard against </script> breakout.
@@ -128,6 +207,22 @@ ${jsonLdBlocks
       margin: 1.5rem 0; color: #6b7280; font-style: italic;
     }
     .dark .prose blockquote { border-left-color: #3b82f6; color: #9ca3af; }
+    /* First-blockquote "Quick answer" callout card — highlighted for AI answer engines. */
+    .prose blockquote.quick-answer {
+      border: 1px solid #bfdbfe; border-left: 4px solid #2563eb;
+      background: #eff6ff; border-radius: 12px;
+      padding: 1.1rem 1.35rem 1.1rem 1.5rem; margin: 0 0 2rem;
+      color: #1e3a5f; font-style: normal;
+    }
+    .dark .prose blockquote.quick-answer {
+      border-color: rgba(59,130,246,0.35); border-left-color: #3b82f6;
+      background: rgba(37,99,235,0.12); color: #dbeafe;
+    }
+    /* Accent + emphasise the "Quick answer:" lead-in the post supplies. */
+    .prose blockquote.quick-answer strong { color: #1d4ed8; font-weight: 800; }
+    .dark .prose blockquote.quick-answer strong { color: #93c5fd; }
+    .prose blockquote.quick-answer p { margin-bottom: 0; }
+    .prose blockquote.quick-answer p:not(:last-child) { margin-bottom: 0.75rem; }
     .prose code {
       background: rgba(17,24,39,0.08); padding: 0.15em 0.4em;
       border-radius: 6px; font-size: 0.9em;
@@ -242,6 +337,30 @@ const scrollScript = `  <script>
     }
   </script>`;
 
+/**
+ * Render a post body to HTML, promoting a leading blockquote into a
+ * "Quick answer" callout card. The callout only applies when a blockquote is
+ * the very first rendered element; any later blockquotes render normally.
+ * Posts without a leading blockquote render exactly as before.
+ */
+function renderBody(body) {
+  const tokens = marked.lexer(body);
+  const firstIdx = tokens.findIndex((t) => t.type !== 'space');
+  if (firstIdx === -1 || tokens[firstIdx].type !== 'blockquote') {
+    return marked.parser(tokens);
+  }
+  // Render the leading blockquote on its own and tag it as the callout.
+  const head = [tokens[firstIdx]];
+  head.links = tokens.links;
+  const calloutHtml = marked
+    .parser(head)
+    .replace(/^<blockquote>/, '<blockquote class="quick-answer">');
+  // Render the remainder normally, preserving the shared link reference map.
+  const rest = tokens.slice(firstIdx + 1);
+  rest.links = tokens.links;
+  return calloutHtml + marked.parser(rest);
+}
+
 /** Human-friendly date, e.g. "10 July 2026". */
 function prettyDate(iso) {
   if (!iso) return '';
@@ -269,7 +388,7 @@ function renderPost(post, allPublished) {
     headline: data.title,
     description: data.description,
     datePublished: data.publishDate || undefined,
-    dateModified: data.publishDate || undefined,
+    dateModified: data.updated || data.publishDate || undefined,
     keywords: data.keywords.length ? data.keywords.join(', ') : undefined,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     author: { '@type': 'Person', name: 'Cong Le', url: SITE_URL },
@@ -281,7 +400,11 @@ function renderPost(post, allPublished) {
     image: ogImage,
   };
 
-  const contentHtml = marked.parse(body);
+  const contentHtml = renderBody(body);
+
+  const faqPage = buildFaqPage(body);
+  const jsonLdBlocks = [jsonLd(blogPosting)];
+  if (faqPage) jsonLdBlocks.push(jsonLd(faqPage));
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -292,7 +415,7 @@ ${headBlock({
     canonical,
     ogType: 'article',
     ogImage,
-    jsonLdBlocks: [jsonLd(blogPosting)],
+    jsonLdBlocks,
     appId: app?.trackId,
   })}
 </head>
@@ -304,7 +427,7 @@ ${navbar()}
       <header class="fade-up mb-10">
         <a href="/blog/" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">&larr; All posts</a>
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">${esc(data.title)}</h1>
-        <p class="text-sm text-gray-500 dark:text-gray-400">${data.publishDate ? `Published ${esc(prettyDate(data.publishDate))}` : ''}${app ? ` &middot; <a href="${escAttr(app.landingPage)}" class="text-blue-600 dark:text-blue-400 hover:opacity-80">${esc(app.name)}</a>` : ''}</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">${data.publishDate ? `Published ${esc(prettyDate(data.publishDate))}` : ''}${data.updated && data.updated !== data.publishDate ? ` &middot; <span class="text-gray-600 dark:text-gray-300">Updated ${esc(prettyDate(data.updated))}</span>` : ''}${app ? ` &middot; <a href="${escAttr(app.landingPage)}" class="text-blue-600 dark:text-blue-400 hover:opacity-80">${esc(app.name)}</a>` : ''}</p>
       </header>
       <div class="prose fade-up">
 ${contentHtml}
@@ -338,19 +461,45 @@ function renderIndex(allPublished) {
         No posts yet &mdash; check back soon for guides, tips, and updates.
       </p>`;
   } else {
-    listing = allPublished
-      .map((p) => {
-        const app = getApp(p.data.app);
-        return `      <li class="fade-up">
+    // Group posts by app. Posts stay newest-first within a group; groups are
+    // ordered by their most recent post (allPublished is already newest-first).
+    const groups = [];
+    const byApp = new Map();
+    for (const p of allPublished) {
+      const key = p.data.app || '';
+      if (!byApp.has(key)) {
+        const group = { key, app: getApp(key), posts: [] };
+        byApp.set(key, group);
+        groups.push(group);
+      }
+      byApp.get(key).posts.push(p);
+    }
+
+    const renderCard = (p) => {
+      const app = getApp(p.data.app);
+      return `        <li class="fade-up">
         <a href="/blog/${escAttr(p.data.slug)}/" class="block rounded-2xl p-6 sm:p-8 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
           <span class="block text-xs uppercase tracking-wide mb-2 text-gray-400 dark:text-gray-500">${p.data.publishDate ? esc(prettyDate(p.data.publishDate)) : ''}${app ? ` &middot; ${esc(app.name)}` : ''}</span>
           <span class="block text-2xl font-bold text-gray-900 dark:text-white mb-2">${esc(p.data.title)}</span>
           <span class="block text-gray-500 dark:text-gray-400">${esc(p.data.description)}</span>
         </a>
       </li>`;
+    };
+
+    listing = groups
+      .map((g) => {
+        const heading = g.app
+          ? `<a href="${escAttr(g.app.landingPage)}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">${esc(g.app.name)}</a>`
+          : esc(g.key || 'Other');
+        const cards = g.posts.map(renderCard).join('\n');
+        return `    <section class="mb-14 fade-up">
+      <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-6">${heading}</h2>
+      <ul class="grid gap-6">
+${cards}
+      </ul>
+    </section>`;
       })
       .join('\n');
-    listing = `    <ul class="grid gap-6">\n${listing}\n    </ul>`;
   }
 
   return `<!DOCTYPE html>
@@ -436,6 +585,21 @@ export function buildBlog() {
 
   writeFileSync(path.join(BLOG_DIR, 'index.html'), renderIndex(pub));
   writeFileSync(path.join(BLOG_DIR, 'rss.xml'), renderRss(pub));
+
+  // Machine-readable index consumed by update-landing-links.mjs (and handy for
+  // any external tooling). Newest-first, one entry per published post.
+  const postsIndex = pub.map((p) => ({
+    slug: p.data.slug,
+    title: p.data.title,
+    description: p.data.description,
+    app: p.data.app,
+    publishDate: p.data.publishDate,
+    updated: p.data.updated || '',
+  }));
+  writeFileSync(
+    path.join(BLOG_DIR, 'posts-index.json'),
+    JSON.stringify(postsIndex, null, 2) + '\n'
+  );
 
   console.log(
     `build-blog: ${pub.length} published post(s) of ${posts.length} total -> public/blog/`

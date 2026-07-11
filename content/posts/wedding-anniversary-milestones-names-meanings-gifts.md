@@ -9,7 +9,9 @@ status: queued
 publishDate:
 ---
 
-Every wedding anniversary has a traditional name — paper, cotton, silver, gold — and behind each is a bit of symbolism about how a marriage is meant to be growing at that point. The custom of assigning materials to anniversary years goes back generations, and while modern lists have added their own alternatives, the traditional names below are the well-established ones you will find echoed across long-standing sources.
+> **Quick answer:** Each wedding anniversary has a traditional material that grows sturdier with the years — paper (1st), cotton (2nd), leather (3rd), and wood (5th) in the early years, building to the milestone years of silver (25th), pearl (30th), ruby (40th), gold (50th), and diamond (60th). The pattern mirrors a marriage strengthening over time, moving from a fragile blank page to the hardest, most enduring materials. Use the year-by-year list below to plan gifts with lead time.
+
+Every wedding anniversary has a traditional name — paper, cotton, silver, gold — and behind each is a bit of symbolism about how a marriage is meant to be growing at that point. The custom of assigning materials to anniversary years goes back generations: the silver-wreath (25th) and gold-wreath (50th) traditions trace to medieval Central Europe, and Emily Post's landmark 1922 book *Etiquette* helped popularize a fuller list of anniversary gifts in the modern era. The comprehensive year-by-year version most of us picture today was expanded further when the American National Retail Jeweler Association published an extended list in 1937. While later "modern" lists have added their own alternatives, the traditional names below are the well-established ones you will find echoed across those long-standing sources.
 
 This is your reference for what each milestone is called, what the material is meant to suggest, and a sensible gift direction for each. Use it to plan ahead, and consider tracking the ones that matter to you so the big years never sneak up.
 

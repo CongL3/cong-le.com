@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** To run a private LLM at home and use it from your phone, install [Ollama](https://ollama.com) on a Mac or PC, pull a model with `ollama pull llama3.2`, then start the server with `OLLAMA_HOST=0.0.0.0 ollama serve` so it listens on your local network on port 11434. On the same Wi-Fi, connect an iOS client like [Ollama Connect](/apps/ollama-connect/) to your computer's IP (for example `http://192.168.1.42:11434`). Your prompts travel only from your phone to your own machine, so nothing is logged on a third-party server and there are no per-token fees.
+
 There is a growing appeal to running your own language model instead of renting one by the token. You control the hardware, you control the data, and once the machine is paid for, the marginal cost of a conversation is roughly the electricity to run it. The catch has always been convenience: a model living on a desktop is hard to use when you are away from the desk. This post covers how to run a private LLM at home and, crucially, how to actually use it from your phone.
 
 ## Why run a model locally at all
@@ -24,7 +26,7 @@ There is a third, quieter reason: **independence**. A local model does not chang
 ## What you need
 
 - A computer that can run a model. A Mac with Apple Silicon (M1 or newer) is excellent for this thanks to unified memory. A PC with a modern GPU works well too. Even a machine with 8 GB of RAM can run small models; 16 GB or more opens up better ones.
-- **Ollama**, the free tool that makes running local models genuinely easy.
+- **Ollama**, the free, open-source (MIT-licensed) tool that makes running local models genuinely easy.
 - Your phone, on the same home network, for remote access.
 
 ## Step 1: Install Ollama and pull a model

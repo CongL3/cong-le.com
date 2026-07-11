@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** Career mode games hook us with a progression loop: you make a choice, see a visible number change, feel slightly more powerful, and immediately face the next choice. Layered goals at different time scales — this possession, this season, a career-long legacy — mean something is always almost finished, so stopping feels like leaving a task incomplete. Meaningful trade-offs make each reward feel earned, and a world that reacts to your progress turns stat-raising into a story you are invested in.
+
 There is a particular kind of "just one more" that career mode games produce. You tell yourself you will play until the end of the season, and then it is two seasons later and your created player just made an all-star team and you cannot possibly stop now. Sports career modes, life sims, RPGs — they all share a hook that is remarkably consistent once you learn to see it.
 
 It is not manipulation, exactly. It is a well-tuned progression loop, and understanding how it works makes both the games and your own attachment to them more interesting.
@@ -17,13 +19,13 @@ It is not manipulation, exactly. It is a well-tuned progression loop, and unders
 
 A progression loop is this: **make a choice, see a number change, feel slightly more powerful, immediately face the next choice.** Repeat until you look up and it is midnight.
 
-Each turn through the loop is small. The magic is that the loop never fully closes — there is always a next rating to raise, a next milestone in sight, a next chapter of the story that has not been written yet. Your brain treats each of those near-complete goals as an open tab it wants to close, and closing one just opens the next.
+Each turn through the loop is small. The magic is that the loop never fully closes — there is always a next rating to raise, a next milestone in sight, a next chapter of the story that has not been written yet. Your brain treats each of those near-complete goals as an open tab it wants to close, and closing one just opens the next. Psychologists have a name for this pull: the Zeigarnik effect, after Bluma Zeigarnik's 1920s research showing that people remember and stay mentally occupied by unfinished tasks far more than completed ones. A progression loop keeps a task perpetually unfinished on purpose.
 
 ## Ingredient one: small, legible wins
 
 The engine of the loop is a steady drip of small wins that you can actually *see*. Not "you are doing well" in the abstract, but a rating that ticks from 71 to 73, a bank balance that grows, a popularity meter that fills.
 
-Legibility is the key word. If the reward is invisible or vague, the loop stalls. If you can watch the number move the instant you make a decision, the feedback is immediate and satisfying, and you want to do it again.
+Legibility is the key word. If the reward is invisible or vague, the loop stalls. If you can watch the number move the instant you make a decision, the feedback is immediate and satisfying, and you want to do it again. This is the same reinforcement principle B.F. Skinner documented in his mid-20th-century operant-conditioning work: a clear, well-timed reward following an action makes you far more likely to repeat that action.
 
 Take [Hoop Quest](/apps/hoop-quest/) as a concrete case. Its age-by-age choices move four visible meters — ratings, money, popularity, and trust — and its live games hand you a full box score. Every decision and every game produces a legible result you can point at. That is the small-wins engine running exactly as designed.
 

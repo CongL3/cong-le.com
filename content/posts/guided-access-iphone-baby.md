@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** Turn on Guided Access at Settings > Accessibility > Guided Access, toggle it on, and set a passcode. To use it, open any app, triple-click the side button (or the home button on older iPhones), tap Options to disable the hardware buttons or specific touch zones, then tap Start to lock the phone to that app. Triple-click again and enter your passcode (or use Face ID/Touch ID) to exit. Its main limit: it only contains your child in whatever app is already open, so pair it with a genuinely baby-safe app.
+
 Guided Access is one of the most useful iPhone features that most people never turn on. It locks your phone to a single app and lets you disable the parts you don't want touched, which makes it a go-to trick for parents handing a device to a small child. This guide covers exactly how to set it up, how to use it well with a baby or toddler, and the honest limits you should know before relying on it.
 
 ## What Guided Access Actually Does

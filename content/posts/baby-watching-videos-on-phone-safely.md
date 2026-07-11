@@ -9,6 +9,8 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** To make it safer when your baby watches videos on your phone, keep sessions short with a timer, choose calm and simple content over fast, loud video, and stay nearby to co-view. Lock the phone to one app with Guided Access (Settings > Accessibility > Guided Access) or a dedicated baby-lock app so stray taps can't exit into your messages or the App Store, and turn off autoplay, or use an ad-free app with no feed, so one clip can't chain into an endless stream. The American Academy of Pediatrics advises keeping screens away from the youngest babies and using them sparingly, with quality content and co-viewing, for toddlers.
+
 At some point nearly every parent hands the phone over. The waiting room drags on, dinner needs cooking, the meltdown needs defusing, and a screen buys a few minutes of calm. There's a lot of guilt around this, some of it earned, most of it not. The useful question isn't "screen or no screen," it's "how do I make the screen time my baby does get as safe and low-stress as possible?"
 
 Here's a practical, judgment-free take grounded in common pediatric guidance.

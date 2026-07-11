@@ -7,7 +7,10 @@ keywords: ["ollama iphone client", "chat with ollama on iphone", "ollama mobile 
 queue: 3
 status: published
 publishDate: 2026-07-10
+updated: 2026-07-11
 ---
+
+> **Quick answer:** To chat with Ollama from your iPhone, start the server on your Mac or PC with `OLLAMA_HOST=0.0.0.0 ollama serve` so it listens on your whole network instead of just localhost, then connect an iOS client like [Ollama Connect](/apps/ollama-connect/) to your computer's local IP on Ollama's default port 11434 (for example `http://192.168.1.42:11434`). Both devices must be on the same Wi-Fi. Everything stays on your own hardware, with no cloud account and nothing routed through a third party.
 
 If you already run Ollama on your Mac or home server, you have a capable local AI sitting on your desk. The problem is that it stays on your desk. When you are on the couch, in the kitchen, or out of the house, that model may as well not exist. This guide walks through connecting to your existing Ollama server from your iPhone so you can chat with your own models from anywhere on your network.
 
@@ -36,7 +39,7 @@ If that streams back a response, the engine is healthy. Now we just need to make
 
 ## Step 1: Expose Ollama on your network
 
-By default, Ollama only listens on `127.0.0.1` (localhost). That is deliberately private, but it means nothing outside the machine itself can reach it, including your phone. To open it up to your local network, set the `OLLAMA_HOST` environment variable and restart the server.
+By default, Ollama only listens on `127.0.0.1` (localhost). That is deliberately private, but it means nothing outside the machine itself can reach it, including your phone. Ollama's own documentation confirms the server binds to `127.0.0.1:11434` unless you override it with the `OLLAMA_HOST` environment variable. To open it up to your local network, set the `OLLAMA_HOST` environment variable and restart the server.
 
 Stop any running Ollama instance first (quit the menu bar app on macOS), then start it bound to all interfaces:
 

@@ -9,11 +9,13 @@ status: queued
 publishDate:
 ---
 
+> **Quick answer:** AI roleplay chat works by having a language model continue a conversation in character, so the quality depends almost entirely on your setup. Write a persona with a clear identity, voice, motivation, and constraints, set the scene, then reply with substance and steer with brief out-of-character notes. Purpose-built apps like Frankly AI ship ready-made personas and persistent memory, and on-device ones keep your scenes private.
+
 AI roleplay chat is one of the most popular ways people actually use language models, and one of the least explained. If you have only ever used AI as a question-answering tool, the idea of holding a conversation *in character* with a consistent persona can seem strange at first. Done well, it is a genuinely engaging way to write collaboratively, think through ideas from another point of view, or just have a more interesting conversation than "summarize this document." This guide covers how character chat works and, more usefully, how to write personas and prompts that produce good results.
 
 ## What AI roleplay chat actually is
 
-At its core, a language model predicts the next piece of text given everything before it. Roleplay leverages this directly: if you establish that the model is playing a particular character, the model continues the conversation *as* that character, because that is the most likely continuation of the text you have set up.
+At its core, a language model predicts the next piece of text given everything before it. Modern chat models are transformers that generate text autoregressively, one token at a time, an approach introduced in Google's 2017 paper "Attention Is All You Need." Roleplay leverages this directly: if you establish that the model is playing a particular character, the model continues the conversation *as* that character, because that is the most likely continuation of the text you have set up.
 
 That means the quality of a roleplay is almost entirely determined by the setup. A vague instruction like "pretend to be a detective" gives the model very little to work with, so it falls back on clichés. A rich, specific persona gives it a lot to work with, and the character comes alive. Roleplay is less about the model and more about how clearly you describe who it should be.
 

@@ -1,0 +1,25 @@
+# Cong Le Apps
+
+> Indie iOS apps by Cong Le — utilities, family, fishing, AI chat, and games. Every app has a landing page under /apps/<slug>/; guides live on the blog.
+
+## Apps
+
+- [Frankly AI: Uncensored Chat](https://www.cong-le.com/apps/frankly-ai/): Unfiltered AI companion & roleplay chat for iPhone
+- [Ollama Connect](https://www.cong-le.com/apps/ollama-connect/): iOS client for chatting with local LLMs served by Ollama
+- [Baby Screen Lock: Kid Safe](https://www.cong-le.com/apps/baby-screen-lock/): Lock the iPhone screen so babies and toddlers can watch safely
+- [Hoop Quest: Basketball Sim](https://www.cong-le.com/apps/hoop-quest/): Basketball career simulator game for iPhone
+- [Solunar: Best Fishing Times](https://www.cong-le.com/apps/solunar-fishing/): Solunar calendar predicting the best fishing times
+- [Anniversary Tracker](https://www.cong-le.com/apps/anniversary-tracker/): Track anniversaries, countdowns, and meaningful dates
+- [All apps](https://www.cong-le.com/#apps): full portfolio (53 apps on the App Store)
+
+## Blog
+
+- [Blog index](https://www.cong-le.com/blog/)
+- [What Is the Best Time to Fish Today?](https://www.cong-le.com/blog/best-time-to-fish-today/): Find the best time to fish today using major and minor feeding windows, moon position, and a simple daily rating anglers actually trust.
+- [How to Chat with Ollama from Your iPhone](https://www.cong-le.com/blog/how-to-chat-with-ollama-from-your-iphone/): Set up an Ollama iPhone client in minutes: run Ollama on your Mac or PC, expose it on your network, and chat with your local models on the go.
+- [How to Lock Your iPhone Screen for a Baby](https://www.cong-le.com/blog/lock-iphone-screen-for-baby/): Learn how to lock your iPhone screen for a baby using Guided Access, plus a faster app-based alternative that keeps little fingers from causing chaos.
+
+## Legal
+
+- [Privacy](https://www.cong-le.com/privacy.html)
+- [Terms](https://www.cong-le.com/terms.html)

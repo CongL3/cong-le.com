@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "best-time-to-fish-today",
+    "title": "What Is the Best Time to Fish Today?",
+    "description": "Find the best time to fish today using major and minor feeding windows, moon position, and a simple daily rating anglers actually trust.",
+    "app": "solunar-fishing",
+    "publishDate": "2026-07-10",
+    "updated": "2026-07-11"
+  },
+  {
+    "slug": "how-to-chat-with-ollama-from-your-iphone",
+    "title": "How to Chat with Ollama from Your iPhone",
+    "description": "Set up an Ollama iPhone client in minutes: run Ollama on your Mac or PC, expose it on your network, and chat with your local models on the go.",
+    "app": "ollama-connect",
+    "publishDate": "2026-07-10",
+    "updated": "2026-07-11"
+  },
+  {
+    "slug": "lock-iphone-screen-for-baby",
+    "title": "How to Lock Your iPhone Screen for a Baby",
+    "description": "Learn how to lock your iPhone screen for a baby using Guided Access, plus a faster app-based alternative that keeps little fingers from causing chaos.",
+    "app": "baby-screen-lock",
+    "publishDate": "2026-07-10",
+    "updated": "2026-07-11"
+  }
+]

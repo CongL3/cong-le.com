@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/build-blog.mjs && node scripts/generate-sitemap.mjs",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "sync": "node scripts/sync-apps.mjs",
     "blog:build": "node scripts/build-blog.mjs",
