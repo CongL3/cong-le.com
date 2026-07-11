@@ -75,7 +75,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-rose-500",
     iconUrl: "/images/apps/1570714816/icon.jpg",
     isFeatured: true,
-    url: "https://apps.apple.com/gb/app/anniversary-tracker/id1570714816?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/anniversary-tracker/id1570714816?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/anniversary-tracker/",
     screenshots: [
       "/images/apps/1570714816/screenshot-1.jpg",
@@ -91,7 +91,7 @@ export const APPS: AppData[] = [
     description: "Chat with AI — frank, uncensored, 100% on your device.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6766366146/icon.jpg",
-    url: "https://apps.apple.com/gb/app/frankly-ai-uncensored-chat/id6766366146?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/frankly-ai-uncensored-chat/id6766366146?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/frankly-ai/",
   },
   {
@@ -101,7 +101,7 @@ export const APPS: AppData[] = [
     description: "Track relationship milestones and day counts.",
     iconColor: "bg-rose-400",
     iconUrl: "/images/apps/1634973558/icon.jpg",
-    url: "https://apps.apple.com/gb/app/couple-days-counter/id1634973558?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/couple-days-counter/id1634973558?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/couple-days-counter/",
     screenshots: [
       "/images/apps/1634973558/screenshot-1.jpg",
@@ -118,7 +118,7 @@ export const APPS: AppData[] = [
     description: "A private chat client for Ollama on iPhone.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6769891596/icon.jpg",
-    url: "https://apps.apple.com/gb/app/ollama-connect/id6769891596?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/ollama-connect/id6769891596?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/ollama-connect/",
   },
   {
@@ -128,7 +128,7 @@ export const APPS: AppData[] = [
     description: "Build a full football career from first prospect to club legend.",
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6777125671/icon.jpg",
-    url: "https://apps.apple.com/gb/app/football-career-quest/id6777125671?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/football-career-quest/id6777125671?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/football-career-quest/",
   },
   {
@@ -138,7 +138,7 @@ export const APPS: AppData[] = [
     description: "Keep your little one entertained with age-appropriate activities while the screen stays locked.",
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6761378897/icon.jpg",
-    url: "https://apps.apple.com/gb/app/baby-screen-lock-kid-safe/id6761378897?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/baby-screen-lock-kid-safe/id6761378897?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/baby-screen-lock/",
   },
   {
@@ -148,7 +148,7 @@ export const APPS: AppData[] = [
     description: "Build a basketball career from backyard prospect to pro league legend.",
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6775279715/icon.jpg",
-    url: "https://apps.apple.com/gb/app/hoop-quest-basketball-sim/id6775279715?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/hoop-quest-basketball-sim/id6775279715?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/hoop-quest/",
   },
   {
@@ -158,7 +158,7 @@ export const APPS: AppData[] = [
     description: "Stay connected with your partner through shared virtual pets, mood tracking, and daily love notes.",
     iconColor: "bg-rose-400",
     iconUrl: "/images/apps/6761291886/icon.jpg",
-    url: "https://apps.apple.com/gb/app/lovepet-pookie-couple-app/id6761291886?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/lovepet-pookie-couple-app/id6761291886?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/lovepet-pookie-couple-app/",
   },
   {
@@ -168,7 +168,7 @@ export const APPS: AppData[] = [
     description: "Chat with AI — 100% private, 100% on your device.",
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6761863969/icon.jpg",
-    url: "https://apps.apple.com/gb/app/privatechat-ai-ollama-llm/id6761863969?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/privatechat-ai-ollama-llm/id6761863969?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/privatechat-ai-ollama-llm/",
   },
   {
@@ -178,7 +178,7 @@ export const APPS: AppData[] = [
     description: "Visual routine timers designed to help kids stay focused and independent.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6747147301/icon.jpg",
-    url: "https://apps.apple.com/gb/app/kids-timer-visual-countdown/id6747147301?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/kids-timer-visual-countdown/id6747147301?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/kids-timer/",
   },
   {
@@ -188,7 +188,7 @@ export const APPS: AppData[] = [
     description: "Predict major and minor feeding periods with proven solunar theory for the best fishing times.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6760960543/icon.jpg",
-    url: "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/solunar-fishing/",
   },
   {
@@ -198,7 +198,7 @@ export const APPS: AppData[] = [
     description: "A clean interval timer and workout log built for skipping and jump rope training.",
     iconColor: "bg-rose-400",
     iconUrl: "/images/apps/6771269878/icon.jpg",
-    url: "https://apps.apple.com/gb/app/jump-rope-timer-tracker/id6771269878?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/jump-rope-timer-tracker/id6771269878?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/jump-rope-timer-tracker/",
   },
   {
@@ -208,7 +208,7 @@ export const APPS: AppData[] = [
     description: "Lightweight link manager to quickly save and organize useful URLs.",
     iconColor: "bg-emerald-500",
     iconUrl: "/images/apps/6743759106/icon.jpg",
-    url: "https://apps.apple.com/gb/app/link-saver-fast-and-easy/id6743759106?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/link-saver-fast-and-easy/id6743759106?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/link-saver-fast-and-easy/",
   },
   {
@@ -218,7 +218,7 @@ export const APPS: AppData[] = [
     description: "See your life in weeks and know exactly how much time you have left.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6761100038/icon.jpg",
-    url: "https://apps.apple.com/gb/app/life-countdown-age-calculator/id6761100038?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/life-countdown-age-calculator/id6761100038?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/life-countdown-age-calculator/",
   },
   {
@@ -228,7 +228,7 @@ export const APPS: AppData[] = [
     description: "Simple timer and stopwatch utility.",
     iconColor: "bg-blue-400",
     iconUrl: "/images/apps/6737737475/icon.jpg",
-    url: "https://apps.apple.com/gb/app/simple-timer-stopwatch-clock/id6737737475?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/simple-timer-stopwatch-clock/id6737737475?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/simple-timer-stopwatch-clock/",
   },
   {
@@ -238,7 +238,7 @@ export const APPS: AppData[] = [
     description: "Know exactly when the light gets good — every golden hour and light window a photographer needs.",
     iconColor: "bg-indigo-500",
     iconUrl: "/images/apps/6760960439/icon.jpg",
-    url: "https://apps.apple.com/gb/app/golden-hour-light-planner/id6760960439?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/golden-hour-light-planner/id6760960439?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/golden-hour-light-planner/",
   },
   {
@@ -248,7 +248,7 @@ export const APPS: AppData[] = [
     description: "Auto-transcribe your videos into subtitles in 30 seconds, not 30 minutes.",
     iconColor: "bg-indigo-500",
     iconUrl: "/images/apps/6765780052/icon.jpg",
-    url: "https://apps.apple.com/gb/app/captions-auto-video-subtitles/id6765780052?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/captions-auto-video-subtitles/id6765780052?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/captions-auto-video-subtitles/",
   },
   {
@@ -258,7 +258,7 @@ export const APPS: AppData[] = [
     description: "Private, offline AI image generation on iPhone.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6776417249/icon.jpg",
-    url: "https://apps.apple.com/gb/app/local-ai-image-generator/id6776417249?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/local-ai-image-generator/id6776417249?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/local-ai-image-generator/",
   },
   {
@@ -268,7 +268,7 @@ export const APPS: AppData[] = [
     description: "A private document scanner wallet for the records your household needs when timing matters.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6776387674/icon.jpg",
-    url: "https://apps.apple.com/gb/app/householdvault-id-docs/id6776387674?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/householdvault-id-docs/id6776387674?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/householdvault-id-docs/",
   },
   {
@@ -278,7 +278,7 @@ export const APPS: AppData[] = [
     description: "Pack together from one shared checklist for families, friends, and travel groups.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6773508857/icon.jpg",
-    url: "https://apps.apple.com/gb/app/pack-planner-group-lists/id6773508857?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/pack-planner-group-lists/id6773508857?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/pack-planner-group-lists/",
   },
   {
@@ -288,7 +288,7 @@ export const APPS: AppData[] = [
     description: "Start solids with practical baby-led weaning, puree, and finger-food prep ideas.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6772686797/icon.jpg",
-    url: "https://apps.apple.com/gb/app/tiny-table-blw-ideas-purees/id6772686797?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/tiny-table-blw-ideas-purees/id6772686797?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/tiny-table-blw-ideas-purees/",
   },
   {
@@ -298,7 +298,7 @@ export const APPS: AppData[] = [
     description: "A clean soap and lye calculator for handmade soap makers.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6772685450/icon.jpg",
-    url: "https://apps.apple.com/gb/app/soapcraft-soap-calculator/id6772685450?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/soapcraft-soap-calculator/id6772685450?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/soapcraft-soap-calculator/",
   },
   {
@@ -308,7 +308,7 @@ export const APPS: AppData[] = [
     description: "A private anime chat app that runs on your iPhone.",
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6772072727/icon.jpg",
-    url: "https://apps.apple.com/gb/app/anime-chat-private-ai/id6772072727?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/anime-chat-private-ai/id6772072727?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/anime-chat-private-ai/",
   },
   {
@@ -318,7 +318,7 @@ export const APPS: AppData[] = [
     description: "See your exact age in years, months, and days — instantly.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6770217651/icon.jpg",
-    url: "https://apps.apple.com/gb/app/age-calculator-how-old-am-i/id6770217651?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/age-calculator-how-old-am-i/id6770217651?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/age-calculator-how-old-am-i/",
   },
   {
@@ -328,7 +328,7 @@ export const APPS: AppData[] = [
     description: "An all-in-one document scanner that works completely offline. No account, no subscription.",
     iconColor: "bg-slate-500",
     iconUrl: "/images/apps/6769176993/icon.jpg",
-    url: "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/docscanner-sign-documents/",
   },
   {
@@ -338,7 +338,7 @@ export const APPS: AppData[] = [
     description: "A private AI writing and story chat app for scenes, dialogue, and recurring characters.",
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6768801666/icon.jpg",
-    url: "https://apps.apple.com/gb/app/persona-ai-story-chat/id6768801666?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/persona-ai-story-chat/id6768801666?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/persona-ai-story-chat/",
   },
   {
@@ -348,7 +348,7 @@ export const APPS: AppData[] = [
     description: "A private AI code assistant that runs on your iPhone.",
     iconColor: "bg-red-400",
     iconUrl: "/images/apps/6768466507/icon.jpg",
-    url: "https://apps.apple.com/gb/app/codingchat-ai/id6768466507?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/codingchat-ai/id6768466507?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/codingchat-ai/",
   },
   {
@@ -358,7 +358,7 @@ export const APPS: AppData[] = [
     description: "Scan, discover, and rate no-alcohol and low-alcohol drinks.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6761860910/icon.jpg",
-    url: "https://apps.apple.com/gb/app/nolo-inspiration/id6761860910?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/nolo-inspiration/id6761860910?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/nolo-inspiration/",
   },
   {
@@ -368,7 +368,7 @@ export const APPS: AppData[] = [
     description: "The privacy-first way to create and manage Apple Wallet passes for loyalty and membership cards.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6761440158/icon.jpg",
-    url: "https://apps.apple.com/gb/app/cardkeeper-wallet-passes/id6761440158?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/cardkeeper-wallet-passes/id6761440158?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/cardkeeper-wallet-passes/",
   },
   {
@@ -378,7 +378,7 @@ export const APPS: AppData[] = [
     description: "Know your personal burn time before you step outside, from clear-sky ultraviolet levels.",
     iconColor: "bg-amber-500",
     iconUrl: "/images/apps/6760960498/icon.jpg",
-    url: "https://apps.apple.com/gb/app/uv-index-burn-time-tracker/id6760960498?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/uv-index-burn-time-tracker/id6760960498?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/uv-index-burn-time-tracker/",
   },
   {
@@ -388,7 +388,7 @@ export const APPS: AppData[] = [
     description: "See what the moon is doing right now in under a second — no internet required.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6760960352/icon.jpg",
-    url: "https://apps.apple.com/gb/app/moon-phases-lunar-tracker/id6760960352?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/moon-phases-lunar-tracker/id6760960352?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/moon-phases-lunar-tracker/",
   },
   {
@@ -398,7 +398,7 @@ export const APPS: AppData[] = [
     description: "結婚・出産・香典・快気祝いなど、日本の贈答マナーに沿ったお返しの期限と金額を自動計算。",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6760551450/icon.jpg",
-    url: "https://apps.apple.com/gb/app/%E3%81%8A%E8%BF%94%E3%81%97-%E5%86%85%E7%A5%9D%E3%81%84-%E9%A6%99%E5%85%B8%E8%BF%94%E3%81%97%E7%AE%A1%E7%90%86/id6760551450?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/%E3%81%8A%E8%BF%94%E3%81%97-%E5%86%85%E7%A5%9D%E3%81%84-%E9%A6%99%E5%85%B8%E8%BF%94%E3%81%97%E7%AE%A1%E7%90%86/id6760551450?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/okaeshi/",
   },
   {
@@ -408,7 +408,7 @@ export const APPS: AppData[] = [
     description: "Swipe through 10,000+ baby names from 60+ cultural origins and match with your partner.",
     iconColor: "bg-pink-500",
     iconUrl: "/images/apps/6760255587/icon.jpg",
-    url: "https://apps.apple.com/gb/app/baby-names-swipe-pick/id6760255587?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/baby-names-swipe-pick/id6760255587?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/baby-names/",
   },
   {
@@ -418,7 +418,7 @@ export const APPS: AppData[] = [
     description: "Track your gut health in seconds.",
     iconColor: "bg-rose-400",
     iconUrl: "/images/apps/6760222884/icon.jpg",
-    url: "https://apps.apple.com/gb/app/poop-tracker-gut-health/id6760222884?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/poop-tracker-gut-health/id6760222884?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/poop-tracker-gut-health/",
   },
   {
@@ -428,7 +428,7 @@ export const APPS: AppData[] = [
     description: "Colour, draw, and create with a kids-first colouring app. Fully offline.",
     iconColor: "bg-violet-500",
     iconUrl: "/images/apps/6759912464/icon.jpg",
-    url: "https://apps.apple.com/gb/app/kids-coloring-book-draw/id6759912464?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/kids-coloring-book-draw/id6759912464?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/coloring/",
   },
   {
@@ -438,7 +438,7 @@ export const APPS: AppData[] = [
     description: "A quiet, offline prayer and Scripture app built for simple daily consistency.",
     iconColor: "bg-red-400",
     iconUrl: "/images/apps/6759859294/icon.jpg",
-    url: "https://apps.apple.com/gb/app/bible-prayer-companion/id6759859294?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/bible-prayer-companion/id6759859294?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/bible-prayer/",
   },
   {
@@ -448,7 +448,7 @@ export const APPS: AppData[] = [
     description: "Create passport, visa, and ID photos that meet official government standards — processed on device.",
     iconColor: "bg-indigo-500",
     iconUrl: "/images/apps/6747094958/icon.jpg",
-    url: "https://apps.apple.com/gb/app/passport-photo-visa-id/id6747094958?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/passport-photo-visa-id/id6747094958?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/passport-photo-visa-id/",
   },
   {
@@ -458,7 +458,7 @@ export const APPS: AppData[] = [
     description: "Identify fish species with AI and keep useful details close while outdoors.",
     iconColor: "bg-cyan-600",
     iconUrl: "/images/apps/6746223793/icon.jpg",
-    url: "https://apps.apple.com/gb/app/fish-finder-ai-identifier/id6746223793?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/fish-finder-ai-identifier/id6746223793?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/fish-finder/",
   },
   {
@@ -468,7 +468,7 @@ export const APPS: AppData[] = [
     description: "Simple focus sessions and breaks based on the Pomodoro method.",
     iconColor: "bg-orange-500",
     iconUrl: "/images/apps/6744445553/icon.jpg",
-    url: "https://apps.apple.com/gb/app/pomodoro-timer-focus/id6744445553?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/pomodoro-timer-focus/id6744445553?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/pomodoro-timer-focus/",
   },
   {
@@ -478,7 +478,7 @@ export const APPS: AppData[] = [
     description: "Your ultimate Pokémon card collecting companion — scan, track, and price your collection.",
     iconColor: "bg-yellow-500",
     iconUrl: "/images/apps/6743774763/icon.jpg",
-    url: "https://apps.apple.com/gb/app/carddex-tcg-scanner-price/id6743774763?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/carddex-tcg-scanner-price/id6743774763?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/carddex-tcg-scanner-price/",
   },
   {
@@ -488,7 +488,7 @@ export const APPS: AppData[] = [
     description: "Know exactly when the sun rises and sets, to the minute, offline, anywhere on Earth.",
     iconColor: "bg-amber-500",
     iconUrl: "/images/apps/6740433779/icon.jpg",
-    url: "https://apps.apple.com/gb/app/sun-times-sunrise-sunset/id6740433779?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/sun-times-sunrise-sunset/id6740433779?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/sun-times-sunrise-sunset/",
   },
   {
@@ -498,7 +498,7 @@ export const APPS: AppData[] = [
     description: "Compress large videos quickly while keeping quality good enough to share.",
     iconColor: "bg-indigo-500",
     iconUrl: "/images/apps/6740351118/icon.jpg",
-    url: "https://apps.apple.com/gb/app/vidcompress-video-compressor/id6740351118?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/vidcompress-video-compressor/id6740351118?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/vidcompress-video-compressor/",
   },
   {
@@ -508,7 +508,7 @@ export const APPS: AppData[] = [
     description: "Clean up your photo library and reclaim storage — all processed privately on your device.",
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6740165217/icon.jpg",
-    url: "https://apps.apple.com/gb/app/photo-cleaner-compressor/id6740165217?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/photo-cleaner-compressor/id6740165217?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/photo-cleaner-compressor/",
   },
   {
@@ -518,7 +518,7 @@ export const APPS: AppData[] = [
     description: "Smart birthday reminders with countdowns so important dates never slip.",
     iconColor: "bg-pink-500",
     iconUrl: "/images/apps/6739454115/icon.jpg",
-    url: "https://apps.apple.com/gb/app/birthday-reminder-countdowns/id6739454115?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/birthday-reminder-countdowns/id6739454115?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/birthday-reminder/",
   },
   {
@@ -528,7 +528,7 @@ export const APPS: AppData[] = [
     description: "Calming white noise and ambient sounds for sleep and focus.",
     iconColor: "bg-sky-500",
     iconUrl: "/images/apps/6739187522/icon.jpg",
-    url: "https://apps.apple.com/gb/app/lullaby-pal-white-noise/id6739187522?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/lullaby-pal-white-noise/id6739187522?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/lullaby-pal/",
   },
   {
@@ -538,7 +538,7 @@ export const APPS: AppData[] = [
     description: "Track baby kick sessions with simple logs and timing.",
     iconColor: "bg-pink-400",
     iconUrl: "/images/apps/6563145060/icon.jpg",
-    url: "https://apps.apple.com/gb/app/baby-kicks-track-movements/id6563145060?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/baby-kicks-track-movements/id6563145060?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/baby-kicks-track-movements/",
     screenshots: [
       "/images/apps/6563145060/screenshot-1.jpg",
@@ -555,7 +555,7 @@ export const APPS: AppData[] = [
     description: "Build Japanese vocabulary and daily language habits with bite-sized practice.",
     iconColor: "bg-red-400",
     iconUrl: "/images/apps/1637507803/icon.jpg",
-    url: "https://apps.apple.com/gb/app/learn-japanese/id1637507803?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/learn-japanese/id1637507803?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/learn-japanese/",
   },
   {
@@ -565,7 +565,7 @@ export const APPS: AppData[] = [
     description: "Minimal task manager focused on one thing at a time.",
     iconColor: "bg-slate-500",
     iconUrl: "/images/apps/1633843163/icon.jpg",
-    url: "https://apps.apple.com/gb/app/to-do-list-one-focus/id1633843163?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/to-do-list-one-focus/id1633843163?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/to-do-list-one-focus/",
     screenshots: [
       "/images/apps/1633843163/screenshot-1.jpg",
@@ -582,7 +582,7 @@ export const APPS: AppData[] = [
     description: "Classic strategy board game implementation.",
     iconColor: "bg-neutral-600",
     iconUrl: "/images/apps/1590705319/icon.jpg",
-    url: "https://apps.apple.com/gb/app/othello-teamcong/id1590705319?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/othello-teamcong/id1590705319?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/othello-teamcong/",
     screenshots: [
       "/images/apps/1590705319/screenshot-1.jpg",
@@ -597,7 +597,7 @@ export const APPS: AppData[] = [
     description: "Arcade runner game with fast-paced gameplay.",
     iconColor: "bg-orange-500",
     iconUrl: "/images/apps/1582701318/icon.jpg",
-    url: "https://apps.apple.com/gb/app/run-run-run/id1582701318?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/run-run-run/id1582701318?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/run-run-run/",
     screenshots: [
       "/images/apps/1582701318/screenshot-1.jpg",
@@ -613,7 +613,7 @@ export const APPS: AppData[] = [
     description: "Classic solitaire card game for quick sessions.",
     iconColor: "bg-emerald-600",
     iconUrl: "/images/apps/1582328906/icon.jpg",
-    url: "https://apps.apple.com/gb/app/solitaire-teamcong/id1582328906?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/solitaire-teamcong/id1582328906?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/solitaire-teamcong/",
     screenshots: [
       "/images/apps/1582328906/screenshot-1.jpg",
@@ -628,7 +628,7 @@ export const APPS: AppData[] = [
     description: "Casual game: collect stars and avoid obstacles.",
     iconColor: "bg-cyan-500",
     iconUrl: "/images/apps/1580103922/icon.jpg",
-    url: "https://apps.apple.com/gb/app/fish-run-collect-stars/id1580103922?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/fish-run-collect-stars/id1580103922?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/fish-run-collect-stars/",
     screenshots: [
       "/images/apps/1580103922/screenshot-1.jpg",
@@ -644,7 +644,7 @@ export const APPS: AppData[] = [
     description: "Plant care reminders and watering schedules.",
     iconColor: "bg-green-500",
     iconUrl: "/images/apps/1573313539/icon.jpg",
-    url: "https://apps.apple.com/gb/app/water-them-plants/id1573313539?ct=congle-web-home&mt=8",
+    url: "https://apps.apple.com/gb/app/water-them-plants/id1573313539?pt=19678800&ct=congle-web-home&mt=8",
     landingPage: "/apps/water-them-plants/",
     screenshots: [
       "/images/apps/1573313539/screenshot-1.jpg",

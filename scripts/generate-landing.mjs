@@ -241,7 +241,7 @@ function renderPage(data) {
     description, price, currency, rating, ratingCount,
   } = data;
 
-  const storeUrl = `https://apps.apple.com/app/id${trackId}?ct=congle-web-${slug}&mt=8`;
+  const storeUrl = `https://apps.apple.com/app/id${trackId}?pt=19678800&ct=congle-web-${slug}&mt=8`;
   const canonical = `${SITE_URL}/apps/${slug}/`;
   const imageUrl = `${SITE_URL}${icon}`;
   const subtitle = subtitleFromName(trackName);
