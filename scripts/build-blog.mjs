@@ -40,10 +40,10 @@ function jsonLd(obj) {
 }
 
 /** Shared <head> block matching the app landing page visual style. */
-function headBlock({ title, description, canonical, ogType, ogImage, jsonLdBlocks = [] }) {
+function headBlock({ title, description, canonical, ogType, ogImage, jsonLdBlocks = [], appId }) {
   return `  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+${appId ? `  <meta name="apple-itunes-app" content="app-id=${appId}">\n` : ''}
   <title>${esc(title)}</title>
   <meta name="description" content="${escAttr(description)}">
   <link rel="canonical" href="${escAttr(canonical)}">
@@ -66,16 +66,22 @@ ${jsonLdBlocks
   .map((b) => `  <script type="application/ld+json">\n${b}\n  </script>`)
   .join('\n')}
 
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
-          colors: { sky: { cta: '#3B82F6' } },
-          fontFamily: {
-            display: ['"DM Serif Display"', 'Georgia', 'serif'],
-            body: ['Inter', 'system-ui', 'sans-serif'],
-          }
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
         }
       }
     }
@@ -83,51 +89,52 @@ ${jsonLdBlocks
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    html { scroll-behavior: smooth; }
     .fade-up {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(24px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
-    .navbar.scrolled {
-      background-color: rgba(230, 243, 255, 0.95) !important;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(46,61,92,0.1);
-    }
-    /* Readable article prose */
-    .prose { color: #3A4A63; font-size: 1.075rem; line-height: 1.8; }
+    .fade-up.visible { opacity: 1; transform: none; }
+    /* Readable article prose — Inter, homepage palette, dark-mode aware */
+    .prose { color: #374151; font-size: 1.075rem; line-height: 1.8; }
+    .dark .prose { color: #d1d5db; }
     .prose h2 {
-      font-family: '"DM Serif Display"', Georgia, serif;
-      font-size: 1.9rem; color: #2E3D5C;
-      margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.25;
+      font-weight: 800; font-size: 1.8rem; line-height: 1.25;
+      letter-spacing: -0.02em; color: #111827;
+      margin-top: 2.5rem; margin-bottom: 1rem;
     }
+    .dark .prose h2 { color: #ffffff; }
     .prose h3 {
-      font-family: Inter, system-ui, sans-serif; font-weight: 700;
-      font-size: 1.3rem; color: #2E3D5C;
+      font-weight: 700; font-size: 1.3rem; color: #111827;
       margin-top: 1.75rem; margin-bottom: 0.6rem;
     }
+    .dark .prose h3 { color: #f3f4f6; }
     .prose p { margin-bottom: 1.25rem; }
     .prose ul, .prose ol { margin: 1rem 0 1.5rem 1.25rem; }
     .prose ul { list-style: disc; }
     .prose ol { list-style: decimal; }
     .prose li { margin-bottom: 0.5rem; padding-left: 0.25rem; }
-    .prose a { color: #2563EB; text-decoration: underline; }
+    .prose a { color: #2563eb; text-decoration: underline; text-underline-offset: 2px; }
+    .dark .prose a { color: #60a5fa; }
     .prose a:hover { opacity: 0.8; }
-    .prose strong { color: #2E3D5C; }
+    .prose strong { color: #111827; font-weight: 700; }
+    .dark .prose strong { color: #f3f4f6; }
     .prose blockquote {
-      border-left: 4px solid #93C5FD; padding-left: 1.25rem;
-      margin: 1.5rem 0; color: #557090; font-style: italic;
+      border-left: 4px solid #93c5fd; padding-left: 1.25rem;
+      margin: 1.5rem 0; color: #6b7280; font-style: italic;
     }
+    .dark .prose blockquote { border-left-color: #3b82f6; color: #9ca3af; }
     .prose code {
-      background: rgba(46,61,92,0.08); padding: 0.15em 0.4em;
+      background: rgba(17,24,39,0.08); padding: 0.15em 0.4em;
       border-radius: 6px; font-size: 0.9em;
     }
+    .dark .prose code { background: rgba(255,255,255,0.1); }
     .prose pre {
-      background: #1E293B; color: #E2E8F0; padding: 1.1rem 1.25rem;
+      background: #1e293b; color: #e2e8f0; padding: 1.1rem 1.25rem;
       border-radius: 12px; overflow-x: auto; margin: 1.5rem 0;
     }
     .prose pre code { background: none; padding: 0; color: inherit; }
@@ -136,36 +143,42 @@ ${jsonLdBlocks
   </style>`;
 }
 
-/** Site navbar (links back to portfolio home). */
+/** Sun/moon theme-toggle icons (lucide-style), swapped via the `dark` class. */
+const THEME_TOGGLE = `<button type="button" onclick="__toggleTheme()" aria-label="Toggle dark mode" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 hidden dark:block"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>`;
+
+/** Shared site header — matches the React homepage Navbar. */
 function navbar() {
-  return `  <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent">
-    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/blog/" class="font-display text-lg" style="color: #2E3D5C;">Cong Le Apps &mdash; Blog</a>
-      <a href="/" class="inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full text-sm hover:opacity-90 transition-colors" style="background: #3B82F6; color: white;">
-        All Apps
-      </a>
+  return `  <header class="fixed top-0 inset-x-0 z-50 bg-white/85 dark:bg-black/85 backdrop-blur-md border-b border-gray-200 dark:border-white/10 transition-colors">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold text-xl tracking-tight text-gray-900 dark:text-white">Cong Le</a>
+      <nav class="flex items-center gap-6 sm:gap-8">
+        <a href="/#apps" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Apps</a>
+        <a href="/blog/" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blog</a>
+        ${THEME_TOGGLE}
+      </nav>
     </div>
-  </nav>`;
+  </header>`;
 }
 
-/** Site footer. */
+/** Shared site footer — matches the React homepage Footer tone. */
 function footer() {
   const year = new Date().getUTCFullYear();
-  return `  <footer class="py-12 mt-16" style="background-color: #D4E8F5;">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <a href="/blog/" class="font-display text-lg" style="color: #2E3D5C;">Cong Le Apps &mdash; Blog</a>
-        <div class="flex flex-wrap items-center gap-6 text-sm" style="color: #557090;">
-          <a href="/blog/" class="hover:opacity-70 transition-colors">All posts</a>
-          <a href="/privacy.html" class="hover:opacity-70 transition-colors">Privacy Policy</a>
-          <a href="/terms.html" class="hover:opacity-70 transition-colors">Terms</a>
-          <a href="/developer.html" class="hover:opacity-70 transition-colors">Support</a>
-          <a href="/" class="hover:opacity-70 transition-colors">More apps by Cong Le</a>
-        </div>
+  return `  <footer class="bg-gray-900 dark:bg-black text-white border-t border-gray-800 dark:border-gray-900 mt-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="font-bold text-xl">Cong Le</a>
+        <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+          <a href="/developer.html" class="hover:text-white transition-colors">Developer Support</a>
+          <a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/terms.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        </nav>
       </div>
-      <div class="mt-8 text-center text-sm" style="color: #7A9AB5;">
-        &copy; ${year} Cong Le. All rights reserved.
-      </div>
+      <p class="mt-8 text-sm text-gray-500">&copy; ${year} Cong Le. All rights reserved.</p>
     </div>
   </footer>`;
 }
@@ -175,14 +188,14 @@ const APPLE_SVG = `<svg class="w-6 h-6" viewBox="0 0 384 512" fill="currentColor
 /** Download CTA box derived from an app's frontmatter. */
 function ctaBox(app) {
   if (!app) return '';
-  return `  <aside class="fade-up mt-12 rounded-3xl p-6 sm:p-8" style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.18);">
+  return `  <aside class="fade-up mt-12 rounded-2xl p-6 sm:p-8 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm">
     <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
       <img src="${escAttr(app.icon)}" alt="${escAttr(app.name)} icon" class="w-20 h-20 rounded-2xl shadow-md flex-shrink-0">
       <div class="flex-1">
-        <h3 class="font-display text-2xl mb-1" style="color: #2E3D5C;"><a href="${escAttr(app.landingPage)}" style="color:#2E3D5C; text-decoration:none;">${esc(app.name)}</a></h3>
-        <p class="mb-4" style="color: #557090;">${esc(app.oneLiner)}</p>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1"><a href="${escAttr(app.landingPage)}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">${esc(app.name)}</a></h3>
+        <p class="text-gray-500 dark:text-gray-400 mb-4">${esc(app.oneLiner)}</p>
         <a href="${escAttr(app.storeUrl)}" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-3 font-bold px-6 py-3 rounded-full text-base hover:opacity-90 transition-colors shadow-lg" style="background: #3B82F6; color: white;">
+           class="inline-flex items-center gap-2.5 font-semibold px-6 py-3 rounded-full text-base text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm">
           ${APPLE_SVG}
           Download on the App Store
         </a>
@@ -201,33 +214,32 @@ function relatedSection(current, allPublished) {
   const items = picks
     .map(
       (p) => `      <li>
-        <a href="/blog/${escAttr(p.data.slug)}/" class="block rounded-2xl p-5 hover:opacity-90 transition" style="background: rgba(46,61,92,0.05);">
-          <span class="block font-semibold mb-1" style="color: #2E3D5C;">${esc(p.data.title)}</span>
-          <span class="block text-sm" style="color: #557090;">${esc(p.data.description)}</span>
+        <a href="/blog/${escAttr(p.data.slug)}/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <span class="block font-semibold text-gray-900 dark:text-white mb-1">${esc(p.data.title)}</span>
+          <span class="block text-sm text-gray-500 dark:text-gray-400">${esc(p.data.description)}</span>
         </a>
       </li>`
     )
     .join('\n');
   return `  <section class="fade-up mt-14">
-    <h2 class="font-display text-2xl mb-5" style="color: #2E3D5C;">Related posts</h2>
+    <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-5">Related posts</h2>
     <ul class="grid gap-4">
 ${items}
     </ul>
   </section>`;
 }
 
-const bodyOpen = `<body class="font-body" style="background: linear-gradient(180deg, #E6F3FF 0%, #E6FFF3 100%); background-attachment: fixed; color: #2E3D5C;">`;
+const bodyOpen = `<body class="bg-gray-50 dark:bg-black text-gray-900 dark:text-white antialiased selection:bg-blue-100 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-white transition-colors">`;
 
 const scrollScript = `  <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
-    });
+    function __toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
   </script>`;
 
 /** Human-friendly date, e.g. "10 July 2026". */
@@ -281,6 +293,7 @@ ${headBlock({
     ogType: 'article',
     ogImage,
     jsonLdBlocks: [jsonLd(blogPosting)],
+    appId: app?.trackId,
   })}
 </head>
 ${bodyOpen}
@@ -289,9 +302,9 @@ ${navbar()}
   <main class="max-w-2xl mx-auto px-6 pt-28 pb-4">
     <article>
       <header class="fade-up mb-10">
-        <a href="/blog/" class="text-sm font-semibold" style="color: #2563EB;">&larr; All posts</a>
-        <h1 class="font-display text-4xl md:text-5xl leading-tight mt-4 mb-4" style="color: #2E3D5C;">${esc(data.title)}</h1>
-        <p class="text-sm" style="color: #7A9AB5;">${data.publishDate ? `Published ${esc(prettyDate(data.publishDate))}` : ''}${app ? ` &middot; <a href="${escAttr(app.landingPage)}" style="color:#557090;">${esc(app.name)}</a>` : ''}</p>
+        <a href="/blog/" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">&larr; All posts</a>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">${esc(data.title)}</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">${data.publishDate ? `Published ${esc(prettyDate(data.publishDate))}` : ''}${app ? ` &middot; <a href="${escAttr(app.landingPage)}" class="text-blue-600 dark:text-blue-400 hover:opacity-80">${esc(app.name)}</a>` : ''}</p>
       </header>
       <div class="prose fade-up">
 ${contentHtml}
@@ -321,7 +334,7 @@ function renderIndex(allPublished) {
 
   let listing;
   if (allPublished.length === 0) {
-    listing = `      <p class="text-lg text-center py-16" style="color: #557090;">
+    listing = `      <p class="text-lg text-center py-16 text-gray-500 dark:text-gray-400">
         No posts yet &mdash; check back soon for guides, tips, and updates.
       </p>`;
   } else {
@@ -329,10 +342,10 @@ function renderIndex(allPublished) {
       .map((p) => {
         const app = getApp(p.data.app);
         return `      <li class="fade-up">
-        <a href="/blog/${escAttr(p.data.slug)}/" class="block rounded-3xl p-6 sm:p-8 hover:opacity-95 transition" style="background: rgba(46,61,92,0.05);">
-          <span class="block text-xs uppercase tracking-wide mb-2" style="color: #7A9AB5;">${p.data.publishDate ? esc(prettyDate(p.data.publishDate)) : ''}${app ? ` &middot; ${esc(app.name)}` : ''}</span>
-          <span class="block font-display text-2xl mb-2" style="color: #2E3D5C;">${esc(p.data.title)}</span>
-          <span class="block" style="color: #557090;">${esc(p.data.description)}</span>
+        <a href="/blog/${escAttr(p.data.slug)}/" class="block rounded-2xl p-6 sm:p-8 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <span class="block text-xs uppercase tracking-wide mb-2 text-gray-400 dark:text-gray-500">${p.data.publishDate ? esc(prettyDate(p.data.publishDate)) : ''}${app ? ` &middot; ${esc(app.name)}` : ''}</span>
+          <span class="block text-2xl font-bold text-gray-900 dark:text-white mb-2">${esc(p.data.title)}</span>
+          <span class="block text-gray-500 dark:text-gray-400">${esc(p.data.description)}</span>
         </a>
       </li>`;
       })
@@ -351,17 +364,18 @@ ${headBlock({
     ogType: 'website',
     ogImage: `${SITE_URL}/images/apps/${'1570714816'}/icon.jpg`,
     jsonLdBlocks: [jsonLd(website)],
+    appId: '1570714816',
   })}
 </head>
 ${bodyOpen}
 ${navbar()}
 
-  <header class="max-w-4xl mx-auto px-6 pt-32 pb-10 text-center fade-up">
-    <h1 class="font-display text-5xl md:text-6xl leading-tight mb-4" style="color: #2E3D5C;">The Blog</h1>
-    <p class="text-xl" style="color: #557090;">Guides, tips, and updates from the apps I build.</p>
+  <header class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-10 text-center fade-up">
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4 text-gray-900 dark:text-white">The Blog</h1>
+    <p class="text-xl text-gray-500 dark:text-gray-400">Guides, tips, and updates from the apps I build.</p>
   </header>
 
-  <main class="max-w-4xl mx-auto px-6 pb-8">
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
 ${listing}
   </main>
 

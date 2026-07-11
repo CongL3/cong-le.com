@@ -22,6 +22,7 @@ export interface AppData {
   iconUrl?: string;
   isFeatured?: boolean;
   url?: string;
+  landingPage?: string;
   screenshots?: string[];
 }
 

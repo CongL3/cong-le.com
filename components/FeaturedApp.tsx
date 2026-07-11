@@ -4,9 +4,9 @@ import { APPS } from '../constants';
 
 const FeaturedApp: React.FC = () => {
   const anniversaryApp = APPS.find(app => app.id === 'anniversary');
-  const cardValueApp = APPS.find(app => app.id === 'cardvalue');
-  const kidsTimerApp = APPS.find(app => app.id === 'kids-timer');
-  const sunriseApp = APPS.find(app => app.id === 'sunrise');
+  const franklyApp = APPS.find(app => app.id === 'frankly-ai');
+  const coupleDaysApp = APPS.find(app => app.id === 'couple-days');
+  const ollamaApp = APPS.find(app => app.id === 'ollama-connect');
 
   if (!anniversaryApp) return null;
 
@@ -97,12 +97,12 @@ const FeaturedApp: React.FC = () => {
 
         {/* Secondary Features Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {[cardValueApp, kidsTimerApp, sunriseApp].filter(Boolean).map((app) => (
+          {[franklyApp, coupleDaysApp, ollamaApp].filter(Boolean).map((app) => (
             <a
               key={app!.id}
-              href={app!.url || '#'}
-              target="_blank"
-              rel="noreferrer"
+              href={app!.landingPage || app!.url || '#'}
+              target={app!.landingPage ? undefined : '_blank'}
+              rel={app!.landingPage ? undefined : 'noreferrer'}
               className="bg-gray-900/60 dark:bg-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 group hover:-translate-y-1 flex flex-col"
             >
               {/* Screenshot */}
@@ -127,7 +127,7 @@ const FeaturedApp: React.FC = () => {
                 <h3 className="text-lg font-semibold text-white mb-1">{app!.name}</h3>
                 <p className="text-gray-400 text-sm mb-4 flex-1 leading-relaxed">{app!.description}</p>
                 <span className="text-blue-400 text-sm font-medium group-hover:text-blue-300 flex items-center gap-1 transition-colors">
-                  View on App Store
+                  {app!.landingPage ? 'Learn more' : 'View on App Store'}
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </div>

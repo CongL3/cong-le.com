@@ -30,7 +30,13 @@ const AppCard: React.FC<{ app: AppData }> = ({ app }) => (
         {app.category}
       </span>
     </div>
-    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{app.name}</h3>
+    {app.landingPage ? (
+      <a href={app.landingPage} className="block">
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{app.name}</h3>
+      </a>
+    ) : (
+      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{app.name}</h3>
+    )}
     <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
       {app.description}
     </p>
