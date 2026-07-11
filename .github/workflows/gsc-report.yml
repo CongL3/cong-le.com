@@ -1,4 +1,4 @@
-name: Weekly search report
+name: Weekly search & store report
 
 on:
   schedule:
@@ -20,11 +20,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Generate report
+      # ASC runs first so it writes seo-reports/asc/summary.json before the GSC
+      # step sends its ntfy push (which appends the store numbers).
+      - name: Generate App Store Connect report
+        env:
+          ASC_P8: ${{ secrets.ASC_P8 }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: node scripts/asc-weekly-report.mjs || echo "::warning::asc report failed"
+
+      - name: Generate Search Console report
         env:
           GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-        run: node scripts/gsc-weekly-report.mjs
+        run: node scripts/gsc-weekly-report.mjs || echo "::warning::gsc report failed"
 
       - name: Commit report
         run: |

@@ -1,0 +1,764 @@
+{
+  "generatedAt": "2026-07-11T10:50:36.686Z",
+  "apps": {
+    "1570714816": {
+      "name": "Anniversary Tracker",
+      "reports": {
+        "discovery": "r15-54b0edcc-2d6f-4d6e-b696-d76063eccddc",
+        "downloads": "r3-54b0edcc-2d6f-4d6e-b696-d76063eccddc",
+        "sessions": "r8-54b0edcc-2d6f-4d6e-b696-d76063eccddc",
+        "crashes": "r2-54b0edcc-2d6f-4d6e-b696-d76063eccddc",
+        "purchases": "r12-54b0edcc-2d6f-4d6e-b696-d76063eccddc"
+      },
+      "requestId": "54b0edcc-2d6f-4d6e-b696-d76063eccddc"
+    },
+    "1573313539": {
+      "name": "Water them plants",
+      "reports": {
+        "discovery": "r15-7a95cade-50ed-4fb8-a94a-2a947b3f963d",
+        "downloads": "r3-7a95cade-50ed-4fb8-a94a-2a947b3f963d",
+        "sessions": "r8-7a95cade-50ed-4fb8-a94a-2a947b3f963d",
+        "crashes": "r2-7a95cade-50ed-4fb8-a94a-2a947b3f963d",
+        "purchases": "r12-7a95cade-50ed-4fb8-a94a-2a947b3f963d"
+      },
+      "requestId": "7a95cade-50ed-4fb8-a94a-2a947b3f963d"
+    },
+    "1580103922": {
+      "name": "Fish Run - Collect stars",
+      "reports": {
+        "discovery": "r15-20adbc95-938c-469d-a6c4-8004bacb8f7a",
+        "downloads": "r3-20adbc95-938c-469d-a6c4-8004bacb8f7a",
+        "sessions": "r8-20adbc95-938c-469d-a6c4-8004bacb8f7a",
+        "crashes": "r2-20adbc95-938c-469d-a6c4-8004bacb8f7a",
+        "purchases": "r12-20adbc95-938c-469d-a6c4-8004bacb8f7a"
+      },
+      "requestId": "20adbc95-938c-469d-a6c4-8004bacb8f7a"
+    },
+    "1582328906": {
+      "name": "Solitaire - TEAMCONG",
+      "reports": {
+        "discovery": "r15-7a02367c-ed18-4ef0-b10a-fc2a69703a87",
+        "downloads": "r3-7a02367c-ed18-4ef0-b10a-fc2a69703a87",
+        "sessions": "r8-7a02367c-ed18-4ef0-b10a-fc2a69703a87",
+        "crashes": "r2-7a02367c-ed18-4ef0-b10a-fc2a69703a87",
+        "purchases": "r12-7a02367c-ed18-4ef0-b10a-fc2a69703a87"
+      },
+      "requestId": "7a02367c-ed18-4ef0-b10a-fc2a69703a87"
+    },
+    "1582701318": {
+      "name": "Run Run Run",
+      "reports": {
+        "discovery": "r15-aaa87870-a552-4e16-b3fb-3af1a5140b0e",
+        "downloads": "r3-aaa87870-a552-4e16-b3fb-3af1a5140b0e",
+        "sessions": "r8-aaa87870-a552-4e16-b3fb-3af1a5140b0e",
+        "crashes": "r2-aaa87870-a552-4e16-b3fb-3af1a5140b0e",
+        "purchases": "r12-aaa87870-a552-4e16-b3fb-3af1a5140b0e"
+      },
+      "requestId": "aaa87870-a552-4e16-b3fb-3af1a5140b0e"
+    },
+    "1590705319": {
+      "name": "Othello boardgame",
+      "reports": {
+        "discovery": "r15-80aed89e-9902-4b12-818f-c3a1608466ed",
+        "downloads": "r3-80aed89e-9902-4b12-818f-c3a1608466ed",
+        "sessions": "r8-80aed89e-9902-4b12-818f-c3a1608466ed",
+        "crashes": "r2-80aed89e-9902-4b12-818f-c3a1608466ed",
+        "purchases": "r12-80aed89e-9902-4b12-818f-c3a1608466ed"
+      },
+      "requestId": "80aed89e-9902-4b12-818f-c3a1608466ed"
+    },
+    "1633843163": {
+      "name": "to do リスト - やること管理アプリ",
+      "reports": {
+        "discovery": "r15-a382b6ca-c529-48e0-932a-89faf490658a",
+        "downloads": "r3-a382b6ca-c529-48e0-932a-89faf490658a",
+        "sessions": "r8-a382b6ca-c529-48e0-932a-89faf490658a",
+        "crashes": "r2-a382b6ca-c529-48e0-932a-89faf490658a",
+        "purchases": "r12-a382b6ca-c529-48e0-932a-89faf490658a"
+      },
+      "requestId": "a382b6ca-c529-48e0-932a-89faf490658a"
+    },
+    "1634973558": {
+      "name": "Couple days counter",
+      "reports": {
+        "discovery": "r15-5803e96e-cac4-4371-a2fa-7092f8d8235e",
+        "downloads": "r3-5803e96e-cac4-4371-a2fa-7092f8d8235e",
+        "sessions": "r8-5803e96e-cac4-4371-a2fa-7092f8d8235e",
+        "crashes": "r2-5803e96e-cac4-4371-a2fa-7092f8d8235e",
+        "purchases": "r12-5803e96e-cac4-4371-a2fa-7092f8d8235e"
+      },
+      "requestId": "5803e96e-cac4-4371-a2fa-7092f8d8235e"
+    },
+    "1637507803": {
+      "name": "Learn Japanese",
+      "reports": {
+        "discovery": "r15-bb4ce2ed-e1c2-4c9d-9849-411e4e30d002",
+        "downloads": "r3-bb4ce2ed-e1c2-4c9d-9849-411e4e30d002",
+        "sessions": "r8-bb4ce2ed-e1c2-4c9d-9849-411e4e30d002",
+        "crashes": "r2-bb4ce2ed-e1c2-4c9d-9849-411e4e30d002",
+        "purchases": "r12-bb4ce2ed-e1c2-4c9d-9849-411e4e30d002"
+      },
+      "requestId": "bb4ce2ed-e1c2-4c9d-9849-411e4e30d002"
+    },
+    "6776387674": {
+      "name": "Document Vault: ID & Passport",
+      "reports": {
+        "discovery": "r15-9e468eed-203e-4f52-9129-5cbaaa16624b",
+        "downloads": "r3-9e468eed-203e-4f52-9129-5cbaaa16624b",
+        "sessions": "r8-9e468eed-203e-4f52-9129-5cbaaa16624b",
+        "crashes": "r2-9e468eed-203e-4f52-9129-5cbaaa16624b",
+        "purchases": "r12-9e468eed-203e-4f52-9129-5cbaaa16624b"
+      },
+      "requestId": "9e468eed-203e-4f52-9129-5cbaaa16624b"
+    },
+    "6775279715": {
+      "name": "Hoop Quest: Basketball Sim",
+      "reports": {
+        "discovery": "r15-d4595d03-9ab9-4022-bbf2-8a94b287e64a",
+        "downloads": "r3-d4595d03-9ab9-4022-bbf2-8a94b287e64a",
+        "sessions": "r8-d4595d03-9ab9-4022-bbf2-8a94b287e64a",
+        "crashes": "r2-d4595d03-9ab9-4022-bbf2-8a94b287e64a",
+        "purchases": "r12-d4595d03-9ab9-4022-bbf2-8a94b287e64a"
+      },
+      "requestId": "d4595d03-9ab9-4022-bbf2-8a94b287e64a"
+    },
+    "6787888847": {
+      "name": "Prime Minister Sim: Politics",
+      "reports": {
+        "discovery": "r15-2d0ddac3-3153-4dbe-8226-ed5a859348f4",
+        "downloads": "r3-2d0ddac3-3153-4dbe-8226-ed5a859348f4",
+        "sessions": "r8-2d0ddac3-3153-4dbe-8226-ed5a859348f4",
+        "crashes": "r2-2d0ddac3-3153-4dbe-8226-ed5a859348f4",
+        "purchases": "r12-2d0ddac3-3153-4dbe-8226-ed5a859348f4"
+      },
+      "requestId": "2d0ddac3-3153-4dbe-8226-ed5a859348f4"
+    },
+    "6737737475": {
+      "name": "Simple Timer & Stopwatch Clock",
+      "reports": {
+        "discovery": "r15-5d4984b1-50b4-4761-9edf-58589258cfe0",
+        "downloads": "r3-5d4984b1-50b4-4761-9edf-58589258cfe0",
+        "sessions": "r8-5d4984b1-50b4-4761-9edf-58589258cfe0",
+        "crashes": "r2-5d4984b1-50b4-4761-9edf-58589258cfe0",
+        "purchases": "r12-5d4984b1-50b4-4761-9edf-58589258cfe0"
+      },
+      "requestId": "5d4984b1-50b4-4761-9edf-58589258cfe0"
+    },
+    "6743774763": {
+      "name": "CardDex: TCG Scanner & Price",
+      "reports": {
+        "discovery": "r15-d0c6eae3-10cb-4fbd-b00c-52c7c1317875",
+        "downloads": "r3-d0c6eae3-10cb-4fbd-b00c-52c7c1317875",
+        "sessions": "r8-d0c6eae3-10cb-4fbd-b00c-52c7c1317875",
+        "crashes": "r2-d0c6eae3-10cb-4fbd-b00c-52c7c1317875",
+        "purchases": "r12-d0c6eae3-10cb-4fbd-b00c-52c7c1317875"
+      },
+      "requestId": "d0c6eae3-10cb-4fbd-b00c-52c7c1317875"
+    },
+    "6765780052": {
+      "name": "Captions: Auto Video Subtitles",
+      "reports": {
+        "discovery": "r15-8ca56cce-3d32-49ce-a16d-a62f1531ccc2",
+        "downloads": "r3-8ca56cce-3d32-49ce-a16d-a62f1531ccc2",
+        "sessions": "r8-8ca56cce-3d32-49ce-a16d-a62f1531ccc2",
+        "crashes": "r2-8ca56cce-3d32-49ce-a16d-a62f1531ccc2",
+        "purchases": "r12-8ca56cce-3d32-49ce-a16d-a62f1531ccc2"
+      },
+      "requestId": "8ca56cce-3d32-49ce-a16d-a62f1531ccc2"
+    },
+    "6777125671": {
+      "name": "Football Career Quest",
+      "reports": {
+        "discovery": "r15-9d711a12-b752-4880-9313-6cd6589cef85",
+        "downloads": "r3-9d711a12-b752-4880-9313-6cd6589cef85",
+        "sessions": "r8-9d711a12-b752-4880-9313-6cd6589cef85",
+        "crashes": "r2-9d711a12-b752-4880-9313-6cd6589cef85",
+        "purchases": "r12-9d711a12-b752-4880-9313-6cd6589cef85"
+      },
+      "requestId": "9d711a12-b752-4880-9313-6cd6589cef85"
+    },
+    "6761863969": {
+      "name": "PrivateChat AI: Ollama & LLM",
+      "reports": {
+        "discovery": "r15-d0a27420-1da5-43f3-b409-8a00d72b03d1",
+        "downloads": "r3-d0a27420-1da5-43f3-b409-8a00d72b03d1",
+        "sessions": "r8-d0a27420-1da5-43f3-b409-8a00d72b03d1",
+        "crashes": "r2-d0a27420-1da5-43f3-b409-8a00d72b03d1",
+        "purchases": "r12-d0a27420-1da5-43f3-b409-8a00d72b03d1"
+      },
+      "requestId": "d0a27420-1da5-43f3-b409-8a00d72b03d1"
+    },
+    "6787791263": {
+      "name": "Loan Calculator Malaysia",
+      "reports": {
+        "discovery": "r15-ffd8aff0-21e0-4244-8bb4-3fa070a7c09c",
+        "downloads": "r3-ffd8aff0-21e0-4244-8bb4-3fa070a7c09c",
+        "sessions": "r8-ffd8aff0-21e0-4244-8bb4-3fa070a7c09c",
+        "crashes": "r2-ffd8aff0-21e0-4244-8bb4-3fa070a7c09c",
+        "purchases": "r12-ffd8aff0-21e0-4244-8bb4-3fa070a7c09c"
+      },
+      "requestId": "ffd8aff0-21e0-4244-8bb4-3fa070a7c09c"
+    },
+    "6759912464": {
+      "name": "Kids Coloring Book & Draw",
+      "reports": {
+        "discovery": "r15-37675741-6fd7-4435-8ffb-72f6c079e70b",
+        "downloads": "r3-37675741-6fd7-4435-8ffb-72f6c079e70b",
+        "sessions": "r8-37675741-6fd7-4435-8ffb-72f6c079e70b",
+        "crashes": "r2-37675741-6fd7-4435-8ffb-72f6c079e70b",
+        "purchases": "r12-37675741-6fd7-4435-8ffb-72f6c079e70b"
+      },
+      "requestId": "37675741-6fd7-4435-8ffb-72f6c079e70b"
+    },
+    "6787269503": {
+      "name": "ConnectForLMStudio",
+      "reports": {
+        "discovery": "r15-fd848899-e59e-45fa-a8dd-412aa459c547",
+        "downloads": "r3-fd848899-e59e-45fa-a8dd-412aa459c547",
+        "sessions": "r8-fd848899-e59e-45fa-a8dd-412aa459c547",
+        "crashes": "r2-fd848899-e59e-45fa-a8dd-412aa459c547",
+        "purchases": "r12-fd848899-e59e-45fa-a8dd-412aa459c547"
+      },
+      "requestId": "fd848899-e59e-45fa-a8dd-412aa459c547"
+    },
+    "6761291886": {
+      "name": "LovePet: Pookie & Couple App",
+      "reports": {
+        "discovery": "r15-a9790a46-9419-430c-b6a2-e4636eca2f98",
+        "downloads": "r3-a9790a46-9419-430c-b6a2-e4636eca2f98",
+        "sessions": "r8-a9790a46-9419-430c-b6a2-e4636eca2f98",
+        "crashes": "r2-a9790a46-9419-430c-b6a2-e4636eca2f98",
+        "purchases": "r12-a9790a46-9419-430c-b6a2-e4636eca2f98"
+      },
+      "requestId": "a9790a46-9419-430c-b6a2-e4636eca2f98"
+    },
+    "6773508857": {
+      "name": "Pack Planner: Group Lists",
+      "reports": {
+        "discovery": "r15-9ce67513-5dfd-4f17-bda0-99b13a546cdf",
+        "downloads": "r3-9ce67513-5dfd-4f17-bda0-99b13a546cdf",
+        "sessions": "r8-9ce67513-5dfd-4f17-bda0-99b13a546cdf",
+        "crashes": "r2-9ce67513-5dfd-4f17-bda0-99b13a546cdf",
+        "purchases": "r12-9ce67513-5dfd-4f17-bda0-99b13a546cdf"
+      },
+      "requestId": "9ce67513-5dfd-4f17-bda0-99b13a546cdf"
+    },
+    "6769891596": {
+      "name": "Ollama Connect",
+      "reports": {
+        "discovery": "r15-8dbca9f6-aa8c-455f-b604-9c71278a9471",
+        "downloads": "r3-8dbca9f6-aa8c-455f-b604-9c71278a9471",
+        "sessions": "r8-8dbca9f6-aa8c-455f-b604-9c71278a9471",
+        "crashes": "r2-8dbca9f6-aa8c-455f-b604-9c71278a9471",
+        "purchases": "r12-8dbca9f6-aa8c-455f-b604-9c71278a9471"
+      },
+      "requestId": "8dbca9f6-aa8c-455f-b604-9c71278a9471"
+    },
+    "6766366146": {
+      "name": "Frankly AI: Uncensored Chat",
+      "reports": {
+        "discovery": "r15-36265b38-d69a-4ecd-a170-b79a1b77501d",
+        "downloads": "r3-36265b38-d69a-4ecd-a170-b79a1b77501d",
+        "sessions": "r8-36265b38-d69a-4ecd-a170-b79a1b77501d",
+        "crashes": "r2-36265b38-d69a-4ecd-a170-b79a1b77501d",
+        "purchases": "r12-36265b38-d69a-4ecd-a170-b79a1b77501d"
+      },
+      "requestId": "36265b38-d69a-4ecd-a170-b79a1b77501d"
+    },
+    "6760960543": {
+      "name": "Solunar: Best Fishing Times",
+      "reports": {
+        "discovery": "r15-e56ec48f-e2ec-447a-bafa-378c99466d83",
+        "downloads": "r3-e56ec48f-e2ec-447a-bafa-378c99466d83",
+        "sessions": "r8-e56ec48f-e2ec-447a-bafa-378c99466d83",
+        "crashes": "r2-e56ec48f-e2ec-447a-bafa-378c99466d83",
+        "purchases": "r12-e56ec48f-e2ec-447a-bafa-378c99466d83"
+      },
+      "requestId": "e56ec48f-e2ec-447a-bafa-378c99466d83"
+    },
+    "6779095734": {
+      "name": "Padel Score Tracker Keeper",
+      "reports": {
+        "discovery": "r15-4f15aa5b-3cbd-4605-a3c6-5df167bbad69",
+        "downloads": "r3-4f15aa5b-3cbd-4605-a3c6-5df167bbad69",
+        "sessions": "r8-4f15aa5b-3cbd-4605-a3c6-5df167bbad69",
+        "crashes": "r2-4f15aa5b-3cbd-4605-a3c6-5df167bbad69",
+        "purchases": "r12-4f15aa5b-3cbd-4605-a3c6-5df167bbad69"
+      },
+      "requestId": "4f15aa5b-3cbd-4605-a3c6-5df167bbad69"
+    },
+    "6776417249": {
+      "name": "Local AI Image Generator",
+      "reports": {
+        "discovery": "r15-a8fdef72-e16c-46ae-9f9c-6890df3e8fa9",
+        "downloads": "r3-a8fdef72-e16c-46ae-9f9c-6890df3e8fa9",
+        "sessions": "r8-a8fdef72-e16c-46ae-9f9c-6890df3e8fa9",
+        "crashes": "r2-a8fdef72-e16c-46ae-9f9c-6890df3e8fa9",
+        "purchases": "r12-a8fdef72-e16c-46ae-9f9c-6890df3e8fa9"
+      },
+      "requestId": "a8fdef72-e16c-46ae-9f9c-6890df3e8fa9"
+    },
+    "6761378897": {
+      "name": "Baby Screen Lock: Kid Safe",
+      "reports": {
+        "discovery": "r15-52f27073-248b-4c6b-9f8e-fdc59658e5ec",
+        "downloads": "r3-52f27073-248b-4c6b-9f8e-fdc59658e5ec",
+        "sessions": "r8-52f27073-248b-4c6b-9f8e-fdc59658e5ec",
+        "crashes": "r2-52f27073-248b-4c6b-9f8e-fdc59658e5ec",
+        "purchases": "r12-52f27073-248b-4c6b-9f8e-fdc59658e5ec"
+      },
+      "requestId": "52f27073-248b-4c6b-9f8e-fdc59658e5ec"
+    },
+    "6770217651": {
+      "name": "Age Calculator: How Old Am I",
+      "reports": {
+        "discovery": "r15-f27ec9e9-7625-4d16-9757-9ad72ca5fce9",
+        "downloads": "r3-f27ec9e9-7625-4d16-9757-9ad72ca5fce9",
+        "sessions": "r8-f27ec9e9-7625-4d16-9757-9ad72ca5fce9",
+        "crashes": "r2-f27ec9e9-7625-4d16-9757-9ad72ca5fce9",
+        "purchases": "r12-f27ec9e9-7625-4d16-9757-9ad72ca5fce9"
+      },
+      "requestId": "f27ec9e9-7625-4d16-9757-9ad72ca5fce9"
+    },
+    "6760960599": {
+      "name": "Salah: Prayer Times & Qibla",
+      "reports": {
+        "discovery": "r15-eab725ee-a358-44ad-b97f-1a48bede4c93",
+        "downloads": "r3-eab725ee-a358-44ad-b97f-1a48bede4c93",
+        "sessions": "r8-eab725ee-a358-44ad-b97f-1a48bede4c93",
+        "crashes": "r2-eab725ee-a358-44ad-b97f-1a48bede4c93",
+        "purchases": "r12-eab725ee-a358-44ad-b97f-1a48bede4c93"
+      },
+      "requestId": "eab725ee-a358-44ad-b97f-1a48bede4c93"
+    },
+    "6772072727": {
+      "name": "Anime Chat: Private AI",
+      "reports": {
+        "discovery": "r15-35fe38d2-3610-4101-9d67-a71196a3e735",
+        "downloads": "r3-35fe38d2-3610-4101-9d67-a71196a3e735",
+        "sessions": "r8-35fe38d2-3610-4101-9d67-a71196a3e735",
+        "crashes": "r2-35fe38d2-3610-4101-9d67-a71196a3e735",
+        "purchases": "r12-35fe38d2-3610-4101-9d67-a71196a3e735"
+      },
+      "requestId": "35fe38d2-3610-4101-9d67-a71196a3e735"
+    },
+    "6772686797": {
+      "name": "Tiny Table: BLW Ideas & Purees",
+      "reports": {
+        "discovery": "r15-63950cb1-dbf8-43b2-a01c-6f936e1df118",
+        "downloads": "r3-63950cb1-dbf8-43b2-a01c-6f936e1df118",
+        "sessions": "r8-63950cb1-dbf8-43b2-a01c-6f936e1df118",
+        "crashes": "r2-63950cb1-dbf8-43b2-a01c-6f936e1df118",
+        "purchases": "r12-63950cb1-dbf8-43b2-a01c-6f936e1df118"
+      },
+      "requestId": "63950cb1-dbf8-43b2-a01c-6f936e1df118"
+    },
+    "6768466507": {
+      "name": "CodingChat AI",
+      "reports": {
+        "discovery": "r15-ce1eeb91-1754-4bf8-a031-1e24c979e64b",
+        "downloads": "r3-ce1eeb91-1754-4bf8-a031-1e24c979e64b",
+        "sessions": "r8-ce1eeb91-1754-4bf8-a031-1e24c979e64b",
+        "crashes": "r2-ce1eeb91-1754-4bf8-a031-1e24c979e64b",
+        "purchases": "r12-ce1eeb91-1754-4bf8-a031-1e24c979e64b"
+      },
+      "requestId": "ce1eeb91-1754-4bf8-a031-1e24c979e64b"
+    },
+    "6772685450": {
+      "name": "SoapCraft: Soap Calculator",
+      "reports": {
+        "discovery": "r15-5aa85dea-3ac6-4143-ac6b-f5535ea5aa3c",
+        "downloads": "r3-5aa85dea-3ac6-4143-ac6b-f5535ea5aa3c",
+        "sessions": "r8-5aa85dea-3ac6-4143-ac6b-f5535ea5aa3c",
+        "crashes": "r2-5aa85dea-3ac6-4143-ac6b-f5535ea5aa3c",
+        "purchases": "r12-5aa85dea-3ac6-4143-ac6b-f5535ea5aa3c"
+      },
+      "requestId": "5aa85dea-3ac6-4143-ac6b-f5535ea5aa3c"
+    },
+    "6768801666": {
+      "name": "Persona AI: Story Chat",
+      "reports": {
+        "discovery": "r15-8d516ddd-d04e-4713-a880-9ddf7da1013c",
+        "downloads": "r3-8d516ddd-d04e-4713-a880-9ddf7da1013c",
+        "sessions": "r8-8d516ddd-d04e-4713-a880-9ddf7da1013c",
+        "crashes": "r2-8d516ddd-d04e-4713-a880-9ddf7da1013c",
+        "purchases": "r12-8d516ddd-d04e-4713-a880-9ddf7da1013c"
+      },
+      "requestId": "8d516ddd-d04e-4713-a880-9ddf7da1013c"
+    },
+    "6771269878": {
+      "name": "Jump Rope Timer & Tracker",
+      "reports": {
+        "discovery": "r15-b270f064-d05e-4c8b-aeee-30d617c38ce3",
+        "downloads": "r3-b270f064-d05e-4c8b-aeee-30d617c38ce3",
+        "sessions": "r8-b270f064-d05e-4c8b-aeee-30d617c38ce3",
+        "crashes": "r2-b270f064-d05e-4c8b-aeee-30d617c38ce3",
+        "purchases": "r12-b270f064-d05e-4c8b-aeee-30d617c38ce3"
+      },
+      "requestId": "b270f064-d05e-4c8b-aeee-30d617c38ce3"
+    },
+    "6769176993": {
+      "name": "DocScanner: Sign Documents",
+      "reports": {
+        "discovery": "r15-9db1644f-772e-4446-9a0a-6b0eea86ed93",
+        "downloads": "r3-9db1644f-772e-4446-9a0a-6b0eea86ed93",
+        "sessions": "r8-9db1644f-772e-4446-9a0a-6b0eea86ed93",
+        "crashes": "r2-9db1644f-772e-4446-9a0a-6b0eea86ed93",
+        "purchases": "r12-9db1644f-772e-4446-9a0a-6b0eea86ed93"
+      },
+      "requestId": "9db1644f-772e-4446-9a0a-6b0eea86ed93"
+    },
+    "6767519692": {
+      "name": "Live Captions for Hearing",
+      "reports": {
+        "discovery": "r15-fb60394e-0563-4f3e-909d-c994b4b1bc42",
+        "downloads": "r3-fb60394e-0563-4f3e-909d-c994b4b1bc42",
+        "sessions": "r8-fb60394e-0563-4f3e-909d-c994b4b1bc42",
+        "crashes": "r2-fb60394e-0563-4f3e-909d-c994b4b1bc42",
+        "purchases": "r12-fb60394e-0563-4f3e-909d-c994b4b1bc42"
+      },
+      "requestId": "fb60394e-0563-4f3e-909d-c994b4b1bc42"
+    },
+    "6740433779": {
+      "name": "Sun Times: Sunrise & Sunset",
+      "reports": {
+        "discovery": "r15-c5c7dc68-4b95-42a6-a729-3f56b7c5c495",
+        "downloads": "r3-c5c7dc68-4b95-42a6-a729-3f56b7c5c495",
+        "sessions": "r8-c5c7dc68-4b95-42a6-a729-3f56b7c5c495",
+        "crashes": "r2-c5c7dc68-4b95-42a6-a729-3f56b7c5c495",
+        "purchases": "r12-c5c7dc68-4b95-42a6-a729-3f56b7c5c495"
+      },
+      "requestId": "c5c7dc68-4b95-42a6-a729-3f56b7c5c495"
+    },
+    "6761440158": {
+      "name": "CardKeeper – Wallet Passes",
+      "reports": {
+        "discovery": "r15-00f9876b-6007-4165-8fef-2a34e153ee0d",
+        "downloads": "r3-00f9876b-6007-4165-8fef-2a34e153ee0d",
+        "sessions": "r8-00f9876b-6007-4165-8fef-2a34e153ee0d",
+        "crashes": "r2-00f9876b-6007-4165-8fef-2a34e153ee0d",
+        "purchases": "r12-00f9876b-6007-4165-8fef-2a34e153ee0d"
+      },
+      "requestId": "00f9876b-6007-4165-8fef-2a34e153ee0d"
+    },
+    "6761100038": {
+      "name": "Life Countdown: Age Calculator",
+      "reports": {
+        "discovery": "r15-dba92d92-4509-48c4-973f-2b183b81a80e",
+        "downloads": "r3-dba92d92-4509-48c4-973f-2b183b81a80e",
+        "sessions": "r8-dba92d92-4509-48c4-973f-2b183b81a80e",
+        "crashes": "r2-dba92d92-4509-48c4-973f-2b183b81a80e",
+        "purchases": "r12-dba92d92-4509-48c4-973f-2b183b81a80e"
+      },
+      "requestId": "dba92d92-4509-48c4-973f-2b183b81a80e"
+    },
+    "6761517017": {
+      "name": "CipherNest: Password Manager",
+      "reports": {
+        "discovery": "r15-00470066-9de2-45b5-9647-3b632e3a2871",
+        "downloads": "r3-00470066-9de2-45b5-9647-3b632e3a2871",
+        "sessions": "r8-00470066-9de2-45b5-9647-3b632e3a2871",
+        "crashes": "r2-00470066-9de2-45b5-9647-3b632e3a2871",
+        "purchases": "r12-00470066-9de2-45b5-9647-3b632e3a2871"
+      },
+      "requestId": "00470066-9de2-45b5-9647-3b632e3a2871"
+    },
+    "6760954131": {
+      "name": "ギフト管理 - 贈り物・頂き物記録帳",
+      "reports": {
+        "discovery": "r15-4cf1ba3c-046d-4be2-bda2-eaede498ce90",
+        "downloads": "r3-4cf1ba3c-046d-4be2-bda2-eaede498ce90",
+        "sessions": "r8-4cf1ba3c-046d-4be2-bda2-eaede498ce90",
+        "crashes": "r2-4cf1ba3c-046d-4be2-bda2-eaede498ce90",
+        "purchases": "r12-4cf1ba3c-046d-4be2-bda2-eaede498ce90"
+      },
+      "requestId": "4cf1ba3c-046d-4be2-bda2-eaede498ce90"
+    },
+    "6739454115": {
+      "name": "Birthday Reminder & Countdowns",
+      "reports": {
+        "discovery": "r15-b5e14423-ec55-4687-89e8-d99bb76a0bc2",
+        "downloads": "r3-b5e14423-ec55-4687-89e8-d99bb76a0bc2",
+        "sessions": "r8-b5e14423-ec55-4687-89e8-d99bb76a0bc2",
+        "crashes": "r2-b5e14423-ec55-4687-89e8-d99bb76a0bc2",
+        "purchases": "r12-b5e14423-ec55-4687-89e8-d99bb76a0bc2"
+      },
+      "requestId": "b5e14423-ec55-4687-89e8-d99bb76a0bc2"
+    },
+    "6563145060": {
+      "name": "Baby Kicks: Track Movements",
+      "reports": {
+        "discovery": "r15-866d4762-4674-401f-b94b-c3fbad6e4df0",
+        "downloads": "r3-866d4762-4674-401f-b94b-c3fbad6e4df0",
+        "sessions": "r8-866d4762-4674-401f-b94b-c3fbad6e4df0",
+        "crashes": "r2-866d4762-4674-401f-b94b-c3fbad6e4df0",
+        "purchases": "r12-866d4762-4674-401f-b94b-c3fbad6e4df0"
+      },
+      "requestId": "866d4762-4674-401f-b94b-c3fbad6e4df0"
+    },
+    "6760960352": {
+      "name": "Moon Phases: Lunar Tracker",
+      "reports": {
+        "discovery": "r15-29a4233c-c8e5-496c-822a-92e304a7de38",
+        "downloads": "r3-29a4233c-c8e5-496c-822a-92e304a7de38",
+        "sessions": "r8-29a4233c-c8e5-496c-822a-92e304a7de38",
+        "crashes": "r2-29a4233c-c8e5-496c-822a-92e304a7de38",
+        "purchases": "r12-29a4233c-c8e5-496c-822a-92e304a7de38"
+      },
+      "requestId": "29a4233c-c8e5-496c-822a-92e304a7de38"
+    },
+    "6747094958": {
+      "name": "Passport Photo: Visa & ID",
+      "reports": {
+        "discovery": "r15-07f33b85-0866-4a45-8422-8e788f6084d3",
+        "downloads": "r3-07f33b85-0866-4a45-8422-8e788f6084d3",
+        "sessions": "r8-07f33b85-0866-4a45-8422-8e788f6084d3",
+        "crashes": "r2-07f33b85-0866-4a45-8422-8e788f6084d3",
+        "purchases": "r12-07f33b85-0866-4a45-8422-8e788f6084d3"
+      },
+      "requestId": "07f33b85-0866-4a45-8422-8e788f6084d3"
+    },
+    "6762000801": {
+      "name": "IconMaker: Developer Icon Tool",
+      "reports": {
+        "discovery": "r15-f8bb659f-843a-47f2-be32-b0512e9b95ae",
+        "downloads": "r3-f8bb659f-843a-47f2-be32-b0512e9b95ae",
+        "sessions": "r8-f8bb659f-843a-47f2-be32-b0512e9b95ae",
+        "crashes": "r2-f8bb659f-843a-47f2-be32-b0512e9b95ae",
+        "purchases": "r12-f8bb659f-843a-47f2-be32-b0512e9b95ae"
+      },
+      "requestId": "f8bb659f-843a-47f2-be32-b0512e9b95ae"
+    },
+    "6740165217": {
+      "name": "Photo Cleaner & Compressor",
+      "reports": {
+        "discovery": "r15-e98d23e5-0ab0-455d-bf1a-2bc6fc71a7e5",
+        "downloads": "r3-e98d23e5-0ab0-455d-bf1a-2bc6fc71a7e5",
+        "sessions": "r8-e98d23e5-0ab0-455d-bf1a-2bc6fc71a7e5",
+        "crashes": "r2-e98d23e5-0ab0-455d-bf1a-2bc6fc71a7e5",
+        "purchases": "r12-e98d23e5-0ab0-455d-bf1a-2bc6fc71a7e5"
+      },
+      "requestId": "e98d23e5-0ab0-455d-bf1a-2bc6fc71a7e5"
+    },
+    "6762024793": {
+      "name": "禁欲カウンター - 禁煙・禁酒",
+      "reports": {
+        "discovery": "r15-c9b29900-9226-40d1-8881-aee694a9d1db",
+        "downloads": "r3-c9b29900-9226-40d1-8881-aee694a9d1db",
+        "sessions": "r8-c9b29900-9226-40d1-8881-aee694a9d1db",
+        "crashes": "r2-c9b29900-9226-40d1-8881-aee694a9d1db",
+        "purchases": "r12-c9b29900-9226-40d1-8881-aee694a9d1db"
+      },
+      "requestId": "c9b29900-9226-40d1-8881-aee694a9d1db"
+    },
+    "6761954801": {
+      "name": "Baby Heartbeat: Fetal Monitor",
+      "reports": {
+        "discovery": "r15-38efadc4-6f03-43f7-86bd-0e4276e933ee",
+        "downloads": "r3-38efadc4-6f03-43f7-86bd-0e4276e933ee",
+        "sessions": "r8-38efadc4-6f03-43f7-86bd-0e4276e933ee",
+        "crashes": "r2-38efadc4-6f03-43f7-86bd-0e4276e933ee",
+        "purchases": "r12-38efadc4-6f03-43f7-86bd-0e4276e933ee"
+      },
+      "requestId": "38efadc4-6f03-43f7-86bd-0e4276e933ee"
+    },
+    "6761999116": {
+      "name": "Meridian Clock: TCM Body Clock",
+      "reports": {
+        "discovery": "r15-0ec82760-8fc9-4349-b9f4-50b9bc151263",
+        "downloads": "r3-0ec82760-8fc9-4349-b9f4-50b9bc151263",
+        "sessions": "r8-0ec82760-8fc9-4349-b9f4-50b9bc151263",
+        "crashes": "r2-0ec82760-8fc9-4349-b9f4-50b9bc151263",
+        "purchases": "r12-0ec82760-8fc9-4349-b9f4-50b9bc151263"
+      },
+      "requestId": "0ec82760-8fc9-4349-b9f4-50b9bc151263"
+    },
+    "6760960498": {
+      "name": "UV Index - Burn Time Tracker",
+      "reports": {
+        "discovery": "r15-76f6a40d-3ab5-4389-a9b5-1608f4425abb",
+        "downloads": "r3-76f6a40d-3ab5-4389-a9b5-1608f4425abb",
+        "sessions": "r8-76f6a40d-3ab5-4389-a9b5-1608f4425abb",
+        "crashes": "r2-76f6a40d-3ab5-4389-a9b5-1608f4425abb",
+        "purchases": "r12-76f6a40d-3ab5-4389-a9b5-1608f4425abb"
+      },
+      "requestId": "76f6a40d-3ab5-4389-a9b5-1608f4425abb"
+    },
+    "6760960439": {
+      "name": "Golden Hour: Light Planner",
+      "reports": {
+        "discovery": "r15-55d4ba8d-e443-48bb-9b77-1720c7cb3b7e",
+        "downloads": "r3-55d4ba8d-e443-48bb-9b77-1720c7cb3b7e",
+        "sessions": "r8-55d4ba8d-e443-48bb-9b77-1720c7cb3b7e",
+        "crashes": "r2-55d4ba8d-e443-48bb-9b77-1720c7cb3b7e",
+        "purchases": "r12-55d4ba8d-e443-48bb-9b77-1720c7cb3b7e"
+      },
+      "requestId": "55d4ba8d-e443-48bb-9b77-1720c7cb3b7e"
+    },
+    "6760255587": {
+      "name": "Baby Names : Swipe & Pick",
+      "reports": {
+        "discovery": "r15-8e59f5b3-1b54-4b6d-b53d-4d14e59f50b8",
+        "downloads": "r3-8e59f5b3-1b54-4b6d-b53d-4d14e59f50b8",
+        "sessions": "r8-8e59f5b3-1b54-4b6d-b53d-4d14e59f50b8",
+        "crashes": "r2-8e59f5b3-1b54-4b6d-b53d-4d14e59f50b8",
+        "purchases": "r12-8e59f5b3-1b54-4b6d-b53d-4d14e59f50b8"
+      },
+      "requestId": "8e59f5b3-1b54-4b6d-b53d-4d14e59f50b8"
+    },
+    "6761676508": {
+      "name": "High-Contrast Baby Shapes",
+      "reports": {
+        "discovery": "r15-107c9024-f679-4f98-bd2b-471d276ab06f",
+        "downloads": "r3-107c9024-f679-4f98-bd2b-471d276ab06f",
+        "sessions": "r8-107c9024-f679-4f98-bd2b-471d276ab06f",
+        "crashes": "r2-107c9024-f679-4f98-bd2b-471d276ab06f",
+        "purchases": "r12-107c9024-f679-4f98-bd2b-471d276ab06f"
+      },
+      "requestId": "107c9024-f679-4f98-bd2b-471d276ab06f"
+    },
+    "6743759106": {
+      "name": "Link Saver - fast and easy",
+      "reports": {
+        "discovery": "r15-c284d08c-5225-49d6-af49-a1a78a84b99d",
+        "downloads": "r3-c284d08c-5225-49d6-af49-a1a78a84b99d",
+        "sessions": "r8-c284d08c-5225-49d6-af49-a1a78a84b99d",
+        "crashes": "r2-c284d08c-5225-49d6-af49-a1a78a84b99d",
+        "purchases": "r12-c284d08c-5225-49d6-af49-a1a78a84b99d"
+      },
+      "requestId": "c284d08c-5225-49d6-af49-a1a78a84b99d"
+    },
+    "6760222884": {
+      "name": "Poop Tracker & Gut Health",
+      "reports": {
+        "discovery": "r15-078e9c8d-db1a-4793-b47e-2344954b7853",
+        "downloads": "r3-078e9c8d-db1a-4793-b47e-2344954b7853",
+        "sessions": "r8-078e9c8d-db1a-4793-b47e-2344954b7853",
+        "crashes": "r2-078e9c8d-db1a-4793-b47e-2344954b7853",
+        "purchases": "r12-078e9c8d-db1a-4793-b47e-2344954b7853"
+      },
+      "requestId": "078e9c8d-db1a-4793-b47e-2344954b7853"
+    },
+    "6746223793": {
+      "name": "Fish Finder · AI Identifier",
+      "reports": {
+        "discovery": "r15-29f58b5e-1562-43c4-a170-c0cdaeee7ebd",
+        "downloads": "r3-29f58b5e-1562-43c4-a170-c0cdaeee7ebd",
+        "sessions": "r8-29f58b5e-1562-43c4-a170-c0cdaeee7ebd",
+        "crashes": "r2-29f58b5e-1562-43c4-a170-c0cdaeee7ebd",
+        "purchases": "r12-29f58b5e-1562-43c4-a170-c0cdaeee7ebd"
+      },
+      "requestId": "29f58b5e-1562-43c4-a170-c0cdaeee7ebd"
+    },
+    "6760551450": {
+      "name": "お返し - 内祝い・香典返し管理",
+      "reports": {
+        "discovery": "r15-a0f7b1ce-ea9d-42e0-ad66-a728790da8cf",
+        "downloads": "r3-a0f7b1ce-ea9d-42e0-ad66-a728790da8cf",
+        "sessions": "r8-a0f7b1ce-ea9d-42e0-ad66-a728790da8cf",
+        "crashes": "r2-a0f7b1ce-ea9d-42e0-ad66-a728790da8cf",
+        "purchases": "r12-a0f7b1ce-ea9d-42e0-ad66-a728790da8cf"
+      },
+      "requestId": "a0f7b1ce-ea9d-42e0-ad66-a728790da8cf"
+    },
+    "6760981155": {
+      "name": "UV IndexAppleWatch",
+      "reports": {
+        "discovery": "r15-ff151ce3-fcbf-42f8-9430-81e5ff83b647",
+        "downloads": "r3-ff151ce3-fcbf-42f8-9430-81e5ff83b647",
+        "sessions": "r8-ff151ce3-fcbf-42f8-9430-81e5ff83b647",
+        "crashes": "r2-ff151ce3-fcbf-42f8-9430-81e5ff83b647",
+        "purchases": "r12-ff151ce3-fcbf-42f8-9430-81e5ff83b647"
+      },
+      "requestId": "ff151ce3-fcbf-42f8-9430-81e5ff83b647"
+    },
+    "6740351118": {
+      "name": "VidCompress - Video Compressor",
+      "reports": {
+        "discovery": "r15-f0efc610-15e6-4f60-acb0-73e6ec139b59",
+        "downloads": "r3-f0efc610-15e6-4f60-acb0-73e6ec139b59",
+        "sessions": "r8-f0efc610-15e6-4f60-acb0-73e6ec139b59",
+        "crashes": "r2-f0efc610-15e6-4f60-acb0-73e6ec139b59",
+        "purchases": "r12-f0efc610-15e6-4f60-acb0-73e6ec139b59"
+      },
+      "requestId": "f0efc610-15e6-4f60-acb0-73e6ec139b59"
+    },
+    "6759859294": {
+      "name": "Bible Prayer Companion",
+      "reports": {
+        "discovery": "r15-f718ec9f-70e1-4b7a-964d-1dd4b2b82ed7",
+        "downloads": "r3-f718ec9f-70e1-4b7a-964d-1dd4b2b82ed7",
+        "sessions": "r8-f718ec9f-70e1-4b7a-964d-1dd4b2b82ed7",
+        "crashes": "r2-f718ec9f-70e1-4b7a-964d-1dd4b2b82ed7",
+        "purchases": "r12-f718ec9f-70e1-4b7a-964d-1dd4b2b82ed7"
+      },
+      "requestId": "f718ec9f-70e1-4b7a-964d-1dd4b2b82ed7"
+    },
+    "6747147301": {
+      "name": "Kids Timer - Visual Countdown",
+      "reports": {
+        "discovery": "r15-9a9079dd-ff64-45b4-86ef-6c9e3f3e9b94",
+        "downloads": "r3-9a9079dd-ff64-45b4-86ef-6c9e3f3e9b94",
+        "sessions": "r8-9a9079dd-ff64-45b4-86ef-6c9e3f3e9b94",
+        "crashes": "r2-9a9079dd-ff64-45b4-86ef-6c9e3f3e9b94",
+        "purchases": "r12-9a9079dd-ff64-45b4-86ef-6c9e3f3e9b94"
+      },
+      "requestId": "9a9079dd-ff64-45b4-86ef-6c9e3f3e9b94"
+    },
+    "6747405762": {
+      "name": "AppsFast",
+      "reports": {
+        "discovery": "r15-caacad35-b44d-4277-9c0d-7b6c176de410",
+        "downloads": "r3-caacad35-b44d-4277-9c0d-7b6c176de410",
+        "sessions": "r8-caacad35-b44d-4277-9c0d-7b6c176de410",
+        "crashes": "r2-caacad35-b44d-4277-9c0d-7b6c176de410",
+        "purchases": "r12-caacad35-b44d-4277-9c0d-7b6c176de410"
+      },
+      "requestId": "caacad35-b44d-4277-9c0d-7b6c176de410"
+    },
+    "6744445553": {
+      "name": "Focus Habit: A Pomodoro Timer",
+      "reports": {
+        "discovery": "r15-214c628a-f8f4-4e87-8e0b-435e37fb00f8",
+        "downloads": "r3-214c628a-f8f4-4e87-8e0b-435e37fb00f8",
+        "sessions": "r8-214c628a-f8f4-4e87-8e0b-435e37fb00f8",
+        "crashes": "r2-214c628a-f8f4-4e87-8e0b-435e37fb00f8",
+        "purchases": "r12-214c628a-f8f4-4e87-8e0b-435e37fb00f8"
+      },
+      "requestId": "214c628a-f8f4-4e87-8e0b-435e37fb00f8"
+    },
+    "6746983940": {
+      "name": "Future Baby Generator AI - Pip",
+      "reports": {
+        "discovery": "r15-3f1b458c-8c8f-4b1b-bc17-44328cf07164",
+        "downloads": "r3-3f1b458c-8c8f-4b1b-bc17-44328cf07164",
+        "sessions": "r8-3f1b458c-8c8f-4b1b-bc17-44328cf07164",
+        "crashes": "r2-3f1b458c-8c8f-4b1b-bc17-44328cf07164",
+        "purchases": "r12-3f1b458c-8c8f-4b1b-bc17-44328cf07164"
+      },
+      "requestId": "3f1b458c-8c8f-4b1b-bc17-44328cf07164"
+    },
+    "6739187522": {
+      "name": "Lullaby Pal - White Noise",
+      "reports": {
+        "discovery": "r15-f726e569-cb47-49d2-aca6-20528b23b729",
+        "downloads": "r3-f726e569-cb47-49d2-aca6-20528b23b729",
+        "sessions": "r8-f726e569-cb47-49d2-aca6-20528b23b729",
+        "crashes": "r2-f726e569-cb47-49d2-aca6-20528b23b729",
+        "purchases": "r12-f726e569-cb47-49d2-aca6-20528b23b729"
+      },
+      "requestId": "f726e569-cb47-49d2-aca6-20528b23b729"
+    },
+    "6739982136": {
+      "name": "Countdown Tracker Reminders",
+      "reports": {
+        "discovery": "r15-3ea193ac-1295-4598-8119-e0b060d40325",
+        "downloads": "r3-3ea193ac-1295-4598-8119-e0b060d40325",
+        "sessions": "r8-3ea193ac-1295-4598-8119-e0b060d40325",
+        "crashes": "r2-3ea193ac-1295-4598-8119-e0b060d40325",
+        "purchases": "r12-3ea193ac-1295-4598-8119-e0b060d40325"
+      },
+      "requestId": "3ea193ac-1295-4598-8119-e0b060d40325"
+    }
+  }
+}
