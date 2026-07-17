@@ -32,7 +32,7 @@ export const EXPERIENCE: JobData[] = [
     isCurrent: true,
     description: [
       "Tech lead of a high-performing cross-functional team, owning technical direction and delivery.",
-      "Lead engineer on the mobile app rebuild — modular architecture, a custom Dependency Injection container, and Router/Coordinator-based navigation in Swift 6.",
+      "Lead engineer on the mobile app rebuild — modular architecture.",
       "Built internal tooling that acted as a delivery multiplier for the team.",
       "Improved CI/CD and automated testing to raise release quality and velocity."
     ],
