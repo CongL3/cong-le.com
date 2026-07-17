@@ -5,7 +5,7 @@ export const HERO_CONTENT = {
   name: "Cong Le",
   title: "Technical Lead, iOS @ Capital One",
   subtitle: "11+ years in iOS. Enterprise banking by day, indie apps by night. Gravitating towards the positive.",
-  blurb: "",
+  blurb: "I like building things.",
   signalSentence: "",
   strengths: [] as string[],
   profileImage: "https://github.com/CongL3.png",
@@ -55,13 +55,13 @@ export const EXPERIENCE: JobData[] = [
   {
     id: "career-break",
     role: "Career Break",
-    company: "Teaching & Personal Development",
+    company: "Travel & Teaching",
     period: "2019 - 2021",
     description: [
-      "Focused on communication, mentoring, and leadership in education settings.",
-      "Strengthened coaching and people skills now applied to engineering leadership."
+      "Took a break from engineering to travel for 18 months.",
+      "Taught English as a second language for a year."
     ],
-    technologies: ["Communication", "Leadership", "Coaching"]
+    technologies: ["Travel", "Teaching (ESL)"]
   },
   {
     id: "capone-senior",
