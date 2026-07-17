@@ -1,9 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import FeaturedApp from './components/FeaturedApp';
 import AppGrid from './components/AppGrid';
-import ScreenshotGallery from './components/ScreenshotGallery';
 import Career from './components/Career';
 import Footer from './components/Footer';
 
@@ -13,8 +11,6 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
-        <FeaturedApp />
-        <ScreenshotGallery />
         <AppGrid />
         <Career />
       </main>

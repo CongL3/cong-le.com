@@ -1,10 +1,6 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Globe, Twitter } from 'lucide-react';
+import { Github, Linkedin, Globe, Twitter } from 'lucide-react';
 import { HERO_CONTENT, STATS } from '../constants';
-
-const scrollTo = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-};
 
 const Hero: React.FC = () => {
   return (
@@ -57,25 +53,6 @@ const Hero: React.FC = () => {
            <a href={HERO_CONTENT.appStoreLink} target="_blank" rel="noreferrer" className="p-2 text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full transition-all">
               <Globe className="w-6 h-6" />
            </a>
-        </div>
-
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <button
-            onClick={() => scrollTo('featured')}
-            className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-full hover:bg-black dark:hover:bg-gray-200 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-          >
-            View Flagship App
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </button>
-          <a
-            href={HERO_CONTENT.appStoreLink}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-all hover:border-gray-300 dark:hover:border-gray-600"
-          >
-            Browse App Store Portfolio
-          </a>
         </div>
 
         {/* Mini Stats - Simplified */}
