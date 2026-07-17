@@ -31,10 +31,10 @@ export const EXPERIENCE: JobData[] = [
     period: "Jul 2026 - Present",
     isCurrent: true,
     description: [
-      "Leading an iOS engineering team, owning technical direction and delivery.",
-      "Designed and implemented modular app architecture, a custom Dependency Injection container, and Router/Coordinator-based navigation in Swift 6.",
-      "Drove adoption of async/concurrency workflows and modern engineering standards.",
-      "Mentoring engineers and shaping long-term technical strategy in a regulated environment."
+      "Tech lead of a high-performing iOS team, owning technical direction and delivery.",
+      "Lead engineer on the mobile app rebuild — modular architecture, a custom Dependency Injection container, and Router/Coordinator-based navigation in Swift 6.",
+      "Built internal tooling that acted as a delivery multiplier for the team.",
+      "Improved CI/CD and automated testing to raise release quality and velocity."
     ],
     technologies: ["Swift 6", "SwiftUI", "Architecture", "Dependency Injection", "Concurrency"]
   },
