@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T13:36:42.524Z",
+  "generatedAt": "2026-07-17T09:49:31.967Z",
   "apps": {
     "1570714816": {
       "name": "Anniversary Tracker",
@@ -145,7 +145,7 @@
       "requestId": "5d4984b1-50b4-4761-9edf-58589258cfe0"
     },
     "6743774763": {
-      "name": "CardDex: TCG Scanner & Price",
+      "name": "CardDex: TCG Scanner & Value",
       "reports": {
         "discovery": "r15-d0c6eae3-10cb-4fbd-b00c-52c7c1317875",
         "downloads": "r3-d0c6eae3-10cb-4fbd-b00c-52c7c1317875",
@@ -211,7 +211,7 @@
       "requestId": "37675741-6fd7-4435-8ffb-72f6c079e70b"
     },
     "6787269503": {
-      "name": "ConnectForLMStudio",
+      "name": "Connect for LM Studio",
       "reports": {
         "discovery": "r15-fd848899-e59e-45fa-a8dd-412aa459c547",
         "downloads": "r3-fd848899-e59e-45fa-a8dd-412aa459c547",
