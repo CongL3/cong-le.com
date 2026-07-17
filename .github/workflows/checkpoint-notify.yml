@@ -1,0 +1,31 @@
+# Relays SEO checkpoint verdicts (committed by scheduled Claude cloud routines
+# into seo-reports/checkpoints/) to Cong's phone via ntfy. The routines run in
+# Anthropic's cloud and can't read repo secrets, so this workflow does the push.
+name: Notify SEO checkpoint
+
+on:
+  push:
+    paths:
+      - 'seo-reports/checkpoints/**.md'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Push checkpoint verdict to ntfy
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          FILE=$(git diff --name-only HEAD^ HEAD -- 'seo-reports/checkpoints/*.md' | head -1)
+          if [ -z "$FILE" ] || [ -z "$NTFY_TOPIC" ]; then
+            echo "No checkpoint file changed or NTFY_TOPIC unset; skipping."
+            exit 0
+          fi
+          TITLE=$(head -1 "$FILE" | sed 's/^#* *//')
+          # Body: everything up to the first '---' or 25 lines, whichever comes first.
+          BODY=$(sed -n '2,26p' "$FILE" | sed '/^---$/q')
+          curl -s -H "Title: $TITLE" -H "Tags: mag" -d "$BODY" "https://ntfy.sh/$NTFY_TOPIC"
