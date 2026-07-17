@@ -5,7 +5,7 @@ export const HERO_CONTENT = {
   name: "Cong Le",
   title: "Technical Lead, iOS @ Capital One",
   subtitle: "11+ years in iOS. Enterprise banking by day, indie apps by night. Gravitating towards the positive.",
-  blurb: "I like building things.",
+  blurb: "I like building things, and learning anything that helps me build faster.",
   signalSentence: "",
   strengths: [] as string[],
   profileImage: "https://github.com/CongL3.png",
