@@ -1,9 +1,9 @@
 import { AppCategory, AppData, JobData, StatData } from './types';
-import { Smartphone, Code2, Download, Trophy } from 'lucide-react';
+import { Smartphone, Code2, Download } from 'lucide-react';
 
 export const HERO_CONTENT = {
   name: "Cong Le",
-  title: "Principal iOS Engineer @ Capital One",
+  title: "Technical Lead & Principal iOS Engineer @ Capital One",
   subtitle: "11+ years in iOS. Enterprise banking by day, indie apps by night. Gravitating towards the positive.",
   blurb: "",
   signalSentence: "",
@@ -20,22 +20,35 @@ export const STATS: StatData[] = [
   { label: "Experience", value: "11+ Years", icon: Code2, description: "iOS Engineering" },
   { label: "Apps", value: "40+", icon: Smartphone, description: "Live on App Store" },
   { label: "Downloads", value: "500k+", icon: Download, description: "Portfolio-wide" },
-  { label: "Flagship", value: "250k+", icon: Trophy, description: "Anniversary Tracker" },
 ];
 
 export const EXPERIENCE: JobData[] = [
+  {
+    id: "capone-tech-lead",
+    role: "Technical Lead — Manager Associate (SDE4)",
+    company: "Capital One",
+    location: "Nottingham, UK",
+    period: "Jul 2026 - Present",
+    isCurrent: true,
+    description: [
+      "Leading an iOS engineering team, owning technical direction and delivery.",
+      "Designed and implemented modular app architecture, a custom Dependency Injection container, and Router/Coordinator-based navigation in Swift 6.",
+      "Drove adoption of async/concurrency workflows and modern engineering standards.",
+      "Mentoring engineers and shaping long-term technical strategy in a regulated environment."
+    ],
+    technologies: ["Swift 6", "SwiftUI", "Architecture", "Dependency Injection", "Concurrency"]
+  },
   {
     id: "capone-principal",
     role: "Principal iOS Engineer",
     company: "Capital One",
     location: "Nottingham, UK",
-    period: "Dec 2021 - Present",
-    isCurrent: true,
+    period: "Dec 2021 - Jul 2026",
     description: [
-      "Leading architecture modernization across a large iOS codebase.",
-      "Driving delivery across product, design, and QA in a regulated environment.",
-      "Raising engineering quality through testing, CI/CD, and team standards.",
-      "Mentoring engineers and shaping technical direction for long-term scalability."
+      "Led architecture modernization across a large iOS codebase.",
+      "Drove delivery across product, design, and QA in a regulated environment.",
+      "Raised engineering quality through testing, CI/CD, and team standards.",
+      "Mentored engineers and shaped technical direction for long-term scalability."
     ],
     technologies: ["Swift", "SwiftUI", "UIKit", "Architecture", "CI/CD"]
   },
