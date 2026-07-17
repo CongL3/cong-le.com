@@ -54,7 +54,7 @@ export function getApp(slug) {
     oneLiner: app.oneLiner,
     icon: `/images/apps/${app.trackId}/icon.jpg`,
     landingPage: `/apps/${slug}/`,
-    storeUrl: `https://apps.apple.com/app/id${app.trackId}?pt=19678800&ct=congle-web-${slug}&mt=8`,
+    storeUrl: `https://apps.apple.com/app/id${app.trackId}?ct=congle-web-${slug}&pt=19678800`,
   };
 }
 
