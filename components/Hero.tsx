@@ -56,13 +56,15 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Mini Stats - Simplified */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8 border-t border-gray-100 dark:border-gray-800 pt-10">
-          {STATS.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <span className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</span>
-              <span className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide mt-1">{stat.label}</span>
-            </div>
-          ))}
+        <div className="w-full max-w-2xl border-t border-gray-100 dark:border-gray-800 pt-10">
+          <div className="flex flex-wrap justify-center gap-x-12 sm:gap-x-16 gap-y-8">
+            {STATS.map((stat, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <span className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</span>
+                <span className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide mt-1">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
