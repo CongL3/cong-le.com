@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cong Le - Principal iOS Developer</title>
+    <title>Cong Le — iOS Engineer & App Developer | Technical Lead at Capital One</title>
+    <link rel="canonical" href="https://www.cong-le.com/" />
     <script>
       (function() {
         var saved = localStorage.getItem('theme');
@@ -13,7 +14,25 @@
         }
       })();
     </script>
-    <meta name="description" content="Portfolio of Cong Le, Principal iOS Developer at Capital One. Creator of Anniversary Tracker." />
+    <meta name="description" content="Cong Le is an iOS engineer and indie app developer — Technical Lead at Capital One and creator of Anniversary Tracker (250k+ downloads). 11+ years building iPhone apps." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Cong Le — iOS Engineer & App Developer" />
+    <meta property="og:description" content="iOS engineer and indie app developer. Technical Lead at Capital One, creator of Anniversary Tracker. 11+ years building iPhone apps." />
+    <meta property="og:url" content="https://www.cong-le.com/" />
+    <meta property="og:image" content="https://github.com/CongL3.png" />
+    <meta property="og:site_name" content="Cong Le" />
+    <meta property="profile:first_name" content="Cong" />
+    <meta property="profile:last_name" content="Le" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@CongLe" />
+    <meta name="twitter:creator" content="@CongLe" />
+    <meta name="twitter:title" content="Cong Le — iOS Engineer & App Developer" />
+    <meta name="twitter:description" content="iOS engineer and indie app developer. Technical Lead at Capital One, creator of Anniversary Tracker." />
+    <meta name="twitter:image" content="https://github.com/CongL3.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,27 +74,49 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Cong Le - Principal iOS Developer",
-        "url": "https://www.cong-le.com",
-        "description": "Portfolio of Cong Le, Principal iOS Developer at Capital One. Creator of Anniversary Tracker.",
-        "author": {
-          "@type": "Person",
-          "name": "Cong Le"
-        }
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Cong Le",
-        "url": "https://www.cong-le.com",
-        "jobTitle": "Principal iOS Developer",
-        "sameAs": [
-          "https://github.com/CongL3",
-          "https://www.linkedin.com/in/cong-le-ios/",
-          "https://x.com/CongLe"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://www.cong-le.com/#cong-le",
+            "name": "Cong Le",
+            "alternateName": "Cong Le iOS",
+            "url": "https://www.cong-le.com/",
+            "image": "https://github.com/CongL3.png",
+            "jobTitle": "Technical Lead, iOS",
+            "description": "iOS engineer and indie app developer. Technical Lead at Capital One and creator of Anniversary Tracker (250k+ downloads).",
+            "disambiguatingDescription": "iOS software engineer and mobile app developer based in the United Kingdom.",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Capital One"
+            },
+            "homeLocation": {
+              "@type": "Place",
+              "name": "Nottingham, United Kingdom"
+            },
+            "knowsAbout": [
+              "iOS development",
+              "Swift",
+              "SwiftUI",
+              "Mobile app architecture",
+              "App Store Optimization",
+              "iPhone app development"
+            ],
+            "sameAs": [
+              "https://github.com/CongL3",
+              "https://www.linkedin.com/in/cong-le-ios/",
+              "https://x.com/CongLe",
+              "https://apps.apple.com/gb/developer/cong-le/id954373766"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.cong-le.com/#website",
+            "name": "Cong Le — iOS Engineer & App Developer",
+            "url": "https://www.cong-le.com/",
+            "description": "Portfolio of Cong Le, iOS engineer and indie app developer. Technical Lead at Capital One, creator of Anniversary Tracker.",
+            "publisher": { "@id": "https://www.cong-le.com/#cong-le" },
+            "author": { "@id": "https://www.cong-le.com/#cong-le" }
+          }
         ]
       }
     </script>
