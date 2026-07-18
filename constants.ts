@@ -24,7 +24,7 @@ export const ABOUT: string[] = [
 
 export const STATS: StatData[] = [
   { label: "Experience", value: "11+ Years", icon: Code2, description: "iOS Engineering" },
-  { label: "Apps", value: "40+", icon: Smartphone, description: "Live on App Store" },
+  { label: "Apps", value: "50+", icon: Smartphone, description: "Live on App Store" },
   { label: "Downloads", value: "500k+", icon: Download, description: "Portfolio-wide" },
 ];
 
