@@ -19,7 +19,7 @@ export const HERO_CONTENT = {
 export const ABOUT: string[] = [
   "I'm an iOS developer with 11+ years building iPhone apps — Technical Lead for mobile at Capital One by day, indie app developer by night.",
   "At Capital One I lead a high-performing cross-functional team and own the technical direction for our iOS work. I was lead engineer on the mobile app rebuild to a modular architecture, and I've built internal tooling and CI/CD improvements that acted as force multipliers — raising delivery speed and release quality across teams.",
-  "Outside of work I've shipped 50+ apps to the App Store. The one closest to me is Anniversary Tracker (250k+ downloads), which I build with my wife. I've also released Pokémon Card Values and Birthday Reminders, with more always in progress.",
+  "Outside of work I've shipped 50+ apps to the App Store. The one closest to me is Anniversary Tracker (250k+ downloads), which I build with my wife.",
   "I like building things, and learning anything that helps me build faster. My mantra is to gravitate towards the positive — I'd describe myself as relaxed, diligent, and genuinely passionate about creating intuitive mobile experiences and solving hard technical problems."
 ];
 
