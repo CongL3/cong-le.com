@@ -3,7 +3,7 @@ import { Smartphone, Code2, Download } from 'lucide-react';
 
 export const HERO_CONTENT = {
   name: "Cong Le",
-  title: "Technical Lead, iOS @ Capital One",
+  title: "iOS Developer & Technical Lead @ Capital One",
   subtitle: "11+ years in iOS. Enterprise banking by day, indie apps by night. Gravitating towards the positive.",
   blurb: "I like building things, and learning anything that helps me build faster.",
   signalSentence: "",
