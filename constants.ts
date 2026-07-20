@@ -671,4 +671,22 @@ export const APPS: AppData[] = [
       "/images/apps/1573313539/screenshot-3.jpg",
     ],
   },
+  ,{
+    id: "uv-index-widget-burn-time",
+    name: "UV Index Widget & Burn Time",
+    category: AppCategory.WEATHER,
+    description: "Know your personal burn time before you step outside. Add the UV Index widget to your Home Screen, get a sunscreen remin",
+    iconColor: "bg-amber-500",
+    iconUrl: "/images/apps/6760960498/icon.jpg",
+    url: "https://apps.apple.com/gb/app/uv-index-widget-burn-time/id6760960498?uo=4",
+  }
+  ,{
+    id: "okaeshi-return-gift-tracker",
+    name: "Okaeshi: Return Gift Tracker",
+    category: AppCategory.UTILITIES,
+    description: "In Japan, when you receive a gift for a wedding, a new baby, or a condolence, you're expected to send a return gift — ca",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6760551450/icon.jpg",
+    url: "https://apps.apple.com/gb/app/okaeshi-return-gift-tracker/id6760551450?uo=4",
+  }
 ];
