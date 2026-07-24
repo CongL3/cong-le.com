@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T09:49:31.967Z",
+  "generatedAt": "2026-07-24T10:09:17.627Z",
   "apps": {
     "1570714816": {
       "name": "Anniversary Tracker",
@@ -57,7 +57,7 @@
       "requestId": "aaa87870-a552-4e16-b3fb-3af1a5140b0e"
     },
     "1590705319": {
-      "name": "Othello boardgame",
+      "name": "Reversi: Offline Board Game",
       "reports": {
         "discovery": "r15-80aed89e-9902-4b12-818f-c3a1608466ed",
         "downloads": "r3-80aed89e-9902-4b12-818f-c3a1608466ed",
@@ -68,7 +68,7 @@
       "requestId": "80aed89e-9902-4b12-818f-c3a1608466ed"
     },
     "1633843163": {
-      "name": "to do リスト - やること管理アプリ",
+      "name": "やることリスト＆やること管理アプリ",
       "reports": {
         "discovery": "r15-a382b6ca-c529-48e0-932a-89faf490658a",
         "downloads": "r3-a382b6ca-c529-48e0-932a-89faf490658a",
@@ -134,7 +134,7 @@
       "requestId": "2d0ddac3-3153-4dbe-8226-ed5a859348f4"
     },
     "6737737475": {
-      "name": "Simple Timer & Stopwatch Clock",
+      "name": "Simple Timer & Stopwatch",
       "reports": {
         "discovery": "r15-5d4984b1-50b4-4761-9edf-58589258cfe0",
         "downloads": "r3-5d4984b1-50b4-4761-9edf-58589258cfe0",
@@ -431,7 +431,7 @@
       "requestId": "c5c7dc68-4b95-42a6-a729-3f56b7c5c495"
     },
     "6761440158": {
-      "name": "CardKeeper – Wallet Passes",
+      "name": "CardKeeper: Wallet Pass Maker",
       "reports": {
         "discovery": "r15-00f9876b-6007-4165-8fef-2a34e153ee0d",
         "downloads": "r3-00f9876b-6007-4165-8fef-2a34e153ee0d",
@@ -486,7 +486,7 @@
       "requestId": "b5e14423-ec55-4687-89e8-d99bb76a0bc2"
     },
     "6563145060": {
-      "name": "Baby Kicks: Track Movements",
+      "name": "Baby Kicks: Kick Counter",
       "reports": {
         "discovery": "r15-866d4762-4674-401f-b94b-c3fbad6e4df0",
         "downloads": "r3-866d4762-4674-401f-b94b-c3fbad6e4df0",
@@ -574,7 +574,7 @@
       "requestId": "0ec82760-8fc9-4349-b9f4-50b9bc151263"
     },
     "6760960498": {
-      "name": "UV Index - Burn Time Tracker",
+      "name": "UV Index Widget & Burn Time",
       "reports": {
         "discovery": "r15-76f6a40d-3ab5-4389-a9b5-1608f4425abb",
         "downloads": "r3-76f6a40d-3ab5-4389-a9b5-1608f4425abb",
@@ -585,7 +585,7 @@
       "requestId": "76f6a40d-3ab5-4389-a9b5-1608f4425abb"
     },
     "6760960439": {
-      "name": "Golden Hour: Light Planner",
+      "name": "Golden Hour - Sun Tracker",
       "reports": {
         "discovery": "r15-55d4ba8d-e443-48bb-9b77-1720c7cb3b7e",
         "downloads": "r3-55d4ba8d-e443-48bb-9b77-1720c7cb3b7e",
