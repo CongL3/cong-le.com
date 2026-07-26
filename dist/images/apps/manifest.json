@@ -29,9 +29,9 @@
     },
     {
       "trackId": 6743774763,
-      "trackName": "CardDex: TCG Scanner & Price",
+      "trackName": "CardDex: TCG Scanner & Value",
       "bundleId": "com.congle.TEAMCONG.PokemonCardValueTracker",
-      "appStoreUrl": "https://apps.apple.com/gb/app/carddex-tcg-scanner-price/id6743774763?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/carddex-tcg-scanner-value/id6743774763?uo=4",
       "icon": "/images/apps/6743774763/icon.jpg",
       "screenshots": []
     },
@@ -57,9 +57,9 @@
     },
     {
       "trackId": 6737737475,
-      "trackName": "Simple Timer & Stopwatch Clock",
+      "trackName": "Simple Timer & Stopwatch",
       "bundleId": "com.congle.TEAMCONG.Simple-Timer",
-      "appStoreUrl": "https://apps.apple.com/gb/app/simple-timer-stopwatch-clock/id6737737475?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/simple-timer-stopwatch/id6737737475?uo=4",
       "icon": "/images/apps/6737737475/icon.jpg",
       "screenshots": []
     },
@@ -239,9 +239,9 @@
     },
     {
       "trackId": 6760551450,
-      "trackName": "お返し - 内祝い・香典返し管理",
+      "trackName": "Okaeshi: Return Gift Tracker",
       "bundleId": "com.congle.TEAMCONG.Okaeshi",
-      "appStoreUrl": "https://apps.apple.com/gb/app/%E3%81%8A%E8%BF%94%E3%81%97-%E5%86%85%E7%A5%9D%E3%81%84-%E9%A6%99%E5%85%B8%E8%BF%94%E3%81%97%E7%AE%A1%E7%90%86/id6760551450?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/okaeshi-return-gift-tracker/id6760551450?uo=4",
       "icon": "/images/apps/6760551450/icon.jpg",
       "screenshots": []
     },
@@ -279,9 +279,9 @@
     },
     {
       "trackId": 6760960498,
-      "trackName": "UV Index - Burn Time Tracker",
+      "trackName": "UV Index Widget & Burn Time",
       "bundleId": "com.congle.TEAMCONG.UVIndex",
-      "appStoreUrl": "https://apps.apple.com/gb/app/uv-index-burn-time-tracker/id6760960498?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/uv-index-widget-burn-time/id6760960498?uo=4",
       "icon": "/images/apps/6760960498/icon.jpg",
       "screenshots": []
     },
@@ -351,9 +351,9 @@
     },
     {
       "trackId": 6761440158,
-      "trackName": "CardKeeper – Wallet Passes",
+      "trackName": "CardKeeper: Wallet Pass Maker",
       "bundleId": "com.congle.TEAMCONG.CardKeeper",
-      "appStoreUrl": "https://apps.apple.com/gb/app/cardkeeper-wallet-passes/id6761440158?uo=4",
+      "appStoreUrl": "https://apps.apple.com/gb/app/cardkeeper-wallet-pass-maker/id6761440158?uo=4",
       "icon": "/images/apps/6761440158/icon.jpg",
       "screenshots": []
     },
