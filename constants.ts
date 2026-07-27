@@ -689,4 +689,29 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6760551450/icon.jpg",
     url: "https://apps.apple.com/gb/app/okaeshi-return-gift-tracker/id6760551450?uo=4",
   }
+  ,{
+    id: "checklist-to-do-one-focus",
+    name: "Checklist To Do - One Focus",
+    category: AppCategory.UTILITIES,
+    description: "A single todo list. It's either completed or not. Tap to complete and tap when you need to do it again. No thrills, stra",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/1633843163/icon.jpg",
+    url: "https://apps.apple.com/gb/app/checklist-to-do-one-focus/id1633843163?uo=4",
+    screenshots: [
+      "/images/apps/1633843163/screenshot-1.jpg",
+      "/images/apps/1633843163/screenshot-2.jpg",
+      "/images/apps/1633843163/screenshot-3.jpg",
+      "/images/apps/1633843163/screenshot-4.jpg",
+      "/images/apps/1633843163/screenshot-5.jpg",
+    ]
+  }
+  ,{
+    id: "card-log-pose",
+    name: "Card Log Pose",
+    category: AppCategory.UTILITIES,
+    description: "Track every card, know its true value, and build winning decks — all in one app made for English-language trading card g",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6791280506/icon.jpg",
+    url: "https://apps.apple.com/gb/app/card-log-pose/id6791280506?uo=4",
+  }
 ];
