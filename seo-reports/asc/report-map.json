@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T10:09:17.627Z",
+  "generatedAt": "2026-07-31T10:30:21.107Z",
   "apps": {
     "1570714816": {
       "name": "Anniversary Tracker",
@@ -354,7 +354,7 @@
       "requestId": "63950cb1-dbf8-43b2-a01c-6f936e1df118"
     },
     "6768466507": {
-      "name": "CodingChat AI",
+      "name": "Private Code AI",
       "reports": {
         "discovery": "r15-ce1eeb91-1754-4bf8-a031-1e24c979e64b",
         "downloads": "r3-ce1eeb91-1754-4bf8-a031-1e24c979e64b",
@@ -409,7 +409,7 @@
       "requestId": "9db1644f-772e-4446-9a0a-6b0eea86ed93"
     },
     "6767519692": {
-      "name": "Live Captions for Hearing",
+      "name": "Live Captions HearBee",
       "reports": {
         "discovery": "r15-fb60394e-0563-4f3e-909d-c994b4b1bc42",
         "downloads": "r3-fb60394e-0563-4f3e-909d-c994b4b1bc42",
