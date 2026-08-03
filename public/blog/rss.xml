@@ -6,7 +6,14 @@
     <atom:link href="https://www.cong-le.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Guides, tips, and updates from the apps built by Cong Le.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jul 2026 22:42:26 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 10:33:50 GMT</lastBuildDate>
+    <item>
+      <title>Every SwiftData Property Needs a Default Value</title>
+      <link>https://www.cong-le.com/blog/swiftdata-properties-need-default-values/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/swiftdata-properties-need-default-values/</guid>
+      <description>If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.</description>
+      <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>Guided Access on iPhone: Complete Guide (and Its Limits)</title>
       <link>https://www.cong-le.com/blog/guided-access-iphone-baby/</link>

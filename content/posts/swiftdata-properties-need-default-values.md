@@ -4,8 +4,8 @@ description: "If you use SwiftData with CloudKit and a property has no default, 
 slug: swiftdata-properties-need-default-values
 keywords: ["swiftdata cloudkit", "swiftdata empty results", "swiftdata default value", "modelcontainer failed to load"]
 queue: 1
-status: queued
-publishDate:
+status: published
+publishDate: 2026-08-03
 ---
 
 Here is a bug that costs an afternoon the first time you meet it, and about ninety seconds every time after.

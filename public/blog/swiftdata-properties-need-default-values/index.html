@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Every SwiftData Property Needs a Default Value | Cong Le Apps</title>
+  <meta name="description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
+  <link rel="canonical" href="https://www.cong-le.com/blog/swiftdata-properties-need-default-values/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Every SwiftData Property Needs a Default Value | Cong Le Apps">
+  <meta property="og:description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.cong-le.com/blog/swiftdata-properties-need-default-values/">
+  <meta property="og:image" content="https://www.cong-le.com/images/apps/manifest.json">
+  <meta property="og:site_name" content="Cong Le Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Every SwiftData Property Needs a Default Value | Cong Le Apps">
+  <meta name="twitter:description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
+  <meta name="twitter:image" content="https://www.cong-le.com/images/apps/manifest.json">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Every SwiftData Property Needs a Default Value",
+  "description": "If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.",
+  "datePublished": "2026-08-03",
+  "dateModified": "2026-08-03",
+  "keywords": "swiftdata cloudkit, swiftdata empty results, swiftdata default value, modelcontainer failed to load",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cong-le.com/blog/swiftdata-properties-need-default-values/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Cong Le",
+    "url": "https://www.cong-le.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cong Le Apps",
+    "url": "https://www.cong-le.com"
+  },
+  "image": "https://www.cong-le.com/images/apps/manifest.json"
+}
+  </script>
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
+    /* Readable article prose — Inter, homepage palette, dark-mode aware */
+    .prose { color: #374151; font-size: 1.075rem; line-height: 1.8; }
+    .dark .prose { color: #d1d5db; }
+    .prose h2 {
+      font-weight: 800; font-size: 1.8rem; line-height: 1.25;
+      letter-spacing: -0.02em; color: #111827;
+      margin-top: 2.5rem; margin-bottom: 1rem;
+    }
+    .dark .prose h2 { color: #ffffff; }
+    .prose h3 {
+      font-weight: 700; font-size: 1.3rem; color: #111827;
+      margin-top: 1.75rem; margin-bottom: 0.6rem;
+    }
+    .dark .prose h3 { color: #f3f4f6; }
+    .prose p { margin-bottom: 1.25rem; }
+    .prose ul, .prose ol { margin: 1rem 0 1.5rem 1.25rem; }
+    .prose ul { list-style: disc; }
+    .prose ol { list-style: decimal; }
+    .prose li { margin-bottom: 0.5rem; padding-left: 0.25rem; }
+    .prose a { color: #2563eb; text-decoration: underline; text-underline-offset: 2px; }
+    .dark .prose a { color: #60a5fa; }
+    .prose a:hover { opacity: 0.8; }
+    .prose strong { color: #111827; font-weight: 700; }
+    .dark .prose strong { color: #f3f4f6; }
+    .prose blockquote {
+      border-left: 4px solid #93c5fd; padding-left: 1.25rem;
+      margin: 1.5rem 0; color: #6b7280; font-style: italic;
+    }
+    .dark .prose blockquote { border-left-color: #3b82f6; color: #9ca3af; }
+    /* First-blockquote "Quick answer" callout card — highlighted for AI answer engines. */
+    .prose blockquote.quick-answer {
+      border: 1px solid #bfdbfe; border-left: 4px solid #2563eb;
+      background: #eff6ff; border-radius: 12px;
+      padding: 1.1rem 1.35rem 1.1rem 1.5rem; margin: 0 0 2rem;
+      color: #1e3a5f; font-style: normal;
+    }
+    .dark .prose blockquote.quick-answer {
+      border-color: rgba(59,130,246,0.35); border-left-color: #3b82f6;
+      background: rgba(37,99,235,0.12); color: #dbeafe;
+    }
+    /* Accent + emphasise the "Quick answer:" lead-in the post supplies. */
+    .prose blockquote.quick-answer strong { color: #1d4ed8; font-weight: 800; }
+    .dark .prose blockquote.quick-answer strong { color: #93c5fd; }
+    .prose blockquote.quick-answer p { margin-bottom: 0; }
+    .prose blockquote.quick-answer p:not(:last-child) { margin-bottom: 0.75rem; }
+    .prose code {
+      background: rgba(17,24,39,0.08); padding: 0.15em 0.4em;
+      border-radius: 6px; font-size: 0.9em;
+    }
+    .dark .prose code { background: rgba(255,255,255,0.1); }
+    .prose pre {
+      background: #1e293b; color: #e2e8f0; padding: 1.1rem 1.25rem;
+      border-radius: 12px; overflow-x: auto; margin: 1.5rem 0;
+    }
+    .prose pre code { background: none; padding: 0; color: inherit; }
+    .prose img { max-width: 100%; border-radius: 12px; }
+    .prose h2:first-child { margin-top: 0; }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-black text-gray-900 dark:text-white antialiased selection:bg-blue-100 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-white transition-colors">
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/85 dark:bg-black/85 backdrop-blur-md border-b border-gray-200 dark:border-white/10 transition-colors">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold text-xl tracking-tight text-gray-900 dark:text-white">Cong Le</a>
+      <nav class="flex items-center gap-6 sm:gap-8">
+        <a href="/#apps" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Apps</a>
+        <a href="/blog/" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blog</a>
+        <button type="button" onclick="__toggleTheme()" aria-label="Toggle dark mode" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 hidden dark:block"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-6 pt-28 pb-4">
+    <article>
+      <header class="fade-up mb-10">
+        <a href="/blog/" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">&larr; All posts</a>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">Every SwiftData Property Needs a Default Value</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Published 3 August 2026</p>
+      </header>
+      <div class="prose fade-up">
+<p>Here is a bug that costs an afternoon the first time you meet it, and about ninety seconds every time after.</p>
+<p>You add SwiftData to an app, enable CloudKit sync, run it, and everything appears fine. No crash, no red text. But nothing you insert is ever saved, and every fetch comes back empty. The UI renders its empty state perfectly, forever.</p>
+<p>The cause is almost always this:</p>
+<pre><code class="language-swift">@Model
+final class Entry {
+    var title: String
+    var count: Int
+}
+</code></pre>
+<p>And the fix is this:</p>
+<pre><code class="language-swift">@Model
+final class Entry {
+    var title: String = &quot;&quot;
+    var count: Int = 0
+}
+</code></pre>
+<h2>Why CloudKit forces this</h2>
+<p>SwiftData on its own is relaxed about non-optional properties without defaults. CloudKit is not.</p>
+<p>CloudKit&#39;s schema model has no concept of a required field. Any record type it syncs must be able to exist with a value missing, because a record can arrive from a device running an older version of your app that never knew about that field. So every attribute in a CloudKit-backed store has to be either <strong>optional</strong> or <strong>have a default value</strong> — those are the only two shapes that survive a partial record.</p>
+<p>A non-optional <code>String</code> with no default is neither. There is no legal value for it when the field is absent, so the schema is rejected.</p>
+<h2>Why it&#39;s silent</h2>
+<p>This is the part that wastes the afternoon. The container fails to load, but a <code>ModelContainer</code> failure at app startup doesn&#39;t necessarily crash — depending on how you construct it, you can end up with a container that exists but has no working store behind it. Inserts go nowhere. Fetches return <code>[]</code>. No exception reaches your code.</p>
+<p>Everything downstream behaves exactly like a database that is simply empty, which is a state your app is designed to handle gracefully. Your error handling hides the error.</p>
+<p>The symptom looks like a data-flow bug — a wrong predicate, a missing <code>@Query</code>, a context that isn&#39;t propagating — and that&#39;s where most of the afternoon goes. It isn&#39;t any of those. The store never opened.</p>
+<h2>Spotting it faster</h2>
+<p><strong>Look at the console at launch, before anything else.</strong> The failure does usually log, somewhere in the noise of a normal startup, mentioning that the model couldn&#39;t be loaded or the schema is invalid for CloudKit. It scrolls past because it appears while you&#39;re still looking at the simulator, not the log.</p>
+<p><strong>Construct the container so failure is loud.</strong> If you&#39;re building a <code>ModelContainer</code> inside a <code>try?</code> or falling back to an in-memory store when the real one fails, you have written the silence yourself. During development, let it crash — a fatal error at launch is far cheaper to diagnose than an app that runs and quietly does nothing.</p>
+<p><strong>Check the model, not the query.</strong> If a fetch returns empty and you&#39;re certain you inserted, check every <code>@Model</code> property before you touch the predicate.</p>
+<h2>The rule we work to</h2>
+<p><strong>Every <code>@Model</code> property gets a default value on the declaration.</strong> Not in <code>init</code> — on the property itself.</p>
+<pre><code class="language-swift">@Model
+final class Trip {
+    var name: String = &quot;&quot;
+    var startDate: Date = Date.distantPast
+    var isArchived: Bool = false
+    var notes: String? = nil          // optional is fine too
+    var items: [Item]? = nil          // relationships: optional
+}
+</code></pre>
+<p>Setting it in <code>init</code> doesn&#39;t help. The schema is derived from the property declarations, so a default supplied only by an initialiser is invisible to the thing doing the validating.</p>
+<p>Applying this unconditionally — even to models that aren&#39;t CloudKit-backed today — costs nothing and removes the possibility of the bug entirely. We treat it as a hard rule across every app rather than a thing to remember when enabling sync, because &quot;we&#39;ll add sync later&quot; is exactly when this resurfaces, in an app whose models were written months earlier by someone who has forgotten this post exists.</p>
+<h2>One related trap</h2>
+<p>Relationships need the same treatment. A to-many relationship that isn&#39;t optional will fail schema validation for the same reason: CloudKit can&#39;t express &quot;this must have at least one.&quot; Make relationship properties optional, and handle the nil case in your UI.</p>
+<p>If you have already lost the afternoon: it wasn&#39;t the predicate.</p>
+
+      </div>
+
+  <section class="fade-up mt-14">
+    <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-5">Related posts</h2>
+    <ul class="grid gap-4">
+      <li>
+        <a href="/blog/guided-access-iphone-baby/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <span class="block font-semibold text-gray-900 dark:text-white mb-1">Guided Access on iPhone: Complete Guide (and Its Limits)</span>
+          <span class="block text-sm text-gray-500 dark:text-gray-400">A complete Guided Access iPhone guide for parents: how to set it up, use it with a baby or toddler, and where it falls short.</span>
+        </a>
+      </li>
+      <li>
+        <a href="/blog/solunar-theory-explained/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <span class="block font-semibold text-gray-900 dark:text-white mb-1">Solunar Theory Explained: Does Fishing by the Moon Actually Work?</span>
+          <span class="block text-sm text-gray-500 dark:text-gray-400">Solunar theory explained: where it came from, why the moon affects fish feeding, and how much you should really trust solunar tables.</span>
+        </a>
+      </li>
+      <li>
+        <a href="/blog/how-to-never-forget-an-anniversary-again/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <span class="block font-semibold text-gray-900 dark:text-white mb-1">How to Never Forget an Anniversary Again</span>
+          <span class="block text-sm text-gray-500 dark:text-gray-400">Never forget an anniversary again: build a reliable system with calendars, layered reminders, and widgets that put the date in front of you.</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+    </article>
+  </main>
+
+  <footer class="bg-gray-900 dark:bg-black text-white border-t border-gray-800 dark:border-gray-900 mt-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="font-bold text-xl">Cong Le</a>
+        <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+          <a href="/developer.html" class="hover:text-white transition-colors">Developer Support</a>
+          <a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/terms.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        </nav>
+      </div>
+      <p class="mt-8 text-sm text-gray-500">&copy; 2026 Cong Le. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    function __toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+  </script>
+</body>
+</html>

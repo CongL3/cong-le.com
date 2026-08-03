@@ -1,5 +1,13 @@
 [
   {
+    "slug": "swiftdata-properties-need-default-values",
+    "title": "Every SwiftData Property Needs a Default Value",
+    "description": "If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.",
+    "app": "",
+    "publishDate": "2026-08-03",
+    "updated": ""
+  },
+  {
     "slug": "guided-access-iphone-baby",
     "title": "Guided Access on iPhone: Complete Guide (and Its Limits)",
     "description": "A complete Guided Access iPhone guide for parents: how to set it up, use it with a baby or toddler, and where it falls short.",
