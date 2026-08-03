@@ -714,4 +714,13 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6791280506/icon.jpg",
     url: "https://apps.apple.com/gb/app/card-log-pose/id6791280506?uo=4",
   }
+  ,{
+    id: "live-captions-hearbee",
+    name: "Live Captions HearBee",
+    category: AppCategory.UTILITIES,
+    description: "See nearby speech as large, easy-to-read captions. Live Captions HearBee is built for Deaf and hard-of-hearing people, w",
+    iconColor: "bg-blue-500",
+    iconUrl: "/images/apps/6767519692/icon.jpg",
+    url: "https://apps.apple.com/gb/app/live-captions-hearbee/id6767519692?uo=4",
+  }
 ];
