@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T10:30:21.107Z",
+  "generatedAt": "2026-08-07T08:48:17.321Z",
   "apps": {
     "1570714816": {
       "name": "Anniversary Tracker",
@@ -156,7 +156,7 @@
       "requestId": "d0c6eae3-10cb-4fbd-b00c-52c7c1317875"
     },
     "6765780052": {
-      "name": "Captions: Auto Video Subtitles",
+      "name": "Caption Creator: AI Subtitles",
       "reports": {
         "discovery": "r15-8ca56cce-3d32-49ce-a16d-a62f1531ccc2",
         "downloads": "r3-8ca56cce-3d32-49ce-a16d-a62f1531ccc2",
