@@ -4,36 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Every SwiftData Property Needs a Default Value | Cong Le Apps</title>
-  <meta name="description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
-  <link rel="canonical" href="https://www.cong-le.com/blog/swiftdata-properties-need-default-values/">
+  <title>We Translate Every String As We Write It | Cong Le Apps</title>
+  <meta name="description" content="Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.">
+  <link rel="canonical" href="https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Every SwiftData Property Needs a Default Value | Cong Le Apps">
-  <meta property="og:description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
+  <meta property="og:title" content="We Translate Every String As We Write It | Cong Le Apps">
+  <meta property="og:description" content="Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.cong-le.com/blog/swiftdata-properties-need-default-values/">
+  <meta property="og:url" content="https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/">
   <meta property="og:image" content="https://www.cong-le.com/images/apps/manifest.json">
   <meta property="og:site_name" content="Cong Le Apps">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Every SwiftData Property Needs a Default Value | Cong Le Apps">
-  <meta name="twitter:description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
+  <meta name="twitter:title" content="We Translate Every String As We Write It | Cong Le Apps">
+  <meta name="twitter:description" content="Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.">
   <meta name="twitter:image" content="https://www.cong-le.com/images/apps/manifest.json">
 
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Every SwiftData Property Needs a Default Value",
-  "description": "If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.",
-  "datePublished": "2026-08-03",
-  "dateModified": "2026-08-03",
-  "keywords": "swiftdata cloudkit, swiftdata empty results, swiftdata default value, modelcontainer failed to load",
+  "headline": "We Translate Every String As We Write It",
+  "description": "Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.",
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "keywords": "ios localization workflow, swiftui localization, xcstrings, localizedstringkey",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.cong-le.com/blog/swiftdata-properties-need-default-values/"
+    "@id": "https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/"
   },
   "author": {
     "@type": "Person",
@@ -160,54 +160,67 @@
     <article>
       <header class="fade-up mb-10">
         <a href="/blog/" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">&larr; All posts</a>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">Every SwiftData Property Needs a Default Value</h1>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Published 3 August 2026</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">We Translate Every String As We Write It</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Published 10 August 2026</p>
       </header>
       <div class="prose fade-up">
-<p>Here is a bug that costs an afternoon the first time you meet it, and about ninety seconds every time after.</p>
-<p>You add SwiftData to an app, enable CloudKit sync, run it, and everything appears fine. No crash, no red text. But nothing you insert is ever saved, and every fetch comes back empty. The UI renders its empty state perfectly, forever.</p>
-<p>The cause is almost always this:</p>
-<pre><code class="language-swift">@Model
-final class Entry {
-    var title: String
-    var count: Int
+<p>The plan is always the same: build the app in English, localise it before launch. It never works, and the reason isn&#39;t laziness. It&#39;s that &quot;find every user-facing string&quot; is a search problem with no reliable query.</p>
+<h2>What retrofitting misses</h2>
+<p>By the time you go looking, the English is distributed across places you won&#39;t think to check:</p>
+<ul>
+<li>The error message that only appears when the network drops mid-save.</li>
+<li>The empty state nobody has seen since week one, because there&#39;s always test data.</li>
+<li>The accessibility label on an icon-only button.</li>
+<li>The confirmation dialog on a destructive action.</li>
+<li>The <code>plural</code> case you wrote in a hurry: <code>&quot;\(n) item&quot; + (n == 1 ? &quot;&quot; : &quot;s&quot;)</code>.</li>
+<li>Notification bodies, assembled in a background task.</li>
+<li>Widget copy, which lives in a different target entirely.</li>
+</ul>
+<p>You can grep for <code>Text(</code>. You cannot grep for &quot;strings a user might one day see.&quot; Every retrofit pass I&#39;ve done has missed something, and the misses surface as a screenshot from a Japanese user with one English sentence in the middle of an otherwise translated screen.</p>
+<p>Writing the translation at the moment you write the string costs almost nothing — you&#39;re already in the file, already thinking about the sentence. Doing it later costs a day per app and still leaks.</p>
+<h2>SwiftUI will break your localisation without telling you</h2>
+<p>This is the part worth internalising, because there&#39;s no warning and no error. It compiles, it runs, it displays English.</p>
+<p><code>Text(&quot;Save&quot;)</code> localises automatically, because the literal becomes a <code>LocalizedStringKey</code>. Break the literal in any way and that stops:</p>
+<pre><code class="language-swift">// Localises.
+Text(&quot;Save&quot;)
+
+// Does NOT localise — the ternary produces a String, not a key.
+Text(isEditing ? &quot;Save&quot; : &quot;Done&quot;)
+
+// Does NOT localise — it&#39;s a variable.
+let label = &quot;Save&quot;
+Text(label)
+
+// Does NOT localise — interpolation of a non-literal.
+Text(&quot;Hello, \(name)&quot;)   // the surrounding literal is fine; be careful what you build
+</code></pre>
+<p>The fix for the ternary is to wrap each branch, so each is still a literal at the point of lookup:</p>
+<pre><code class="language-swift">Text(isEditing ? String(localized: &quot;Save&quot;) : String(localized: &quot;Done&quot;))
+</code></pre>
+<p>And note <code>String(localized:)</code> has the same constraint in reverse — it takes a literal. <code>String(localized: someVariable)</code> will not do what you want.</p>
+<h2>Reusable views need the right parameter type</h2>
+<p>The second silent failure. You write a helper:</p>
+<pre><code class="language-swift">struct Row: View {
+    let title: String          // ← this is the bug
+    var body: some View { Text(title) }
 }
 </code></pre>
-<p>And the fix is this:</p>
-<pre><code class="language-swift">@Model
-final class Entry {
-    var title: String = &quot;&quot;
-    var count: Int = 0
+<p>Every call site passes a literal, everything looks correct, and nothing localises — because by the time the literal reaches <code>Text</code>, it&#39;s a <code>String</code>. Take a <code>LocalizedStringKey</code> instead:</p>
+<pre><code class="language-swift">struct Row: View {
+    let title: LocalizedStringKey
+    var body: some View { Text(title) }
 }
 </code></pre>
-<h2>Why CloudKit forces this</h2>
-<p>SwiftData on its own is relaxed about non-optional properties without defaults. CloudKit is not.</p>
-<p>CloudKit&#39;s schema model has no concept of a required field. Any record type it syncs must be able to exist with a value missing, because a record can arrive from a device running an older version of your app that never knew about that field. So every attribute in a CloudKit-backed store has to be either <strong>optional</strong> or <strong>have a default value</strong> — those are the only two shapes that survive a partial record.</p>
-<p>A non-optional <code>String</code> with no default is neither. There is no legal value for it when the field is absent, so the schema is rejected.</p>
-<h2>Why it&#39;s silent</h2>
-<p>This is the part that wastes the afternoon. The container fails to load, but a <code>ModelContainer</code> failure at app startup doesn&#39;t necessarily crash — depending on how you construct it, you can end up with a container that exists but has no working store behind it. Inserts go nowhere. Fetches return <code>[]</code>. No exception reaches your code.</p>
-<p>Everything downstream behaves exactly like a database that is simply empty, which is a state your app is designed to handle gracefully. Your error handling hides the error.</p>
-<p>The symptom looks like a data-flow bug — a wrong predicate, a missing <code>@Query</code>, a context that isn&#39;t propagating — and that&#39;s where most of the afternoon goes. It isn&#39;t any of those. The store never opened.</p>
-<h2>Spotting it faster</h2>
-<p><strong>Look at the console at launch, before anything else.</strong> The failure does usually log, somewhere in the noise of a normal startup, mentioning that the model couldn&#39;t be loaded or the schema is invalid for CloudKit. It scrolls past because it appears while you&#39;re still looking at the simulator, not the log.</p>
-<p><strong>Construct the container so failure is loud.</strong> If you&#39;re building a <code>ModelContainer</code> inside a <code>try?</code> or falling back to an in-memory store when the real one fails, you have written the silence yourself. During development, let it crash — a fatal error at launch is far cheaper to diagnose than an app that runs and quietly does nothing.</p>
-<p><strong>Check the model, not the query.</strong> If a fetch returns empty and you&#39;re certain you inserted, check every <code>@Model</code> property before you touch the predicate.</p>
-<h2>The rule we work to</h2>
-<p><strong>Every <code>@Model</code> property gets a default value on the declaration.</strong> Not in <code>init</code> — on the property itself.</p>
-<pre><code class="language-swift">@Model
-final class Trip {
-    var name: String = &quot;&quot;
-    var startDate: Date = Date.distantPast
-    var isArchived: Bool = false
-    var notes: String? = nil          // optional is fine too
-    var items: [Item]? = nil          // relationships: optional
-}
-</code></pre>
-<p>Setting it in <code>init</code> doesn&#39;t help. The schema is derived from the property declarations, so a default supplied only by an initialiser is invisible to the thing doing the validating.</p>
-<p>Applying this unconditionally — even to models that aren&#39;t CloudKit-backed today — costs nothing and removes the possibility of the bug entirely. We treat it as a hard rule across every app rather than a thing to remember when enabling sync, because &quot;we&#39;ll add sync later&quot; is exactly when this resurfaces, in an app whose models were written months earlier by someone who has forgotten this post exists.</p>
-<h2>One related trap</h2>
-<p>Relationships need the same treatment. A to-many relationship that isn&#39;t optional will fail schema validation for the same reason: CloudKit can&#39;t express &quot;this must have at least one.&quot; Make relationship properties optional, and handle the nil case in your UI.</p>
-<p>If you have already lost the afternoon: it wasn&#39;t the predicate.</p>
+<p>Now <code>Row(title: &quot;Save&quot;)</code> localises, because the literal is converted to a key at the call site.</p>
+<h2>Framework strings live in the app, not the framework</h2>
+<p>A subtle one if you share UI across apps. If a shared package renders &quot;Restore Purchase&quot;, the lookup happens against the <em>app&#39;s</em> bundle, not the package&#39;s. Those keys have to exist in each app&#39;s string catalogue, or they fall back to English in every app that uses the shared component — which is all of them.</p>
+<p>It&#39;s the kind of bug that hides well: the app&#39;s own screens are perfectly translated, and one button in a shared settings row isn&#39;t.</p>
+<h2>Audit anyway</h2>
+<p>Even writing strings as you go, we run an audit script before shipping that walks the source for user-facing text with no matching catalogue entry. Not because the discipline fails often, but because the cost of the check is seconds and the cost of a miss is a user seeing half a translated screen and reasonably concluding the app is sloppy.</p>
+<p>The discipline is the mechanism. The audit is the seatbelt.</p>
+<h2>The actual argument</h2>
+<p>None of this is about being thorough for its own sake. Retrofitted localisation produces apps that are 95% translated, and a 95% translated app reads worse than an English one — because the English fragment appears exactly at the moment something has gone wrong, in the error message, when the user is already frustrated and least able to guess.</p>
+<p>Which languages, and why those, is <a href="/blog/what-locales-we-translate-to-and-why">a separate question</a>.</p>
 
       </div>
 
@@ -215,9 +228,9 @@ final class Trip {
     <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-5">Related posts</h2>
     <ul class="grid gap-4">
       <li>
-        <a href="/blog/we-translate-every-string-as-we-write-it/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-          <span class="block font-semibold text-gray-900 dark:text-white mb-1">We Translate Every String As We Write It</span>
-          <span class="block text-sm text-gray-500 dark:text-gray-400">Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.</span>
+        <a href="/blog/swiftdata-properties-need-default-values/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <span class="block font-semibold text-gray-900 dark:text-white mb-1">Every SwiftData Property Needs a Default Value</span>
+          <span class="block text-sm text-gray-500 dark:text-gray-400">If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.</span>
         </a>
       </li>
       <li>

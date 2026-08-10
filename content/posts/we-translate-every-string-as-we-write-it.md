@@ -4,8 +4,8 @@ description: "Why retrofitting localisation into an iOS app always leaks, and th
 slug: we-translate-every-string-as-we-write-it
 keywords: ["ios localization workflow", "swiftui localization", "xcstrings", "localizedstringkey"]
 queue: 2
-status: queued
-publishDate:
+status: published
+publishDate: 2026-08-10
 ---
 
 The plan is always the same: build the app in English, localise it before launch. It never works, and the reason isn't laziness. It's that "find every user-facing string" is a search problem with no reliable query.

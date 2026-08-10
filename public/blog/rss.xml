@@ -6,7 +6,14 @@
     <atom:link href="https://www.cong-le.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Guides, tips, and updates from the apps built by Cong Le.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Aug 2026 10:33:50 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 08:22:05 GMT</lastBuildDate>
+    <item>
+      <title>We Translate Every String As We Write It</title>
+      <link>https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/</guid>
+      <description>Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.</description>
+      <pubDate>Mon, 10 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>Every SwiftData Property Needs a Default Value</title>
       <link>https://www.cong-le.com/blog/swiftdata-properties-need-default-values/</link>

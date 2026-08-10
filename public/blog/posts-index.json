@@ -1,5 +1,13 @@
 [
   {
+    "slug": "we-translate-every-string-as-we-write-it",
+    "title": "We Translate Every String As We Write It",
+    "description": "Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.",
+    "app": "",
+    "publishDate": "2026-08-10",
+    "updated": ""
+  },
+  {
     "slug": "swiftdata-properties-need-default-values",
     "title": "Every SwiftData Property Needs a Default Value",
     "description": "If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.",
