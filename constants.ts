@@ -723,4 +723,43 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6767519692/icon.jpg",
     url: "https://apps.apple.com/gb/app/live-captions-hearbee/id6767519692?uo=4",
   }
+  ,{
+    id: "prime-minister-sim-politics",
+    name: "Prime Minister Sim: Politics",
+    category: AppCategory.ENTERTAINMENT,
+    description: "You're the new Prime Minister. The last government imploded on live television, Downing Street is yours, and the entire ",
+    iconColor: "bg-purple-500",
+    iconUrl: "/images/apps/6787888847/icon.jpg",
+    url: "https://apps.apple.com/gb/app/prime-minister-sim-politics/id6787888847?uo=4",
+    screenshots: [
+      "/images/apps/6787888847/screenshot-1.jpg",
+      "/images/apps/6787888847/screenshot-2.jpg",
+      "/images/apps/6787888847/screenshot-3.jpg",
+      "/images/apps/6787888847/screenshot-4.jpg",
+      "/images/apps/6787888847/screenshot-5.jpg",
+      "/images/apps/6787888847/screenshot-6.jpg",
+      "/images/apps/6787888847/screenshot-7.jpg",
+    ]
+  }
+  ,{
+    id: "bingefree-recovery-companion",
+    name: "BingeFree: Recovery Companion",
+    category: AppCategory.LIFESTYLE,
+    description: "BingeFree is a calm, mascot-guided companion for binge eating recovery — built around AVRT (Addictive Voice Recognition ",
+    iconColor: "bg-rose-400",
+    iconUrl: "/images/apps/6797020508/icon.jpg",
+    url: "https://apps.apple.com/gb/app/bingefree-recovery-companion/id6797020508?uo=4",
+    screenshots: [
+      "/images/apps/6797020508/screenshot-1.jpg",
+      "/images/apps/6797020508/screenshot-2.jpg",
+      "/images/apps/6797020508/screenshot-3.jpg",
+      "/images/apps/6797020508/screenshot-4.jpg",
+      "/images/apps/6797020508/screenshot-5.jpg",
+      "/images/apps/6797020508/screenshot-6.jpg",
+      "/images/apps/6797020508/screenshot-7.jpg",
+      "/images/apps/6797020508/screenshot-8.jpg",
+      "/images/apps/6797020508/screenshot-9.jpg",
+      "/images/apps/6797020508/screenshot-10.jpg",
+    ]
+  }
 ];
