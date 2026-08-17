@@ -15,6 +15,7 @@
 ## Blog
 
 - [Blog index](https://www.cong-le.com/blog/)
+- [What Locales We Translate To, and Why](https://www.cong-le.com/blog/what-locales-we-translate-to-and-why/): Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.
 - [We Translate Every String As We Write It](https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/): Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.
 - [Every SwiftData Property Needs a Default Value](https://www.cong-le.com/blog/swiftdata-properties-need-default-values/): If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.
 - [Guided Access on iPhone: Complete Guide (and Its Limits)](https://www.cong-le.com/blog/guided-access-iphone-baby/): A complete Guided Access iPhone guide for parents: how to set it up, use it with a baby or toddler, and where it falls short.

@@ -1,5 +1,13 @@
 [
   {
+    "slug": "what-locales-we-translate-to-and-why",
+    "title": "What Locales We Translate To, and Why",
+    "description": "Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.",
+    "app": "",
+    "publishDate": "2026-08-17",
+    "updated": ""
+  },
+  {
     "slug": "we-translate-every-string-as-we-write-it",
     "title": "We Translate Every String As We Write It",
     "description": "Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.",

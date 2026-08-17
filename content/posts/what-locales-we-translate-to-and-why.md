@@ -4,8 +4,8 @@ description: "Four languages are non-negotiable, another fifteen are nearly free
 slug: what-locales-we-translate-to-and-why
 keywords: ["app store localization", "which languages to localize app", "ios app locales", "app store japan"]
 queue: 3
-status: queued
-publishDate:
+status: published
+publishDate: 2026-08-17
 ---
 
 Every app we publish ships in at least five languages. Most ship in around twenty. Here's the reasoning, because "localise everything" is not a strategy and neither is "English is fine."
