@@ -268,16 +268,25 @@ function renderPage(data) {
     "applicationCategory": ${jsonStr(schemaCategory)},
     "description": ${jsonStr(metaDescription(description, 300))},
     "url": ${jsonStr(canonical)},
+    "downloadUrl": ${jsonStr(storeUrl)},
+    "sameAs": [${jsonStr(storeUrl)}],
     "image": ${jsonStr(imageUrl)},
     "offers": {
       "@type": "Offer",
       "price": ${jsonStr(priceStr)},
-      "priceCurrency": ${jsonStr(currencyStr)}
+      "priceCurrency": ${jsonStr(currencyStr)},
+      "url": ${jsonStr(storeUrl)}
     },
     "author": {
       "@type": "Person",
       "name": "Cong Le",
       "url": "https://www.cong-le.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.cong-le.com/#organization",
+      "name": "Cong Le Apps",
+      "url": "https://www.cong-le.com/"
     }${ratingBlock}
   }`;
 

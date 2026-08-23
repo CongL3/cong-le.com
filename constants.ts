@@ -679,6 +679,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-amber-500",
     iconUrl: "/images/apps/6760960498/icon.jpg",
     url: "https://apps.apple.com/gb/app/uv-index-widget-burn-time/id6760960498?uo=4",
+    landingPage: "/apps/uv-index-widget-burn-time/",
   }
   ,{
     id: "okaeshi-return-gift-tracker",
@@ -688,6 +689,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6760551450/icon.jpg",
     url: "https://apps.apple.com/gb/app/okaeshi-return-gift-tracker/id6760551450?uo=4",
+    landingPage: "/apps/okaeshi-return-gift-tracker/",
   }
   ,{
     id: "checklist-to-do-one-focus",
@@ -697,6 +699,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/1633843163/icon.jpg",
     url: "https://apps.apple.com/gb/app/checklist-to-do-one-focus/id1633843163?uo=4",
+    landingPage: "/apps/checklist-to-do-one-focus/",
     screenshots: [
       "/images/apps/1633843163/screenshot-1.jpg",
       "/images/apps/1633843163/screenshot-2.jpg",
@@ -713,6 +716,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6791280506/icon.jpg",
     url: "https://apps.apple.com/gb/app/card-log-pose/id6791280506?uo=4",
+    landingPage: "/apps/card-log-pose/",
   }
   ,{
     id: "live-captions-hearbee",
@@ -722,6 +726,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6767519692/icon.jpg",
     url: "https://apps.apple.com/gb/app/live-captions-hearbee/id6767519692?uo=4",
+    landingPage: "/apps/live-captions-hearbee/",
   }
   ,{
     id: "prime-minister-sim-politics",
@@ -731,6 +736,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6787888847/icon.jpg",
     url: "https://apps.apple.com/gb/app/prime-minister-sim-politics/id6787888847?uo=4",
+    landingPage: "/apps/prime-minister-sim-politics/",
     screenshots: [
       "/images/apps/6787888847/screenshot-1.jpg",
       "/images/apps/6787888847/screenshot-2.jpg",
@@ -749,6 +755,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-rose-400",
     iconUrl: "/images/apps/6797020508/icon.jpg",
     url: "https://apps.apple.com/gb/app/bingefree-recovery-companion/id6797020508?uo=4",
+    landingPage: "/apps/bingefree-recovery-companion/",
     screenshots: [
       "/images/apps/6797020508/screenshot-1.jpg",
       "/images/apps/6797020508/screenshot-2.jpg",
