@@ -4,36 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Every SwiftData Property Needs a Default Value | Cong Le Apps</title>
-  <meta name="description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
-  <link rel="canonical" href="https://www.cong-le.com/blog/swiftdata-properties-need-default-values/">
+  <title>SwiftData's String SortDescriptor Isn't Sorting How You Think | Cong Le Apps</title>
+  <meta name="description" content="A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's &lt; and changes per user.">
+  <link rel="canonical" href="https://www.cong-le.com/blog/swiftdata-sortdescriptor-string-localized-standard/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Every SwiftData Property Needs a Default Value | Cong Le Apps">
-  <meta property="og:description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
+  <meta property="og:title" content="SwiftData's String SortDescriptor Isn't Sorting How You Think | Cong Le Apps">
+  <meta property="og:description" content="A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's &lt; and changes per user.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.cong-le.com/blog/swiftdata-properties-need-default-values/">
+  <meta property="og:url" content="https://www.cong-le.com/blog/swiftdata-sortdescriptor-string-localized-standard/">
   <meta property="og:image" content="https://www.cong-le.com/images/apps/manifest.json">
   <meta property="og:site_name" content="Cong Le Apps">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Every SwiftData Property Needs a Default Value | Cong Le Apps">
-  <meta name="twitter:description" content="If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.">
+  <meta name="twitter:title" content="SwiftData's String SortDescriptor Isn't Sorting How You Think | Cong Le Apps">
+  <meta name="twitter:description" content="A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's &lt; and changes per user.">
   <meta name="twitter:image" content="https://www.cong-le.com/images/apps/manifest.json">
 
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Every SwiftData Property Needs a Default Value",
-  "description": "If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.",
-  "datePublished": "2026-08-03",
-  "dateModified": "2026-08-03",
-  "keywords": "swiftdata cloudkit, swiftdata empty results, swiftdata default value, modelcontainer failed to load",
+  "headline": "SwiftData's String SortDescriptor Isn't Sorting How You Think",
+  "description": "A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's \u003c and changes per user.",
+  "datePublished": "2026-08-24",
+  "dateModified": "2026-08-24",
+  "keywords": "swiftdata sortdescriptor, swiftdata sort order wrong, localizedstandard comparator, swift sortdescriptor string",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.cong-le.com/blog/swiftdata-properties-need-default-values/"
+    "@id": "https://www.cong-le.com/blog/swiftdata-sortdescriptor-string-localized-standard/"
   },
   "author": {
     "@type": "Person",
@@ -160,66 +160,55 @@
     <article>
       <header class="fade-up mb-10">
         <a href="/blog/" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">&larr; All posts</a>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">Every SwiftData Property Needs a Default Value</h1>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Published 3 August 2026</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">SwiftData's String SortDescriptor Isn't Sorting How You Think</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Published 24 August 2026</p>
       </header>
       <div class="prose fade-up">
-<p>Here is a bug that costs an afternoon the first time you meet it, and about ninety seconds every time after.</p>
-<p>You add SwiftData to an app, enable CloudKit sync, run it, and everything appears fine. No crash, no red text. But nothing you insert is ever saved, and every fetch comes back empty. The UI renders its empty state perfectly, forever.</p>
-<p>The cause is almost always this:</p>
-<pre><code class="language-swift">@Model
-final class Entry {
-    var title: String
-    var count: Int
-}
+<blockquote class="quick-answer">
+<p><strong>Quick answer:</strong> <code>SortDescriptor</code> on a <code>String</code> key path uses <code>.localizedStandard</code> by default, which compares numerically (&quot;4&quot; before &quot;12&quot;) and depends on the user&#39;s locale. That disagrees with Swift&#39;s <code>&lt;</code>, so a fetch-level sort and any in-memory re-sort silently diverge. If you need a deterministic order, pass <code>comparator: .lexical</code>.</p>
+</blockquote>
+<p>Here&#39;s a bug that survives every test you&#39;re likely to write.</p>
+<p>A fetch sorted by a string identifier returned <code>4F3C…</code> before <code>12A3…</code>. Not a crash, not an error — just an order that made no sense until you notice what it&#39;s doing: reading the leading <code>4</code> and <code>12</code> as <em>numbers</em>, and putting 4 before 12.</p>
+<pre><code class="language-swift">// Numeric-aware and locale-dependent. Probably not what you meant.
+FetchDescriptor&lt;Card&gt;(sortBy: [SortDescriptor(\.code)])
 </code></pre>
-<p>And the fix is this:</p>
-<pre><code class="language-swift">@Model
-final class Entry {
-    var title: String = &quot;&quot;
-    var count: Int = 0
-}
+<h2>Why it happens</h2>
+<p><code>SortDescriptor</code>&#39;s initialiser for <code>String</code> key paths defaults its comparator to <code>.localizedStandard</code> — the same &quot;Finder-like&quot; comparison that puts <code>file2</code> before <code>file10</code>. It&#39;s the right default for filenames and titles shown to a person. It&#39;s the wrong default for anything you intend as an identifier.</p>
+<p>Two consequences follow, and the second is worse.</p>
+<p><strong>It disagrees with Swift&#39;s <code>&lt;</code>.</strong> Sort the same array in memory and you get a different order:</p>
+<pre><code class="language-swift">let fetched = try context.fetch(FetchDescriptor&lt;Card&gt;(sortBy: [SortDescriptor(\.code)]))
+let inMemory = cards.sorted { $0.code &lt; $1.code }
+// These do not match.
 </code></pre>
-<h2>Why CloudKit forces this</h2>
-<p>SwiftData on its own is relaxed about non-optional properties without defaults. CloudKit is not.</p>
-<p>CloudKit&#39;s schema model has no concept of a required field. Any record type it syncs must be able to exist with a value missing, because a record can arrive from a device running an older version of your app that never knew about that field. So every attribute in a CloudKit-backed store has to be either <strong>optional</strong> or <strong>have a default value</strong> — those are the only two shapes that survive a partial record.</p>
-<p>A non-optional <code>String</code> with no default is neither. There is no legal value for it when the field is absent, so the schema is rejected.</p>
-<h2>Why it&#39;s silent</h2>
-<p>This is the part that wastes the afternoon. The container fails to load, but a <code>ModelContainer</code> failure at app startup doesn&#39;t necessarily crash — depending on how you construct it, you can end up with a container that exists but has no working store behind it. Inserts go nowhere. Fetches return <code>[]</code>. No exception reaches your code.</p>
-<p>Everything downstream behaves exactly like a database that is simply empty, which is a state your app is designed to handle gracefully. Your error handling hides the error.</p>
-<p>The symptom looks like a data-flow bug — a wrong predicate, a missing <code>@Query</code>, a context that isn&#39;t propagating — and that&#39;s where most of the afternoon goes. It isn&#39;t any of those. The store never opened.</p>
-<h2>Spotting it faster</h2>
-<p><strong>Look at the console at launch, before anything else.</strong> The failure does usually log, somewhere in the noise of a normal startup, mentioning that the model couldn&#39;t be loaded or the schema is invalid for CloudKit. It scrolls past because it appears while you&#39;re still looking at the simulator, not the log.</p>
-<p><strong>Construct the container so failure is loud.</strong> If you&#39;re building a <code>ModelContainer</code> inside a <code>try?</code> or falling back to an in-memory store when the real one fails, you have written the silence yourself. During development, let it crash — a fatal error at launch is far cheaper to diagnose than an app that runs and quietly does nothing.</p>
-<p><strong>Check the model, not the query.</strong> If a fetch returns empty and you&#39;re certain you inserted, check every <code>@Model</code> property before you touch the predicate.</p>
-<h2>The rule we work to</h2>
-<p><strong>Every <code>@Model</code> property gets a default value on the declaration.</strong> Not in <code>init</code> — on the property itself.</p>
-<pre><code class="language-swift">@Model
-final class Trip {
-    var name: String = &quot;&quot;
-    var startDate: Date = Date.distantPast
-    var isArchived: Bool = false
-    var notes: String? = nil          // optional is fine too
-    var items: [Item]? = nil          // relationships: optional
-}
+<p>So a fetch-level sort and any later re-sort quietly diverge. If part of your code trusts the fetch order and part re-sorts, you get two different truths for the same data.</p>
+<p><strong>It changes with the user&#39;s locale.</strong> <code>.localizedStandard</code> is, unavoidably, localised. The order your Japanese users see is not necessarily the order your British users see. If that ordering feeds anything deterministic — a seeded shuffle, a stable tiebreak, a sync reconciliation, a checksum over ordered rows — you have a bug that only reproduces on someone else&#39;s device.</p>
+<h2>Why your tests pass</h2>
+<p>This is the part that costs the afternoon.</p>
+<p>The order is <strong>stable</strong>. Fetch twice, get the same answer both times. So the obvious test —</p>
+<pre><code class="language-swift">let a = try context.fetch(descriptor)
+let b = try context.fetch(descriptor)
+#expect(a.map(\.code) == b.map(\.code))   // passes
 </code></pre>
-<p>Setting it in <code>init</code> doesn&#39;t help. The schema is derived from the property declarations, so a default supplied only by an initialiser is invisible to the thing doing the validating.</p>
-<p>Applying this unconditionally — even to models that aren&#39;t CloudKit-backed today — costs nothing and removes the possibility of the bug entirely. We treat it as a hard rule across every app rather than a thing to remember when enabling sync, because &quot;we&#39;ll add sync later&quot; is exactly when this resurfaces, in an app whose models were written months earlier by someone who has forgotten this post exists.</p>
-<h2>One related trap</h2>
-<p>Relationships need the same treatment. A to-many relationship that isn&#39;t optional will fail schema validation for the same reason: CloudKit can&#39;t express &quot;this must have at least one.&quot; Make relationship properties optional, and handle the nil case in your UI.</p>
-<p>If you have already lost the afternoon: it wasn&#39;t the predicate.</p>
+<p>— passes cleanly and tells you nothing. Determinism across repeated fetches is not the property you care about. The properties you care about are <em>agreement with <code>&lt;</code></em> and <em>independence from locale</em>, and neither is what the test asserts.</p>
+<p>The test that catches it compares the fetch against an explicit expected order:</p>
+<pre><code class="language-swift">let fetched = try context.fetch(FetchDescriptor&lt;Card&gt;(sortBy: [SortDescriptor(\.code)]))
+#expect(fetched.map(\.code) == [&quot;12A3&quot;, &quot;4F3C&quot;])   // fails — you get 4F3C first
+</code></pre>
+<h2>The fix</h2>
+<p>Pass the comparator explicitly whenever the string is an identifier rather than display text:</p>
+<pre><code class="language-swift">FetchDescriptor&lt;Card&gt;(sortBy: [SortDescriptor(\.code, comparator: .lexical)])
+</code></pre>
+<p><code>.lexical</code> compares by Unicode scalar, matches Swift&#39;s <code>&lt;</code>, and doesn&#39;t care about locale.</p>
+<p>The rule worth adopting: <strong><code>.localizedStandard</code> for anything a human reads, <code>.lexical</code> for anything a machine relies on.</strong> Titles, names and labels want the friendly ordering — users expect &quot;Episode 2&quot; before &quot;Episode 10&quot;. Codes, identifiers, hashes and tiebreak keys want the boring one.</p>
+<h2>The related trap</h2>
+<p>While you&#39;re here: <code>UUID</code> isn&#39;t <code>Comparable</code> in Swift, so it can&#39;t be a fetch-level sort key at all. If you&#39;re using a UUID as a stable tiebreak, store it as a <code>String</code> alongside — and sort that string with <code>.lexical</code>, for exactly the reasons above.</p>
+<p>That combination — UUID stored as a string, sorted with the default comparator — is how you end up with a &quot;deterministic&quot; ordering that silently differs between two devices in different regions.</p>
 
       </div>
 
   <section class="fade-up mt-14">
     <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-5">Related posts</h2>
     <ul class="grid gap-4">
-      <li>
-        <a href="/blog/swiftdata-sortdescriptor-string-localized-standard/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-          <span class="block font-semibold text-gray-900 dark:text-white mb-1">SwiftData's String SortDescriptor Isn't Sorting How You Think</span>
-          <span class="block text-sm text-gray-500 dark:text-gray-400">A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's &lt; and changes per user.</span>
-        </a>
-      </li>
       <li>
         <a href="/blog/what-locales-we-translate-to-and-why/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
           <span class="block font-semibold text-gray-900 dark:text-white mb-1">What Locales We Translate To, and Why</span>
@@ -230,6 +219,12 @@ final class Trip {
         <a href="/blog/we-translate-every-string-as-we-write-it/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
           <span class="block font-semibold text-gray-900 dark:text-white mb-1">We Translate Every String As We Write It</span>
           <span class="block text-sm text-gray-500 dark:text-gray-400">Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.</span>
+        </a>
+      </li>
+      <li>
+        <a href="/blog/swiftdata-properties-need-default-values/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <span class="block font-semibold text-gray-900 dark:text-white mb-1">Every SwiftData Property Needs a Default Value</span>
+          <span class="block text-sm text-gray-500 dark:text-gray-400">If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.</span>
         </a>
       </li>
     </ul>

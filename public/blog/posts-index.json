@@ -1,5 +1,13 @@
 [
   {
+    "slug": "swiftdata-sortdescriptor-string-localized-standard",
+    "title": "SwiftData's String SortDescriptor Isn't Sorting How You Think",
+    "description": "A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's < and changes per user.",
+    "app": "",
+    "publishDate": "2026-08-24",
+    "updated": ""
+  },
+  {
     "slug": "what-locales-we-translate-to-and-why",
     "title": "What Locales We Translate To, and Why",
     "description": "Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.",

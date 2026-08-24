@@ -4,8 +4,8 @@ description: "A SortDescriptor on a String key path defaults to .localizedStanda
 slug: swiftdata-sortdescriptor-string-localized-standard
 keywords: ["swiftdata sortdescriptor", "swiftdata sort order wrong", "localizedstandard comparator", "swift sortdescriptor string"]
 queue: 4
-status: queued
-publishDate:
+status: published
+publishDate: 2026-08-24
 ---
 
 > **Quick answer:** `SortDescriptor` on a `String` key path uses `.localizedStandard` by default, which compares numerically ("4" before "12") and depends on the user's locale. That disagrees with Swift's `<`, so a fetch-level sort and any in-memory re-sort silently diverge. If you need a deterministic order, pass `comparator: .lexical`.

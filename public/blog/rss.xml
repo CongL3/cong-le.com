@@ -6,7 +6,14 @@
     <atom:link href="https://www.cong-le.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Guides, tips, and updates from the apps built by Cong Le.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Aug 2026 07:44:40 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 07:51:05 GMT</lastBuildDate>
+    <item>
+      <title>SwiftData's String SortDescriptor Isn't Sorting How You Think</title>
+      <link>https://www.cong-le.com/blog/swiftdata-sortdescriptor-string-localized-standard/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/swiftdata-sortdescriptor-string-localized-standard/</guid>
+      <description>A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's &lt; and changes per user.</description>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>What Locales We Translate To, and Why</title>
       <link>https://www.cong-le.com/blog/what-locales-we-translate-to-and-why/</link>
