@@ -4,36 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>What Locales We Translate To, and Why | Cong Le Apps</title>
-  <meta name="description" content="Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.">
-  <link rel="canonical" href="https://www.cong-le.com/blog/what-locales-we-translate-to-and-why/">
+  <title>CloudKit Rejects @Attribute(.unique) — Model Around It | Cong Le Apps</title>
+  <meta name="description" content="SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.">
+  <link rel="canonical" href="https://www.cong-le.com/blog/swiftdata-cloudkit-rejects-unique-attribute/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="What Locales We Translate To, and Why | Cong Le Apps">
-  <meta property="og:description" content="Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.">
+  <meta property="og:title" content="CloudKit Rejects @Attribute(.unique) — Model Around It | Cong Le Apps">
+  <meta property="og:description" content="SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.cong-le.com/blog/what-locales-we-translate-to-and-why/">
+  <meta property="og:url" content="https://www.cong-le.com/blog/swiftdata-cloudkit-rejects-unique-attribute/">
   <meta property="og:image" content="https://www.cong-le.com/images/apps/manifest.json">
   <meta property="og:site_name" content="Cong Le Apps">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="What Locales We Translate To, and Why | Cong Le Apps">
-  <meta name="twitter:description" content="Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.">
+  <meta name="twitter:title" content="CloudKit Rejects @Attribute(.unique) — Model Around It | Cong Le Apps">
+  <meta name="twitter:description" content="SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.">
   <meta name="twitter:image" content="https://www.cong-le.com/images/apps/manifest.json">
 
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "What Locales We Translate To, and Why",
-  "description": "Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.",
-  "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
-  "keywords": "app store localization, which languages to localize app, ios app locales, app store japan",
+  "headline": "CloudKit Rejects @Attribute(.unique) — Model Around It",
+  "description": "SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "keywords": "swiftdata attribute unique cloudkit, swiftdata unique constraint, cloudkit schema validation failed, swiftdata cloudkit rules",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.cong-le.com/blog/what-locales-we-translate-to-and-why/"
+    "@id": "https://www.cong-le.com/blog/swiftdata-cloudkit-rejects-unique-attribute/"
   },
   "author": {
     "@type": "Person",
@@ -160,34 +160,64 @@
     <article>
       <header class="fade-up mb-10">
         <a href="/blog/" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">&larr; All posts</a>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">What Locales We Translate To, and Why</h1>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Published 17 August 2026</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4 mb-4 text-gray-900 dark:text-white">CloudKit Rejects @Attribute(.unique) — Model Around It</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Published 31 August 2026</p>
       </header>
       <div class="prose fade-up">
-<p>Every app we publish ships in at least five languages. Most ship in around twenty. Here&#39;s the reasoning, because &quot;localise everything&quot; is not a strategy and neither is &quot;English is fine.&quot;</p>
-<h2>The case against English-only</h2>
-<p>English-only isn&#39;t a neutral default. On the App Store, your metadata — name, subtitle, keywords — is indexed <strong>per storefront</strong>. An app with only English metadata is competing in the Japanese App Store using English keywords against apps using Japanese ones. You don&#39;t rank badly. You&#39;re largely invisible.</p>
-<p>That&#39;s the part that surprises people. The cost of English-only isn&#39;t that Japanese users find your app and bounce off the language. It&#39;s that they never see it.</p>
-<h2>The four that are non-negotiable</h2>
-<p><strong>Japanese, Korean, German, Simplified Chinese.</strong></p>
-<p>Not because they&#39;re the four largest markets in raw population terms, but because of what they have in common: high-spending App Store storefronts, strong preference for native-language software, and — critically — much less competition from indie developers who stopped at English.</p>
-<p>Japanese is the standout. It&#39;s a market where paid apps and one-off purchases still perform well, users are unusually willing to pay for something small that does its job, and the review culture rewards polish. It&#39;s also a market where a half-translated app is noticed immediately and reflected in reviews. There&#39;s no cheap way in; you either localise properly or you don&#39;t bother.</p>
-<p>German brings a large European storefront with high purchase intent. Korean is small in absolute terms but dense and app-literate. Simplified Chinese is enormous, complicated for other reasons, and worth having metadata for regardless.</p>
-<h2>The fifteen that are nearly free</h2>
-<p>Once an app is properly internationalised — every string in a catalogue, no hardcoded English, no layout that assumes short words — adding another language is a translation pass, not an engineering project. That changes the maths completely.</p>
-<p>So we also ship, where it makes sense for the app: <strong>French, Spanish, Portuguese (Brazil), Italian, Traditional Chinese, Thai, Vietnamese, Indonesian, Turkish, Russian, Arabic, Hindi, Dutch, Polish, Swedish.</strong></p>
-<p>The reasoning is that the marginal cost is near zero and the marginal benefit is a storefront you were previously invisible in. Brazil, Turkey and Indonesia in particular have large, growing, under-served App Store audiences where an app with local-language metadata stands out disproportionately.</p>
-<p>Arabic deserves a specific note: it requires right-to-left layout, which is a real engineering commitment rather than a translation pass. Test it properly or leave it out — a broken RTL layout is worse than an English one.</p>
-<h2>Where it doesn&#39;t make sense</h2>
-<p>Not every app should ship in twenty languages.</p>
-<p>An app whose content is inherently tied to one country — UK passport photo specifications, a Japanese return-gift custom, a fishing calendar tuned to one region&#39;s regulations — has a natural audience that a Swedish translation does not expand. Translating the interface while the content remains irrelevant produces an app that is technically available and practically useless, and that earns one-star reviews from confused users.</p>
-<p>Our test: <strong>does the app do something useful for someone in that country?</strong> If the answer is no, the translation is a cost with no return, and the honest move is to not appear in that storefront pretending otherwise.</p>
-<h2>Machine translation, and where it isn&#39;t enough</h2>
-<p>We use machine translation as the first pass, pooled across apps so the same phrases stay consistent everywhere — &quot;Restore Purchases&quot; should be identical in every app we ship, and a shared translation database is what makes that true rather than aspirational.</p>
-<p>Where machine output isn&#39;t sufficient: anything with cultural weight, anything legal, and anything where a wrong word is unsafe rather than just awkward. Gift-giving etiquette, health-adjacent copy, and safety warnings get human review. A subtly wrong word in a settings toggle is a small embarrassment. A subtly wrong word in a warning is not.</p>
-<h2>The one that pays for itself</h2>
-<p>If you ship one language beyond English, make it Japanese. The gap between &quot;English-only&quot; and &quot;properly localised&quot; is wider in that storefront than anywhere else, the competition among small developers is thinner, and the users are more willing to pay.</p>
-<p>It&#39;s also the one that punishes half-measures hardest — which is a decent argument for <a href="/blog/we-translate-every-string-as-we-write-it">writing every string as a translated string from the start</a> rather than deciding later.</p>
+<blockquote class="quick-answer">
+<p><strong>Quick answer:</strong> <code>@Attribute(.unique)</code> cannot be used in a CloudKit-backed SwiftData store. CloudKit has no unique-constraint concept, so <code>ModelContainer.init</code> rejects the schema outright. Enforce uniqueness in your code instead — fetch-then-insert, or an upsert helper — and design for the fact that two offline devices can still create the same record.</p>
+</blockquote>
+<p>Add <code>@Attribute(.unique)</code> to a model, turn on CloudKit sync, and the container refuses to build. There is no flag, no partial mode, and no version of this that works.</p>
+<pre><code class="language-swift">@Model
+final class Card {
+    @Attribute(.unique) var code: String = &quot;&quot;   // ← breaks CloudKit
+}
+</code></pre>
+<h2>Why there&#39;s no workaround</h2>
+<p>CloudKit&#39;s record model doesn&#39;t have unique constraints. It can&#39;t — it&#39;s a distributed store designed for devices that spend a lot of time offline. Two devices in aeroplane mode can both create a record with the same value, and neither can know until they sync. A constraint that can&#39;t be checked at write time isn&#39;t a constraint.</p>
+<p>So SwiftData validates the schema up front rather than failing mysteriously later. That&#39;s the right call, but it means the fix is architectural rather than a keyword.</p>
+<p>This sits alongside the other CloudKit schema rules, which have the same root cause — a record must be able to exist with a field missing:</p>
+<ul>
+<li>Every attribute optional or defaulted <strong>on the declaration</strong>, not just in <code>init</code></li>
+<li>All relationships optional</li>
+<li>No <code>@Attribute(.unique)</code></li>
+<li>Enums stored as raw <code>String</code>/<code>Int</code>, not <code>Codable</code></li>
+</ul>
+<h2>Enforcing uniqueness yourself</h2>
+<p>The practical replacement is a fetch-then-insert:</p>
+<pre><code class="language-swift">func upsertCard(code: String, in context: ModelContext) throws -&gt; Card {
+    var descriptor = FetchDescriptor&lt;Card&gt;(
+        predicate: #Predicate { $0.code == code }
+    )
+    descriptor.fetchLimit = 1
+
+    if let existing = try context.fetch(descriptor).first {
+        return existing
+    }
+
+    let card = Card(code: code)
+    context.insert(card)
+    return card
+}
+</code></pre>
+<p>Route every insert through it. The moment one code path inserts directly, the invariant is gone — which is exactly what the attribute used to prevent, and why this is worth wrapping rather than remembering.</p>
+<h2>Design for duplicates arriving anyway</h2>
+<p>This is the part that matters more than the helper. Even with a perfect upsert, <strong>two offline devices can create the same record independently</strong>, and both will sync. Your uniqueness is best-effort within one device, not across the account.</p>
+<p>So the model needs to tolerate duplicates rather than assume they can&#39;t happen:</p>
+<ul>
+<li><strong>Fetch defensively.</strong> Use <code>.first</code> on a sorted fetch rather than assuming exactly one row. Code that does <code>results[0]</code> after asserting a count of 1 will crash on a user&#39;s device eventually.</li>
+<li><strong>Make merging cheap.</strong> If a duplicate appears, can you fold them together without losing data? Designing the model so merge is possible is worth more than trying to prevent the collision.</li>
+<li><strong>Give records a deterministic identity.</strong> If uniqueness comes from a natural key — a card code, an ISBN, a date — two devices generating the &quot;same&quot; record will at least agree on which one it is, which makes dedupe straightforward. Random UUIDs generated per device do the opposite.</li>
+</ul>
+<p>A dedupe pass at launch, keeping the oldest and folding the rest, is usually simpler than any scheme to prevent duplicates in the first place.</p>
+<h2>Verify the schema in a test</h2>
+<p>The useful thing about this validation being up front is that you can catch it in CI. With <code>cloudKitDatabase: .private(...)</code>, <code>ModelContainer.init</code> validates the entire schema — so a test that just constructs the container is real evidence, not a no-op:</p>
+<pre><code class="language-swift">@Test func schemaIsCloudKitCompatible() throws {
+    let config = ModelConfiguration(cloudKitDatabase: .private(&quot;iCloud.com.example.app&quot;))
+    _ = try ModelContainer(for: Card.self, Deck.self, configurations: config)
+}
+</code></pre>
+<p>That one test catches every rule in the list above — the missing default, the non-optional relationship, the Codable enum, the unique attribute — at the moment someone adds it, rather than when a user turns on sync and the store silently fails to load.</p>
 
       </div>
 
@@ -195,15 +225,15 @@
     <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-5">Related posts</h2>
     <ul class="grid gap-4">
       <li>
-        <a href="/blog/swiftdata-cloudkit-rejects-unique-attribute/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-          <span class="block font-semibold text-gray-900 dark:text-white mb-1">CloudKit Rejects @Attribute(.unique) — Model Around It</span>
-          <span class="block text-sm text-gray-500 dark:text-gray-400">SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.</span>
-        </a>
-      </li>
-      <li>
         <a href="/blog/swiftdata-sortdescriptor-string-localized-standard/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
           <span class="block font-semibold text-gray-900 dark:text-white mb-1">SwiftData's String SortDescriptor Isn't Sorting How You Think</span>
           <span class="block text-sm text-gray-500 dark:text-gray-400">A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's &lt; and changes per user.</span>
+        </a>
+      </li>
+      <li>
+        <a href="/blog/what-locales-we-translate-to-and-why/" class="block rounded-2xl p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <span class="block font-semibold text-gray-900 dark:text-white mb-1">What Locales We Translate To, and Why</span>
+          <span class="block text-sm text-gray-500 dark:text-gray-400">Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.</span>
         </a>
       </li>
       <li>

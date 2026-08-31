@@ -4,8 +4,8 @@ description: "SwiftData's unique constraint is incompatible with CloudKit sync. 
 slug: swiftdata-cloudkit-rejects-unique-attribute
 keywords: ["swiftdata attribute unique cloudkit", "swiftdata unique constraint", "cloudkit schema validation failed", "swiftdata cloudkit rules"]
 queue: 5
-status: queued
-publishDate:
+status: published
+publishDate: 2026-08-31
 ---
 
 > **Quick answer:** `@Attribute(.unique)` cannot be used in a CloudKit-backed SwiftData store. CloudKit has no unique-constraint concept, so `ModelContainer.init` rejects the schema outright. Enforce uniqueness in your code instead — fetch-then-insert, or an upsert helper — and design for the fact that two offline devices can still create the same record.

@@ -68,6 +68,7 @@ The [full machine-readable catalogue](https://www.cong-le.com/llms-full.txt) inc
 ## Blog
 
 - [Blog index](https://www.cong-le.com/blog/)
+- [CloudKit Rejects @Attribute(.unique) — Model Around It](https://www.cong-le.com/blog/swiftdata-cloudkit-rejects-unique-attribute/): SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.
 - [SwiftData's String SortDescriptor Isn't Sorting How You Think](https://www.cong-le.com/blog/swiftdata-sortdescriptor-string-localized-standard/): A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's < and changes per user.
 - [What Locales We Translate To, and Why](https://www.cong-le.com/blog/what-locales-we-translate-to-and-why/): Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.
 - [We Translate Every String As We Write It](https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/): Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.

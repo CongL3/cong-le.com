@@ -1,5 +1,13 @@
 [
   {
+    "slug": "swiftdata-cloudkit-rejects-unique-attribute",
+    "title": "CloudKit Rejects @Attribute(.unique) — Model Around It",
+    "description": "SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.",
+    "app": "",
+    "publishDate": "2026-08-31",
+    "updated": ""
+  },
+  {
     "slug": "swiftdata-sortdescriptor-string-localized-standard",
     "title": "SwiftData's String SortDescriptor Isn't Sorting How You Think",
     "description": "A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's < and changes per user.",
