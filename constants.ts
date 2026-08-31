@@ -769,4 +769,60 @@ export const APPS: AppData[] = [
       "/images/apps/6797020508/screenshot-10.jpg",
     ]
   }
+  ,{
+    id: "oval-office-president-sim",
+    name: "Oval Office President Sim",
+    category: AppCategory.ENTERTAINMENT,
+    description: "You're the new President. The last administration imploded live on cable news, the Oval Office is yours, and the entire ",
+    iconColor: "bg-purple-500",
+    iconUrl: "/images/apps/6790584903/icon.jpg",
+    url: "https://apps.apple.com/gb/app/oval-office-president-sim/id6790584903?uo=4",
+    screenshots: [
+      "/images/apps/6790584903/screenshot-1.jpg",
+      "/images/apps/6790584903/screenshot-2.jpg",
+      "/images/apps/6790584903/screenshot-3.jpg",
+      "/images/apps/6790584903/screenshot-4.jpg",
+      "/images/apps/6790584903/screenshot-5.jpg",
+      "/images/apps/6790584903/screenshot-6.jpg",
+    ]
+  }
+  ,{
+    id: "phrasal-verbs-english-trainer",
+    name: "Phrasal Verbs: English Trainer",
+    category: AppCategory.EDUCATION,
+    description: "Phrasal verbs are the hardest part of everyday English. give up, get over, put off, come across — tiny words that change",
+    iconColor: "bg-red-400",
+    iconUrl: "/images/apps/6797039310/icon.jpg",
+    url: "https://apps.apple.com/gb/app/phrasal-verbs-english-trainer/id6797039310?uo=4",
+    screenshots: [
+      "/images/apps/6797039310/screenshot-1.jpg",
+      "/images/apps/6797039310/screenshot-2.jpg",
+      "/images/apps/6797039310/screenshot-3.jpg",
+      "/images/apps/6797039310/screenshot-4.jpg",
+      "/images/apps/6797039310/screenshot-5.jpg",
+      "/images/apps/6797039310/screenshot-6.jpg",
+      "/images/apps/6797039310/screenshot-7.jpg",
+      "/images/apps/6797039310/screenshot-8.jpg",
+    ]
+  }
+  ,{
+    id: "coastclock-tide-times-uk",
+    name: "CoastClock: Tide Times UK",
+    category: AppCategory.WEATHER,
+    description: "See what the tide is doing without digging through menus.",
+    iconColor: "bg-amber-500",
+    iconUrl: "/images/apps/6796102052/icon.jpg",
+    url: "https://apps.apple.com/gb/app/coastclock-tide-times-uk/id6796102052?uo=4",
+    screenshots: [
+      "/images/apps/6796102052/screenshot-1.jpg",
+      "/images/apps/6796102052/screenshot-2.jpg",
+      "/images/apps/6796102052/screenshot-3.jpg",
+      "/images/apps/6796102052/screenshot-4.jpg",
+      "/images/apps/6796102052/screenshot-5.jpg",
+      "/images/apps/6796102052/screenshot-6.jpg",
+      "/images/apps/6796102052/screenshot-7.jpg",
+      "/images/apps/6796102052/screenshot-8.jpg",
+      "/images/apps/6796102052/screenshot-9.jpg",
+    ]
+  }
 ];
