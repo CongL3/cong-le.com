@@ -1,10 +1,9 @@
 import React from 'react';
 import { ArrowUpRight, BookOpen } from 'lucide-react';
 
-// Keep this pointed at the live archive until the PocketGrove developer index
-// is deployed. The three topics below are intentionally not deep links while
-// their articles remain in the editing queue.
-const POCKETGROVE_WRITING_URL = 'https://pocketgrove.com/blog/';
+// The three topics below are intentionally not deep links while their
+// articles remain in the editing queue.
+const POCKETGROVE_DEVELOPER_BLOG_URL = 'https://pocketgrove.com/blog/developer/';
 const developerPosts = [
   {
     title: 'Stop putting everything in CLAUDE.md',
@@ -55,12 +54,12 @@ const DeveloperNotes: React.FC = () => {
 
         <div className="mt-8 text-center">
           <a
-            href={trackedUrl(POCKETGROVE_WRITING_URL, 'developer-notes-hub')}
+            href={trackedUrl(POCKETGROVE_DEVELOPER_BLOG_URL, 'developer-notes-hub')}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
           >
-            Visit the PocketGrove writing archive
+            Browse all developer notes
             <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </div>
