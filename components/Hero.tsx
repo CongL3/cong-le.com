@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Globe, Twitter } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Globe, Twitter } from 'lucide-react';
 import { HERO_CONTENT, STATS } from '../constants';
 
 const Hero: React.FC = () => {
@@ -38,6 +38,22 @@ const Hero: React.FC = () => {
             {HERO_CONTENT.blurb}
           </p>
         )}
+
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <a
+            href="#download-spotlight"
+            className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
+          >
+            Try an app
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </a>
+          <a
+            href="#apps"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-6 py-3 font-semibold text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:text-gray-200 dark:hover:border-blue-700 dark:hover:text-blue-400"
+          >
+            Browse all apps
+          </a>
+        </div>
 
         {/* Social Links */}
         <div className="flex space-x-4 mb-10">

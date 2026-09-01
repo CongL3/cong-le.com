@@ -70,6 +70,14 @@ test.describe('Navbar', () => {
   });
 });
 
+test.describe('Hero conversion links', () => {
+  test('first-screen Try an app CTA reaches the spotlight', async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('link', { name: 'Try an app' }).first().click();
+    await expect(page.locator('#download-spotlight')).toBeInViewport({ timeout: 3000 });
+  });
+});
+
 test.describe('CV download', () => {
   test('CV.pdf returns 200', async ({ page }) => {
     const response = await page.request.get('/CV.pdf');
