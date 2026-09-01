@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import DeveloperNotes from './components/DeveloperNotes';
 import AppGrid from './components/AppGrid';
 import Career from './components/Career';
 import Footer from './components/Footer';
@@ -13,6 +14,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <About />
+        <DeveloperNotes />
         <AppGrid />
         <Career />
       </main>
