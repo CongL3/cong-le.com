@@ -34,65 +34,39 @@ test.describe('Dark mode', () => {
   });
 });
 
-test.describe('Featured section', () => {
-  test('Anniversary Tracker screenshots are visible', async ({ page }) => {
+test.describe('Download spotlight', () => {
+  test('shows the four measured acquisition candidates', async ({ page }) => {
     await page.goto('/');
-    await page.locator('#featured').scrollIntoViewIfNeeded();
-    const screenshots = page.locator('#featured img[src*="1570714816"]');
-    await expect(screenshots.first()).toBeVisible();
-    const src = await screenshots.first().getAttribute('src');
-    expect(src).toContain('screenshot-');
+    await page.locator('#download-spotlight').scrollIntoViewIfNeeded();
+    await expect(page.locator('#download-spotlight')).toBeVisible();
+    await expect(page.locator('#download-spotlight > div > div.grid > a')).toHaveCount(4);
+    await expect(page.locator('#download-spotlight')).toContainText('Anniversary Tracker');
+    await expect(page.locator('#download-spotlight')).toContainText('DocScanner: Sign Documents');
+    await expect(page.locator('#download-spotlight')).toContainText('Prime Minister Sim: Politics');
+    await expect(page.locator('#download-spotlight')).toContainText('Ollama Connect');
   });
 
-  test('secondary cards show real imagery, not placeholders', async ({ page }) => {
+  test('uses app-specific PocketGrove referral links', async ({ page }) => {
     await page.goto('/');
-    await page.locator('#featured').scrollIntoViewIfNeeded();
-    const secondaryImgs = page.locator('#featured .grid a img');
-    await expect(secondaryImgs).toHaveCount(3);
-    for (const src of await secondaryImgs.evaluateAll((imgs) => imgs.map((img) => img.getAttribute('src') || ''))) {
-      expect(src).not.toContain('placeholder');
-    }
-  });
-});
-
-test.describe('Gallery section', () => {
-  test('renders and has screenshot images', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('#gallery').scrollIntoViewIfNeeded();
-    await expect(page.locator('#gallery')).toBeVisible();
-    const imgs = page.locator('#gallery img[src*="screenshot"]');
-    const count = await imgs.count();
-    expect(count).toBeGreaterThan(10);
-  });
-
-  test('lightbox opens on screenshot click', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('#gallery').scrollIntoViewIfNeeded();
-    await page.locator('#gallery button').first().click();
-    await expect(page.locator('.fixed.inset-0')).toBeVisible();
-  });
-
-  test('lightbox closes on background click', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('#gallery').scrollIntoViewIfNeeded();
-    await page.locator('#gallery button').first().click();
-    await expect(page.locator('.fixed.inset-0')).toBeVisible();
-    await page.locator('.fixed.inset-0').click({ position: { x: 10, y: 10 } });
-    await expect(page.locator('.fixed.inset-0')).not.toBeVisible();
+    const links = page.locator('#download-spotlight > div > div.grid > a');
+    await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/apps\/anniversary-tracker\/\?utm_source=congle/);
+    await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/apps\/docscanner-sign-documents\/\?utm_source=congle/);
+    await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/apps\/prime-minister-sim-politics\/\?utm_source=congle/);
+    await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/apps\/ollama-connect\/\?utm_source=congle/);
   });
 });
 
 test.describe('Navbar', () => {
-  test('Gallery link is present and scrolls to section', async ({ page }) => {
+  test('Try an app link is present and scrolls to the spotlight', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: 'Gallery' }).click();
-    await expect(page.locator('#gallery')).toBeInViewport({ timeout: 3000 });
+    await page.getByRole('button', { name: 'Try an app' }).first().click();
+    await expect(page.locator('#download-spotlight')).toBeInViewport({ timeout: 3000 });
   });
 
-  test('View Flagship App scrolls to featured', async ({ page }) => {
+  test('Browse all apps link scrolls to the portfolio', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: 'View Flagship App' }).click();
-    await expect(page.locator('#featured')).toBeInViewport({ timeout: 3000 });
+    await page.locator('#download-spotlight').getByRole('link', { name: 'Browse all 50+ apps' }).click();
+    await expect(page.locator('#apps')).toBeInViewport({ timeout: 3000 });
   });
 });
 

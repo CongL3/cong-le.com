@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import DownloadSpotlight from './components/DownloadSpotlight';
 import DeveloperNotes from './components/DeveloperNotes';
 import AppGrid from './components/AppGrid';
 import Career from './components/Career';
@@ -13,6 +14,7 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
+        <DownloadSpotlight />
         <About />
         <DeveloperNotes />
         <AppGrid />
