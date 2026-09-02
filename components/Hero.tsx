@@ -1,6 +1,17 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Globe, Twitter } from 'lucide-react';
-import { HERO_CONTENT, STATS } from '../constants';
+import { ArrowRight, Download, Github, Linkedin, Globe, Twitter } from 'lucide-react';
+import { APPS, HERO_CONTENT, STATS } from '../constants';
+
+const ANNIVERSARY_DOWNLOAD_URL = (() => {
+  const app = APPS.find((candidate) => candidate.id === 'anniversary');
+  if (!app?.url) return null;
+
+  const url = new URL(app.url);
+  url.searchParams.set('pt', '19678800');
+  url.searchParams.set('ct', 'congle-web-hero-anniversary');
+  url.searchParams.set('mt', '8');
+  return url.toString();
+})();
 
 const Hero: React.FC = () => {
   return (
@@ -40,9 +51,20 @@ const Hero: React.FC = () => {
         )}
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {ANNIVERSARY_DOWNLOAD_URL ? (
+            <a
+              href={ANNIVERSARY_DOWNLOAD_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
+            >
+              Download Anniversary Tracker
+              <Download className="w-4 h-4" aria-hidden="true" />
+            </a>
+          ) : null}
           <a
             href="#download-spotlight"
-            className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-6 py-3 font-semibold text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:text-gray-200 dark:hover:border-blue-700 dark:hover:text-blue-400"
           >
             Try an app
             <ArrowRight className="w-4 h-4" aria-hidden="true" />

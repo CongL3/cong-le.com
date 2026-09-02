@@ -95,6 +95,14 @@ test.describe('Navbar', () => {
 });
 
 test.describe('Hero conversion links', () => {
+  test('first screen exposes a direct Anniversary Tracker download', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByRole('link', { name: 'Download Anniversary Tracker' })).toHaveAttribute(
+      'href',
+      /https:\/\/apps\.apple\.com\/gb\/app\/anniversary-tracker\/.*\?(?=.*pt=19678800)(?=.*ct=congle-web-hero-anniversary)/,
+    );
+  });
+
   test('first-screen Try an app CTA reaches the spotlight', async ({ page }) => {
     await page.goto('/');
     await page.getByRole('link', { name: 'Try an app' }).first().click();
