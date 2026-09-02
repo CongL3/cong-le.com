@@ -4,7 +4,8 @@
 
 # Run and deploy your AI Studio app
 
-This contains everything you need to run your app locally.
+This repository powers cong-le.com: Cong Le's portfolio, with a direct Anniversary
+Tracker download and links for exploring the wider app collection.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1GzGCI6bShu3uuLy6ZThCs7fJJeIlCTBC
 
