@@ -35,22 +35,23 @@ test.describe('Dark mode', () => {
 });
 
 test.describe('Download spotlight', () => {
-  test('shows the four measured acquisition candidates', async ({ page }) => {
+  test('shows the four active acquisition candidates', async ({ page }) => {
     await page.goto('/');
     await page.locator('#download-spotlight').scrollIntoViewIfNeeded();
     await expect(page.locator('#download-spotlight')).toBeVisible();
     await expect(page.locator('#download-spotlight > div > div.grid > a')).toHaveCount(4);
     await expect(page.locator('#download-spotlight')).toContainText('Anniversary Tracker');
-    await expect(page.locator('#download-spotlight')).toContainText('DocScanner: Sign Documents');
+    await expect(page.locator('#download-spotlight')).toContainText('Solunar: Best Fishing Times');
     await expect(page.locator('#download-spotlight')).toContainText('Prime Minister Sim: Politics');
     await expect(page.locator('#download-spotlight')).toContainText('Ollama Connect');
+    await expect(page.locator('#download-spotlight')).not.toContainText('DocScanner: Sign Documents');
   });
 
   test('uses app-specific PocketGrove referral links', async ({ page }) => {
     await page.goto('/');
     const links = page.locator('#download-spotlight > div > div.grid > a');
     await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/apps\/anniversary-tracker\/\?utm_source=congle/);
-    await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/apps\/docscanner-sign-documents\/\?utm_source=congle/);
+    await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/apps\/solunar-best-fishing-times\/\?utm_source=congle/);
     await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/apps\/prime-minister-sim-politics\/\?utm_source=congle/);
     await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/apps\/ollama-connect\/\?utm_source=congle/);
   });
