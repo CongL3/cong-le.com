@@ -4,12 +4,12 @@ import { APPS } from '../constants';
 
 const POCKETGROVE_APP_PAGES: Record<string, string> = {
   anniversary: 'https://pocketgrove.com/apps/anniversary-tracker/',
-  docscanner: 'https://pocketgrove.com/apps/docscanner-sign-documents/',
+  solunar: 'https://pocketgrove.com/apps/solunar-best-fishing-times/',
   'prime-minister-sim-politics': 'https://pocketgrove.com/apps/prime-minister-sim-politics/',
   'ollama-connect': 'https://pocketgrove.com/apps/ollama-connect/',
 };
 
-const spotlightIds = ['anniversary', 'docscanner', 'prime-minister-sim-politics', 'ollama-connect'];
+const spotlightIds = ['anniversary', 'solunar', 'prime-minister-sim-politics', 'ollama-connect'];
 
 const DownloadSpotlight: React.FC = () => {
   const apps = spotlightIds
