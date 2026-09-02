@@ -95,6 +95,14 @@ test.describe('Navbar', () => {
 });
 
 test.describe('Hero conversion links', () => {
+  test('advertises Anniversary Tracker to iOS Smart App Banner', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('meta[name="apple-itunes-app"]')).toHaveAttribute(
+      'content',
+      'app-id=1570714816',
+    );
+  });
+
   test('first screen exposes a direct Anniversary Tracker download', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 568 });
     await page.goto('/');
