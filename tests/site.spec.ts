@@ -39,7 +39,7 @@ test.describe('Download spotlight', () => {
     await page.goto('/');
     await page.locator('#download-spotlight').scrollIntoViewIfNeeded();
     await expect(page.locator('#download-spotlight')).toBeVisible();
-    await expect(page.locator('#download-spotlight > div > div.grid > a')).toHaveCount(4);
+    await expect(page.locator('#download-spotlight > div > div.grid > article')).toHaveCount(4);
     await expect(page.locator('#download-spotlight')).toContainText('Anniversary Tracker');
     await expect(page.locator('#download-spotlight')).toContainText('Football Career Quest');
     await expect(page.locator('#download-spotlight')).toContainText('Prime Minister Sim: Politics');
@@ -49,11 +49,20 @@ test.describe('Download spotlight', () => {
 
   test('uses app-specific PocketGrove referral links', async ({ page }) => {
     await page.goto('/');
-    const links = page.locator('#download-spotlight > div > div.grid > a');
+    const links = page.locator('#download-spotlight > div > div.grid > article a').filter({ hasText: 'Learn more' });
     await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/apps\/anniversary-tracker\/\?utm_source=congle/);
     await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/apps\/football-career-quest\/\?utm_source=congle/);
     await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/apps\/prime-minister-sim-politics\/\?utm_source=congle/);
     await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/apps\/ollama-connect\/\?utm_source=congle/);
+  });
+
+  test('exposes direct attributed App Store download links', async ({ page }) => {
+    await page.goto('/');
+    const links = page.locator('#download-spotlight > div > div.grid > article a').filter({ hasText: 'Download' });
+    await expect(links).toHaveCount(4);
+    for (let i = 0; i < 4; i += 1) {
+      await expect(links.nth(i)).toHaveAttribute('href', /https:\/\/apps\.apple\.com\/gb\/app\/.*\?(?=.*pt=19678800)(?=.*ct=congle-web-spotlight-)/);
+    }
   });
 });
 
