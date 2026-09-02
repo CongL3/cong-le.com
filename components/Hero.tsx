@@ -41,6 +41,17 @@ const Hero: React.FC = () => {
         <p className="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-medium mb-3">
           {HERO_CONTENT.title}
         </p>
+        {ANNIVERSARY_DOWNLOAD_URL ? (
+          <a
+            href={ANNIVERSARY_DOWNLOAD_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
+          >
+            Download Anniversary Tracker
+            <Download className="w-4 h-4" aria-hidden="true" />
+          </a>
+        ) : null}
         <p className="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-6">
           {HERO_CONTENT.subtitle}
         </p>
@@ -51,17 +62,6 @@ const Hero: React.FC = () => {
         )}
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {ANNIVERSARY_DOWNLOAD_URL ? (
-            <a
-              href={ANNIVERSARY_DOWNLOAD_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
-            >
-              Download Anniversary Tracker
-              <Download className="w-4 h-4" aria-hidden="true" />
-            </a>
-          ) : null}
           <a
             href="#download-spotlight"
             className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-6 py-3 font-semibold text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:text-gray-200 dark:hover:border-blue-700 dark:hover:text-blue-400"
