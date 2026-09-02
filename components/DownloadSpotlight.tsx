@@ -1,6 +1,9 @@
 import React from 'react';
 import { ArrowUpRight, Download } from 'lucide-react';
 import { APPS } from '../constants';
+import type { AppData } from '../types';
+
+const APP_STORE_PROVIDER_TOKEN = '19678800';
 
 const POCKETGROVE_APP_PAGES: Record<string, string> = {
   anniversary: 'https://pocketgrove.com/apps/anniversary-tracker/',
@@ -10,6 +13,16 @@ const POCKETGROVE_APP_PAGES: Record<string, string> = {
 };
 
 const spotlightIds = ['anniversary', 'football-career-quest', 'prime-minister-sim-politics', 'ollama-connect'];
+
+function spotlightStoreUrl(app: AppData): string | null {
+  if (!app.url) return null;
+
+  const url = new URL(app.url);
+  url.searchParams.set('pt', APP_STORE_PROVIDER_TOKEN);
+  url.searchParams.set('ct', `congle-web-spotlight-${app.id}`);
+  url.searchParams.set('mt', '8');
+  return url.toString();
+}
 
 const DownloadSpotlight: React.FC = () => {
   const apps = spotlightIds
@@ -49,23 +62,41 @@ const DownloadSpotlight: React.FC = () => {
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {apps.map(({ app, href }) => (
-            <a
-              key={app.id}
-              href={`${href}?utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=${app.id}`}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-gray-50 p-5 transition-all hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-700"
-            >
-              <img src={app.iconUrl} alt="" width={64} height={64} className="h-16 w-16 rounded-2xl shadow-sm" loading="lazy" />
-              <h3 className="mt-5 text-lg font-bold leading-snug text-gray-900 dark:text-white">{app.name}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{app.description}</p>
-              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 transition-colors group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-300">
-                See the app
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-              </span>
-            </a>
-          ))}
+          {apps.map(({ app, href }) => {
+            const storeUrl = spotlightStoreUrl(app);
+            return (
+              <article
+                key={app.id}
+                className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-gray-50 p-5 transition-all hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-700"
+              >
+                <img src={app.iconUrl} alt="" width={64} height={64} className="h-16 w-16 rounded-2xl shadow-sm" loading="lazy" />
+                <h3 className="mt-5 text-lg font-bold leading-snug text-gray-900 dark:text-white">{app.name}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{app.description}</p>
+                <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold">
+                  <a
+                    href={`${href}?utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=${app.id}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+                  >
+                    Learn more
+                    <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                  </a>
+                  {storeUrl ? (
+                    <a
+                      href={storeUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    >
+                      Download
+                      <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                    </a>
+                  ) : null}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
