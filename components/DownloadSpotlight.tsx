@@ -65,36 +65,36 @@ const DownloadSpotlight: React.FC = () => {
           {apps.map(({ app, href }) => {
             const storeUrl = spotlightStoreUrl(app);
             return (
-            <article
-              key={app.id}
-              className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-gray-50 p-5 transition-all hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-700"
-            >
-              <img src={app.iconUrl} alt="" width={64} height={64} className="h-16 w-16 rounded-2xl shadow-sm" loading="lazy" />
-              <h3 className="mt-5 text-lg font-bold leading-snug text-gray-900 dark:text-white">{app.name}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{app.description}</p>
-              <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold">
-                <a
-                  href={`${href}?utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=${app.id}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
-                >
-                  Learn more
-                  <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-                </a>
-                {storeUrl ? (
+              <article
+                key={app.id}
+                className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-gray-50 p-5 transition-all hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-700"
+              >
+                <img src={app.iconUrl} alt="" width={64} height={64} className="h-16 w-16 rounded-2xl shadow-sm" loading="lazy" />
+                <h3 className="mt-5 text-lg font-bold leading-snug text-gray-900 dark:text-white">{app.name}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{app.description}</p>
+                <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold">
                   <a
-                    href={storeUrl}
+                    href={`${href}?utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=${app.id}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    className="inline-flex items-center gap-1 text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
                   >
-                    Download
+                    Learn more
                     <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                   </a>
-                ) : null}
-              </div>
-            </article>
+                  {storeUrl ? (
+                    <a
+                      href={storeUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    >
+                      Download
+                      <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                    </a>
+                  ) : null}
+                </div>
+              </article>
             );
           })}
         </div>

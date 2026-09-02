@@ -18,7 +18,9 @@ do it. He will forget these otherwise.
 - `scripts/build-blog.mjs` + `generate-sitemap.mjs` also run as `prebuild`.
 - `scripts/lib/apps.mjs` — app registry used by the blog CTA (slug → trackId/store URL).
 - `public/apps/<slug>/index.html` — static SEO landing pages. All App Store links carry
-  `?ct=congle-web-<slug>&mt=8` campaign tokens (`ct=congle-web-home` from the homepage).
+  `ct=congle-web-<slug>&pt=19678800` attribution. Homepage grid links use
+  `ct=congle-web-home`; spotlight downloads use `ct=congle-web-spotlight-<app-id>`
+  and add `mt=8`.
 - Strategy/keyword map/batch recipe: `/Users/congle/Dev/SEO/PLAYBOOK.md`.
 
 ## Conventions
