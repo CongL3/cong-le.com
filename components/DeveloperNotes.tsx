@@ -1,21 +1,25 @@
 import React from 'react';
 import { ArrowUpRight, BookOpen } from 'lucide-react';
 
-// The three topics below are intentionally not deep links while their
-// articles remain in the editing queue.
 const POCKETGROVE_DEVELOPER_BLOG_URL = 'https://pocketgrove.com/blog/developer/';
 const developerPosts = [
   {
     title: 'Stop putting everything in CLAUDE.md',
     description: 'A practical way to separate always-on project rules from task-specific agent skills.',
+    path: 'https://pocketgrove.com/blog/stop-putting-everything-in-claude-md/',
+    content: 'stop-putting-everything-in-claude-md',
   },
   {
     title: 'Build huge agent knowledge bases without huge context windows',
     description: 'How layered references and retrieval keep large engineering knowledge useful.',
+    path: 'https://pocketgrove.com/blog/how-to-build-huge-agent-knowledge-bases-without-huge-context-windows/',
+    content: 'huge-agent-knowledge-bases',
   },
   {
     title: 'Your CLAUDE.md needs tests too',
     description: 'Treat agent instructions like executable project behaviour: test them, audit them, and keep them current.',
+    path: 'https://pocketgrove.com/blog/your-claude-md-needs-tests-too/',
+    content: 'claude-md-needs-tests',
   },
 ];
 
@@ -47,7 +51,15 @@ const DeveloperNotes: React.FC = () => {
             >
               <h3 className="text-xl font-bold leading-snug text-gray-900 dark:text-white">{post.title}</h3>
               <p className="mt-3 flex-1 text-gray-600 dark:text-gray-400 leading-relaxed">{post.description}</p>
-              <span className="mt-6 text-sm font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">Coming to the developer series</span>
+              <a
+                href={trackedUrl(post.path, post.content)}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+              >
+                Read the essay
+                <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+              </a>
             </article>
           ))}
         </div>

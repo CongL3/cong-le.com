@@ -66,6 +66,20 @@ test.describe('Download spotlight', () => {
   });
 });
 
+test.describe('Developer notes', () => {
+  test('links the published essays instead of showing placeholder copy', async ({ page }) => {
+    await page.goto('/');
+    const section = page.locator('#developer-notes');
+    await expect(section).toContainText('Read the essay');
+    await expect(section).not.toContainText('Coming to the developer series');
+    const links = section.getByRole('link', { name: 'Read the essay' });
+    await expect(links).toHaveCount(3);
+    await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/blog\/stop-putting-everything-in-claude-md\/\?utm_source=congle/);
+    await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/blog\/how-to-build-huge-agent-knowledge-bases-without-huge-context-windows\/\?utm_source=congle/);
+    await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/blog\/your-claude-md-needs-tests-too\/\?utm_source=congle/);
+  });
+});
+
 test.describe('Navbar', () => {
   test('Try an app link is present and scrolls to the spotlight', async ({ page }) => {
     await page.goto('/');
