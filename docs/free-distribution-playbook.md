@@ -24,6 +24,11 @@ links.
   “submit the application” flow and points visitors to the product's official
   website. Add only apps that fit a real alternative/search need, with accurate
   platform and pricing information.
+- [Apple editorial consideration](https://appstore.com/promote) — Apple points
+  Developer Program members to this route to submit an app for App Store
+  feature consideration. Consider Anniversary Tracker, Football Career Quest,
+  Hoop Quest, or Solunar only when there is a timely product story or meaningful
+  update; selection is editorial and never guaranteed.
 - [Indie Hackers](https://www.indiehackers.com/) — treat this as a builder
   community, not a bulk directory. Share a specific build lesson or launch
   story and participate before linking to an app.
