@@ -5,6 +5,11 @@ import type { AppData } from '../types';
 
 const APP_STORE_PROVIDER_TOKEN = '19678800';
 
+const GOOGLE_PLAY_LINKS: Record<string, string> = {
+  anniversary: 'https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.AnniversaryTracker',
+  'ollama-connect': 'https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.OllamaConnect',
+};
+
 const POCKETGROVE_APP_PAGES: Record<string, string> = {
   anniversary: 'https://pocketgrove.com/anniversary-tracker/',
   'football-career-quest': 'https://pocketgrove.com/football-career-quest/',
@@ -28,6 +33,18 @@ function spotlightStoreUrl(app: AppData): string | null {
   url.searchParams.set('pt', APP_STORE_PROVIDER_TOKEN);
   url.searchParams.set('ct', `congle-web-spotlight-${app.id}`);
   url.searchParams.set('mt', '8');
+  return url.toString();
+}
+
+function spotlightGooglePlayUrl(app: AppData): string | null {
+  const baseUrl = GOOGLE_PLAY_LINKS[app.id];
+  if (!baseUrl) return null;
+
+  const url = new URL(baseUrl);
+  url.searchParams.set('utm_source', 'congle');
+  url.searchParams.set('utm_medium', 'referral');
+  url.searchParams.set('utm_campaign', 'portfolio_downloads');
+  url.searchParams.set('utm_content', `${app.id}-android`);
   return url.toString();
 }
 
@@ -71,6 +88,7 @@ const DownloadSpotlight: React.FC = () => {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {apps.map(({ app, href }) => {
             const storeUrl = spotlightStoreUrl(app);
+            const googlePlayUrl = spotlightGooglePlayUrl(app);
             return (
               <article
                 key={app.id}
@@ -95,6 +113,16 @@ const DownloadSpotlight: React.FC = () => {
                       className="inline-flex items-center gap-1 rounded-full bg-blue-600 px-4 py-2 text-white shadow-sm transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
                     >
                       Download on the App Store
+                      <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                    </a>
+                  ) : null}
+                  {googlePlayUrl ? (
+                    <a
+                      href={googlePlayUrl}
+                      aria-label={`${app.name} on Google Play`}
+                      className="inline-flex items-center gap-1 rounded-full border border-gray-300 px-4 py-2 text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-700 dark:border-gray-700 dark:text-gray-200 dark:hover:border-blue-500 dark:hover:text-blue-300"
+                    >
+                      Get it on Google Play
                       <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                     </a>
                   ) : null}

@@ -82,6 +82,22 @@ test.describe('Download spotlight', () => {
     }
   });
 
+  test('exposes verified Android download links where Google Play is available', async ({ page }) => {
+    await page.goto('/');
+    const links = page.getByRole('link', { name: /on Google Play/ });
+    await expect(links).toHaveCount(2);
+    await expect(links.nth(0)).toHaveAttribute(
+      'href',
+      /play\.google\.com\/store\/apps\/details\?id=com\.congle\.TEAMCONG\.AnniversaryTracker&.*utm_source=congle.*utm_content=anniversary-android/,
+    );
+    await expect(links.nth(1)).toHaveAttribute(
+      'href',
+      /play\.google\.com\/store\/apps\/details\?id=com\.congle\.TEAMCONG\.OllamaConnect&.*utm_source=congle.*utm_content=ollama-connect-android/,
+    );
+    await expect(links.nth(0)).not.toHaveAttribute('target', '_blank');
+    await expect(links.nth(1)).not.toHaveAttribute('target', '_blank');
+  });
+
   test('uses app-specific campaign links in the full app grid', async ({ page }) => {
     await page.goto('/');
     const links = page.locator('#apps a[aria-label$="on the App Store"]');
