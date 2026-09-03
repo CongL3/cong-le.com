@@ -9,10 +9,10 @@ const POCKETGROVE_APP_PAGES: Record<string, string> = {
   anniversary: 'https://pocketgrove.com/anniversary-tracker/',
   'football-career-quest': 'https://pocketgrove.com/football-career-quest/',
   'prime-minister-sim-politics': 'https://pocketgrove.com/prime-minister-sim/',
-  'ollama-connect': 'https://pocketgrove.com/apps/ollama-connect/',
+  'ollama-connect': 'https://pocketgrove.com/ollama-connect/',
   'hoop-quest': 'https://pocketgrove.com/hoop-quest/',
   'baby-screen-lock': 'https://pocketgrove.com/baby-screen-lock/',
-  solunar: 'https://pocketgrove.com/apps/solunar-best-fishing-times/',
+  solunar: 'https://pocketgrove.com/solunar-fishing-times/',
 };
 
 // Keep the first-screen order aligned with the latest complete first-time
