@@ -56,6 +56,56 @@
   }
   </script>
 
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What kind of game is Prime Minister Sim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prime Minister Sim is a fast political survival game with swipe-simple decisions, satirical consequences, short sessions, and four factions that react to every choice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you stay in office?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Balance the Cabinet, Backbenchers, Media, and Public. If any one faction reaches zero, your government is over."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Prime Minister Sim based on real politicians or events?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The politicians, parties, events, ministers, and tabloids are fictional and satirical; no real politician, party, or event is used."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long is a typical session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The game is designed around five-minute sessions, so you can make a few decisions or try to survive a longer run."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the full game free to play?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The full game is free to play. Occasional ads appear between completed turns and one optional purchase can remove them forever."
+        }
+      }
+    ]
+  }
+  </script>
+
   <script>
     (function () {
       var saved = localStorage.getItem('theme');
@@ -190,6 +240,35 @@
     </div>
   </section>
 <!-- /BLOG-LINKS -->
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-24" aria-labelledby="faq-heading">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 id="faq-heading" class="text-4xl md:text-5xl mb-10 text-center fade-up">Frequently asked questions</h2>
+      <div class="space-y-6">
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">What kind of game is Prime Minister Sim?</h3>
+          <p>It is a fast political survival game with swipe-simple decisions, satirical consequences, short sessions, and four factions that react to every choice.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">How do you stay in office?</h3>
+          <p>Balance the Cabinet, Backbenchers, Media, and Public. If any one faction reaches zero, your government is over.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">Is Prime Minister Sim based on real politicians or events?</h3>
+          <p>No. The politicians, parties, events, ministers, and tabloids are fictional and satirical; no real politician, party, or event is used.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">How long is a typical session?</h3>
+          <p>The game is designed around five-minute sessions, so you can make a few decisions or try to survive a longer run.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">Is the full game free to play?</h3>
+          <p>The full game is free to play. Occasional ads appear between completed turns and one optional purchase can remove them forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Final CTA -->
   <section class="py-24 lg:py-32 text-center">
