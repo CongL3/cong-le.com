@@ -6,7 +6,7 @@ import type { AppData } from '../types';
 const APP_STORE_PROVIDER_TOKEN = '19678800';
 
 const POCKETGROVE_APP_PAGES: Record<string, string> = {
-  anniversary: 'https://pocketgrove.com/apps/anniversary-tracker/',
+  anniversary: 'https://pocketgrove.com/anniversary-tracker/',
   'football-career-quest': 'https://pocketgrove.com/football-career-quest/',
   'prime-minister-sim-politics': 'https://pocketgrove.com/prime-minister-sim/',
   'ollama-connect': 'https://pocketgrove.com/apps/ollama-connect/',

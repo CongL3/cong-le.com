@@ -63,7 +63,7 @@ test.describe('Download spotlight', () => {
   test('uses app-specific PocketGrove referral links', async ({ page }) => {
     await page.goto('/');
     const links = page.locator('#download-spotlight > div > div.grid > article a').filter({ hasText: 'Learn more' });
-    await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/apps\/anniversary-tracker\/\?utm_source=congle/);
+    await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/anniversary-tracker\/\?utm_source=congle/);
     await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/football-career-quest\/\?utm_source=congle/);
     await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/prime-minister-sim\/\?utm_source=congle/);
     await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/hoop-quest\/\?utm_source=congle/);
