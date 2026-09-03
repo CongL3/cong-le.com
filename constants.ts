@@ -110,6 +110,7 @@ export const APPS: AppData[] = [
     description: "Chat with AI — frank, uncensored, 100% on your device.",
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6766366146/icon.jpg",
+    available: false,
     url: "https://apps.apple.com/gb/app/frankly-ai-uncensored-chat/id6766366146?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/frankly-ai/",
   },
@@ -347,6 +348,7 @@ export const APPS: AppData[] = [
     description: "An all-in-one document scanner that works completely offline. No account, no subscription.",
     iconColor: "bg-slate-500",
     iconUrl: "/images/apps/6769176993/icon.jpg",
+    available: false,
     url: "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/docscanner-sign-documents/",
   },
@@ -616,6 +618,7 @@ export const APPS: AppData[] = [
     description: "Arcade runner game with fast-paced gameplay.",
     iconColor: "bg-orange-500",
     iconUrl: "/images/apps/1582701318/icon.jpg",
+    available: false,
     url: "https://apps.apple.com/gb/app/run-run-run/id1582701318?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/run-run-run/",
     screenshots: [
@@ -826,3 +829,7 @@ export const APPS: AppData[] = [
     ]
   }
 ];
+
+// Keep unavailable listings in the source catalogue for historical links, but
+// never surface them in download-focused UI.
+export const AVAILABLE_APPS: AppData[] = APPS.filter((app) => app.available !== false);

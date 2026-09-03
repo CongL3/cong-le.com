@@ -22,6 +22,10 @@ const CONSTANTS_PATH = path.join(ROOT, 'constants.ts');
 const DEVELOPER_ID = '954373766';
 const COUNTRY = 'gb';
 
+// Keep historical records out of future sync-generated catalogues. These
+// listings are not currently available for download and must not be promoted.
+const RETIRED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
+
 // Map iTunes genre names → our AppCategory enum values
 const GENRE_MAP = {
   'Utilities': 'Utilities',
@@ -72,12 +76,18 @@ async function main() {
     `https://itunes.apple.com/lookup?id=${DEVELOPER_ID}&entity=software&country=${COUNTRY}&limit=200`
   );
 
-  const itunesApps = data.results.filter(r => r.wrapperType === 'software');
+  const itunesApps = data.results.filter(
+    r => r.wrapperType === 'software' && !RETIRED_APP_IDS.has(String(r.trackId))
+  );
   console.log(`Found ${itunesApps.length} apps on App Store\n`);
 
   // Load existing manifest
   const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf8'));
-  const manifestById = Object.fromEntries(manifest.apps.map(a => [String(a.trackId), a]));
+  const manifestById = Object.fromEntries(
+    manifest.apps
+      .filter(a => !RETIRED_APP_IDS.has(String(a.trackId)))
+      .map(a => [String(a.trackId), a])
+  );
 
   // Load constants.ts to detect existing app IDs
   const constantsSource = readFileSync(CONSTANTS_PATH, 'utf8');
@@ -142,7 +152,9 @@ async function main() {
   // Rebuild manifest.apps array preserving order (existing first, then new)
   const existingIds = new Set(manifest.apps.map(a => String(a.trackId)));
   manifest.apps = [
-    ...manifest.apps.map(a => manifestById[String(a.trackId)] || a),
+    ...manifest.apps
+      .filter(a => !RETIRED_APP_IDS.has(String(a.trackId)))
+      .map(a => manifestById[String(a.trackId)] || a),
     ...Object.values(manifestById).filter(a => !existingIds.has(String(a.trackId))),
   ];
   writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');

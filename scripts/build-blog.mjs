@@ -289,11 +289,13 @@ function ctaBox(app) {
       <div class="flex-1">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1"><a href="${escAttr(app.landingPage)}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">${esc(app.name)}</a></h3>
         <p class="text-gray-500 dark:text-gray-400 mb-4">${esc(app.oneLiner)}</p>
-        <a href="${escAttr(app.storeUrl)}" target="_blank" rel="noopener"
+        ${app.storeUrl
+          ? `<a href="${escAttr(app.storeUrl)}" target="_blank" rel="noopener"
            class="inline-flex items-center gap-2.5 font-semibold px-6 py-3 rounded-full text-base text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm">
           ${APPLE_SVG}
           Download on the App Store
-        </a>
+        </a>`
+          : '<span class="inline-flex items-center gap-2.5 font-semibold px-6 py-3 rounded-full text-base bg-amber-100 text-amber-900" role="status">App Store listing currently unavailable</span>'}
       </div>
     </div>
   </aside>`;
@@ -416,7 +418,7 @@ ${headBlock({
     ogType: 'article',
     ogImage,
     jsonLdBlocks,
-    appId: app?.trackId,
+    appId: app?.available === false ? null : app?.trackId,
   })}
 </head>
 ${bodyOpen}

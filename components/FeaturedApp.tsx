@@ -1,12 +1,12 @@
 import React from 'react';
 import { Heart, Star, ChevronRight } from 'lucide-react';
-import { APPS } from '../constants';
+import { AVAILABLE_APPS } from '../constants';
 
 const FeaturedApp: React.FC = () => {
-  const anniversaryApp = APPS.find(app => app.id === 'anniversary');
-  const franklyApp = APPS.find(app => app.id === 'frankly-ai');
-  const coupleDaysApp = APPS.find(app => app.id === 'couple-days');
-  const ollamaApp = APPS.find(app => app.id === 'ollama-connect');
+  const anniversaryApp = AVAILABLE_APPS.find(app => app.id === 'anniversary');
+  const footballApp = AVAILABLE_APPS.find(app => app.id === 'football-career-quest');
+  const coupleDaysApp = AVAILABLE_APPS.find(app => app.id === 'couple-days');
+  const ollamaApp = AVAILABLE_APPS.find(app => app.id === 'ollama-connect');
 
   if (!anniversaryApp) return null;
 
@@ -97,7 +97,7 @@ const FeaturedApp: React.FC = () => {
 
         {/* Secondary Features Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {[franklyApp, coupleDaysApp, ollamaApp].filter(Boolean).map((app) => (
+          {[footballApp, coupleDaysApp, ollamaApp].filter(Boolean).map((app) => (
             <a
               key={app!.id}
               href={app!.landingPage || app!.url || '#'}

@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { AppCategory } from '../types';
-import { APPS } from '../constants';
+import { AVAILABLE_APPS } from '../constants';
 import AppCard from './AppCard';
 import { Search, X } from 'lucide-react';
 
@@ -10,16 +10,16 @@ const AppGrid: React.FC = () => {
 
   // Only surface categories that actually have apps, in the enum's declared order.
   const categories = useMemo(() => {
-    const present = new Set(APPS.map((app) => app.category));
+    const present = new Set(AVAILABLE_APPS.map((app) => app.category));
     return ['All', ...Object.values(AppCategory).filter((cat) => present.has(cat))];
   }, []);
 
   const countForCategory = (cat: string) =>
-    cat === 'All' ? APPS.length : APPS.filter((app) => app.category === cat).length;
+    cat === 'All' ? AVAILABLE_APPS.length : AVAILABLE_APPS.filter((app) => app.category === cat).length;
 
   const normalizedQuery = query.trim().toLowerCase();
 
-  const filteredApps = APPS.filter((app) => {
+  const filteredApps = AVAILABLE_APPS.filter((app) => {
     const matchesCategory = selectedCategory === 'All' || app.category === selectedCategory;
     const matchesQuery =
       normalizedQuery === '' ||
@@ -40,7 +40,7 @@ const AppGrid: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 mb-4 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-semibold border border-blue-100 dark:border-blue-900/50">
-            {APPS.length} apps on the App Store
+            {AVAILABLE_APPS.length} apps currently on the App Store
           </span>
           <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-3">
             Browse the Portfolio
@@ -133,7 +133,7 @@ const AppGrid: React.FC = () => {
         {/* Result count when filtering */}
         {hasActiveFilters && filteredApps.length > 0 && (
           <p className="text-center text-sm text-gray-400 dark:text-gray-500 mt-8">
-            Showing {filteredApps.length} of {APPS.length} apps
+            Showing {filteredApps.length} of {AVAILABLE_APPS.length} apps
             <button onClick={clearFilters} className="ml-2 text-blue-600 dark:text-blue-400 hover:underline font-medium">
               Clear filters
             </button>
