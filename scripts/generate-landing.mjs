@@ -297,6 +297,7 @@ function renderPage(data) {
 
   const descHtml = renderDescription(description);
   const screenshotUrls = Array.isArray(screenshots) ? screenshots.filter(Boolean).slice(0, 5) : [];
+  const heroScreenshot = screenshotUrls[0] || '';
   const screenshotsBlock = screenshotUrls.length
     ? `
   <!-- App Store screenshots — sourced from the synced public catalogue. -->
@@ -384,6 +385,8 @@ function renderPage(data) {
     .prose-desc a { color: var(--accent); }
     .hero-icon { width: 240px; height: 240px; border-radius: 54px; box-shadow: 0 30px 60px rgba(0,0,0,0.18); animation: float 5s ease-in-out infinite; }
     .dark .hero-icon { box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+    .hero-screenshot { width: min(220px, 58vw); aspect-ratio: 9 / 19.5; object-fit: cover; border-radius: 28px; box-shadow: 0 30px 60px rgba(0,0,0,0.18); }
+    .dark .hero-screenshot { box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
     .accent-nav:hover { color: var(--accent); }
   </style>
@@ -421,7 +424,9 @@ function renderPage(data) {
         </a>
       </div>
       <div class="fade-up flex justify-center">
-        <img src="${icon}" alt="${esc(trackName)} app icon" class="hero-icon" width="240" height="240">
+        ${heroScreenshot
+          ? `<img src="${esc(heroScreenshot)}" alt="${esc(trackName)} screenshot 1" class="hero-screenshot" width="220" height="477" fetchpriority="high">`
+          : `<img src="${icon}" alt="${esc(trackName)} app icon" class="hero-icon" width="240" height="240">`}
       </div>
     </div>
   </section>

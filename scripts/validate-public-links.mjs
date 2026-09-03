@@ -121,17 +121,20 @@ if (existsSync(manifestPath)) {
     const refs = [...html.matchAll(/<img\b[^>]*src=["'](\/images\/apps\/\d+\/screenshot-\d+\.jpg)["'][^>]*>/gi)].map(
       (match) => match[1],
     );
-    if (refs.length !== screenshots.length) {
+    const uniqueRefs = [...new Set(refs)];
+    if (uniqueRefs.length !== screenshots.length) {
       errors.push(
-        `${path.relative(ROOT, file)} must expose ${screenshots.length} synced App Store screenshots (found ${refs.length})`,
+        `${path.relative(ROOT, file)} must expose ${screenshots.length} unique synced App Store screenshots (found ${uniqueRefs.length})`,
       );
     }
     for (const screenshot of screenshots) {
-      if (!existsSync(path.join(ROOT, 'public', screenshot.slice(1)))) {
+      if (!refs.includes(screenshot)) {
+        errors.push(`${path.relative(ROOT, file)} does not render synced screenshot ${screenshot}`);
+      } else if (!existsSync(path.join(ROOT, 'public', screenshot.slice(1)))) {
         errors.push(`${path.relative(ROOT, file)} references missing screenshot asset ${screenshot}`);
       }
     }
-    for (const ref of refs) {
+    for (const ref of uniqueRefs) {
       if (!ref.startsWith(`/images/apps/${id}/`)) {
         errors.push(`${path.relative(ROOT, file)} references the wrong screenshot app id: ${ref}`);
       }
