@@ -342,6 +342,27 @@ test.describe('Generated app screenshot galleries', () => {
   }
 });
 
+test.describe('Priority social previews', () => {
+  const apps = [
+    { slug: 'anniversary-tracker', id: '1570714816' },
+    { slug: 'baby-screen-lock', id: '6761378897' },
+    { slug: 'football-career-quest', id: '6777125671' },
+    { slug: 'hoop-quest', id: '6775279715' },
+    { slug: 'ollama-connect', id: '6769891596' },
+    { slug: 'solunar-fishing', id: '6760960543' },
+    { slug: 'prime-minister-sim-politics', id: '6787888847' },
+  ];
+
+  for (const app of apps) {
+    test(`${app.slug} uses its first real screenshot for social previews`, async ({ page }) => {
+      await page.goto(`/apps/${app.slug}/`);
+      const expected = `https://www.cong-le.com/images/apps/${app.id}/screenshot-1.jpg`;
+      await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', expected);
+      await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute('content', expected);
+    });
+  }
+});
+
 test.describe('Hand-authored app screenshot galleries', () => {
   const apps = [
     { slug: 'birthday-reminder', screenshotCount: 5 },
