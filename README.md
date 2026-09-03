@@ -2,26 +2,26 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Cong Le — iOS app portfolio
 
-This repository powers cong-le.com: Cong Le's portfolio, with an iOS Smart App
-Banner and direct attributed downloads for Anniversary Tracker, plus prominent
-attributed Download actions throughout the full app catalogue.
+This repository powers [cong-le.com](https://www.cong-le.com): a portfolio of
+small iOS apps, developer notes, and the static acquisition pages that explain
+each product before sending visitors to its store listing.
 
 ## Try the active apps
 
-The portfolio's active app pages provide the product context and the correct
-store hand-off:
+The portfolio's active app pages provide product context and the correct store
+hand-off. Use the page for details, or go directly to the App Store:
 
-- [Anniversary Tracker](https://pocketgrove.com/anniversary-tracker/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=anniversary)
-- [Football Career Quest](https://pocketgrove.com/football-career-quest/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=football-career-quest)
-- [Prime Minister Sim](https://pocketgrove.com/prime-minister-sim/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=prime-minister-sim-politics)
-- [Hoop Quest](https://pocketgrove.com/hoop-quest/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=hoop-quest)
-- [Ollama Connect](https://pocketgrove.com/ollama-connect/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=ollama-connect)
-- [Baby Screen Lock](https://pocketgrove.com/baby-screen-lock/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=baby-screen-lock)
-- [Solunar Fishing](https://pocketgrove.com/solunar-fishing-times/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=solunar)
+- [Anniversary Tracker page](https://pocketgrove.com/anniversary-tracker/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=anniversary) · [Download](https://apps.apple.com/gb/app/anniversary-tracker/id1570714816?ct=congle-github-readme-anniversary&pt=19678800&mt=8)
+- [Football Career Quest page](https://pocketgrove.com/football-career-quest/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=football-career-quest) · [Download](https://apps.apple.com/gb/app/football-career-quest/id6777125671?ct=congle-github-readme-football&pt=19678800&mt=8)
+- [Prime Minister Sim page](https://pocketgrove.com/prime-minister-sim/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=prime-minister-sim-politics) · [Download](https://apps.apple.com/gb/app/prime-minister-sim-politics/id6787888847?ct=congle-github-readme-prime-minister&pt=19678800&mt=8)
+- [Hoop Quest page](https://pocketgrove.com/hoop-quest/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=hoop-quest) · [Download](https://apps.apple.com/gb/app/hoop-quest-basketball-sim/id6775279715?ct=congle-github-readme-hoop&pt=19678800&mt=8)
+- [Ollama Connect page](https://pocketgrove.com/ollama-connect/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=ollama-connect) · [Download](https://apps.apple.com/gb/app/ollama-connect/id6769891596?ct=congle-github-readme-ollama&pt=19678800&mt=8)
+- [Baby Screen Lock page](https://pocketgrove.com/baby-screen-lock/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=baby-screen-lock) · [Download](https://apps.apple.com/gb/app/baby-screen-lock-kid-safe/id6761378897?ct=congle-github-readme-baby&pt=19678800&mt=8)
+- [Solunar Fishing page](https://pocketgrove.com/solunar-fishing-times/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=solunar) · [Download](https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?ct=congle-github-readme-solunar&pt=19678800&mt=8)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1GzGCI6bShu3uuLy6ZThCs7fJJeIlCTBC
+[Browse the full active app catalogue](https://www.cong-le.com/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=full-catalogue#apps).
 
 ## Run Locally
 
