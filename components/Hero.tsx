@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
            <a href={HERO_CONTENT.xLink} target="_blank" rel="noreferrer" className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-all">
               <Twitter className="w-6 h-6" />
            </a>
-           <a href={HERO_CONTENT.appStoreLink} target="_blank" rel="noreferrer" className="p-2 text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full transition-all">
+           <a href={HERO_CONTENT.appStoreLink} className="p-2 text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full transition-all">
               <Globe className="w-6 h-6" />
            </a>
         </div>
