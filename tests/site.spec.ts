@@ -84,7 +84,7 @@ test.describe('Download spotlight', () => {
 
   test('exposes verified Android download links where Google Play is available', async ({ page }) => {
     await page.goto('/');
-    const links = page.getByRole('link', { name: /on Google Play/ });
+    const links = page.locator('#download-spotlight').getByRole('link', { name: /on Google Play/ });
     await expect(links).toHaveCount(2);
     await expect(links.nth(0)).toHaveAttribute(
       'href',
@@ -105,6 +105,24 @@ test.describe('Download spotlight', () => {
     expect(hrefs.length).toBeGreaterThan(0);
     expect(hrefs.every((href) => href.includes('pt=19678800') && href.includes('ct=congle-web-grid-'))).toBe(true);
     expect(hrefs.find((href) => href.includes('id1570714816'))).toContain('ct=congle-web-grid-anniversary');
+  });
+
+  test('exposes every verified Google Play listing in the full app grid', async ({ page }) => {
+    await page.goto('/');
+    const links = page.locator('#apps a[aria-label$="on Google Play"]');
+    await expect(links).toHaveCount(3);
+    const hrefs = await links.evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
+    expect(hrefs).toEqual(expect.arrayContaining([
+      expect.stringMatching(/id=com\.congle\.TEAMCONG\.AnniversaryTracker/),
+      expect.stringMatching(/id=com\.congle\.TEAMCONG\.OllamaConnect/),
+      expect.stringMatching(/id=com\.congle\.TEAMCONG\.MoonPhases/),
+    ]));
+    expect(hrefs.every((href) =>
+      href.includes('utm_source=congle') &&
+      href.includes('utm_medium=referral') &&
+      href.includes('utm_campaign=portfolio_downloads') &&
+      href.includes('-android'),
+    )).toBe(true);
   });
 
   test('routes apps with focused pages through the Pocket Grove intent page', async ({ page }) => {

@@ -95,6 +95,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/1570714816/icon.jpg",
     isFeatured: true,
     url: "https://apps.apple.com/gb/app/anniversary-tracker/id1570714816?ct=congle-web-home&pt=19678800",
+    googlePlayUrl: "https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.AnniversaryTracker",
     landingPage: "/apps/anniversary-tracker/",
     focusedPage: "https://pocketgrove.com/anniversary-tracker/",
     screenshots: [
@@ -140,6 +141,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6769891596/icon.jpg",
     url: "https://apps.apple.com/gb/app/ollama-connect/id6769891596?ct=congle-web-home&pt=19678800",
+    googlePlayUrl: "https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.OllamaConnect",
     landingPage: "/apps/ollama-connect/",
     focusedPage: "https://pocketgrove.com/ollama-connect/",
   },
@@ -417,6 +419,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6760960352/icon.jpg",
     url: "https://apps.apple.com/gb/app/moon-phases-lunar-tracker/id6760960352?ct=congle-web-home&pt=19678800",
+    googlePlayUrl: "https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.MoonPhases",
     landingPage: "/apps/moon-phases-lunar-tracker/",
   },
   {

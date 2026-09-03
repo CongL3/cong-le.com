@@ -26,6 +26,8 @@ export interface AppData {
   /** False when the listing is intentionally omitted from acquisition UI. */
   promotable?: boolean;
   url?: string;
+  /** Concrete Google Play listing when this app is also released on Android. */
+  googlePlayUrl?: string;
   landingPage?: string;
   /** Optional high-intent Pocket Grove page for apps with a verified focused page. */
   focusedPage?: string;

@@ -5,11 +5,6 @@ import type { AppData } from '../types';
 
 const APP_STORE_PROVIDER_TOKEN = '19678800';
 
-const GOOGLE_PLAY_LINKS: Record<string, string> = {
-  anniversary: 'https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.AnniversaryTracker',
-  'ollama-connect': 'https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.OllamaConnect',
-};
-
 const POCKETGROVE_APP_PAGES: Record<string, string> = {
   anniversary: 'https://pocketgrove.com/anniversary-tracker/',
   'football-career-quest': 'https://pocketgrove.com/football-career-quest/',
@@ -37,10 +32,9 @@ function spotlightStoreUrl(app: AppData): string | null {
 }
 
 function spotlightGooglePlayUrl(app: AppData): string | null {
-  const baseUrl = GOOGLE_PLAY_LINKS[app.id];
-  if (!baseUrl) return null;
+  if (!app.googlePlayUrl) return null;
 
-  const url = new URL(baseUrl);
+  const url = new URL(app.googlePlayUrl);
   url.searchParams.set('utm_source', 'congle');
   url.searchParams.set('utm_medium', 'referral');
   url.searchParams.set('utm_campaign', 'portfolio_downloads');

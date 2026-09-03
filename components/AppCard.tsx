@@ -23,8 +23,20 @@ function focusedPageUrl(app: AppData): string | null {
   return url.toString();
 }
 
+function googlePlayGridUrl(app: AppData): string | null {
+  if (!app.googlePlayUrl) return null;
+
+  const url = new URL(app.googlePlayUrl);
+  url.searchParams.set('utm_source', 'congle');
+  url.searchParams.set('utm_medium', 'referral');
+  url.searchParams.set('utm_campaign', 'portfolio_downloads');
+  url.searchParams.set('utm_content', `${app.id}-android`);
+  return url.toString();
+}
+
 const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
   const primaryHref = focusedPageUrl(app) || app.landingPage || app.url || '#';
+  const googlePlayUrl = googlePlayGridUrl(app);
 
   return (
     <div className="group relative flex flex-col h-full bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:-translate-y-0.5 hover:border-blue-200 dark:hover:border-blue-900/60 focus-within:ring-2 focus-within:ring-blue-500">
@@ -73,7 +85,7 @@ const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
         {app.description}
       </p>
 
-      <div className="mt-3 flex items-center justify-between gap-2">
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2.5 text-[11px] font-medium text-gray-400 dark:text-gray-500 min-w-0">
           {app.rating && (
             <span className="inline-flex items-center gap-0.5">
@@ -83,14 +95,26 @@ const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
           )}
           {app.downloads && <span className="truncate">{app.downloads}</span>}
         </div>
-        <a
-          href={appStoreGridUrl(app)}
-          aria-label={`${app.name} on the App Store`}
-          className="relative z-10 inline-flex items-center gap-1 flex-shrink-0 rounded-full bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-        >
-          Download
-          <ArrowUpRight className="w-3 h-3" />
-        </a>
+        <div className="relative z-10 flex flex-wrap items-center gap-2 shrink-0">
+          <a
+            href={appStoreGridUrl(app)}
+            aria-label={`${app.name} on the App Store`}
+            className="inline-flex items-center gap-1 rounded-full bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          >
+            Download
+            <ArrowUpRight className="w-3 h-3" />
+          </a>
+          {googlePlayUrl ? (
+            <a
+              href={googlePlayUrl}
+              aria-label={`${app.name} on Google Play`}
+              className="inline-flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-700 dark:border-gray-700 dark:text-gray-200 dark:hover:border-blue-500 dark:hover:text-blue-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            >
+              Android
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
+          ) : null}
+        </div>
       </div>
     </div>
   );
