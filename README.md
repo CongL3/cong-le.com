@@ -5,8 +5,8 @@
 # Run and deploy your AI Studio app
 
 This repository powers cong-le.com: Cong Le's portfolio, with an iOS Smart App
-Banner and direct attributed downloads for Anniversary Tracker, plus links for
-exploring the wider app collection.
+Banner and direct attributed downloads for Anniversary Tracker, plus prominent
+attributed Download actions throughout the full app catalogue.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1GzGCI6bShu3uuLy6ZThCs7fJJeIlCTBC
 

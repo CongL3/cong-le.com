@@ -91,6 +91,17 @@ test.describe('Download spotlight', () => {
     expect(hrefs.find((href) => href.includes('id1570714816'))).toContain('ct=congle-web-grid-anniversary');
   });
 
+  test('makes every full-grid store exit a clear download action', async ({ page }) => {
+    await page.goto('/');
+    const links = page.locator('#apps a[aria-label$="on the App Store"]');
+    const count = await links.count();
+    expect(count).toBeGreaterThan(0);
+    for (let i = 0; i < count; i += 1) {
+      await expect(links.nth(i)).toContainText('Download');
+      await expect(links.nth(i)).toHaveClass(/bg-blue-600/);
+    }
+  });
+
   test('keeps every homepage App Store link in the current tab', async ({ page }) => {
     await page.goto('/');
     const links = page.locator('a[href*="apps.apple.com"]');

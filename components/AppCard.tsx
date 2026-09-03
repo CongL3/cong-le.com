@@ -75,9 +75,9 @@ const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
         <a
           href={appStoreGridUrl(app)}
           aria-label={`${app.name} on the App Store`}
-          className="relative z-10 inline-flex items-center gap-0.5 flex-shrink-0 text-[11px] font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 px-2 py-1 -mr-1 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          className="relative z-10 inline-flex items-center gap-1 flex-shrink-0 rounded-full bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
         >
-          App Store
+          Download
           <ArrowUpRight className="w-3 h-3" />
         </a>
       </div>
