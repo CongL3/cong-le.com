@@ -338,7 +338,6 @@ test.describe('Apple Smart App Banners', () => {
     { slug: 'birthday-reminder', id: '6739454115' },
     { slug: 'bible-prayer', id: '6759859294' },
     { slug: 'fish-finder', id: '6746223793' },
-    { slug: 'coloring', id: '6759912464' },
     { slug: 'kids-timer', id: '6747147301' },
     { slug: 'lullaby-pal', id: '6739187522' },
   ];
@@ -348,6 +347,37 @@ test.describe('Apple Smart App Banners', () => {
       const response = await page.goto(`/apps/${app.slug}/`);
       expect(response?.status()).toBe(200);
       await expect(page.locator('meta[name="apple-itunes-app"]')).toHaveAttribute('content', `app-id=${app.id}`);
+    }
+  });
+});
+
+test.describe('Hand-authored hero product proof', () => {
+  const apps = [
+    { slug: 'anniversary-tracker', id: '1570714816' },
+    { slug: 'baby-names', id: '6760255587' },
+    { slug: 'baby-screen-lock', id: '6761378897' },
+    { slug: 'bible-prayer', id: '6759859294' },
+    { slug: 'birthday-reminder', id: '6739454115' },
+    { slug: 'coloring', id: '6759912464' },
+    { slug: 'fish-finder', id: '6746223793' },
+    { slug: 'football-career-quest', id: '6777125671' },
+    { slug: 'hoop-quest', id: '6775279715' },
+    { slug: 'kids-timer', id: '6747147301' },
+    { slug: 'lullaby-pal', id: '6739187522' },
+    { slug: 'ollama-connect', id: '6769891596' },
+    { slug: 'prime-minister-sim-politics', id: '6787888847' },
+    { slug: 'solunar-fishing', id: '6760960543' },
+    { slug: 'uv-index-widget-burn-time', id: '6760960498' },
+  ];
+
+  test('surfaces the first verified App Store screenshot in each hand-authored hero', async ({ page }) => {
+    for (const app of apps) {
+      const response = await page.goto(`/apps/${app.slug}/`);
+      expect(response?.status()).toBe(200);
+      await expect(page.locator('section').first().locator('img.hero-screenshot')).toHaveAttribute(
+        'src',
+        `/images/apps/${app.id}/screenshot-1.jpg`,
+      );
     }
   });
 });
