@@ -331,3 +331,23 @@ test.describe('Canonical app aliases', () => {
     expect(sitemap).not.toContain('/apps/golden-hour-light-planner/');
   });
 });
+
+test.describe('Apple Smart App Banners', () => {
+  const apps = [
+    { slug: 'baby-names', id: '6760255587' },
+    { slug: 'birthday-reminder', id: '6739454115' },
+    { slug: 'bible-prayer', id: '6759859294' },
+    { slug: 'fish-finder', id: '6746223793' },
+    { slug: 'coloring', id: '6759912464' },
+    { slug: 'kids-timer', id: '6747147301' },
+    { slug: 'lullaby-pal', id: '6739187522' },
+  ];
+
+  test('every repaired hand-authored page advertises its verified App Store ID', async ({ page }) => {
+    for (const app of apps) {
+      const response = await page.goto(`/apps/${app.slug}/`);
+      expect(response?.status()).toBe(200);
+      await expect(page.locator('meta[name="apple-itunes-app"]')).toHaveAttribute('content', `app-id=${app.id}`);
+    }
+  });
+});
