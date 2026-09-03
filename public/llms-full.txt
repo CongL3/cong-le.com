@@ -24,6 +24,7 @@
 ### Anniversary Tracker
 - Landing page: https://www.cong-le.com/apps/anniversary-tracker/
 - App Store: https://apps.apple.com/app/id1570714816?ct=congle-web-anniversary-tracker&pt=19678800
+- Google Play: https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.AnniversaryTracker&utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=anniversary-tracker-android-structured-data
 - Description: Anniversary Tracker helps you count, customise, and never forget the moments that matter most — from your very first day together to your 10,000th. Includes an automatic day counter, smart reminders, and built-in milestones.
   - Language pages: [ja](https://www.cong-le.com/apps/anniversary-tracker/ja/), [ko](https://www.cong-le.com/apps/anniversary-tracker/ko/), [de](https://www.cong-le.com/apps/anniversary-tracker/de/), [zh-Hans](https://www.cong-le.com/apps/anniversary-tracker/zh-Hans/)
 
@@ -182,6 +183,7 @@
 ### Moon Phases: Lunar Tracker
 - Landing page: https://www.cong-le.com/apps/moon-phases-lunar-tracker/
 - App Store: https://apps.apple.com/app/id6760960352?ct=congle-web-moon-phases-lunar-tracker&pt=19678800
+- Google Play: https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.MoonPhases&utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=moon-phases-lunar-tracker-android-structured-data
 - Description: See tonight's moon phase, moonrise and moonset times, and count down to the next full moon — instantly, with no internet connection.
 
 ### NoLo Inspiration
@@ -197,6 +199,7 @@
 ### Ollama Connect
 - Landing page: https://www.cong-le.com/apps/ollama-connect/
 - App Store: https://apps.apple.com/app/id6769891596?ct=congle-web-ollama-connect&pt=19678800
+- Google Play: https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.OllamaConnect&utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=ollama-connect-android-structured-data
 - Description: Ollama Connect is a private chat client for Ollama on iPhone. Connect to Ollama running on your Mac, home server, or private endpoint and chat with your models. Chats and settings stay on your device.
   - Language pages: [ja](https://www.cong-le.com/apps/ollama-connect/ja/), [ko](https://www.cong-le.com/apps/ollama-connect/ko/), [de](https://www.cong-le.com/apps/ollama-connect/de/), [zh-Hans](https://www.cong-le.com/apps/ollama-connect/zh-Hans/)
 
@@ -273,6 +276,7 @@
 ### Solunar: Best Fishing Times
 - Landing page: https://www.cong-le.com/apps/solunar-fishing/
 - App Store: https://apps.apple.com/app/id6760960543?ct=congle-web-solunar-fishing&pt=19678800
+- Google Play: https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.SolunarFishing&utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=solunar-fishing-android-structured-data
 - Description: Solunar Fishing Times uses proven solunar theory to predict major and minor feeding windows based on the moon's position — no internet or weather API required. A clean 1-5 daily fish rating tells you at a glance whether today is worth the trip.
   - Language pages: [ja](https://www.cong-le.com/apps/solunar-fishing/ja/), [ko](https://www.cong-le.com/apps/solunar-fishing/ko/), [de](https://www.cong-le.com/apps/solunar-fishing/de/), [zh-Hans](https://www.cong-le.com/apps/solunar-fishing/zh-Hans/)
 

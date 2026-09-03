@@ -237,6 +237,28 @@ test.describe('Developer notes', () => {
   });
 });
 
+test.describe('Machine-readable catalogue', () => {
+  test('exposes every verified Google Play listing in both indexes', async ({ page }) => {
+    const expected = [
+      'com.congle.TEAMCONG.AnniversaryTracker',
+      'com.congle.TEAMCONG.OllamaConnect',
+      'com.congle.TEAMCONG.SolunarFishing',
+      'com.congle.TEAMCONG.MoonPhases',
+    ];
+    const compact = await page.request.get('/llms.txt');
+    const full = await page.request.get('/llms-full.txt');
+    expect(compact.ok()).toBe(true);
+    expect(full.ok()).toBe(true);
+    const compactText = await compact.text();
+    const fullText = await full.text();
+    for (const packageName of expected) {
+      const playUrl = `https://play.google.com/store/apps/details?id=${packageName}`;
+      expect(compactText).toContain(`[Google Play](${playUrl}`);
+      expect(fullText).toContain(`- Google Play: ${playUrl}`);
+    }
+  });
+});
+
 test.describe('Navbar', () => {
   test('Try an app link is present and scrolls to the spotlight', async ({ page }) => {
     await page.goto('/');

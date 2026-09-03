@@ -99,10 +99,20 @@ function readAppEntry(slug, appDir) {
 
   const name = software?.name || decodeHtml(title).split(' — ')[0].trim() || slug;
   const appDescription = software?.description || decodeHtml(description).trim();
-  const downloadUrl = software?.downloadUrl
-    || (appId ? `https://apps.apple.com/app/id${appId}?ct=congle-web-${slug}&pt=19678800` : decodeHtml(storeLink).trim());
+  const schemaDownloadUrls = Array.isArray(software?.downloadUrl)
+    ? software.downloadUrl
+    : software?.downloadUrl
+      ? [software.downloadUrl]
+      : [];
+  const downloadUrls = [...new Set(schemaDownloadUrls.filter(Boolean).map((url) => String(url)))];
+  if (!downloadUrls.length) {
+    const fallback = appId
+      ? `https://apps.apple.com/app/id${appId}?ct=congle-web-${slug}&pt=19678800`
+      : decodeHtml(storeLink).trim();
+    if (fallback) downloadUrls.push(fallback);
+  }
 
-  return { slug, appId, name, description: appDescription, page: canonical, downloadUrl, localeLinks };
+  return { slug, appId, name, description: appDescription, page: canonical, downloadUrls, localeLinks };
 }
 
 /** Return one entry for each live app in the manifest, excluding stale pages. */
@@ -128,8 +138,20 @@ function appEntries() {
 
 function appMarkdownLine(app) {
   const description = app.description ? `: ${app.description}` : '';
-  const store = app.downloadUrl ? ` ([App Store](${app.downloadUrl}))` : '';
+  const stores = app.downloadUrls.map((url) => `[${storeLabel(url)}](${url})`);
+  const store = stores.length ? ` (${stores.join(', ')})` : '';
   return `- [${app.name}](${app.page})${store}${description}`;
+}
+
+function storeLabel(url) {
+  try {
+    const hostname = new URL(url).hostname;
+    if (hostname === 'play.google.com') return 'Google Play';
+    if (hostname === 'apps.apple.com') return 'App Store';
+  } catch {
+    // Keep malformed optional URLs visible without making the catalogue build fail.
+  }
+  return 'Store';
 }
 
 export function generateSitemap() {
@@ -226,7 +248,7 @@ export function generateLlmsTxt() {
     '',
     '> Indie iOS apps by Cong Le — utilities, family, fishing, AI chat, and games. The canonical app catalogue and download links are below; practical guides live on the blog.',
     '',
-    `The [full machine-readable catalogue](${SITE_URL}/llms-full.txt) includes every app landing page, App Store link, available language page, and published article.`,
+    `The [full machine-readable catalogue](${SITE_URL}/llms-full.txt) includes every app landing page, available App Store and Google Play links, available language page, and published article.`,
     '',
     '## Apps',
     '',
@@ -270,7 +292,7 @@ export function generateLlmsTxt() {
       return [
         `### ${app.name}`,
         `- Landing page: ${app.page}`,
-        ...(app.downloadUrl ? [`- App Store: ${app.downloadUrl}`] : []),
+        ...app.downloadUrls.map((url) => `- ${storeLabel(url)}: ${url}`),
         ...(app.description ? [`- Description: ${app.description}`] : []),
         ...localeLines,
         '',
