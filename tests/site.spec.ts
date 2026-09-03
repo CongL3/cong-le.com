@@ -184,6 +184,38 @@ test.describe('Download spotlight', () => {
   });
 });
 
+test.describe('Android app landing pages', () => {
+  const apps = [
+    { slug: 'anniversary-tracker', packageName: 'com.congle.TEAMCONG.AnniversaryTracker' },
+    { slug: 'ollama-connect', packageName: 'com.congle.TEAMCONG.OllamaConnect' },
+    { slug: 'moon-phases-lunar-tracker', packageName: 'com.congle.TEAMCONG.MoonPhases' },
+  ];
+
+  for (const app of apps) {
+    test(`${app.slug} offers its verified Google Play listing`, async ({ page }) => {
+      const response = await page.goto(`/apps/${app.slug}/`);
+      expect(response?.status()).toBe(200);
+
+      for (const position of ['hero', 'final']) {
+        const storeUrl = new URL('https://play.google.com/store/apps/details');
+        storeUrl.searchParams.set('id', app.packageName);
+        storeUrl.searchParams.set('utm_source', 'congle');
+        storeUrl.searchParams.set('utm_medium', 'referral');
+        storeUrl.searchParams.set('utm_campaign', 'portfolio_downloads');
+        storeUrl.searchParams.set('utm_content', `${app.slug}-android-${position}`);
+        await expect(page.locator(`a[data-platform="android"][data-cta-position="${position}"]`)).toHaveAttribute(
+          'href',
+          storeUrl.toString(),
+        );
+      }
+      const structuredData = await page.locator('script[type="application/ld+json"]').evaluateAll(
+        (nodes) => nodes.map((node) => node.textContent ?? ''),
+      );
+      expect(structuredData.some((value) => value.includes('"operatingSystem": "iOS, Android"'))).toBe(true);
+    });
+  }
+});
+
 test.describe('Developer notes', () => {
   test('links the published essays instead of showing placeholder copy', async ({ page }) => {
     await page.goto('/');
