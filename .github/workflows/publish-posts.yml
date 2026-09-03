@@ -2,7 +2,7 @@ name: Publish queued blog post
 
 on:
   schedule:
-    - cron: '0 7 * * 1'    # Mondays at 7am UTC — one a week
+    - cron: '0 8 * * 2,4,6' # Tuesdays, Thursdays, and Saturdays at 8am UTC
   workflow_dispatch:         # Manual trigger from GitHub Actions tab
 
 permissions:
