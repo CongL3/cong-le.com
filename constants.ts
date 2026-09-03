@@ -96,6 +96,7 @@ export const APPS: AppData[] = [
     isFeatured: true,
     url: "https://apps.apple.com/gb/app/anniversary-tracker/id1570714816?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/anniversary-tracker/",
+    focusedPage: "https://pocketgrove.com/anniversary-tracker/",
     screenshots: [
       "/images/apps/1570714816/screenshot-1.jpg",
       "/images/apps/1570714816/screenshot-2.jpg",
@@ -140,6 +141,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6769891596/icon.jpg",
     url: "https://apps.apple.com/gb/app/ollama-connect/id6769891596?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/ollama-connect/",
+    focusedPage: "https://pocketgrove.com/ollama-connect/",
   },
   {
     id: "football-career-quest",
@@ -150,6 +152,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6777125671/icon.jpg",
     url: "https://apps.apple.com/gb/app/football-career-quest/id6777125671?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/football-career-quest/",
+    focusedPage: "https://pocketgrove.com/football-career-quest/",
   },
   {
     id: "baby-screen-lock",
@@ -160,6 +163,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6761378897/icon.jpg",
     url: "https://apps.apple.com/gb/app/baby-screen-lock-kid-safe/id6761378897?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/baby-screen-lock/",
+    focusedPage: "https://pocketgrove.com/baby-screen-lock/",
   },
   {
     id: "hoop-quest",
@@ -170,6 +174,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6775279715/icon.jpg",
     url: "https://apps.apple.com/gb/app/hoop-quest-basketball-sim/id6775279715?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/hoop-quest/",
+    focusedPage: "https://pocketgrove.com/hoop-quest/",
   },
   {
     id: "lovepet",
@@ -210,6 +215,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6760960543/icon.jpg",
     url: "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/solunar-fishing/",
+    focusedPage: "https://pocketgrove.com/solunar-fishing-times/",
   },
   {
     id: "jump-rope-timer",
@@ -731,6 +737,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6767519692/icon.jpg",
     url: "https://apps.apple.com/gb/app/live-captions-hearbee/id6767519692?uo=4",
     landingPage: "/apps/live-captions-hearbee/",
+    focusedPage: "https://pocketgrove.com/live-captions-hearbee/",
   }
   ,{
     id: "prime-minister-sim-politics",
@@ -741,6 +748,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6787888847/icon.jpg",
     url: "https://apps.apple.com/gb/app/prime-minister-sim-politics/id6787888847?uo=4",
     landingPage: "/apps/prime-minister-sim-politics/",
+    focusedPage: "https://pocketgrove.com/prime-minister-sim/",
     screenshots: [
       "/images/apps/6787888847/screenshot-1.jpg",
       "/images/apps/6787888847/screenshot-2.jpg",
@@ -760,6 +768,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6797020508/icon.jpg",
     url: "https://apps.apple.com/gb/app/bingefree-recovery-companion/id6797020508?uo=4",
     landingPage: "/apps/bingefree-recovery-companion/",
+    focusedPage: "https://pocketgrove.com/bingefree-recovery-companion/",
     screenshots: [
       "/images/apps/6797020508/screenshot-1.jpg",
       "/images/apps/6797020508/screenshot-2.jpg",
@@ -782,6 +791,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6790584903/icon.jpg",
     url: "https://apps.apple.com/gb/app/oval-office-president-sim/id6790584903?uo=4",
     landingPage: "/apps/oval-office-president-sim/",
+    focusedPage: "https://pocketgrove.com/oval-office-president-sim/",
     screenshots: [
       "/images/apps/6790584903/screenshot-1.jpg",
       "/images/apps/6790584903/screenshot-2.jpg",
@@ -800,6 +810,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6797039310/icon.jpg",
     url: "https://apps.apple.com/gb/app/phrasal-verbs-english-trainer/id6797039310?uo=4",
     landingPage: "/apps/phrasal-verbs-english-trainer/",
+    focusedPage: "https://pocketgrove.com/phrasal-verbs-english-trainer/",
     screenshots: [
       "/images/apps/6797039310/screenshot-1.jpg",
       "/images/apps/6797039310/screenshot-2.jpg",
@@ -820,6 +831,7 @@ export const APPS: AppData[] = [
     iconUrl: "/images/apps/6796102052/icon.jpg",
     url: "https://apps.apple.com/gb/app/coastclock-tide-times-uk/id6796102052?uo=4",
     landingPage: "/apps/coastclock-tide-times-uk/",
+    focusedPage: "https://pocketgrove.com/coastclock-tide-times-uk/",
     screenshots: [
       "/images/apps/6796102052/screenshot-1.jpg",
       "/images/apps/6796102052/screenshot-2.jpg",

@@ -91,6 +91,32 @@ test.describe('Download spotlight', () => {
     expect(hrefs.find((href) => href.includes('id1570714816'))).toContain('ct=congle-web-grid-anniversary');
   });
 
+  test('routes apps with focused pages through the Pocket Grove intent page', async ({ page }) => {
+    await page.goto('/');
+    const links = page.locator('#apps a[aria-label$="— details"]');
+    const hrefs = await links.evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
+    for (const [slug, id] of [
+      ['anniversary-tracker', 'anniversary'],
+      ['football-career-quest', 'football-career-quest'],
+      ['hoop-quest', 'hoop-quest'],
+      ['ollama-connect', 'ollama-connect'],
+      ['solunar-fishing-times', 'solunar'],
+      ['baby-screen-lock', 'baby-screen-lock'],
+      ['live-captions-hearbee', 'live-captions-hearbee'],
+      ['prime-minister-sim', 'prime-minister-sim-politics'],
+      ['bingefree-recovery-companion', 'bingefree-recovery-companion'],
+      ['oval-office-president-sim', 'oval-office-president-sim'],
+      ['phrasal-verbs-english-trainer', 'phrasal-verbs-english-trainer'],
+      ['coastclock-tide-times-uk', 'coastclock-tide-times-uk'],
+    ]) {
+      const href = hrefs.find((value) => value.includes(`pocketgrove.com/${slug}/`));
+      expect(href, `${slug} should link to its focused Pocket Grove page`).toBeTruthy();
+      expect(href).toContain('utm_source=congle');
+      expect(href).toContain('utm_campaign=focused_app_page');
+      expect(href).toContain(`utm_content=${id}`);
+    }
+  });
+
   test('makes every full-grid store exit a clear download action', async ({ page }) => {
     await page.goto('/');
     const links = page.locator('#apps a[aria-label$="on the App Store"]');

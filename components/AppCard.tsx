@@ -12,8 +12,19 @@ function appStoreGridUrl(app: AppData): string {
   return url.toString();
 }
 
+function focusedPageUrl(app: AppData): string | null {
+  if (!app.focusedPage) return null;
+
+  const url = new URL(app.focusedPage);
+  url.searchParams.set('utm_source', 'congle');
+  url.searchParams.set('utm_medium', 'referral');
+  url.searchParams.set('utm_campaign', 'focused_app_page');
+  url.searchParams.set('utm_content', app.id);
+  return url.toString();
+}
+
 const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
-  const primaryHref = app.landingPage || app.url || '#';
+  const primaryHref = focusedPageUrl(app) || app.landingPage || app.url || '#';
 
   return (
     <div className="group relative flex flex-col h-full bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:-translate-y-0.5 hover:border-blue-200 dark:hover:border-blue-900/60 focus-within:ring-2 focus-within:ring-blue-500">
