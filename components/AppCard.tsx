@@ -2,6 +2,16 @@ import React from 'react';
 import { AppData } from '../types';
 import { Smartphone, Star, ArrowUpRight } from 'lucide-react';
 
+function appStoreGridUrl(app: AppData): string {
+  if (!app.url) return '#';
+
+  const url = new URL(app.url);
+  url.searchParams.set('pt', '19678800');
+  url.searchParams.set('ct', `congle-web-grid-${app.id}`);
+  url.searchParams.set('mt', '8');
+  return url.toString();
+}
+
 const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
   const primaryHref = app.landingPage || app.url || '#';
   const isInternal = Boolean(app.landingPage);
@@ -65,7 +75,7 @@ const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
           {app.downloads && <span className="truncate">{app.downloads}</span>}
         </div>
         <a
-          href={app.url || '#'}
+          href={appStoreGridUrl(app)}
           target="_blank"
           rel="noreferrer"
           aria-label={`${app.name} on the App Store`}
