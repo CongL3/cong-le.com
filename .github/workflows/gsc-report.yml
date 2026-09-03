@@ -2,7 +2,7 @@ name: Weekly search & store report
 
 on:
   schedule:
-    - cron: '0 8 * * 5'   # Fridays 08:00 UTC
+    - cron: '15 8 * * 1'  # Mondays 08:15 UTC — includes Saturday's publication after the reporting delay
   workflow_dispatch:
 
 permissions:
