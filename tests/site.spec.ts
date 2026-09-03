@@ -48,6 +48,16 @@ test.describe('Download spotlight', () => {
     await expect(page.locator('#download-spotlight')).toContainText('Baby Screen Lock: Kid Safe');
     await expect(page.locator('#download-spotlight')).toContainText('Solunar: Best Fishing Times');
     await expect(page.locator('#download-spotlight')).not.toContainText('DocScanner: Sign Documents');
+    const spotlightNames = await page.locator('#download-spotlight > div > div.grid > article h3').allTextContents();
+    expect(spotlightNames).toEqual([
+      'Anniversary Tracker',
+      'Football Career Quest',
+      'Prime Minister Sim: Politics',
+      'Hoop Quest: Basketball Sim',
+      'Ollama Connect',
+      'Baby Screen Lock: Kid Safe',
+      'Solunar: Best Fishing Times',
+    ]);
   });
 
   test('uses app-specific PocketGrove referral links', async ({ page }) => {
@@ -56,8 +66,8 @@ test.describe('Download spotlight', () => {
     await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/apps\/anniversary-tracker\/\?utm_source=congle/);
     await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/apps\/football-career-quest\/\?utm_source=congle/);
     await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/apps\/prime-minister-sim-politics\/\?utm_source=congle/);
-    await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/apps\/ollama-connect\/\?utm_source=congle/);
-    await expect(links.nth(4)).toHaveAttribute('href', /pocketgrove\.com\/apps\/hoop-quest-basketball-sim\/\?utm_source=congle/);
+    await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/apps\/hoop-quest-basketball-sim\/\?utm_source=congle/);
+    await expect(links.nth(4)).toHaveAttribute('href', /pocketgrove\.com\/apps\/ollama-connect\/\?utm_source=congle/);
     await expect(links.nth(5)).toHaveAttribute('href', /pocketgrove\.com\/apps\/baby-screen-lock-kid-safe\/\?utm_source=congle/);
     await expect(links.nth(6)).toHaveAttribute('href', /pocketgrove\.com\/apps\/solunar-best-fishing-times\/\?utm_source=congle/);
   });
