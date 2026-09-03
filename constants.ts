@@ -348,7 +348,8 @@ export const APPS: AppData[] = [
     description: "An all-in-one document scanner that works completely offline. No account, no subscription.",
     iconColor: "bg-slate-500",
     iconUrl: "/images/apps/6769176993/icon.jpg",
-    available: false,
+    available: true,
+    promotable: false,
     url: "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?ct=congle-web-home&pt=19678800",
     landingPage: "/apps/docscanner-sign-documents/",
   },
@@ -832,4 +833,6 @@ export const APPS: AppData[] = [
 
 // Keep unavailable listings in the source catalogue for historical links, but
 // never surface them in download-focused UI.
-export const AVAILABLE_APPS: AppData[] = APPS.filter((app) => app.available !== false);
+export const AVAILABLE_APPS: AppData[] = APPS.filter(
+  (app) => app.available !== false && app.promotable !== false,
+);
