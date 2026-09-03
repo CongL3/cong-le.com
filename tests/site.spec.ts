@@ -81,6 +81,16 @@ test.describe('Download spotlight', () => {
     expect(hrefs.find((href) => href.includes('id1570714816'))).toContain('ct=congle-web-grid-anniversary');
   });
 
+  test('keeps every homepage App Store link in the current tab', async ({ page }) => {
+    await page.goto('/');
+    const links = page.locator('a[href*="apps.apple.com"]');
+    const count = await links.count();
+    expect(count).toBeGreaterThan(0);
+    for (let i = 0; i < count; i += 1) {
+      await expect(links.nth(i)).not.toHaveAttribute('target', '_blank');
+    }
+  });
+
   test('keeps full-card and portfolio App Store links in the current tab', async ({ page }) => {
     await page.goto('/');
     const cardLinks = page.locator('#apps a[aria-label$="— details"]');
