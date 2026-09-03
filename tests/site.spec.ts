@@ -171,6 +171,17 @@ test.describe('App grid', () => {
     await expect(grid).not.toContainText('Frankly AI: Uncensored Chat');
   });
 
+  test('legacy app landing-page Store links keep attribution', async ({ page }) => {
+    await page.goto('/apps/bible-prayer/');
+    const links = page.locator('a[href*="apps.apple.com/gb/app/bible-prayer-companion"]');
+    await expect(links).not.toHaveCount(0);
+    const count = await links.count();
+    for (let i = 0; i < count; i += 1) {
+      await expect(links.nth(i)).toHaveAttribute('href', /pt=19678800/);
+      await expect(links.nth(i)).toHaveAttribute('href', /ct=congle-web-bible-prayer/);
+    }
+  });
+
   test('category filter buttons show counts', async ({ page }) => {
     await page.goto('/');
     await page.locator('#apps').scrollIntoViewIfNeeded();
