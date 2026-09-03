@@ -59,6 +59,19 @@ const PRIORITY_GALLERIES = [
   { slug: 'uv-index-widget-burn-time', id: '6760960498', count: 3 },
 ];
 
+// Legacy pages that were previously too short to explain their product well
+// in search. These sections are intentionally checked here because they are
+// hand-authored and therefore outside the generated-page template.
+const LEGACY_CONTENT_PAGES = [
+  'baby-names',
+  'bible-prayer',
+  'birthday-reminder',
+  'coloring',
+  'fish-finder',
+  'kids-timer',
+  'lullaby-pal',
+];
+
 function filesUnder(directory) {
   const files = [];
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
@@ -176,6 +189,18 @@ for (const gallery of PRIORITY_GALLERIES) {
     if (!existsSync(path.join(ROOT, 'public', ref.slice(1)))) {
       errors.push(`${path.relative(ROOT, file)} references missing screenshot asset ${ref}`);
     }
+  }
+}
+
+for (const slug of LEGACY_CONTENT_PAGES) {
+  const file = path.join(ROOT, 'public/apps', slug, 'index.html');
+  if (!existsSync(file)) {
+    errors.push(`missing enriched legacy app page ${path.relative(ROOT, file)}`);
+    continue;
+  }
+  const html = readFileSync(file, 'utf8');
+  if (!html.includes('aria-labelledby="how-it-works-heading"') || !html.includes('Common questions')) {
+    errors.push(`${path.relative(ROOT, file)} must include the verified how-it-works and FAQ content section`);
   }
 }
 
