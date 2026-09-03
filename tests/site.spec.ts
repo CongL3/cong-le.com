@@ -71,6 +71,33 @@ test.describe('Press and media kit', () => {
   });
 });
 
+test.describe('App catalogue', () => {
+  test('provides a crawlable hub for every active app page', async ({ page }) => {
+    const response = await page.goto('/apps/');
+    expect(response?.status()).toBe(200);
+    await expect(page).toHaveTitle('All iPhone Apps by Cong Le — App Catalogue');
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://www.cong-le.com/apps/');
+
+    const cards = page.locator('article[data-app-slug]');
+    const appCount = await cards.count();
+    expect(appCount).toBeGreaterThan(50);
+    await expect(cards.first()).toHaveAttribute('data-app-slug', 'anniversary-tracker');
+    await expect(page.locator('article[data-app-slug="docscanner-sign-documents"]')).toHaveCount(0);
+
+    const detailLinks = page.locator('article[data-app-slug] a.details-link');
+    await expect(detailLinks).toHaveCount(appCount);
+    const storeLinks = page.locator('article[data-app-slug] a.store-link:not(.store-link-secondary)');
+    await expect(storeLinks).toHaveCount(appCount);
+    for (let i = 0; i < await storeLinks.count(); i += 1) {
+      await expect(storeLinks.nth(i)).toHaveAttribute(
+        'href',
+        /https:\/\/apps\.apple\.com\/.*\?(?=.*ct=congle-web-apps-index-)(?=.*pt=19678800)/,
+      );
+    }
+    expect(await page.locator('article[data-app-slug] a.store-link-secondary').count()).toBeGreaterThanOrEqual(4);
+  });
+});
+
 test.describe('Download spotlight', () => {
   test('shows the seven active acquisition candidates', async ({ page }) => {
     await page.goto('/');

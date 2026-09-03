@@ -6,10 +6,16 @@ synced App Store catalogue and use the real product screenshots. They are the
 canonical destination for search, social, and community references; store
 buttons carry free attribution while the page URL stays permanent.
 
+The crawlable portfolio hub at `https://www.cong-le.com/apps/` is generated from
+the same landing pages. It is a discovery and navigation page, not a second
+canonical page for any app. New active apps appear there automatically once
+their individual landing page passes the normal checks.
+
 ## Before adding an app
 
 - Confirm the App Store listing is live and the listing ID is correct.
 - Sync the app catalogue and generate its landing page.
+- Confirm the app appears in `/apps/` after the catalogue build.
 - Check the page copy against the current product and store listing. Remove
   claims that cannot be evidenced.
 - Confirm every screenshot is a real current product image and has useful alt

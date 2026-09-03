@@ -48,6 +48,12 @@ const AppGrid: React.FC = () => {
           <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
             A focused collection of consumer iOS apps across utility, productivity, and lifestyle categories.
           </p>
+          <a
+            href="/apps/"
+            className="inline-flex mt-5 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            Open the full app catalogue <span aria-hidden="true">→</span>
+          </a>
         </div>
 
         {/* Search */}

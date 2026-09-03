@@ -163,6 +163,13 @@ export function generateSitemap() {
     : PUBLIC;
   entries.push({ loc: `${SITE_URL}/`, mod: lastmod(homeSource) });
 
+  // The portfolio hub links to every active app landing page and is itself a
+  // useful crawl and navigation entry point.
+  const appsIndex = path.join(PUBLIC, 'apps', 'index.html');
+  if (existsSync(appsIndex)) {
+    entries.push({ loc: `${SITE_URL}/apps/`, mod: lastmod(appsIndex) });
+  }
+
   // App landing pages: every directory under public/apps/.
   const appsDir = path.join(PUBLIC, 'apps');
   if (existsSync(appsDir)) {
@@ -266,7 +273,7 @@ export function generateLlmsTxt() {
       return app ? appMarkdownLine(app) : `- [${name}](${SITE_URL}/apps/${slug}/): ${desc}`;
     }),
     ...remainingApps.map(appMarkdownLine),
-    `- [All apps](${SITE_URL}/#apps): full portfolio (${apps.length} apps on the App Store)`,
+    `- [All apps](${SITE_URL}/apps/): full portfolio (${apps.length} apps on the App Store)`,
     '',
     '## Blog',
     '',

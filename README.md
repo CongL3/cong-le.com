@@ -25,7 +25,7 @@ hand-off. Use the page for details, or go directly to a supported store:
 - [Solunar Fishing page](https://pocketgrove.com/solunar-fishing-times/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=solunar) · [Download on the App Store](https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?ct=congle-github-readme-solunar&pt=19678800&mt=8) · [Get it on Google Play](https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.SolunarFishing&utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=solunar-android)
 - [Moon Phases page](https://www.cong-le.com/apps/moon-phases-lunar-tracker/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=moon-phases) · [Download on the App Store](https://apps.apple.com/gb/app/moon-phases-lunar-tracker/id6760960352?ct=congle-github-readme-moon&pt=19678800&mt=8) · [Get it on Google Play](https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.MoonPhases&utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=moon-phases-android)
 
-[Browse the full active app catalogue](https://www.cong-le.com/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=full-catalogue#apps).
+[Browse the full active app catalogue](https://www.cong-le.com/apps/?utm_source=github&utm_medium=referral&utm_campaign=portfolio_readme&utm_content=full-catalogue).
 
 ## Run Locally
 

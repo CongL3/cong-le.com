@@ -64,7 +64,7 @@ For sharing product visuals and direct store destinations, see the [press & medi
 - [UV Index Widget & Burn Time](https://www.cong-le.com/apps/uv-index-widget-burn-time/) ([App Store](https://apps.apple.com/app/id6760960498?ct=congle-web-uv-index-widget-burn-time&pt=19678800)): Know your personal burn time before you step outside.
 - [VidCompress - Video Compressor](https://www.cong-le.com/apps/vidcompress-video-compressor/) ([App Store](https://apps.apple.com/app/id6740351118?ct=congle-web-vidcompress-video-compressor&pt=19678800)): Description: VidCompression is your go-to solution for effortless video compression.
 - [Water them plants](https://www.cong-le.com/apps/water-them-plants/) ([App Store](https://apps.apple.com/app/id1573313539?ct=congle-web-water-them-plants&pt=19678800)): Keep track of your plants and want to never forget to water them ever again?
-- [All apps](https://www.cong-le.com/#apps): full portfolio (57 apps on the App Store)
+- [All apps](https://www.cong-le.com/apps/): full portfolio (57 apps on the App Store)
 
 ## Blog
 
