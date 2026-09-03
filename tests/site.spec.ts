@@ -213,6 +213,22 @@ test.describe('CV download', () => {
   });
 });
 
+test.describe('Generated app pages', () => {
+  test('uses the first real screenshot for social preview and product proof', async ({ page }) => {
+    await page.goto('/apps/age-calculator-how-old-am-i/');
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      'content',
+      'https://www.cong-le.com/images/apps/6770217651/screenshot-1.jpg',
+    );
+    await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute(
+      'content',
+      'https://www.cong-le.com/images/apps/6770217651/screenshot-1.jpg',
+    );
+    await expect(page.locator('#screenshots-heading')).toBeVisible();
+    await expect(page.locator('img.hero-screenshot[alt="Age Calculator: How Old Am I screenshot 1"]')).toBeVisible();
+  });
+});
+
 test.describe('Pack Planner universal links', () => {
   test('apple app site association advertises PackPlanner invite paths', async ({ page }) => {
     const response = await page.request.get('/.well-known/apple-app-site-association');

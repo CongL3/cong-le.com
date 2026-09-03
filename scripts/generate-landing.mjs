@@ -248,7 +248,9 @@ function renderPage(data) {
 
   const storeUrl = `https://apps.apple.com/app/id${trackId}?ct=congle-web-${slug}&pt=19678800`;
   const canonical = `${SITE_URL}/apps/${slug}/`;
-  const imageUrl = `${SITE_URL}${icon}`;
+  const screenshotUrls = Array.isArray(screenshots) ? screenshots.filter(Boolean).slice(0, 5) : [];
+  const socialImagePath = screenshotUrls[0] || icon;
+  const imageUrl = `${SITE_URL}${socialImagePath}`;
   const subtitle = subtitleFromName(trackName);
   const descriptor = subtitle || GENRE_PHRASE[genre] || 'iPhone App';
   const title = `${baseName(trackName)} — ${descriptor} for iPhone`;
@@ -296,7 +298,6 @@ function renderPage(data) {
   }`;
 
   const descHtml = renderDescription(description);
-  const screenshotUrls = Array.isArray(screenshots) ? screenshots.filter(Boolean).slice(0, 5) : [];
   const heroScreenshot = screenshotUrls[0] || '';
   const screenshotsBlock = screenshotUrls.length
     ? `
@@ -333,6 +334,7 @@ function renderPage(data) {
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${imageUrl}">
+  <meta property="og:image:alt" content="${esc(trackName)} app screenshot">
   <meta property="og:site_name" content="Cong Le Apps">
 
   <!-- Twitter Card -->
@@ -340,6 +342,7 @@ function renderPage(data) {
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(metaDesc)}">
   <meta name="twitter:image" content="${imageUrl}">
+  <meta name="twitter:image:alt" content="${esc(trackName)} app screenshot">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
