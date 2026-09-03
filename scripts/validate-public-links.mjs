@@ -162,13 +162,14 @@ for (const gallery of PRIORITY_GALLERIES) {
   const refs = [...html.matchAll(/<img\b[^>]*src=["'](\/images\/apps\/\d+\/screenshot-\d+\.jpg)["'][^>]*>/gi)].map(
     (match) => match[1],
   );
-  if (refs.length !== gallery.count) {
+  const uniqueRefs = [...new Set(refs)];
+  if (uniqueRefs.length !== gallery.count) {
     errors.push(
-      `${path.relative(ROOT, file)} must expose ${gallery.count} real App Store screenshots (found ${refs.length})`,
+      `${path.relative(ROOT, file)} must expose ${gallery.count} unique real App Store screenshots (found ${uniqueRefs.length})`,
     );
   }
   const expectedPrefix = `/images/apps/${gallery.id}/screenshot-`;
-  for (const ref of refs) {
+  for (const ref of uniqueRefs) {
     if (!ref.startsWith(expectedPrefix)) {
       errors.push(`${path.relative(ROOT, file)} references the wrong screenshot app id: ${ref}`);
     }
