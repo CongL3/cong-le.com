@@ -34,6 +34,12 @@ const ANDROID_LANDING_PAGES = [
     iosUrl: 'https://apps.apple.com/app/id6760960352?ct=congle-web-moon-phases-lunar-tracker&pt=19678800',
     packageName: 'com.congle.TEAMCONG.MoonPhases',
   },
+  {
+    slug: 'solunar-fishing',
+    appName: 'Solunar: Best Fishing Times',
+    iosUrl: 'https://apps.apple.com/app/id6760960543?ct=congle-web-solunar-fishing&pt=19678800',
+    packageName: 'com.congle.TEAMCONG.SolunarFishing',
+  },
 ];
 
 function escapeAttribute(value) {

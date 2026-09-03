@@ -85,7 +85,7 @@ test.describe('Download spotlight', () => {
   test('exposes verified Android download links where Google Play is available', async ({ page }) => {
     await page.goto('/');
     const links = page.locator('#download-spotlight').getByRole('link', { name: /on Google Play/ });
-    await expect(links).toHaveCount(2);
+    await expect(links).toHaveCount(3);
     await expect(links.nth(0)).toHaveAttribute(
       'href',
       /play\.google\.com\/store\/apps\/details\?id=com\.congle\.TEAMCONG\.AnniversaryTracker&.*utm_source=congle.*utm_content=anniversary-android/,
@@ -94,8 +94,13 @@ test.describe('Download spotlight', () => {
       'href',
       /play\.google\.com\/store\/apps\/details\?id=com\.congle\.TEAMCONG\.OllamaConnect&.*utm_source=congle.*utm_content=ollama-connect-android/,
     );
+    await expect(links.nth(2)).toHaveAttribute(
+      'href',
+      /play\.google\.com\/store\/apps\/details\?id=com\.congle\.TEAMCONG\.SolunarFishing&.*utm_source=congle.*utm_content=solunar-android/,
+    );
     await expect(links.nth(0)).not.toHaveAttribute('target', '_blank');
     await expect(links.nth(1)).not.toHaveAttribute('target', '_blank');
+    await expect(links.nth(2)).not.toHaveAttribute('target', '_blank');
   });
 
   test('uses app-specific campaign links in the full app grid', async ({ page }) => {
@@ -110,12 +115,13 @@ test.describe('Download spotlight', () => {
   test('exposes every verified Google Play listing in the full app grid', async ({ page }) => {
     await page.goto('/');
     const links = page.locator('#apps a[aria-label$="on Google Play"]');
-    await expect(links).toHaveCount(3);
+    await expect(links).toHaveCount(4);
     const hrefs = await links.evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
     expect(hrefs).toEqual(expect.arrayContaining([
       expect.stringMatching(/id=com\.congle\.TEAMCONG\.AnniversaryTracker/),
       expect.stringMatching(/id=com\.congle\.TEAMCONG\.OllamaConnect/),
       expect.stringMatching(/id=com\.congle\.TEAMCONG\.MoonPhases/),
+      expect.stringMatching(/id=com\.congle\.TEAMCONG\.SolunarFishing/),
     ]));
     expect(hrefs.every((href) =>
       href.includes('utm_source=congle') &&
@@ -189,6 +195,7 @@ test.describe('Android app landing pages', () => {
     { slug: 'anniversary-tracker', packageName: 'com.congle.TEAMCONG.AnniversaryTracker' },
     { slug: 'ollama-connect', packageName: 'com.congle.TEAMCONG.OllamaConnect' },
     { slug: 'moon-phases-lunar-tracker', packageName: 'com.congle.TEAMCONG.MoonPhases' },
+    { slug: 'solunar-fishing', packageName: 'com.congle.TEAMCONG.SolunarFishing' },
   ];
 
   for (const app of apps) {

@@ -216,6 +216,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-blue-500",
     iconUrl: "/images/apps/6760960543/icon.jpg",
     url: "https://apps.apple.com/gb/app/solunar-best-fishing-times/id6760960543?ct=congle-web-home&pt=19678800",
+    googlePlayUrl: "https://play.google.com/store/apps/details?id=com.congle.TEAMCONG.SolunarFishing",
     landingPage: "/apps/solunar-fishing/",
     focusedPage: "https://pocketgrove.com/solunar-fishing-times/",
   },
