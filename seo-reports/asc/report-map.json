@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T19:48:41.321Z",
+  "generatedAt": "2026-09-03T23:39:39.397Z",
   "apps": {
     "1570714816": {
       "name": "Anniversary Tracker",
@@ -255,7 +255,7 @@
       "requestId": "8dbca9f6-aa8c-455f-b604-9c71278a9471"
     },
     "6766366146": {
-      "name": "Frankly AI: Uncensored Chat",
+      "name": "Frankly AI: Direct AI Chat",
       "reports": {
         "discovery": "r15-36265b38-d69a-4ecd-a170-b79a1b77501d",
         "downloads": "r3-36265b38-d69a-4ecd-a170-b79a1b77501d",
@@ -398,7 +398,7 @@
       "requestId": "b270f064-d05e-4c8b-aeee-30d617c38ce3"
     },
     "6769176993": {
-      "name": "DocScanner: Sign Documents",
+      "name": "PaperSeal: Sign PDFs Offline",
       "reports": {
         "discovery": "r15-9db1644f-772e-4446-9a0a-6b0eea86ed93",
         "downloads": "r3-9db1644f-772e-4446-9a0a-6b0eea86ed93",
@@ -442,7 +442,7 @@
       "requestId": "00f9876b-6007-4165-8fef-2a34e153ee0d"
     },
     "6761100038": {
-      "name": "Life Countdown: Age Calculator",
+      "name": "Life Countdown: Weeks Left",
       "reports": {
         "discovery": "r15-dba92d92-4509-48c4-973f-2b183b81a80e",
         "downloads": "r3-dba92d92-4509-48c4-973f-2b183b81a80e",
@@ -640,7 +640,7 @@
       "requestId": "078e9c8d-db1a-4793-b47e-2344954b7853"
     },
     "6746223793": {
-      "name": "Fish Finder · AI Identifier",
+      "name": "Fish ID: Photo Species Scanner",
       "reports": {
         "discovery": "r15-29f58b5e-1562-43c4-a170-c0cdaeee7ebd",
         "downloads": "r3-29f58b5e-1562-43c4-a170-c0cdaeee7ebd",
@@ -759,6 +759,50 @@
         "purchases": "r12-3ea193ac-1295-4598-8119-e0b060d40325"
       },
       "requestId": "3ea193ac-1295-4598-8119-e0b060d40325"
+    },
+    "6796102052": {
+      "name": "CoastClock: Tide Times UK",
+      "reports": {
+        "discovery": "r15-cf648b56-1425-488e-a216-4913b6604a65",
+        "downloads": "r3-cf648b56-1425-488e-a216-4913b6604a65",
+        "sessions": "r8-cf648b56-1425-488e-a216-4913b6604a65",
+        "crashes": "r2-cf648b56-1425-488e-a216-4913b6604a65",
+        "purchases": "r12-cf648b56-1425-488e-a216-4913b6604a65"
+      },
+      "requestId": "cf648b56-1425-488e-a216-4913b6604a65"
+    },
+    "6790584903": {
+      "name": "Oval Office President Sim",
+      "reports": {
+        "discovery": "r15-6eac6dbc-6631-4302-aa0c-fe23d83a99ea",
+        "downloads": "r3-6eac6dbc-6631-4302-aa0c-fe23d83a99ea",
+        "sessions": "r8-6eac6dbc-6631-4302-aa0c-fe23d83a99ea",
+        "crashes": "r2-6eac6dbc-6631-4302-aa0c-fe23d83a99ea",
+        "purchases": "r12-6eac6dbc-6631-4302-aa0c-fe23d83a99ea"
+      },
+      "requestId": "6eac6dbc-6631-4302-aa0c-fe23d83a99ea"
+    },
+    "6797039310": {
+      "name": "Phrasal Verbs: English Trainer",
+      "reports": {
+        "discovery": "r15-8bca1ada-638d-4d62-a5ff-b7be7d06f54c",
+        "downloads": "r3-8bca1ada-638d-4d62-a5ff-b7be7d06f54c",
+        "sessions": "r8-8bca1ada-638d-4d62-a5ff-b7be7d06f54c",
+        "crashes": "r2-8bca1ada-638d-4d62-a5ff-b7be7d06f54c",
+        "purchases": "r12-8bca1ada-638d-4d62-a5ff-b7be7d06f54c"
+      },
+      "requestId": "8bca1ada-638d-4d62-a5ff-b7be7d06f54c"
+    },
+    "6797020508": {
+      "name": "BingeFree: Recovery Companion",
+      "reports": {
+        "discovery": "r15-533eccf2-55a4-4407-9cf6-795f59c2444f",
+        "downloads": "r3-533eccf2-55a4-4407-9cf6-795f59c2444f",
+        "sessions": "r8-533eccf2-55a4-4407-9cf6-795f59c2444f",
+        "crashes": "r2-533eccf2-55a4-4407-9cf6-795f59c2444f",
+        "purchases": "r12-533eccf2-55a4-4407-9cf6-795f59c2444f"
+      },
+      "requestId": "533eccf2-55a4-4407-9cf6-795f59c2444f"
     }
   }
 }
