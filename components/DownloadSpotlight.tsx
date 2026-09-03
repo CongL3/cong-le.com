@@ -16,10 +16,10 @@ const POCKETGROVE_APP_PAGES: Record<string, string> = {
 };
 
 // Keep the first-screen order aligned with the latest complete first-time
-// download report. Hoop Quest (421) is currently just ahead of Ollama Connect
-// (418), so the measured signal gets the earlier card while the rest of the
-// priority order stays unchanged.
-const spotlightIds = ['anniversary', 'football-career-quest', 'prime-minister-sim-politics', 'hoop-quest', 'ollama-connect', 'baby-screen-lock', 'solunar'];
+// download report: the strongest measured products get the earliest cards,
+// while Ollama remains visible because it also has the strongest current
+// Search Console signal among the smaller products.
+const spotlightIds = ['anniversary', 'football-career-quest', 'hoop-quest', 'prime-minister-sim-politics', 'ollama-connect', 'baby-screen-lock', 'solunar'];
 
 function spotlightStoreUrl(app: AppData): string | null {
   if (!app.url) return null;

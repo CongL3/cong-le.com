@@ -119,8 +119,8 @@ test.describe('Download spotlight', () => {
     expect(spotlightNames).toEqual([
       'Anniversary Tracker',
       'Football Career Quest',
-      'Prime Minister Sim: Politics',
       'Hoop Quest: Basketball Sim',
+      'Prime Minister Sim: Politics',
       'Ollama Connect',
       'Baby Screen Lock: Kid Safe',
       'Solunar: Best Fishing Times',
@@ -132,8 +132,8 @@ test.describe('Download spotlight', () => {
     const links = page.locator('#download-spotlight > div > div.grid > article a').filter({ hasText: 'Learn more' });
     await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/anniversary-tracker\/\?utm_source=congle/);
     await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/football-career-quest\/\?utm_source=congle/);
-    await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/prime-minister-sim\/\?utm_source=congle/);
-    await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/hoop-quest\/\?utm_source=congle/);
+    await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/hoop-quest\/\?utm_source=congle/);
+    await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/prime-minister-sim\/\?utm_source=congle/);
     await expect(links.nth(4)).toHaveAttribute('href', /pocketgrove\.com\/ollama-connect\/\?utm_source=congle/);
     await expect(links.nth(5)).toHaveAttribute('href', /pocketgrove\.com\/baby-screen-lock\/\?utm_source=congle/);
     await expect(links.nth(6)).toHaveAttribute('href', /pocketgrove\.com\/solunar-fishing-times\/\?utm_source=congle/);
