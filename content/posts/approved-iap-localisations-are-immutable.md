@@ -5,6 +5,7 @@ slug: approved-iap-localisations-are-immutable
 keywords: ["app store connect api in app purchase", "inapppurchaselocalization active state", "iap display name change", "iap description character limit"]
 queue: 12
 status: queued
+approved: true
 publishDate:
 ---
 

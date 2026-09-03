@@ -5,6 +5,7 @@ slug: xcodebuild-clean-build-silently-builds-release
 keywords: ["xcodebuild configuration debug", "debug-iphonesimulator empty", "xcodebuild build products missing", "xcodebuild release by default"]
 queue: 14
 status: queued
+approved: true
 publishDate:
 ---
 

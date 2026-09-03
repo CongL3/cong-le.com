@@ -5,6 +5,7 @@ slug: mach-error-308-parallel-simulator-tests
 keywords: ["mach error -308", "server died xcodebuild test", "simctl invalid argument", "parallel xcodebuild tests"]
 queue: 9
 status: queued
+approved: true
 publishDate:
 ---
 

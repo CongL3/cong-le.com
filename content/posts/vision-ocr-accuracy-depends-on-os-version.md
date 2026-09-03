@@ -5,6 +5,7 @@ slug: vision-ocr-accuracy-depends-on-os-version
 keywords: ["vnrecognizetextrequest revision", "vision ocr accuracy ios", "vision framework regression", "ios ocr benchmark"]
 queue: 10
 status: queued
+approved: true
 publishDate:
 ---
 

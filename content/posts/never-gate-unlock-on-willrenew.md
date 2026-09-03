@@ -5,6 +5,7 @@ slug: never-gate-unlock-on-willrenew
 keywords: ["revenuecat willrenew", "subscription entitlement check", "storekit auto renew off", "subscriber locked out bug"]
 queue: 11
 status: queued
+approved: true
 publishDate:
 ---
 

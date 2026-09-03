@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate content and publisher
+        run: npm run content:check && npm run test:publisher
+
       - name: Publish next queued post
         run: node scripts/publish-next.mjs
 
@@ -31,6 +34,10 @@ jobs:
         id: changes
         run: |
           git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Validate published output
+        if: steps.changes.outputs.changed == 'true'
+        run: npm run links:check && npm run build
 
       - name: Commit and push if changed
         if: steps.changes.outputs.changed == 'true'

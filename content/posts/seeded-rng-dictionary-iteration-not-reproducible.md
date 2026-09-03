@@ -5,6 +5,7 @@ slug: seeded-rng-dictionary-iteration-not-reproducible
 keywords: ["swift dictionary iteration order", "seeded random not reproducible", "deterministic simulation swift", "swift hash seed randomization"]
 queue: 13
 status: queued
+approved: true
 publishDate:
 ---
 

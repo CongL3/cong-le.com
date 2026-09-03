@@ -5,6 +5,7 @@ slug: fastlane-metadata-locale-codes-differ
 keywords: ["fastlane metadata locales", "deliver unsupported locale", "app store connect locale codes", "fastlane deliver locale error"]
 queue: 8
 status: queued
+approved: true
 publishDate:
 ---
 

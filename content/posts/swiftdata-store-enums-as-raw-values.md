@@ -5,6 +5,7 @@ slug: swiftdata-store-enums-as-raw-values
 keywords: ["swiftdata enum property", "swiftdata predicate enum", "swiftdata codable enum cloudkit", "swiftdata cannot use enum in predicate"]
 queue: 6
 status: queued
+approved: true
 publishDate:
 ---
 

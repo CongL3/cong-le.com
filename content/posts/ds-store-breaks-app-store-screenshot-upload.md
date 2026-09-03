@@ -5,6 +5,7 @@ slug: ds-store-breaks-app-store-screenshot-upload
 keywords: ["ds_store screenshot upload", "image unknown format app store", "app store connect screenshot upload error", "fastlane deliver ds_store"]
 queue: 16
 status: queued
+approved: true
 publishDate:
 ---
 

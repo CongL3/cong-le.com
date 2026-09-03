@@ -20,6 +20,7 @@ slug: post-slug            # must equal the filename without .md
 app: solunar-fishing       # one of the app slugs below
 keywords: ["kw one", "kw two"]
 queue: 1                   # integer; drip-publish order (lowest goes first)
+approved: true             # required before a queued post can publish
 status: queued             # queued | published
 publishDate:               # empty until published, then YYYY-MM-DD
 ---
@@ -40,6 +41,7 @@ blockquotes. Most posts end with a `## FAQ` section of `###` questions.
 | `app` | string | One of the app slugs below. Drives the download CTA + related posts. |
 | `keywords` | string[] | Inline array, e.g. `["a", "b"]`. Used in JSON-LD. |
 | `queue` | int | Drip order. `publish-next` picks the lowest `queue` among `queued`. |
+| `approved` | boolean | Must be `true` before a queued post can publish. Omitted means held. |
 | `status` | string | `queued` or `published`. Only `published` posts are rendered. |
 | `publishDate` | string | Empty while queued; set to `YYYY-MM-DD` on publish. |
 
@@ -53,13 +55,14 @@ App Store URL — see `scripts/lib/apps.mjs`.
 
 ## Lifecycle: queued → cron → published
 
-1. **Write** a post with `status: queued`, an empty `publishDate`, and a `queue`
-   number. Higher = later.
+1. **Write** a post with `status: queued`, `approved: true`, an empty `publishDate`, and a `queue`
+   number. Higher = later. Add it to `data/content-calendar.json` only after the sources,
+   examples, links, and opening answer have been checked.
 2. **Drip-publish.** The `Publish queued blog post` GitHub Action runs on a cron
    (Tue, Thu & Sat, 08:00 UTC) and calls `node scripts/publish-next.mjs`, which:
-   - selects the `queued` post with the lowest `queue`,
+   - selects one queued post that is approved and due in the checked-in calendar,
    - flips it to `status: published` and stamps today's `publishDate`,
-   - rebuilds `public/blog/` and `public/sitemap.xml`,
+   - rebuilds the blog, landing-page links, sitemap, and machine-readable indexes,
    - commits and pushes (which triggers the Pages deploy).
 3. **Published** posts stay live. Re-running the build is deterministic —
    `public/blog/` is wiped and regenerated every time.

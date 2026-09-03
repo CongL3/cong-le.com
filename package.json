@@ -11,6 +11,8 @@
     "sync": "node scripts/sync-apps.mjs",
     "blog:build": "node scripts/build-blog.mjs",
     "blog:publish": "node scripts/publish-next.mjs",
+    "content:check": "node scripts/content-check.mjs",
+    "test:publisher": "node --test tests/publish-next.test.mjs",
     "links:check": "node scripts/augment-android-landing-pages.mjs --check && node scripts/validate-public-links.mjs",
     "indexnow:sitemap": "node scripts/submit-sitemap-indexnow.mjs"
   },

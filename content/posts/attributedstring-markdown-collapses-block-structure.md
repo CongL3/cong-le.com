@@ -5,6 +5,7 @@ slug: attributedstring-markdown-collapses-block-structure
 keywords: ["attributedstring markdown swiftui", "markdownparsingoptions inlineonlypreservingwhitespace", "swiftui markdown lists", "attributedstring newlines missing"]
 queue: 15
 status: queued
+approved: true
 publishDate:
 ---
 

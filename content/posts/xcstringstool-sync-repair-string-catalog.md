@@ -5,6 +5,7 @@ slug: xcstringstool-sync-repair-string-catalog
 keywords: ["xcstringstool sync", "localizable xcstrings", "string catalog missing keys", "xcstrings command line"]
 queue: 7
 status: queued
+approved: true
 publishDate:
 ---
 

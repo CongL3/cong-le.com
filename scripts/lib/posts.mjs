@@ -10,6 +10,7 @@
  *   app: solunar-fishing   string (app slug)
  *   keywords: ["a", "b"]   string array
  *   queue: 1               integer
+ *   approved: true         boolean (required before queued posts can publish)
  *   status: queued         string (queued | published)
  *   publishDate: 2026-01-01  string (may be empty)
  *   updated: 2026-01-01    string (may be empty — last-modified date)
@@ -93,6 +94,7 @@ export function parsePost(raw, filename) {
     app: '',
     keywords: [],
     queue: 0,
+    approved: false,
     status: 'queued',
     publishDate: '',
     updated: '',
@@ -109,6 +111,9 @@ export function parsePost(raw, filename) {
         break;
       case 'queue':
         data.queue = rawVal ? parseInt(rawVal, 10) || 0 : 0;
+        break;
+      case 'approved':
+        data.approved = rawVal.toLowerCase() === 'true';
         break;
       case 'title':
       case 'description':

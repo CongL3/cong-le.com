@@ -1,0 +1,23 @@
+{
+  "startDate": "2026-09-05",
+  "weekdaysUtc": [
+    2,
+    4,
+    6
+  ],
+  "timeUtc": "08:00",
+  "cadence": "Tuesday, Thursday, Saturday 08:00 UTC",
+  "entries": [
+    { "scheduledDate": "2026-09-05", "slug": "swiftdata-store-enums-as-raw-values", "title": "Store SwiftData Enums as Raw Values, Not Codable" },
+    { "scheduledDate": "2026-09-08", "slug": "xcstringstool-sync-repair-string-catalog", "title": "xcstringstool sync: The String Catalog Repair Tool Nobody Mentions" },
+    { "scheduledDate": "2026-09-10", "slug": "fastlane-metadata-locale-codes-differ", "title": "Your App's Locale Codes Aren't Fastlane's Locale Codes" },
+    { "scheduledDate": "2026-09-12", "slug": "mach-error-308-parallel-simulator-tests", "title": "Mach Error -308 and the Shared Simulator Problem" },
+    { "scheduledDate": "2026-09-15", "slug": "vision-ocr-accuracy-depends-on-os-version", "title": "Your Vision OCR Accuracy Depends on the OS, Not Your Code" },
+    { "scheduledDate": "2026-09-17", "slug": "never-gate-unlock-on-willrenew", "title": "Never Gate Access on willRenew" },
+    { "scheduledDate": "2026-09-19", "slug": "approved-iap-localisations-are-immutable", "title": "Approved IAP Localisations Can't Be Changed by API" },
+    { "scheduledDate": "2026-09-22", "slug": "seeded-rng-dictionary-iteration-not-reproducible", "title": "Your Seeded Simulation Isn't Reproducible If It Iterates a Dictionary" },
+    { "scheduledDate": "2026-09-24", "slug": "xcodebuild-clean-build-silently-builds-release", "title": "xcodebuild Might Be Building Release Without Telling You" },
+    { "scheduledDate": "2026-09-26", "slug": "attributedstring-markdown-collapses-block-structure", "title": "AttributedString(markdown:) Throws Away Your Paragraphs" },
+    { "scheduledDate": "2026-09-29", "slug": "ds-store-breaks-app-store-screenshot-upload", "title": "A .DS_Store File Will Break Your Screenshot Upload" }
+  ]
+}
