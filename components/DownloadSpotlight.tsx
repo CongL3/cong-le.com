@@ -10,7 +10,7 @@ const POCKETGROVE_APP_PAGES: Record<string, string> = {
   'football-career-quest': 'https://pocketgrove.com/apps/football-career-quest/',
   'prime-minister-sim-politics': 'https://pocketgrove.com/apps/prime-minister-sim-politics/',
   'ollama-connect': 'https://pocketgrove.com/apps/ollama-connect/',
-  solunar: 'https://pocketgrove.com/apps/solunar-fishing/',
+  solunar: 'https://pocketgrove.com/apps/solunar-best-fishing-times/',
 };
 
 const spotlightIds = ['anniversary', 'football-career-quest', 'prime-minister-sim-politics', 'ollama-connect', 'solunar'];
