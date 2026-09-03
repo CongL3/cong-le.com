@@ -3,6 +3,15 @@
 Vite + React 19 SPA deployed to GitHub Pages (Cloudflare DNS, CNAME www.cong-le.com).
 Push to `main` auto-deploys via `.github/workflows/deploy-pages.yml`.
 
+## Delivery mode
+
+The owner has authorized direct pushes for website-only acquisition work. After
+running the relevant link, content, build, and browser checks, commit and push
+those changes directly to `main`; do not wait for pull-request review. This
+applies to website content, metadata, links, sitemaps, and indexes only. App
+source, App Store Connect, Google Play, and release changes keep their existing
+approval gates.
+
 ## ⏰ Session-start ritual (IMPORTANT)
 
 Read `/Users/congle/Dev/SEO/TASKS.md` and compare its **Due** dates against today's date.
