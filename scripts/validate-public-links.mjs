@@ -14,6 +14,28 @@ const EXCLUDED = [
   { slug: 'run-run-run', id: '1582701318' },
 ];
 
+// Generated pages should expose the real screenshots already synced into the
+// public catalogue. Hand-made pages have their own content contract and are
+// checked separately through PRIORITY_GALLERIES where applicable.
+const HANDMADE_APP_IDS = new Set([
+  '1570714816',
+  '6766366146',
+  '6769891596',
+  '6761378897',
+  '6775279715',
+  '6760960543',
+  '6747147301',
+  '6760255587',
+  '6759912464',
+  '6759859294',
+  '6746223793',
+  '6739454115',
+  '6739187522',
+  '6777125671',
+  '6787888847',
+  '6760960498',
+]);
+
 // These active apps have the strongest recent download signal. Keep their
 // public landing pages honest about the product before a visitor reaches the
 // tracked store CTA: the gallery must use the real synced App Store captures,
@@ -26,6 +48,14 @@ const PRIORITY_GALLERIES = [
   { slug: 'solunar-fishing', id: '6760960543', count: 5 },
   { slug: 'ollama-connect', id: '6769891596', count: 5 },
   { slug: 'baby-screen-lock', id: '6761378897', count: 5 },
+  { slug: 'birthday-reminder', id: '6739454115', count: 5 },
+  { slug: 'kids-timer', id: '6747147301', count: 3 },
+  { slug: 'baby-names', id: '6760255587', count: 5 },
+  { slug: 'coloring', id: '6759912464', count: 4 },
+  { slug: 'bible-prayer', id: '6759859294', count: 4 },
+  { slug: 'fish-finder', id: '6746223793', count: 3 },
+  { slug: 'lullaby-pal', id: '6739187522', count: 5 },
+  { slug: 'uv-index-widget-burn-time', id: '6760960498', count: 3 },
 ];
 
 function filesUnder(directory) {
@@ -39,6 +69,58 @@ function filesUnder(directory) {
 }
 
 const errors = [];
+
+function appIdFromHtml(html) {
+  return html.match(/apple-itunes-app["']\s+content=["']app-id=(\d+)/i)?.[1] || null;
+}
+
+const appPageById = new Map();
+for (const file of filesUnder(path.join(ROOT, 'public/apps')).filter((candidate) => candidate.endsWith('/index.html'))) {
+  const id = appIdFromHtml(readFileSync(file, 'utf8'));
+  if (id) appPageById.set(id, file);
+}
+
+function slugify(name) {
+  return String(name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+const manifestPath = path.join(ROOT, 'public/images/apps/manifest.json');
+if (existsSync(manifestPath)) {
+  const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+  for (const app of manifest.apps || []) {
+    const id = String(app.trackId);
+    if (EXCLUDED.some((excluded) => excluded.id === id) || HANDMADE_APP_IDS.has(id)) continue;
+
+    const canonicalFile = path.join(ROOT, 'public/apps', slugify(app.trackName), 'index.html');
+    const file = existsSync(canonicalFile) ? canonicalFile : appPageById.get(id);
+    const screenshots = Array.isArray(app.screenshots) ? app.screenshots.filter(Boolean).slice(0, 5) : [];
+    if (!file) {
+      errors.push(`missing generated app landing page for ${app.trackName} (${id})`);
+      continue;
+    }
+
+    const html = readFileSync(file, 'utf8');
+    const refs = [...html.matchAll(/<img\b[^>]*src=["'](\/images\/apps\/\d+\/screenshot-\d+\.jpg)["'][^>]*>/gi)].map(
+      (match) => match[1],
+    );
+    if (refs.length !== screenshots.length) {
+      errors.push(
+        `${path.relative(ROOT, file)} must expose ${screenshots.length} synced App Store screenshots (found ${refs.length})`,
+      );
+    }
+    for (const screenshot of screenshots) {
+      if (!existsSync(path.join(ROOT, 'public', screenshot.slice(1)))) {
+        errors.push(`${path.relative(ROOT, file)} references missing screenshot asset ${screenshot}`);
+      }
+    }
+    for (const ref of refs) {
+      if (!ref.startsWith(`/images/apps/${id}/`)) {
+        errors.push(`${path.relative(ROOT, file)} references the wrong screenshot app id: ${ref}`);
+      }
+    }
+  }
+}
+
 for (const app of EXCLUDED) {
   const directory = path.join(ROOT, 'public/apps', app.slug);
   for (const file of filesUnder(directory).filter((candidate) => candidate.endsWith('.html'))) {

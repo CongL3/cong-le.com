@@ -31,7 +31,7 @@ const COUNTRY = 'gb';
 
 const EXCLUDED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
 
-// trackId -> slug for the 13 hand-made pages. These are never regenerated and
+// trackId -> slug for the hand-made pages. These are never regenerated and
 // their trackIds are excluded from generation entirely.
 const EXISTING = {
   '1570714816': 'anniversary-tracker',
@@ -47,6 +47,9 @@ const EXISTING = {
   '6746223793': 'fish-finder',
   '6739454115': 'birthday-reminder',
   '6739187522': 'lullaby-pal',
+  '6777125671': 'football-career-quest',
+  '6787888847': 'prime-minister-sim-politics',
+  '6760960498': 'uv-index-widget-burn-time',
 };
 const PROTECTED_SLUGS = new Set(Object.values(EXISTING));
 

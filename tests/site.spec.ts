@@ -276,3 +276,39 @@ test.describe('New app canonical pages', () => {
     });
   }
 });
+
+test.describe('Generated app screenshot galleries', () => {
+  const apps = [
+    { name: 'Age Calculator: How Old Am I', slug: 'age-calculator-how-old-am-i', screenshotCount: 5 },
+    { name: 'Live Captions', slug: 'live-captions-hearbee', screenshotCount: 5 },
+    { name: 'Link Saver', slug: 'link-saver-bookmark-manager', screenshotCount: 5 },
+  ];
+
+  for (const app of apps) {
+    test(`${app.name} has a usable generated landing page`, async ({ page }) => {
+      const response = await page.goto(`/apps/${app.slug}/`);
+      expect(response?.status()).toBe(200);
+      await expect(page.locator('h1')).toContainText(app.name);
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        `https://www.cong-le.com/apps/${app.slug}/`,
+      );
+      await expect(page.locator('section[aria-labelledby="screenshots-heading"] img')).toHaveCount(app.screenshotCount);
+    });
+  }
+});
+
+test.describe('Hand-authored app screenshot galleries', () => {
+  const apps = [
+    { slug: 'birthday-reminder', screenshotCount: 5 },
+    { slug: 'uv-index-widget-burn-time', screenshotCount: 3 },
+  ];
+
+  for (const app of apps) {
+    test(`${app.slug} keeps its real App Store gallery`, async ({ page }) => {
+      const response = await page.goto(`/apps/${app.slug}/`);
+      expect(response?.status()).toBe(200);
+      await expect(page.locator('section[aria-labelledby="screenshots-heading"] img')).toHaveCount(app.screenshotCount);
+    });
+  }
+});
