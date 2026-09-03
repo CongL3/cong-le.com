@@ -363,6 +363,26 @@ test.describe('Priority social previews', () => {
   }
 });
 
+test.describe('Legacy social previews', () => {
+  const apps = [
+    { slug: 'kids-timer', id: '6747147301' },
+    { slug: 'bible-prayer', id: '6759859294' },
+    { slug: 'fish-finder', id: '6746223793' },
+    { slug: 'birthday-reminder', id: '6739454115' },
+    { slug: 'lullaby-pal', id: '6739187522' },
+    { slug: 'uv-index-widget-burn-time', id: '6760960498' },
+  ];
+
+  for (const app of apps) {
+    test(`${app.slug} uses its first real screenshot for social previews`, async ({ page }) => {
+      await page.goto(`/apps/${app.slug}/`);
+      const expected = `https://www.cong-le.com/images/apps/${app.id}/screenshot-1.jpg`;
+      await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', expected);
+      await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute('content', expected);
+    });
+  }
+});
+
 test.describe('Hand-authored app screenshot galleries', () => {
   const apps = [
     { slug: 'birthday-reminder', screenshotCount: 5 },
