@@ -13,6 +13,7 @@ import { writeFileSync, readFileSync, readdirSync, statSync, existsSync } from '
 import path from 'path';
 import { loadPosts, publishedPosts, ROOT } from './lib/posts.mjs';
 import { SITE_URL } from './lib/apps.mjs';
+import { APP_ALIASES } from './lib/app-aliases.mjs';
 
 const PUBLIC = path.join(ROOT, 'public');
 
@@ -111,6 +112,7 @@ function appEntries() {
   const pages = readdirSync(appsDir)
     .filter((slug) => statSync(path.join(appsDir, slug)).isDirectory())
     .filter((slug) => !EXCLUDED_APP_SLUGS.has(slug))
+    .filter((slug) => !APP_ALIASES[slug])
     .map((slug) => readAppEntry(slug, path.join(appsDir, slug)))
     .filter(Boolean);
   const byId = new Map(pages.filter((page) => page.appId).map((page) => [page.appId, page]));
@@ -146,6 +148,7 @@ export function generateSitemap() {
       const full = path.join(appsDir, dir);
       if (!statSync(full).isDirectory()) continue;
       if (EXCLUDED_APP_SLUGS.has(dir)) continue;
+      if (APP_ALIASES[dir]) continue;
       const indexFile = path.join(full, 'index.html');
       const modSource = existsSync(indexFile) ? indexFile : full;
       entries.push({ loc: `${SITE_URL}/apps/${dir}/`, mod: lastmod(modSource) });

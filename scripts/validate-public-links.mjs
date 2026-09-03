@@ -6,6 +6,7 @@
 import { existsSync, readFileSync, readdirSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { APP_ALIASES } from './lib/app-aliases.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EXCLUDED = [
@@ -69,6 +70,23 @@ function filesUnder(directory) {
 }
 
 const errors = [];
+
+for (const [alias, destination] of Object.entries(APP_ALIASES)) {
+  const file = path.join(ROOT, 'public/apps', alias, 'index.html');
+  if (!existsSync(file)) {
+    errors.push(`missing historical app alias ${path.relative(ROOT, file)}`);
+    continue;
+  }
+  const html = readFileSync(file, 'utf8');
+  const canonical = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1] || '';
+  const expected = `https://www.cong-le.com/apps/${destination}/`;
+  if (canonical !== expected) {
+    errors.push(`${path.relative(ROOT, file)} must canonicalize to ${expected}`);
+  }
+  if (!/noindex/i.test(html) || !html.includes(`/apps/${destination}/`)) {
+    errors.push(`${path.relative(ROOT, file)} must provide a noindex redirect to /apps/${destination}/`);
+  }
+}
 
 function appIdFromHtml(html) {
   return html.match(/apple-itunes-app["']\s+content=["']app-id=(\d+)/i)?.[1] || null;

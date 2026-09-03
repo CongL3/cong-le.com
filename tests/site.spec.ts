@@ -312,3 +312,20 @@ test.describe('Hand-authored app screenshot galleries', () => {
     });
   }
 });
+
+test.describe('Canonical app aliases', () => {
+  test('redirects a historical slug to the canonical page and preserves tracking parameters', async ({ page }) => {
+    await page.goto('/apps/link-saver-fast-and-easy/?utm_source=legacy');
+    await expect(page).toHaveURL(/\/apps\/link-saver-bookmark-manager\/\?utm_source=legacy$/);
+    await expect(page.locator('h1')).toContainText('Link Saver');
+  });
+
+  test('keeps historical aliases out of the sitemap', async ({ page }) => {
+    const response = await page.request.get('/sitemap.xml');
+    expect(response.status()).toBe(200);
+    const sitemap = await response.text();
+    expect(sitemap).toContain('/apps/link-saver-bookmark-manager/');
+    expect(sitemap).not.toContain('/apps/link-saver-fast-and-easy/');
+    expect(sitemap).not.toContain('/apps/golden-hour-light-planner/');
+  });
+});
