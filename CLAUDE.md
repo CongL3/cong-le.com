@@ -12,7 +12,7 @@ do it. He will forget these otherwise.
 ## SEO content pipeline
 - `content/posts/*.md` — blog bank; frontmatter spec in `content/posts/README.md`
   (`status: queued|published`, integer `queue` = publish order).
-- `.github/workflows/publish-posts.yml` — cron Mon + Thu 07:00 UTC runs
+- `.github/workflows/publish-posts.yml` — cron Tue + Thu + Sat 08:00 UTC runs
   `scripts/publish-next.mjs`: publishes lowest-queue post, regenerates `public/blog/`
   (pages, index, RSS) + `public/sitemap.xml`, commits → Pages redeploys.
 - `scripts/build-blog.mjs` + `generate-sitemap.mjs` also run as `prebuild`.

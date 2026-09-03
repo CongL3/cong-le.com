@@ -56,7 +56,7 @@ App Store URL — see `scripts/lib/apps.mjs`.
 1. **Write** a post with `status: queued`, an empty `publishDate`, and a `queue`
    number. Higher = later.
 2. **Drip-publish.** The `Publish queued blog post` GitHub Action runs on a cron
-   (Mon & Thu, 07:00 UTC) and calls `node scripts/publish-next.mjs`, which:
+   (Tue, Thu & Sat, 08:00 UTC) and calls `node scripts/publish-next.mjs`, which:
    - selects the `queued` post with the lowest `queue`,
    - flips it to `status: published` and stamps today's `publishDate`,
    - rebuilds `public/blog/` and `public/sitemap.xml`,
