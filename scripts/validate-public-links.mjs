@@ -35,6 +35,39 @@ for (const app of EXCLUDED) {
   }
 }
 
+// Every product CTA on an app landing page must point to a concrete listing,
+// retain the free App Store Connect attribution, and stay in the current tab.
+// A reader often arrives here from search on an iPhone; opening a second tab
+// makes the download hand-off needlessly fragile on mobile browsers.
+for (const file of filesUnder(path.join(ROOT, 'public/apps')).filter((candidate) => candidate.endsWith('.html'))) {
+  const html = readFileSync(file, 'utf8');
+  for (const match of html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi)) {
+    const tag = match[0];
+    const href = match[1].replace(/&amp;/g, '&');
+    if (!href.includes('apps.apple.com')) continue;
+
+    let url;
+    try {
+      url = new URL(href);
+    } catch {
+      errors.push(`${path.relative(ROOT, file)} contains an invalid App Store URL`);
+      continue;
+    }
+    if (!/\/app\/(?:id\d+|[^/]+\/id\d+)/.test(url.pathname)) {
+      errors.push(`${path.relative(ROOT, file)} points to an App Store directory instead of a product listing`);
+    }
+    if (url.searchParams.get('pt') !== '19678800') {
+      errors.push(`${path.relative(ROOT, file)} is missing the App Store provider token`);
+    }
+    if (!String(url.searchParams.get('ct') || '').startsWith('congle-web-')) {
+      errors.push(`${path.relative(ROOT, file)} is missing the Cong Le campaign token`);
+    }
+    if (/\btarget=["']_blank["']/i.test(tag)) {
+      errors.push(`${path.relative(ROOT, file)} opens a product download in a new tab`);
+    }
+  }
+}
+
 const publicFiles = filesUnder(path.join(ROOT, 'public'));
 for (const file of publicFiles.filter((candidate) => /\.(html|xml|txt)$/.test(candidate))) {
   const contents = readFileSync(file, 'utf8');
