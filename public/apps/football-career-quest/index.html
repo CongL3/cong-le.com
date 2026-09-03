@@ -61,6 +61,56 @@
   }
   </script>
 
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What kind of football game is Football Career Quest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Football Career Quest is a player-career football sim. You control one custom footballer rather than managing a whole club, then build a career from first prospect to club legend."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I create my own footballer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Choose your player's position, dominant foot, traits, and nationality before starting the career."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do matches work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Play fast simulated matches with live decisions, ratings, goals, assists, defensive actions, and rewards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can I do between matches?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Train your attributes, fight for minutes, improve form, earn wages, manage relationships, and answer messages as your career moves from regional football toward bigger leagues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I play Football Career Quest offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The game is built for quick offline seasons, with readable match summaries and career choices that affect your stats, money, fame, and legacy."
+        }
+      }
+    ]
+  }
+  </script>
+
   <script>
     (function () {
       var saved = localStorage.getItem('theme');
@@ -176,6 +226,35 @@
   <!-- Guides & articles — kept in sync by update-landing-links.mjs from the
        published blog. Empty (invisible) until this app has published posts. -->
   <!-- BLOG-LINKS:football-career-quest --><!-- /BLOG-LINKS -->
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-24" aria-labelledby="faq-heading">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 id="faq-heading" class="text-4xl md:text-5xl mb-10 text-center fade-up">Frequently asked questions</h2>
+      <div class="space-y-6">
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">What kind of football game is Football Career Quest?</h3>
+          <p>It is a player-career football sim. You control one custom footballer rather than managing a whole club, then build a career from first prospect to club legend.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">Can I create my own footballer?</h3>
+          <p>Yes. Choose your player's position, dominant foot, traits, and nationality before starting the career.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">How do matches work?</h3>
+          <p>Play fast simulated matches with live decisions, ratings, goals, assists, defensive actions, and rewards.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">What can I do between matches?</h3>
+          <p>Train your attributes, fight for minutes, improve form, earn wages, manage relationships, and answer messages as your career moves from regional football toward bigger leagues.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-up">
+          <h3 class="text-xl mb-2">Can I play Football Career Quest offline?</h3>
+          <p>The game is built for quick offline seasons, with readable match summaries and career choices that affect your stats, money, fame, and legacy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Final CTA -->
   <section class="py-24 lg:py-32 text-center">
