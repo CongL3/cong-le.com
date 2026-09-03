@@ -164,6 +164,13 @@ test.describe('Pack Planner universal links', () => {
 });
 
 test.describe('App grid', () => {
+  test('does not promote unavailable or retired apps', async ({ page }) => {
+    await page.goto('/');
+    const grid = page.locator('#apps');
+    await expect(grid).not.toContainText('DocScanner: Sign Documents');
+    await expect(grid).not.toContainText('Frankly AI: Uncensored Chat');
+  });
+
   test('category filter buttons show counts', async ({ page }) => {
     await page.goto('/');
     await page.locator('#apps').scrollIntoViewIfNeeded();
