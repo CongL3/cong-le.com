@@ -393,7 +393,7 @@ function renderPage(data) {
         <p class="text-xl md:text-2xl mb-8" style="color:#4b5563">
           ${esc(heroLead)}
         </p>
-        <a href="${storeUrl}" target="_blank" rel="noopener"
+        <a href="${storeUrl}"
            class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg" style="background: ${accent}; color: white;">
           ${APP_STORE_SVG}
           Download ${price === 0 || price == null ? 'Free ' : ''}on the App Store
@@ -426,7 +426,7 @@ function renderPage(data) {
       <p class="text-xl mb-10" style="color:#4b5563">
         ${esc(metaDesc)}
       </p>
-      <a href="${storeUrl}" target="_blank" rel="noopener"
+      <a href="${storeUrl}"
          class="inline-flex items-center gap-3 font-bold px-10 py-5 rounded-full text-xl hover:opacity-90 transition-opacity shadow-xl" style="background: ${accent}; color: white;">
         ${APP_STORE_SVG.replace('w-6 h-6', 'w-7 h-7')}
         Download ${price === 0 || price == null ? 'Free ' : ''}on the App Store

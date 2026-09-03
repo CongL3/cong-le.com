@@ -44,8 +44,6 @@ const Hero: React.FC = () => {
         {ANNIVERSARY_DOWNLOAD_URL ? (
           <a
             href={ANNIVERSARY_DOWNLOAD_URL}
-            target="_blank"
-            rel="noreferrer"
             className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
           >
             Download Anniversary Tracker

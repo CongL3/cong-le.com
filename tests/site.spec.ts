@@ -68,6 +68,7 @@ test.describe('Download spotlight', () => {
     await expect(links).toHaveCount(7);
     for (let i = 0; i < 7; i += 1) {
       await expect(links.nth(i)).toHaveAttribute('href', /https:\/\/apps\.apple\.com\/gb\/app\/.*\?(?=.*pt=19678800)(?=.*ct=congle-web-spotlight-)/);
+      await expect(links.nth(i)).not.toHaveAttribute('target', '_blank');
     }
   });
 
@@ -126,6 +127,7 @@ test.describe('Hero conversion links', () => {
       'href',
       /https:\/\/apps\.apple\.com\/gb\/app\/anniversary-tracker\/.*\?(?=.*pt=19678800)(?=.*ct=congle-web-hero-anniversary)/,
     );
+    await expect(downloadLink).not.toHaveAttribute('target', '_blank');
     await expect(downloadLink).toBeInViewport();
   });
 
