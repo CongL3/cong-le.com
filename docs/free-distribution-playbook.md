@@ -14,6 +14,23 @@ links.
 - Store buttons: use the press kit or the store link already present in the
   GitHub README so campaign attribution stays consistent.
 
+## Verified free starting points
+
+- [Product Hunt launch guide](https://www.producthunt.com/launch) — makers can
+  submit their own product; use one focused launch for a genuinely new app,
+  meaningful update, or useful release story rather than duplicating the whole
+  portfolio.
+- [AlternativeTo FAQ](https://alternativeto.net/faq/) — provides an official
+  “submit the application” flow and points visitors to the product's official
+  website. Add only apps that fit a real alternative/search need, with accurate
+  platform and pricing information.
+- [Indie Hackers](https://www.indiehackers.com/) — treat this as a builder
+  community, not a bulk directory. Share a specific build lesson or launch
+  story and participate before linking to an app.
+
+These are opportunities to evaluate, not guarantees of traffic or installs.
+Check each site's current rules immediately before submitting.
+
 ## Approved short descriptions
 
 Use the description that matches the product. Do not add ratings, download
