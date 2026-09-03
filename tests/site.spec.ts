@@ -67,9 +67,9 @@ test.describe('Download spotlight', () => {
     await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/football-career-quest\/\?utm_source=congle/);
     await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/prime-minister-sim\/\?utm_source=congle/);
     await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/hoop-quest\/\?utm_source=congle/);
-    await expect(links.nth(4)).toHaveAttribute('href', /pocketgrove\.com\/apps\/ollama-connect\/\?utm_source=congle/);
+    await expect(links.nth(4)).toHaveAttribute('href', /pocketgrove\.com\/ollama-connect\/\?utm_source=congle/);
     await expect(links.nth(5)).toHaveAttribute('href', /pocketgrove\.com\/baby-screen-lock\/\?utm_source=congle/);
-    await expect(links.nth(6)).toHaveAttribute('href', /pocketgrove\.com\/apps\/solunar-best-fishing-times\/\?utm_source=congle/);
+    await expect(links.nth(6)).toHaveAttribute('href', /pocketgrove\.com\/solunar-fishing-times\/\?utm_source=congle/);
   });
 
   test('exposes direct attributed App Store download links', async ({ page }) => {
