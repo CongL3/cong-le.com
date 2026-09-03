@@ -240,7 +240,7 @@ function titleCase(s) {
 function renderPage(data) {
   const {
     trackName, trackId, slug, icon, accent, genre,
-    description, price, currency, rating, ratingCount,
+    description, price, currency, rating, ratingCount, screenshots,
   } = data;
 
   const storeUrl = `https://apps.apple.com/app/id${trackId}?ct=congle-web-${slug}&pt=19678800`;
@@ -293,6 +293,24 @@ function renderPage(data) {
   }`;
 
   const descHtml = renderDescription(description);
+  const screenshotUrls = Array.isArray(screenshots) ? screenshots.filter(Boolean).slice(0, 5) : [];
+  const screenshotsBlock = screenshotUrls.length
+    ? `
+  <!-- App Store screenshots — sourced from the synced public catalogue. -->
+  <section class="py-16 lg:py-24" aria-labelledby="screenshots-heading">
+    <div class="max-w-6xl mx-auto px-6 fade-up">
+      <h2 id="screenshots-heading" class="text-4xl md:text-5xl mb-8">See it in action</h2>
+      <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+        ${screenshotUrls
+          .map(
+            (screenshot, index) =>
+              `<figure class="w-44 sm:w-52 shrink-0 snap-start"><img src="${esc(screenshot)}" alt="${esc(trackName)} screenshot ${index + 1}" class="w-full rounded-2xl shadow-xl" loading="lazy" decoding="async"></figure>`
+          )
+          .join('\n        ')}
+      </div>
+    </div>
+  </section>`
+    : '';
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -404,6 +422,8 @@ function renderPage(data) {
       </div>
     </div>
   </section>
+
+${screenshotsBlock}
 
   <!-- What it does -->
   <section class="py-16 lg:py-24">
@@ -577,6 +597,7 @@ async function main() {
       currency: m.currency,
       rating: typeof m.averageUserRating === 'number' ? m.averageUserRating : 0,
       ratingCount: m.userRatingCount || 0,
+      screenshots: app.screenshots || [],
     });
 
     const dir = path.join(PUBLIC_APPS, slug);
