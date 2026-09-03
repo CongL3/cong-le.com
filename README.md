@@ -8,6 +8,9 @@ This repository powers [cong-le.com](https://www.cong-le.com): a portfolio of
 small iOS apps, developer notes, and the static acquisition pages that explain
 each product before sending visitors to its store listing.
 
+For shareable product descriptions, real screenshots, and verified store links,
+see the [press & media kit](https://www.cong-le.com/press/).
+
 ## Try the active apps
 
 The portfolio's active app pages provide product context and the correct store
