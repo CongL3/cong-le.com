@@ -96,7 +96,7 @@ function readAppPage(slug) {
 
   const playUrl = firstMatch(html, /<a\b[^>]*data-platform=["']android["'][^>]*href=["']([^"']+)["']/i);
   const icon = firstMatch(html, /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
-  const description = decode(firstMatch(html, /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i));
+  const description = decode(firstMatch(html, /<meta\s+name=["']description["']\s+content="([^"]*)"/i));
 
   return {
     slug,

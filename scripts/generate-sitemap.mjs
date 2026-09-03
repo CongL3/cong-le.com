@@ -86,7 +86,7 @@ function readAppEntry(slug, appDir) {
   }
 
   const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || slug;
-  const description = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i)?.[1] || '';
+  const description = html.match(/<meta\s+name=["']description["']\s+content="([^"]*)"/i)?.[1] || '';
   const canonical = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1]
     || `${SITE_URL}/apps/${slug}/`;
   const storeLink = html.match(/href=["'](https:\/\/apps\.apple\.com\/[^"']+\/id\d+[^"']*)["']/i)?.[1] || '';

@@ -86,6 +86,9 @@ test.describe('App catalogue', () => {
 
     const detailLinks = page.locator('article[data-app-slug] a.details-link');
     await expect(detailLinks).toHaveCount(appCount);
+    await expect(page.locator('article[data-app-slug="checklist-to-do-one-focus"] p')).toContainText(
+      "It's either completed or not",
+    );
     const storeLinks = page.locator('article[data-app-slug] a.store-link:not(.store-link-secondary)');
     await expect(storeLinks).toHaveCount(appCount);
     for (let i = 0; i < await storeLinks.count(); i += 1) {
@@ -528,6 +531,14 @@ test.describe('Generated app screenshot galleries', () => {
       await expect(page.locator('section[aria-labelledby="screenshots-heading"] img')).toHaveCount(app.screenshotCount);
     });
   }
+});
+
+test('generated app metadata expands short verified store descriptions', async ({ page }) => {
+  await page.goto('/apps/checklist-to-do-one-focus/');
+  const description = await page.locator('meta[name="description"]').getAttribute('content');
+  expect(description).toContain('Checklist To Do for iPhone');
+  expect(description).toContain("It's either completed or not");
+  expect(description?.length ?? 0).toBeGreaterThanOrEqual(100);
 });
 
 test.describe('Priority social previews', () => {

@@ -144,6 +144,28 @@ function metaDescription(desc, max = 155) {
   return out;
 }
 
+/**
+ * Keep short store descriptions useful in search results without inventing
+ * product claims. The app name, verified store description, and store
+ * availability are the only inputs used for the expansion.
+ */
+function landingMetaDescription(trackName, desc, price) {
+  const base = metaDescription(desc);
+  if (!base) return `${trackName} for iPhone. Download free on the App Store.`;
+  if (base.length >= 100) return base;
+
+  const name = baseName(trackName);
+  const suffix = price === 0 || price == null
+    ? ' Download free on the App Store.'
+    : ' Explore it on the App Store.';
+  // Use more of the verified store description when the first sentence is
+  // too short; this adds useful context without inventing a feature claim.
+  const clean = String(desc || '').replace(/\s+/g, ' ').trim();
+  const expanded = `${name} for iPhone — ${clean}${suffix}`;
+  if (expanded.length <= 155) return expanded;
+  return expanded.slice(0, 154).replace(/\s+\S*$/, '').trim() + '…';
+}
+
 /** A subtitle-ish descriptor split from the app name, e.g. "Solunar: X" -> "X". */
 function subtitleFromName(name) {
   const parts = String(name).split(/\s*[:·—–-]\s+|\s*:\s*/);
@@ -254,7 +276,7 @@ function renderPage(data) {
   const subtitle = subtitleFromName(trackName);
   const descriptor = subtitle || GENRE_PHRASE[genre] || 'iPhone App';
   const title = `${baseName(trackName)} — ${descriptor} for iPhone`;
-  const metaDesc = metaDescription(description) || `${trackName} for iPhone. Download free on the App Store.`;
+  const metaDesc = landingMetaDescription(trackName, description, price);
   const heroLead = metaDescription(description, 200) || descriptor;
   const schemaCategory = GENRE_SCHEMA[genre] || 'MobileApplication';
   const tintLight = rgba(accent, 0.10);
