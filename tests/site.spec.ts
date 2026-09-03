@@ -541,6 +541,34 @@ test('generated app metadata expands short verified store descriptions', async (
   expect(description?.length ?? 0).toBeGreaterThanOrEqual(100);
 });
 
+test.describe('Priority hand-authored app metadata', () => {
+  const apps = [
+    {
+      slug: 'football-career-quest',
+      required: ['player-career football sim', 'custom footballer', 'simulated matches'],
+    },
+    {
+      slug: 'prime-minister-sim-politics',
+      required: ['fictional political survival game', 'four factions', 'respond to crises'],
+    },
+    {
+      slug: 'uv-index-widget-burn-time',
+      required: ['sun-safety app', 'burn-time estimates', 'SPF guidance', 'offline UV calculations'],
+    },
+  ];
+
+  for (const app of apps) {
+    test(`${app.slug} has useful search and social metadata`, async ({ page }) => {
+      await page.goto(`/apps/${app.slug}/`);
+      const description = await page.locator('meta[name="description"]').getAttribute('content');
+      expect(description?.length ?? 0).toBeGreaterThanOrEqual(100);
+      for (const phrase of app.required) expect(description).toContain(phrase);
+      await expect(page.locator('meta[property="og:description"]')).toHaveAttribute('content', description);
+      await expect(page.locator('meta[name="twitter:description"]')).toHaveAttribute('content', description);
+    });
+  }
+});
+
 test.describe('Priority social previews', () => {
   const apps = [
     { slug: 'anniversary-tracker', id: '1570714816' },

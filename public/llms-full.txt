@@ -118,7 +118,7 @@
 ### Football Career Quest
 - Landing page: https://www.cong-le.com/apps/football-career-quest/
 - App Store: https://apps.apple.com/app/id6777125671?ct=congle-web-football-career-quest&pt=19678800
-- Description: Build a full football career from first prospect to club legend.
+- Description: Football Career Quest is a player-career football sim for iPhone. Create a custom footballer, play simulated matches, and build your career from prospect to club legend.
 
 ### Golden Hour - Sun Tracker
 - Landing page: https://www.cong-le.com/apps/golden-hour-sun-tracker/
@@ -252,7 +252,7 @@
 ### Prime Minister Sim: Politics
 - Landing page: https://www.cong-le.com/apps/prime-minister-sim-politics/
 - App Store: https://apps.apple.com/app/id6787888847?ct=congle-web-prime-minister-sim-politics&pt=19678800
-- Description: You're the new Prime Minister.
+- Description: Prime Minister Sim is a fictional political survival game for iPhone. Balance four factions, respond to crises, and try to keep your government in office.
 
 ### PrivateChat AI: Ollama & LLM
 - Landing page: https://www.cong-le.com/apps/privatechat-ai-ollama-llm/
@@ -294,7 +294,7 @@
 ### UV Index Widget & Burn Time
 - Landing page: https://www.cong-le.com/apps/uv-index-widget-burn-time/
 - App Store: https://apps.apple.com/app/id6760960498?ct=congle-web-uv-index-widget-burn-time&pt=19678800
-- Description: Know your personal burn time before you step outside.
+- Description: UV Index Widget & Burn Time is an iPhone sun-safety app with personalised burn-time estimates, SPF guidance, alerts, and offline UV calculations.
 
 ### VidCompress - Video Compressor
 - Landing page: https://www.cong-le.com/apps/vidcompress-video-compressor/
