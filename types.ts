@@ -23,6 +23,8 @@ export interface AppData {
   isFeatured?: boolean;
   /** False when the listing is no longer available for download. */
   available?: boolean;
+  /** False when the listing is intentionally omitted from acquisition UI. */
+  promotable?: boolean;
   url?: string;
   landingPage?: string;
   screenshots?: string[];

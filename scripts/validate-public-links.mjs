@@ -8,7 +8,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const RETIRED = [
+const EXCLUDED = [
   { slug: 'docscanner-sign-documents', id: '6769176993' },
   { slug: 'frankly-ai', id: '6766366146' },
   { slug: 'run-run-run', id: '1582701318' },
@@ -25,7 +25,7 @@ function filesUnder(directory) {
 }
 
 const errors = [];
-for (const app of RETIRED) {
+for (const app of EXCLUDED) {
   const directory = path.join(ROOT, 'public/apps', app.slug);
   for (const file of filesUnder(directory).filter((candidate) => candidate.endsWith('.html'))) {
     const html = readFileSync(file, 'utf8');
@@ -38,7 +38,7 @@ for (const app of RETIRED) {
 const publicFiles = filesUnder(path.join(ROOT, 'public'));
 for (const file of publicFiles.filter((candidate) => /\.(html|xml|txt)$/.test(candidate))) {
   const contents = readFileSync(file, 'utf8');
-  for (const app of RETIRED) {
+  for (const app of EXCLUDED) {
     if (contents.includes(`apps.apple.com`) && contents.includes(`id${app.id}`)) {
       errors.push(`${path.relative(ROOT, file)} advertises retired App Store id ${app.id}`);
     }

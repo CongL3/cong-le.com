@@ -22,9 +22,8 @@ const CONSTANTS_PATH = path.join(ROOT, 'constants.ts');
 const DEVELOPER_ID = '954373766';
 const COUNTRY = 'gb';
 
-// Keep historical records out of future sync-generated catalogues. These
-// listings are not currently available for download and must not be promoted.
-const RETIRED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
+// Keep intentionally excluded apps out of future sync-generated catalogues.
+const EXCLUDED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
 
 // Map iTunes genre names → our AppCategory enum values
 const GENRE_MAP = {
@@ -77,7 +76,7 @@ async function main() {
   );
 
   const itunesApps = data.results.filter(
-    r => r.wrapperType === 'software' && !RETIRED_APP_IDS.has(String(r.trackId))
+    r => r.wrapperType === 'software' && !EXCLUDED_APP_IDS.has(String(r.trackId))
   );
   console.log(`Found ${itunesApps.length} apps on App Store\n`);
 
@@ -85,7 +84,7 @@ async function main() {
   const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf8'));
   const manifestById = Object.fromEntries(
     manifest.apps
-      .filter(a => !RETIRED_APP_IDS.has(String(a.trackId)))
+      .filter(a => !EXCLUDED_APP_IDS.has(String(a.trackId)))
       .map(a => [String(a.trackId), a])
   );
 
@@ -153,7 +152,7 @@ async function main() {
   const existingIds = new Set(manifest.apps.map(a => String(a.trackId)));
   manifest.apps = [
     ...manifest.apps
-      .filter(a => !RETIRED_APP_IDS.has(String(a.trackId)))
+      .filter(a => !EXCLUDED_APP_IDS.has(String(a.trackId)))
       .map(a => manifestById[String(a.trackId)] || a),
     ...Object.values(manifestById).filter(a => !existingIds.has(String(a.trackId))),
   ];

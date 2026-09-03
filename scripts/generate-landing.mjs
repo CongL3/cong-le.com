@@ -29,7 +29,7 @@ const CONSTANTS_PATH = path.join(ROOT, 'constants.ts');
 const SITE_URL = 'https://www.cong-le.com';
 const COUNTRY = 'gb';
 
-const RETIRED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
+const EXCLUDED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
 
 // trackId -> slug for the 13 hand-made pages. These are never regenerated and
 // their trackIds are excluded from generation entirely.
@@ -524,7 +524,7 @@ async function main() {
   const apps = manifest.apps;
 
   const toGenerate = apps.filter(
-    (a) => !EXISTING[String(a.trackId)] && !RETIRED_APP_IDS.has(String(a.trackId))
+    (a) => !EXISTING[String(a.trackId)] && !EXCLUDED_APP_IDS.has(String(a.trackId))
   );
   const trackIds = toGenerate.map((a) => a.trackId);
 

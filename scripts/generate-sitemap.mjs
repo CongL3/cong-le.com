@@ -29,15 +29,15 @@ const LEGACY_APP_IDS = {
   coloring: '6759912464',
 };
 
-// These pages are retained for old inbound links, but the corresponding
-// App Store listings are not currently downloadable. Do not advertise them
-// in XML sitemaps or machine-readable catalogues.
-const RETIRED_APP_SLUGS = new Set([
+// These pages are retained for old inbound links, but the corresponding apps
+// are intentionally excluded from acquisition SEO. Do not advertise them in
+// XML sitemaps or machine-readable catalogues.
+const EXCLUDED_APP_SLUGS = new Set([
   'docscanner-sign-documents',
   'frankly-ai',
   'run-run-run',
 ]);
-const RETIRED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
+const EXCLUDED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
 
 /** mtime of a file/dir as YYYY-MM-DD (UTC), or today if unavailable. */
 function lastmod(fsPath) {
@@ -110,7 +110,7 @@ function appEntries() {
   if (!existsSync(appsDir)) return [];
   const pages = readdirSync(appsDir)
     .filter((slug) => statSync(path.join(appsDir, slug)).isDirectory())
-    .filter((slug) => !RETIRED_APP_SLUGS.has(slug))
+    .filter((slug) => !EXCLUDED_APP_SLUGS.has(slug))
     .map((slug) => readAppEntry(slug, path.join(appsDir, slug)))
     .filter(Boolean);
   const byId = new Map(pages.filter((page) => page.appId).map((page) => [page.appId, page]));
@@ -118,7 +118,7 @@ function appEntries() {
   if (!existsSync(manifestPath)) return pages.sort((a, b) => a.slug.localeCompare(b.slug));
   const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
   return manifest.apps
-    .filter((app) => !RETIRED_APP_IDS.has(String(app.trackId)))
+    .filter((app) => !EXCLUDED_APP_IDS.has(String(app.trackId)))
     .map((app) => byId.get(String(app.trackId)))
     .filter(Boolean)
     .sort((a, b) => a.slug.localeCompare(b.slug));
@@ -145,7 +145,7 @@ export function generateSitemap() {
     for (const dir of readdirSync(appsDir)) {
       const full = path.join(appsDir, dir);
       if (!statSync(full).isDirectory()) continue;
-      if (RETIRED_APP_SLUGS.has(dir)) continue;
+      if (EXCLUDED_APP_SLUGS.has(dir)) continue;
       const indexFile = path.join(full, 'index.html');
       const modSource = existsSync(indexFile) ? indexFile : full;
       entries.push({ loc: `${SITE_URL}/apps/${dir}/`, mod: lastmod(modSource) });
@@ -215,7 +215,7 @@ export function generateLlmsTxt() {
   const posts = publishedPosts(loadPosts());
   const apps = appEntries();
   const bySlug = new Map(apps.map((app) => [app.slug, app]));
-  const activeFeatured = featured.filter(([slug]) => !RETIRED_APP_SLUGS.has(slug));
+  const activeFeatured = featured.filter(([slug]) => !EXCLUDED_APP_SLUGS.has(slug));
   const featuredSlugs = new Set(activeFeatured.map(([slug]) => slug));
   const remainingApps = apps.filter((app) => !featuredSlugs.has(app.slug));
   const lines = [

@@ -2,9 +2,9 @@
 
 /**
  * Remove download affordances from static pages for listings that are no
- * longer available. This is intentionally explicit and idempotent: it is a
- * maintenance migration, not a network probe or an automatic App Store
- * availability decision.
+ * longer promoted. This is intentionally explicit and idempotent: it is a
+ * maintenance migration, not a network probe or an automatic availability
+ * decision.
  */
 
 import { readFileSync, readdirSync, writeFileSync } from 'fs';
@@ -17,6 +17,9 @@ const PAGES = [
   'public/apps/frankly-ai',
   'public/apps/run-run-run',
 ];
+const NOTICE_BY_DIRECTORY = {
+  'public/apps/docscanner-sign-documents': 'This app is not currently promoted on this site.',
+};
 
 function htmlFiles(directory) {
   const files = [];
@@ -30,6 +33,10 @@ function htmlFiles(directory) {
 
 for (const relativeDirectory of PAGES) {
   const directory = path.join(ROOT, relativeDirectory);
+  const notice = NOTICE_BY_DIRECTORY[relativeDirectory]
+    || 'This app is not currently available on the App Store.';
+  const bannerNotice = NOTICE_BY_DIRECTORY[relativeDirectory]
+    || 'This app is not currently available for download from the App Store.';
   for (const file of htmlFiles(directory)) {
     let html = readFileSync(file, 'utf8');
     const original = html;
@@ -43,15 +50,15 @@ for (const relativeDirectory of PAGES) {
     html = html.replace(/\n\s*"offers":\s*\{[\s\S]*?\n\s*\},/g, '');
     html = html.replace(
       /<a\s+href="https:\/\/apps\.apple\.com\/[^\"]+"[^>]*>([\s\S]*?)<\/a>/g,
-      '<div class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full text-lg bg-gray-200 text-gray-700" role="status">This app is not currently available on the App Store.</div>',
+      `<div class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full text-lg bg-gray-200 text-gray-700" role="status">${notice}</div>`,
     );
-    html = html.replace(/Download free on the App Store\./g, 'The App Store listing is currently unavailable.');
-    html = html.replace(/Download on the App Store/g, 'App Store listing unavailable');
-    html = html.replace(/Download Free on the App Store/g, 'App Store listing unavailable');
+    html = html.replace(/Download free on the App Store\./g, notice);
+    html = html.replace(/Download on the App Store/g, notice);
+    html = html.replace(/Download Free on the App Store/g, notice);
     if (!html.includes('data-retired-app-notice')) {
       html = html.replace(
         /<body([^>]*)>/,
-        '<body$1>\n  <div data-retired-app-notice class="bg-amber-100 px-4 py-3 text-center text-sm text-amber-900" role="status">This app is not currently available for download from the App Store.</div>',
+        `<body$1>\n  <div data-retired-app-notice class="bg-amber-100 px-4 py-3 text-center text-sm text-amber-900" role="status">${bannerNotice}</div>`,
       );
     }
     if (html !== original) writeFileSync(file, html);
