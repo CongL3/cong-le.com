@@ -7,11 +7,11 @@ const APP_STORE_PROVIDER_TOKEN = '19678800';
 
 const POCKETGROVE_APP_PAGES: Record<string, string> = {
   anniversary: 'https://pocketgrove.com/apps/anniversary-tracker/',
-  'football-career-quest': 'https://pocketgrove.com/apps/football-career-quest/',
-  'prime-minister-sim-politics': 'https://pocketgrove.com/apps/prime-minister-sim-politics/',
+  'football-career-quest': 'https://pocketgrove.com/football-career-quest/',
+  'prime-minister-sim-politics': 'https://pocketgrove.com/prime-minister-sim/',
   'ollama-connect': 'https://pocketgrove.com/apps/ollama-connect/',
-  'hoop-quest': 'https://pocketgrove.com/apps/hoop-quest-basketball-sim/',
-  'baby-screen-lock': 'https://pocketgrove.com/apps/baby-screen-lock-kid-safe/',
+  'hoop-quest': 'https://pocketgrove.com/hoop-quest/',
+  'baby-screen-lock': 'https://pocketgrove.com/baby-screen-lock/',
   solunar: 'https://pocketgrove.com/apps/solunar-best-fishing-times/',
 };
 
