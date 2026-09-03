@@ -27,10 +27,10 @@
 - Description: Anniversary Tracker helps you count, customise, and never forget the moments that matter most — from your very first day together to your 10,000th. Includes an automatic day counter, smart reminders, and built-in milestones.
   - Language pages: [ja](https://www.cong-le.com/apps/anniversary-tracker/ja/), [ko](https://www.cong-le.com/apps/anniversary-tracker/ko/), [de](https://www.cong-le.com/apps/anniversary-tracker/de/), [zh-Hans](https://www.cong-le.com/apps/anniversary-tracker/zh-Hans/)
 
-### Baby Kicks: Track Movements
-- Landing page: https://www.cong-le.com/apps/baby-kicks-track-movements/
-- App Store: https://apps.apple.com/app/id6563145060?ct=congle-web-baby-kicks-track-movements&pt=19678800
-- Description: Track your baby’s movements effortlessly with Baby Kicks, the ultimate app for monitoring fetal health.
+### Baby Kicks: Kick Counter
+- Landing page: https://www.cong-le.com/apps/baby-kicks-kick-counter/
+- App Store: https://apps.apple.com/app/id6563145060?ct=congle-web-baby-kicks-kick-counter&pt=19678800
+- Description: Baby Kicks helps you log your baby's movements quickly and easily, so you always have a simple record of kick sessions to look back on.
 
 ### Baby Names: Swipe & Pick
 - Landing page: https://www.cong-le.com/apps/baby-names/
@@ -73,10 +73,15 @@
 - App Store: https://apps.apple.com/app/id6743774763?ct=congle-web-carddex-tcg-scanner-value&pt=19678800
 - Description: Your Ultimate Pokemon Card Collecting Companion Know exactly what your cards are worth.
 
-### CardKeeper – Wallet Passes
-- Landing page: https://www.cong-le.com/apps/cardkeeper-wallet-passes/
-- App Store: https://apps.apple.com/app/id6761440158?ct=congle-web-cardkeeper-wallet-passes&pt=19678800
+### CardKeeper: Wallet Pass Maker
+- Landing page: https://www.cong-le.com/apps/cardkeeper-wallet-pass-maker/
+- App Store: https://apps.apple.com/app/id6761440158?ct=congle-web-cardkeeper-wallet-pass-maker&pt=19678800
 - Description: CardKeeper is the privacy-first way to create and manage Apple Wallet passes.
+
+### Checklist To Do - One Focus
+- Landing page: https://www.cong-le.com/apps/checklist-to-do-one-focus/
+- App Store: https://apps.apple.com/app/id1633843163?ct=congle-web-checklist-to-do-one-focus&pt=19678800
+- Description: A single todo list.
 
 ### CoastClock: Tide Times UK
 - Landing page: https://www.cong-le.com/apps/coastclock-tide-times-uk/
@@ -149,10 +154,10 @@
 - App Store: https://apps.apple.com/app/id6761100038?ct=congle-web-life-countdown-age-calculator&pt=19678800
 - Description: How many weeks do you have left?
 
-### Link Saver - fast and easy
-- Landing page: https://www.cong-le.com/apps/link-saver-fast-and-easy/
-- App Store: https://apps.apple.com/app/id6743759106?ct=congle-web-link-saver-fast-and-easy&pt=19678800
-- Description: Link Saver: Bookmark Anything, Anywhere Discover the simplest way to save and organize links across all your devices.
+### Link Saver: Bookmark Manager
+- Landing page: https://www.cong-le.com/apps/link-saver-bookmark-manager/
+- App Store: https://apps.apple.com/app/id6743759106?ct=congle-web-link-saver-bookmark-manager&pt=19678800
+- Description: Save any link from any app in one tap.
 
 ### Live Captions HearBee
 - Landing page: https://www.cong-le.com/apps/live-captions-hearbee/
@@ -250,10 +255,10 @@
 - App Store: https://apps.apple.com/app/id6761863969?ct=congle-web-privatechat-ai-ollama-llm&pt=19678800
 - Description: Chat with AI — 100% private, 100% on your device.
 
-### Simple Timer & Stopwatch Clock
-- Landing page: https://www.cong-le.com/apps/simple-timer-stopwatch-clock/
-- App Store: https://apps.apple.com/app/id6737737475?ct=congle-web-simple-timer-stopwatch-clock&pt=19678800
-- Description: Here’s an updated version of your app description that includes both the stopwatch and timer features: The Best Simple Stopwatch and Timer App - Just Tap to Start!
+### Simple Timer & Stopwatch
+- Landing page: https://www.cong-le.com/apps/simple-timer-stopwatch/
+- App Store: https://apps.apple.com/app/id6737737475?ct=congle-web-simple-timer-stopwatch&pt=19678800
+- Description: A no-fuss timer and stopwatch that stays live on your Lock Screen and Dynamic Island.
 
 ### SoapCraft: Soap Calculator
 - Landing page: https://www.cong-le.com/apps/soapcraft-soap-calculator/
@@ -280,11 +285,6 @@
 - Landing page: https://www.cong-le.com/apps/tiny-table-blw-ideas-purees/
 - App Store: https://apps.apple.com/app/id6772686797?ct=congle-web-tiny-table-blw-ideas-purees&pt=19678800
 - Description: Tiny Table helps parents start solids with practical baby-led weaning (BLW), puree, and finger-food prep ideas, plus allergen tracking and a lightweight meal planner.
-
-### To Do List - One focus
-- Landing page: https://www.cong-le.com/apps/to-do-list-one-focus/
-- App Store: https://apps.apple.com/app/id1633843163?ct=congle-web-to-do-list-one-focus&pt=19678800
-- Description: A single todo list.
 
 ### UV Index Widget & Burn Time
 - Landing page: https://www.cong-le.com/apps/uv-index-widget-burn-time/
