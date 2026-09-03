@@ -70,6 +70,15 @@ test.describe('Download spotlight', () => {
       await expect(links.nth(i)).toHaveAttribute('href', /https:\/\/apps\.apple\.com\/gb\/app\/.*\?(?=.*pt=19678800)(?=.*ct=congle-web-spotlight-)/);
     }
   });
+
+  test('uses app-specific campaign links in the full app grid', async ({ page }) => {
+    await page.goto('/');
+    const links = page.locator('#apps a[aria-label$="on the App Store"]');
+    const hrefs = await links.evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
+    expect(hrefs.length).toBeGreaterThan(0);
+    expect(hrefs.every((href) => href.includes('pt=19678800') && href.includes('ct=congle-web-grid-'))).toBe(true);
+    expect(hrefs.find((href) => href.includes('id1570714816'))).toContain('ct=congle-web-grid-anniversary');
+  });
 });
 
 test.describe('Developer notes', () => {
