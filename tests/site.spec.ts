@@ -293,6 +293,8 @@ test.describe('Generated app screenshot galleries', () => {
         'href',
         `https://www.cong-le.com/apps/${app.slug}/`,
       );
+      await expect(page.locator('img.hero-screenshot')).toHaveCount(1);
+      await expect(page.locator('img.hero-screenshot')).toHaveAttribute('src', /\/screenshot-1\.jpg$/);
       await expect(page.locator('section[aria-labelledby="screenshots-heading"] img')).toHaveCount(app.screenshotCount);
     });
   }
