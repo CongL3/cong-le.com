@@ -215,19 +215,6 @@
       ]
     },
     {
-      "trackId": 1582701318,
-      "trackName": "Run Run Run",
-      "bundleId": "com.TEAMCONG.RUNRUNRUN1",
-      "appStoreUrl": "https://apps.apple.com/gb/app/run-run-run/id1582701318?uo=4",
-      "icon": "/images/apps/1582701318/icon.jpg",
-      "screenshots": [
-        "/images/apps/1582701318/screenshot-1.jpg",
-        "/images/apps/1582701318/screenshot-2.jpg",
-        "/images/apps/1582701318/screenshot-3.jpg",
-        "/images/apps/1582701318/screenshot-4.jpg"
-      ]
-    },
-    {
       "trackId": 1582328906,
       "trackName": "Solitaire - TEAMCONG",
       "bundleId": "com.TEAMCONG.SolitaireFree",
@@ -474,20 +461,6 @@
       ]
     },
     {
-      "trackId": 6766366146,
-      "trackName": "Frankly AI: Uncensored Chat",
-      "bundleId": "com.congle.TEAMCONG.FranklyAI",
-      "appStoreUrl": "https://apps.apple.com/gb/app/frankly-ai-uncensored-chat/id6766366146?uo=4",
-      "icon": "/images/apps/6766366146/icon.jpg",
-      "screenshots": [
-        "/images/apps/6766366146/screenshot-1.jpg",
-        "/images/apps/6766366146/screenshot-2.jpg",
-        "/images/apps/6766366146/screenshot-3.jpg",
-        "/images/apps/6766366146/screenshot-4.jpg",
-        "/images/apps/6766366146/screenshot-5.jpg"
-      ]
-    },
-    {
       "trackId": 6765780052,
       "trackName": "Captions: Auto Video Subtitles",
       "bundleId": "com.congle.TEAMCONG.CaptionCreator",
@@ -525,19 +498,6 @@
         "/images/apps/6769891596/screenshot-3.jpg",
         "/images/apps/6769891596/screenshot-4.jpg",
         "/images/apps/6769891596/screenshot-5.jpg"
-      ]
-    },
-    {
-      "trackId": 6769176993,
-      "trackName": "DocScanner: Sign Documents",
-      "bundleId": "com.congle.TEAMCONG.DocScanner",
-      "appStoreUrl": "https://apps.apple.com/gb/app/docscanner-sign-documents/id6769176993?uo=4",
-      "icon": "/images/apps/6769176993/icon.jpg",
-      "screenshots": [
-        "/images/apps/6769176993/screenshot-1.jpg",
-        "/images/apps/6769176993/screenshot-2.jpg",
-        "/images/apps/6769176993/screenshot-3.jpg",
-        "/images/apps/6769176993/screenshot-4.jpg"
       ]
     },
     {

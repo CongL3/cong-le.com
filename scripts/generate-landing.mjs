@@ -29,6 +29,8 @@ const CONSTANTS_PATH = path.join(ROOT, 'constants.ts');
 const SITE_URL = 'https://www.cong-le.com';
 const COUNTRY = 'gb';
 
+const RETIRED_APP_IDS = new Set(['6769176993', '6766366146', '1582701318']);
+
 // trackId -> slug for the 13 hand-made pages. These are never regenerated and
 // their trackIds are excluded from generation entirely.
 const EXISTING = {
@@ -521,7 +523,9 @@ async function main() {
   const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf8'));
   const apps = manifest.apps;
 
-  const toGenerate = apps.filter((a) => !EXISTING[String(a.trackId)]);
+  const toGenerate = apps.filter(
+    (a) => !EXISTING[String(a.trackId)] && !RETIRED_APP_IDS.has(String(a.trackId))
+  );
   const trackIds = toGenerate.map((a) => a.trackId);
 
   console.log(`Fetching iTunes metadata for ${trackIds.length} apps in one call...`);

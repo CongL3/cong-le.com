@@ -93,11 +93,6 @@
 - App Store: https://apps.apple.com/app/id1634973558?ct=congle-web-couple-days-counter&pt=19678800
 - Description: This [ Couple days counter ] is to record your anniversaries with of you and your partner.
 
-### DocScanner: Sign Documents
-- Landing page: https://www.cong-le.com/apps/docscanner-sign-documents/
-- App Store: https://apps.apple.com/app/id6769176993?ct=congle-web-docscanner-sign-documents&pt=19678800
-- Description: DocScanner is the all-in-one document scanner that works completely offline.
-
 ### Fish Finder - AI Identifier
 - Landing page: https://www.cong-le.com/apps/fish-finder/
 - App Store: https://apps.apple.com/app/id6746223793?ct=congle-web-fish-finder&pt=19678800
@@ -112,12 +107,6 @@
 - Landing page: https://www.cong-le.com/apps/football-career-quest/
 - App Store: https://apps.apple.com/app/id6777125671?ct=congle-web-football-career-quest&pt=19678800
 - Description: Build a full football career from first prospect to club legend.
-
-### Frankly AI: Uncensored Chat
-- Landing page: https://www.cong-le.com/apps/frankly-ai/
-- App Store: https://apps.apple.com/app/id6766366146?ct=congle-web-frankly-ai&pt=19678800
-- Description: Frankly AI is a private, unfiltered AI chat app that runs open-weight language models directly on your iPhone. Eight candid personas cover honest advice, creative writing, and roleplay. Your conversations never leave your device.
-  - Language pages: [ja](https://www.cong-le.com/apps/frankly-ai/ja/), [ko](https://www.cong-le.com/apps/frankly-ai/ko/), [de](https://www.cong-le.com/apps/frankly-ai/de/), [zh-Hans](https://www.cong-le.com/apps/frankly-ai/zh-Hans/)
 
 ### Golden Hour - Sun Tracker
 - Landing page: https://www.cong-le.com/apps/golden-hour-sun-tracker/
@@ -245,11 +234,6 @@
 - Landing page: https://www.cong-le.com/apps/privatechat-ai-ollama-llm/
 - App Store: https://apps.apple.com/app/id6761863969?ct=congle-web-privatechat-ai-ollama-llm&pt=19678800
 - Description: Chat with AI — 100% private, 100% on your device.
-
-### Run Run Run
-- Landing page: https://www.cong-le.com/apps/run-run-run/
-- App Store: https://apps.apple.com/app/id1582701318?ct=congle-web-run-run-run&pt=19678800
-- Description: Run Run Run for iPhone. Download free on the App Store.
 
 ### Simple Timer & Stopwatch Clock
 - Landing page: https://www.cong-le.com/apps/simple-timer-stopwatch-clock/

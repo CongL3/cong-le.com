@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Download } from 'lucide-react';
-import { APPS } from '../constants';
+import { AVAILABLE_APPS } from '../constants';
 import type { AppData } from '../types';
 
 const APP_STORE_PROVIDER_TOKEN = '19678800';
@@ -30,7 +30,7 @@ const DownloadSpotlight: React.FC = () => {
       // The legacy catalogue contains a few empty array slots between synced
       // entries; optional chaining keeps the spotlight SSR-safe while the
       // normal app grid continues to filter those slots out.
-      const app = APPS.find((candidate) => candidate?.id === id);
+      const app = AVAILABLE_APPS.find((candidate) => candidate?.id === id);
       const href = POCKETGROVE_APP_PAGES[id];
       return app && href ? { app, href } : null;
     })

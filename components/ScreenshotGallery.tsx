@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { APPS } from '../constants';
+import { AVAILABLE_APPS } from '../constants';
 
 const EXCLUDED_IDS = new Set(['to-do-list', 'couple-days', 'water-plants', 'othello', 'solitaire']);
-const appsWithScreenshots = APPS.filter(
+const appsWithScreenshots = AVAILABLE_APPS.filter(
   app => app.screenshots && app.screenshots.length > 0 && !EXCLUDED_IDS.has(app.id)
 );
 

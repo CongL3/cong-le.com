@@ -12,6 +12,7 @@ const APPS = {
     name: 'Frankly AI: Uncensored Chat',
     trackId: '6766366146',
     oneLiner: 'An uncensored AI chat companion that talks about anything, honestly.',
+    available: false,
   },
   'ollama-connect': {
     name: 'Ollama Connect',
@@ -52,9 +53,12 @@ export function getApp(slug) {
     name: app.name,
     trackId: app.trackId,
     oneLiner: app.oneLiner,
+    available: app.available !== false,
     icon: `/images/apps/${app.trackId}/icon.jpg`,
     landingPage: `/apps/${slug}/`,
-    storeUrl: `https://apps.apple.com/app/id${app.trackId}?ct=congle-web-${slug}&pt=19678800`,
+    storeUrl: app.available === false
+      ? null
+      : `https://apps.apple.com/app/id${app.trackId}?ct=congle-web-${slug}&pt=19678800`,
   };
 }
 

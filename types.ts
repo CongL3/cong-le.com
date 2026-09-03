@@ -21,6 +21,8 @@ export interface AppData {
   iconColor: string;
   iconUrl?: string;
   isFeatured?: boolean;
+  /** False when the listing is no longer available for download. */
+  available?: boolean;
   url?: string;
   landingPage?: string;
   screenshots?: string[];
