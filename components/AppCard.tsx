@@ -76,8 +76,6 @@ const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
         </div>
         <a
           href={appStoreGridUrl(app)}
-          target="_blank"
-          rel="noreferrer"
           aria-label={`${app.name} on the App Store`}
           className="relative z-10 inline-flex items-center gap-0.5 flex-shrink-0 text-[11px] font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 px-2 py-1 -mr-1 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
         >

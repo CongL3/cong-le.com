@@ -290,7 +290,7 @@ function ctaBox(app) {
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1"><a href="${escAttr(app.landingPage)}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">${esc(app.name)}</a></h3>
         <p class="text-gray-500 dark:text-gray-400 mb-4">${esc(app.oneLiner)}</p>
         ${app.storeUrl
-          ? `<a href="${escAttr(app.storeUrl)}" target="_blank" rel="noopener"
+          ? `<a href="${escAttr(app.storeUrl)}" rel="noopener"
            class="inline-flex items-center gap-2.5 font-semibold px-6 py-3 rounded-full text-base text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm">
           ${APPLE_SVG}
           Download on the App Store

@@ -50,8 +50,6 @@ const ScreenshotGallery: React.FC = () => {
               {/* App header */}
               <a
                 href={app.url || '#'}
-                target="_blank"
-                rel="noreferrer"
                 className="inline-flex items-center gap-3 mb-5 group"
               >
                 <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md flex-shrink-0">

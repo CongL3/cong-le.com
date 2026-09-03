@@ -56,8 +56,6 @@ const FeaturedApp: React.FC = () => {
 
               <a
                 href={anniversaryApp.url || '#'}
-                target="_blank"
-                rel="noreferrer"
                 className="inline-flex items-center bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-rose-50 transition-all group"
               >
                 View on App Store
