@@ -10,10 +10,10 @@ const POCKETGROVE_APP_PAGES: Record<string, string> = {
   'football-career-quest': 'https://pocketgrove.com/apps/football-career-quest/',
   'prime-minister-sim-politics': 'https://pocketgrove.com/apps/prime-minister-sim-politics/',
   'ollama-connect': 'https://pocketgrove.com/apps/ollama-connect/',
-  solunar: 'https://pocketgrove.com/apps/solunar-best-fishing-times/',
+  'hoop-quest': 'https://pocketgrove.com/apps/hoop-quest/',
 };
 
-const spotlightIds = ['anniversary', 'football-career-quest', 'prime-minister-sim-politics', 'ollama-connect', 'solunar'];
+const spotlightIds = ['anniversary', 'football-career-quest', 'prime-minister-sim-politics', 'ollama-connect', 'hoop-quest'];
 
 function spotlightStoreUrl(app: AppData): string | null {
   if (!app.url) return null;

@@ -44,7 +44,7 @@ test.describe('Download spotlight', () => {
     await expect(page.locator('#download-spotlight')).toContainText('Football Career Quest');
     await expect(page.locator('#download-spotlight')).toContainText('Prime Minister Sim: Politics');
     await expect(page.locator('#download-spotlight')).toContainText('Ollama Connect');
-    await expect(page.locator('#download-spotlight')).toContainText('Solunar: Best Fishing Times');
+    await expect(page.locator('#download-spotlight')).toContainText('Hoop Quest: Basketball Sim');
     await expect(page.locator('#download-spotlight')).not.toContainText('DocScanner: Sign Documents');
   });
 
@@ -55,7 +55,7 @@ test.describe('Download spotlight', () => {
     await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/apps\/football-career-quest\/\?utm_source=congle/);
     await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/apps\/prime-minister-sim-politics\/\?utm_source=congle/);
     await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/apps\/ollama-connect\/\?utm_source=congle/);
-    await expect(links.nth(4)).toHaveAttribute('href', /pocketgrove\.com\/apps\/solunar-best-fishing-times\/\?utm_source=congle/);
+    await expect(links.nth(4)).toHaveAttribute('href', /pocketgrove\.com\/apps\/hoop-quest\/\?utm_source=congle/);
   });
 
   test('exposes direct attributed App Store download links', async ({ page }) => {
