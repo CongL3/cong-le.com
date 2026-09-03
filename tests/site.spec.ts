@@ -35,17 +35,18 @@ test.describe('Dark mode', () => {
 });
 
 test.describe('Download spotlight', () => {
-  test('shows the six active acquisition candidates', async ({ page }) => {
+  test('shows the seven active acquisition candidates', async ({ page }) => {
     await page.goto('/');
     await page.locator('#download-spotlight').scrollIntoViewIfNeeded();
     await expect(page.locator('#download-spotlight')).toBeVisible();
-    await expect(page.locator('#download-spotlight > div > div.grid > article')).toHaveCount(6);
+    await expect(page.locator('#download-spotlight > div > div.grid > article')).toHaveCount(7);
     await expect(page.locator('#download-spotlight')).toContainText('Anniversary Tracker');
     await expect(page.locator('#download-spotlight')).toContainText('Football Career Quest');
     await expect(page.locator('#download-spotlight')).toContainText('Prime Minister Sim: Politics');
     await expect(page.locator('#download-spotlight')).toContainText('Ollama Connect');
     await expect(page.locator('#download-spotlight')).toContainText('Hoop Quest: Basketball Sim');
     await expect(page.locator('#download-spotlight')).toContainText('Baby Screen Lock: Kid Safe');
+    await expect(page.locator('#download-spotlight')).toContainText('Solunar: Best Fishing Times');
     await expect(page.locator('#download-spotlight')).not.toContainText('DocScanner: Sign Documents');
   });
 
@@ -58,13 +59,14 @@ test.describe('Download spotlight', () => {
     await expect(links.nth(3)).toHaveAttribute('href', /pocketgrove\.com\/apps\/ollama-connect\/\?utm_source=congle/);
     await expect(links.nth(4)).toHaveAttribute('href', /pocketgrove\.com\/apps\/hoop-quest-basketball-sim\/\?utm_source=congle/);
     await expect(links.nth(5)).toHaveAttribute('href', /pocketgrove\.com\/apps\/baby-screen-lock-kid-safe\/\?utm_source=congle/);
+    await expect(links.nth(6)).toHaveAttribute('href', /pocketgrove\.com\/apps\/solunar-best-fishing-times\/\?utm_source=congle/);
   });
 
   test('exposes direct attributed App Store download links', async ({ page }) => {
     await page.goto('/');
     const links = page.locator('#download-spotlight > div > div.grid > article a').filter({ hasText: 'Download' });
-    await expect(links).toHaveCount(6);
-    for (let i = 0; i < 6; i += 1) {
+    await expect(links).toHaveCount(7);
+    for (let i = 0; i < 7; i += 1) {
       await expect(links.nth(i)).toHaveAttribute('href', /https:\/\/apps\.apple\.com\/gb\/app\/.*\?(?=.*pt=19678800)(?=.*ct=congle-web-spotlight-)/);
     }
   });
