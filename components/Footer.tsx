@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                 <li><a href="/developer.html" className="text-gray-400 hover:text-white transition-colors">Developer Support</a></li>
                 <li><a href="/privacy.html" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
                 <li><a href="/terms.html" className="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
-                <li><a href={HERO_CONTENT.appStoreLink} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">App Store Portfolio</a></li>
+                <li><a href={HERO_CONTENT.appStoreLink} className="text-gray-400 hover:text-white transition-colors">App Store Portfolio</a></li>
             </ul>
           </div>
         </div>

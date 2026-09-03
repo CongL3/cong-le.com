@@ -80,6 +80,17 @@ test.describe('Download spotlight', () => {
     expect(hrefs.every((href) => href.includes('pt=19678800') && href.includes('ct=congle-web-grid-'))).toBe(true);
     expect(hrefs.find((href) => href.includes('id1570714816'))).toContain('ct=congle-web-grid-anniversary');
   });
+
+  test('keeps full-card and portfolio App Store links in the current tab', async ({ page }) => {
+    await page.goto('/');
+    const cardLinks = page.locator('#apps a[aria-label$="— details"]');
+    const cardCount = await cardLinks.count();
+    expect(cardCount).toBeGreaterThan(0);
+    for (let i = 0; i < cardCount; i += 1) {
+      await expect(cardLinks.nth(i)).not.toHaveAttribute('target', '_blank');
+    }
+    await expect(page.getByRole('link', { name: 'App Store Portfolio' })).not.toHaveAttribute('target', '_blank');
+  });
 });
 
 test.describe('Developer notes', () => {
