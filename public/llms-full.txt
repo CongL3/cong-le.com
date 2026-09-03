@@ -78,6 +78,11 @@
 - App Store: https://apps.apple.com/app/id6761440158?ct=congle-web-cardkeeper-wallet-passes&pt=19678800
 - Description: CardKeeper is the privacy-first way to create and manage Apple Wallet passes.
 
+### CoastClock: Tide Times UK
+- Landing page: https://www.cong-le.com/apps/coastclock-tide-times-uk/
+- App Store: https://apps.apple.com/app/id6796102052?ct=congle-web-coastclock-tide-times-uk&pt=19678800
+- Description: See what the tide is doing without digging through menus.
+
 ### CodingChat AI
 - Landing page: https://www.cong-le.com/apps/codingchat-ai/
 - App Store: https://apps.apple.com/app/id6768466507?ct=congle-web-codingchat-ai&pt=19678800
@@ -195,6 +200,11 @@
 - App Store: https://apps.apple.com/app/id1590705319?ct=congle-web-othello-teamcong&pt=19678800
 - Description: Classic Othello, No thrills, no gimmicks, just good AI and straight to the point.
 
+### Oval Office President Sim
+- Landing page: https://www.cong-le.com/apps/oval-office-president-sim/
+- App Store: https://apps.apple.com/app/id6790584903?ct=congle-web-oval-office-president-sim&pt=19678800
+- Description: You're the new President.
+
 ### Pack Planner: Group Lists
 - Landing page: https://www.cong-le.com/apps/pack-planner-group-lists/
 - App Store: https://apps.apple.com/app/id6773508857?ct=congle-web-pack-planner-group-lists&pt=19678800
@@ -214,6 +224,11 @@
 - Landing page: https://www.cong-le.com/apps/photo-cleaner-compressor/
 - App Store: https://apps.apple.com/app/id6740165217?ct=congle-web-photo-cleaner-compressor&pt=19678800
 - Description: Clean up your photo library and reclaim storage space — all processed privately on your device.
+
+### Phrasal Verbs: English Trainer
+- Landing page: https://www.cong-le.com/apps/phrasal-verbs-english-trainer/
+- App Store: https://apps.apple.com/app/id6797039310?ct=congle-web-phrasal-verbs-english-trainer&pt=19678800
+- Description: Phrasal verbs are the hardest part of everyday English.
 
 ### Pomodoro timer: Focus
 - Landing page: https://www.cong-le.com/apps/pomodoro-timer-focus/
