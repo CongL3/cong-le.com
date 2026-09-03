@@ -32,6 +32,7 @@ do it. He will forget these otherwise.
   `ct=congle-web-spotlight-<app-id>` and the Anniversary hero download uses
   `ct=congle-web-hero-anniversary`; all three direct-download placements add `mt=8`.
 - Strategy/keyword map/batch recipe: `/Users/congle/Dev/SEO/PLAYBOOK.md`.
+- Landing-page and media-kit checklist: `docs/seo-landing-pages.md`.
 
 ## Conventions
 - `public/images/apps/manifest.json` is the source of truth for live apps (41), synced

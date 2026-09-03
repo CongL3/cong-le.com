@@ -34,6 +34,43 @@ test.describe('Dark mode', () => {
   });
 });
 
+test.describe('Press and media kit', () => {
+  test('exposes current app visuals and attributed store destinations', async ({ page }) => {
+    const response = await page.goto('/press/');
+    expect(response?.status()).toBe(200);
+    await expect(page).toHaveTitle('Press & media kit — Cong Le Apps');
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://www.cong-le.com/press/');
+
+    const cards = page.locator('article[data-press-app]');
+    await expect(cards).toHaveCount(8);
+    await expect(cards.nth(0)).toHaveAttribute('data-press-app', 'anniversary-tracker');
+    await expect(cards.nth(7)).toHaveAttribute('data-press-app', 'prime-minister-sim-politics');
+
+    const iosLinks = page.locator('a[data-platform="ios"]');
+    await expect(iosLinks).toHaveCount(8);
+    for (let i = 0; i < await iosLinks.count(); i += 1) {
+      await expect(iosLinks.nth(i)).toHaveAttribute(
+        'href',
+        /https:\/\/apps\.apple\.com\/app\/id\d+\?(?=.*ct=congle-web-press-)(?=.*pt=19678800)(?=.*mt=8)/,
+      );
+      await expect(iosLinks.nth(i)).not.toHaveAttribute('target', '_blank');
+    }
+
+    const androidLinks = page.locator('a[data-platform="android"]');
+    await expect(androidLinks).toHaveCount(4);
+    for (let i = 0; i < await androidLinks.count(); i += 1) {
+      await expect(androidLinks.nth(i)).toHaveAttribute(
+        'href',
+        /play\.google\.com\/store\/apps\/details\?id=[^&]+&utm_source=congle&utm_medium=referral&utm_campaign=press_kit&utm_content=/,
+      );
+      await expect(androidLinks.nth(i)).not.toHaveAttribute('target', '_blank');
+    }
+
+    await expect(page.locator('article[data-press-app] img')).toHaveCount(24);
+    await expect(page.locator('article[data-press-app] img').first()).toHaveAttribute('alt', /screenshot 1/);
+  });
+});
+
 test.describe('Download spotlight', () => {
   test('shows the seven active acquisition candidates', async ({ page }) => {
     await page.goto('/');

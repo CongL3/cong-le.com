@@ -5,7 +5,7 @@
  *   - homepage
  *   - every directory under public/apps/  (as /apps/<dir>/)
  *   - /blog/ and every published blog post
- *   - /privacy.html, /terms.html, /developer.html
+ *   - /press/, /privacy.html, /terms.html, /developer.html
  * lastmod is the file mtime (YYYY-MM-DD, UTC).
  */
 
@@ -202,6 +202,14 @@ export function generateSitemap() {
     });
   }
 
+  // Share/creator media kit. This is a permanent owned discovery surface for
+  // legitimate community, directory, and editorial references.
+  const pressIndex = path.join(PUBLIC, 'press', 'index.html');
+  entries.push({
+    loc: `${SITE_URL}/press/`,
+    mod: lastmod(existsSync(pressIndex) ? pressIndex : PUBLIC),
+  });
+
   // Legal / info pages.
   for (const page of ['privacy.html', 'terms.html', 'developer.html']) {
     const file = path.join(PUBLIC, page);
@@ -249,6 +257,7 @@ export function generateLlmsTxt() {
     '> Indie iOS apps by Cong Le — utilities, family, fishing, AI chat, and games. The canonical app catalogue and download links are below; practical guides live on the blog.',
     '',
     `The [full machine-readable catalogue](${SITE_URL}/llms-full.txt) includes every app landing page, available App Store and Google Play links, available language page, and published article.`,
+    `For sharing product visuals and direct store destinations, see the [press & media kit](${SITE_URL}/press/).`,
     '',
     '## Apps',
     '',
@@ -280,6 +289,7 @@ export function generateLlmsTxt() {
     '',
     `- [Cong Le Apps](${SITE_URL}/): independent iOS apps by Cong Le, including utilities, family tools, fishing tools, AI clients, and games.`,
     `- [Developer support](${SITE_URL}/developer.html)`,
+    `- [Press & media kit](${SITE_URL}/press/)`,
     `- [Privacy policy](${SITE_URL}/privacy.html)`,
     `- [Terms](${SITE_URL}/terms.html)`,
     '',

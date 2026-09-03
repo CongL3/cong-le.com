@@ -3,6 +3,7 @@
 > Indie iOS apps by Cong Le — utilities, family, fishing, AI chat, and games. The canonical app catalogue and download links are below; practical guides live on the blog.
 
 The [full machine-readable catalogue](https://www.cong-le.com/llms-full.txt) includes every app landing page, available App Store and Google Play links, available language page, and published article.
+For sharing product visuals and direct store destinations, see the [press & media kit](https://www.cong-le.com/press/).
 
 ## Apps
 

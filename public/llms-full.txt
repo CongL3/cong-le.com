@@ -6,6 +6,7 @@
 
 - [Cong Le Apps](https://www.cong-le.com/): independent iOS apps by Cong Le, including utilities, family tools, fishing tools, AI clients, and games.
 - [Developer support](https://www.cong-le.com/developer.html)
+- [Press & media kit](https://www.cong-le.com/press/)
 - [Privacy policy](https://www.cong-le.com/privacy.html)
 - [Terms](https://www.cong-le.com/terms.html)
 

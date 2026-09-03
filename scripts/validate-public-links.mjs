@@ -15,6 +15,17 @@ const EXCLUDED = [
   { slug: 'run-run-run', id: '1582701318' },
 ];
 
+const PRESS_APP_SLUGS = [
+  'anniversary-tracker',
+  'football-career-quest',
+  'hoop-quest',
+  'solunar-fishing',
+  'ollama-connect',
+  'baby-screen-lock',
+  'moon-phases-lunar-tracker',
+  'prime-minister-sim-politics',
+];
+
 // Generated pages should expose the real screenshots already synced into the
 // public catalogue. Hand-made pages have their own content contract and are
 // checked separately through PRIORITY_GALLERIES where applicable.
@@ -201,6 +212,64 @@ for (const slug of LEGACY_CONTENT_PAGES) {
   const html = readFileSync(file, 'utf8');
   if (!html.includes('aria-labelledby="how-it-works-heading"') || !html.includes('Common questions')) {
     errors.push(`${path.relative(ROOT, file)} must include the verified how-it-works and FAQ content section`);
+  }
+}
+
+// The press page is generated from the same public landing pages, but its
+// external links are an especially important sharing/download path. Validate
+// its permanent URL, real image assets, and free attribution parameters.
+const pressFile = path.join(ROOT, 'public/press/index.html');
+if (!existsSync(pressFile)) {
+  errors.push('missing public press/media kit page');
+} else {
+  const pressHtml = readFileSync(pressFile, 'utf8');
+  const canonical = pressHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1] || '';
+  if (canonical !== 'https://www.cong-le.com/press/') {
+    errors.push('public/press/index.html must canonicalize to https://www.cong-le.com/press/');
+  }
+  const pressSlugs = [...pressHtml.matchAll(/data-press-app=["']([^"']+)["']/gi)].map(([, slug]) => slug);
+  if (pressSlugs.join('|') !== PRESS_APP_SLUGS.join('|')) {
+    errors.push(`public/press/index.html must contain the expected app order: ${PRESS_APP_SLUGS.join(', ')}`);
+  }
+  for (const image of pressHtml.matchAll(/<img\b[^>]*>/gi)) {
+    const tag = image[0];
+    const src = tag.match(/\bsrc=["']([^"']+)["']/i)?.[1] || '';
+    const alt = tag.match(/\balt=["']([^"']+)["']/i)?.[1] || '';
+    if (!src || !alt) errors.push('public/press/index.html press screenshots need src and alt text');
+    if (src.startsWith('/')) {
+      if (!existsSync(path.join(ROOT, 'public', src.slice(1)))) {
+        errors.push(`public/press/index.html references missing image ${src}`);
+      }
+    }
+  }
+  for (const match of pressHtml.matchAll(/<a\b[^>]*data-platform=["'](ios|android)["'][^>]*href=["']([^"']+)["'][^>]*>/gi)) {
+    const [, platform, rawHref] = match;
+    const href = rawHref.replace(/&amp;/g, '&');
+    let url;
+    try {
+      url = new URL(href);
+    } catch {
+      errors.push(`public/press/index.html contains an invalid ${platform} store URL`);
+      continue;
+    }
+    if (platform === 'ios') {
+      if (url.hostname !== 'apps.apple.com' || !/\/app\/id\d+/.test(url.pathname)) {
+        errors.push('public/press/index.html contains an invalid App Store product URL');
+      }
+      if (url.searchParams.get('pt') !== '19678800' || url.searchParams.get('mt') !== '8') {
+        errors.push('public/press/index.html App Store links need pt=19678800 and mt=8');
+      }
+      if (!String(url.searchParams.get('ct') || '').startsWith('congle-web-press-')) {
+        errors.push('public/press/index.html App Store links need press campaign tokens');
+      }
+    } else {
+      if (url.hostname !== 'play.google.com' || url.pathname !== '/store/apps/details') {
+        errors.push('public/press/index.html contains an invalid Google Play product URL');
+      }
+      if (url.searchParams.get('utm_source') !== 'congle' || url.searchParams.get('utm_medium') !== 'referral' || url.searchParams.get('utm_campaign') !== 'press_kit' || !url.searchParams.get('utm_content')) {
+        errors.push('public/press/index.html Google Play links need press UTM parameters');
+      }
+    }
   }
 }
 
