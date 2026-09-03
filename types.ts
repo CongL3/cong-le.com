@@ -27,6 +27,8 @@ export interface AppData {
   promotable?: boolean;
   url?: string;
   landingPage?: string;
+  /** Optional high-intent Pocket Grove page for apps with a verified focused page. */
+  focusedPage?: string;
   screenshots?: string[];
 }
 
