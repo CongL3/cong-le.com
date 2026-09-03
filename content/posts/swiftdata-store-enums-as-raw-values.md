@@ -1,6 +1,6 @@
 ---
-title: "Store SwiftData Enums as Raw Values, Not Codable"
-description: "A Codable enum property becomes a composite attribute in the CloudKit schema and can't be used inside a #Predicate. Store the raw value and expose the enum through a computed accessor."
+title: "SwiftData Enum Predicates: Store a Queryable Raw Value"
+description: "SwiftData can persist Codable enums, but current #Predicate expressions cannot compare enum cases. Store a raw value when you need filtering or sorting."
 slug: swiftdata-store-enums-as-raw-values
 keywords: ["swiftdata enum property", "swiftdata predicate enum", "swiftdata codable enum cloudkit", "swiftdata cannot use enum in predicate"]
 queue: 6
@@ -9,9 +9,9 @@ approved: true
 publishDate:
 ---
 
-> **Quick answer:** Declaring an enum property directly on a `@Model` stores it as a composite attribute, which CloudKit can't index and `#Predicate` can't filter on. Store the `rawValue` as a `String` or `Int` and expose the enum through a computed property.
+> **Quick answer:** SwiftData can persist a `Codable` enum property, as Apple's documentation demonstrates, but current `#Predicate` expressions cannot use an enum case as a query key. If the value needs filtering or sorting, store an explicit raw `String` or `Int` column and expose the enum through a computed property.
 
-This one looks fine, compiles fine, and then you can't query it.
+This one looks fine, persists fine, and then the query fails.
 
 ```swift
 enum Status: String, Codable {
@@ -20,7 +20,7 @@ enum Status: String, Codable {
 
 @Model
 final class Entry {
-    var status: Status = .draft      // ← the problem
+    var status: Status = Status.draft
 }
 ```
 
@@ -28,19 +28,32 @@ Then you try to filter:
 
 ```swift
 FetchDescriptor<Entry>(
-    predicate: #Predicate { $0.status == .active }   // won't work
+    predicate: #Predicate { $0.status == Status.active }   // won't work
 )
 ```
 
+On the current Swift 6.3 SDK, the predicate macro rejects the enum case with
+`key path cannot refer to enum case 'active'`. Older SDKs can surface the same
+limitation later as an unsupported predicate, so include the OS and SDK version
+in the bug report.
+
 ## What's actually happening
 
-A `Codable` enum property isn't stored as a simple column. SwiftData encodes it as a **composite attribute** — an opaque blob from the store's point of view. That has two consequences:
+There are two separate questions here: can SwiftData persist the property, and
+can the query system translate a comparison against it? Apple's SwiftData
+documentation shows a `Codable` enum as a model property, so persistence itself
+is supported. The current predicate macro still needs a queryable stored value;
+it cannot turn an enum-case member access into a supported key path.
 
-**`#Predicate` can't filter on it.** Predicates are translated into an underlying store query, and the store has no idea what's inside that blob. There's nothing to compare against.
+If you explicitly opt into `@Attribute(.codable)`, Apple describes the encoded
+representation as opaque to SwiftData: it cannot be used in predicates or sort
+descriptors. That is a useful rule for custom Codable types, but it is not a
+reason to describe every directly declared enum property as a composite
+CloudKit field.
 
-**CloudKit can't index it.** In a synced store the composite attribute becomes an equally opaque CloudKit field. It syncs, but it isn't queryable, and it makes the schema harder to evolve later.
-
-You end up fetching everything and filtering in memory, which works right up until the table has ten thousand rows.
+The practical result is the same when you need a filtered fetch: use a plain
+stored value as the query boundary instead of fetching everything and filtering
+in memory.
 
 ## The fix
 
@@ -75,6 +88,11 @@ FetchDescriptor<Entry>(
 
 Note the local binding. `#Predicate` won't let you call `.rawValue` inside the closure — pull the value out first and capture it.
 
+This is a queryability recommendation, not a blanket CloudKit prohibition on
+enums. If you are not filtering the value, Apple's direct Codable enum model can
+be appropriate. If you do need a stable query key, making the raw column
+explicit also makes the persisted contract easier to inspect and migrate.
+
 ## Handling the unknown case
 
 The `?? .draft` in that getter is doing real work, and it's worth thinking about rather than copying.
@@ -85,7 +103,11 @@ Falling back to a sensible default keeps the app running. If losing the distinct
 
 ## `String` or `Int`?
 
-**Prefer `String`.** An `Int` raw value is smaller, but it couples your persisted data to declaration order — insert a case in the middle and every stored row silently means something different. That's a genuinely nasty migration, and it can't be detected after the fact.
+**Prefer `String`.** An automatically assigned `Int` raw value couples your
+persisted data to declaration order — insert a case in the middle and every
+stored row can silently mean something different. Explicit integer values avoid
+that particular problem, but strings remain self-describing and easier to
+inspect.
 
 String raw values are self-describing. You can read the store and understand it, and reordering cases is harmless.
 
@@ -93,4 +115,13 @@ String raw values are self-describing. You can read the store and understand it,
 
 **Persist primitives; expose types.** The persisted layer wants strings, numbers, dates and booleans, because those are what stores can index, query and sync. Rich types belong in the computed layer on top, where Swift's type system does its job and the store never sees them.
 
-Same reasoning applies to anything else you might be tempted to make `Codable` on a model — a small struct of settings, a coordinate pair, a set of flags. If you'll ever want to filter on it, it needs to be a column.
+Same reasoning applies to anything else you might be tempted to make Codable on
+a model — a small struct of settings, a coordinate pair, or a set of flags. If
+you'll ever want to filter or sort on a value, give that query key its own
+supported stored column instead of relying on an opaque encoded representation.
+
+## Sources
+
+- [Defining data relationships with enumerations and model classes](https://developer.apple.com/documentation/swiftdata/defining-data-relationships-with-enumerations-and-model-classes)
+- [Schema.Attribute.Option](https://developer.apple.com/documentation/swiftdata/schema/attribute/option)
+- [What's new in SwiftData — WWDC26](https://developer.apple.com/videos/play/wwdc2026/274/)

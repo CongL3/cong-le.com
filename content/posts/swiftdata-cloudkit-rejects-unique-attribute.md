@@ -6,6 +6,7 @@ keywords: ["swiftdata attribute unique cloudkit", "swiftdata unique constraint",
 queue: 5
 status: published
 publishDate: 2026-08-31
+updated: 2026-09-03
 ---
 
 > **Quick answer:** `@Attribute(.unique)` cannot be used in a CloudKit-backed SwiftData store. CloudKit has no unique-constraint concept, so `ModelContainer.init` rejects the schema outright. Enforce uniqueness in your code instead — fetch-then-insert, or an upsert helper — and design for the fact that two offline devices can still create the same record.
@@ -30,7 +31,7 @@ This sits alongside the other CloudKit schema rules, which have the same root ca
 - Every attribute optional or defaulted **on the declaration**, not just in `init`
 - All relationships optional
 - No `@Attribute(.unique)`
-- Enums stored as raw `String`/`Int`, not `Codable`
+- If an enum needs filtering, persist a queryable raw `String`/`Int` column and expose the enum as a computed property
 
 ## Enforcing uniqueness yourself
 
@@ -78,4 +79,12 @@ The useful thing about this validation being up front is that you can catch it i
 }
 ```
 
-That one test catches every rule in the list above — the missing default, the non-optional relationship, the Codable enum, the unique attribute — at the moment someone adds it, rather than when a user turns on sync and the store silently fails to load.
+That one test catches the CloudKit schema rules above — the missing default,
+the non-optional relationship, and the unique attribute — at the moment someone
+adds them, rather than when a user turns on sync and the store silently fails to
+load. Queryability of an enum is a separate predicate concern; test that with a
+fetch using the raw column you intend to query.
+
+For the distinction between persistable enums, Codable attributes, and queryable
+values, see Apple's [SwiftData enumeration documentation](https://developer.apple.com/documentation/swiftdata/defining-data-relationships-with-enumerations-and-model-classes)
+and [SwiftData Codable guidance](https://developer.apple.com/videos/play/wwdc2026/274/).

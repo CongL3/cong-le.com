@@ -5,7 +5,7 @@
     "description": "SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.",
     "app": "",
     "publishDate": "2026-08-31",
-    "updated": ""
+    "updated": "2026-09-03"
   },
   {
     "slug": "swiftdata-sortdescriptor-string-localized-standard",
