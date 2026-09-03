@@ -14,14 +14,12 @@ function appStoreGridUrl(app: AppData): string {
 
 const AppCard: React.FC<{ app: AppData }> = ({ app }) => {
   const primaryHref = app.landingPage || app.url || '#';
-  const isInternal = Boolean(app.landingPage);
 
   return (
     <div className="group relative flex flex-col h-full bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:-translate-y-0.5 hover:border-blue-200 dark:hover:border-blue-900/60 focus-within:ring-2 focus-within:ring-blue-500">
       {/* Stretched primary link — whole card clicks through to the landing page (or App Store fallback) */}
       <a
         href={primaryHref}
-        {...(isInternal ? {} : { target: '_blank', rel: 'noreferrer' })}
         aria-label={`${app.name} — details`}
         className="absolute inset-0 z-0 rounded-2xl focus:outline-none"
       />
