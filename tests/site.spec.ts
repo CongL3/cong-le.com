@@ -223,6 +223,35 @@ test.describe('Android app landing pages', () => {
   }
 });
 
+test.describe('Localized Android app landing pages', () => {
+  const apps = [
+    { slug: 'anniversary-tracker', packageName: 'com.congle.TEAMCONG.AnniversaryTracker', locales: ['ja', 'ko', 'de', 'zh-Hans'] },
+    { slug: 'ollama-connect', packageName: 'com.congle.TEAMCONG.OllamaConnect', locales: ['ja', 'ko', 'de', 'zh-Hans'] },
+    { slug: 'moon-phases-lunar-tracker', packageName: 'com.congle.TEAMCONG.MoonPhases', locales: [] },
+    { slug: 'solunar-fishing', packageName: 'com.congle.TEAMCONG.SolunarFishing', locales: ['ja', 'ko', 'de', 'zh-Hans'] },
+  ];
+
+  test('exposes attributed Google Play links on every translated page', async ({ page }) => {
+    for (const app of apps) {
+      for (const locale of app.locales) {
+        const response = await page.request.get(`/apps/${app.slug}/${locale}/`);
+        expect(response.ok()).toBe(true);
+        const html = (await response.text()).replaceAll('&amp;', '&');
+        for (const position of ['hero', 'final']) {
+          const storeUrl = new URL('https://play.google.com/store/apps/details');
+          storeUrl.searchParams.set('id', app.packageName);
+          storeUrl.searchParams.set('utm_source', 'congle');
+          storeUrl.searchParams.set('utm_medium', 'referral');
+          storeUrl.searchParams.set('utm_campaign', 'portfolio_downloads');
+          storeUrl.searchParams.set('utm_content', `${app.slug}-${locale}-android-${position}`);
+          expect(html).toContain(`data-platform="android" data-cta-position="${position}" href="${storeUrl.toString()}"`);
+        }
+        expect(html).toContain('"operatingSystem": "iOS, Android"');
+      }
+    }
+  });
+});
+
 test.describe('Developer notes', () => {
   test('links the published essays instead of showing placeholder copy', async ({ page }) => {
     await page.goto('/');

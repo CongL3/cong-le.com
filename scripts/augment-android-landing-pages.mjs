@@ -4,9 +4,10 @@
  * Keep the hand-authored app pages aligned with the verified Android listings.
  *
  * The pages in this file are intentionally explicit: a Google Play CTA is
- * added only after the package has been verified in the live catalogue. Run
- * with --apply when a page is intentionally updated; the default --check
- * mode is safe for CI and links:check.
+ * added only after the package has been verified in the live catalogue. The
+ * English and translated pages use separate attribution keys. Run with
+ * --apply when pages are intentionally updated; the default --check mode is
+ * safe for CI and links:check.
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -14,6 +15,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const LANDING_LOCALES = ['', 'ja', 'ko', 'de', 'zh-Hans'];
 
 const ANDROID_LANDING_PAGES = [
   {
@@ -33,6 +35,7 @@ const ANDROID_LANDING_PAGES = [
     appName: 'Moon Phases: Lunar Tracker',
     iosUrl: 'https://apps.apple.com/app/id6760960352?ct=congle-web-moon-phases-lunar-tracker&pt=19678800',
     packageName: 'com.congle.TEAMCONG.MoonPhases',
+    locales: [''],
   },
   {
     slug: 'solunar-fishing',
@@ -50,19 +53,38 @@ function escapeRegex(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function googlePlayUrl(slug, packageName, position) {
+function localizedIosUrl(app, locale) {
+  if (!locale) return app.iosUrl;
+  const marker = `ct=congle-web-${app.slug}`;
+  if (!app.iosUrl.includes(marker)) {
+    throw new Error(`${app.slug}: base App Store URL is missing its campaign marker`);
+  }
+  return app.iosUrl.replace(marker, `${marker}-${locale}`);
+}
+
+function attributionSlug(slug, locale) {
+  return locale ? `${slug}-${locale}` : slug;
+}
+
+function googlePlayUrl(slug, packageName, position, locale = '') {
   const url = new URL('https://play.google.com/store/apps/details');
   url.searchParams.set('id', packageName);
   url.searchParams.set('utm_source', 'congle');
   url.searchParams.set('utm_medium', 'referral');
   url.searchParams.set('utm_campaign', 'portfolio_downloads');
-  url.searchParams.set('utm_content', `${slug}-android-${position}`);
+  url.searchParams.set('utm_content', `${attributionSlug(slug, locale)}-android-${position}`);
   return url.toString();
 }
 
-function androidButton(app, position) {
-  const url = escapeAttribute(googlePlayUrl(app.slug, app.packageName, position));
-  return `      <!-- ANDROID-STORE-LINK:${app.slug}:${position} -->
+function marker(app, locale, position) {
+  return locale
+    ? `ANDROID-STORE-LINK:${app.slug}:${locale}:${position}`
+    : `ANDROID-STORE-LINK:${app.slug}:${position}`;
+}
+
+function androidButton(app, position, locale) {
+  const url = escapeAttribute(googlePlayUrl(app.slug, app.packageName, position, locale));
+  return `      <!-- ${marker(app, locale, position)} -->
       <a data-platform="android" data-cta-position="${position}" href="${url}"
          aria-label="Get ${app.appName} on Google Play"
          class="inline-flex items-center gap-3 font-bold px-7 py-4 rounded-full text-lg border-2 border-gray-900 dark:border-white hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-colors">
@@ -78,8 +100,9 @@ function replaceOnceOrFail(input, pattern, replacement, description) {
   return input.replace(pattern, replacement);
 }
 
-function applyPage(html, app) {
-  const escapedIosUrl = escapeRegex(app.iosUrl).replaceAll('&', '&(?:amp;)?');
+function applyPage(html, app, locale) {
+  const iosUrl = localizedIosUrl(app, locale);
+  const escapedIosUrl = escapeRegex(iosUrl).replaceAll('&', '&(?:amp;)?');
   const iosAnchor = new RegExp(`(<a\\s+href="${escapedIosUrl}"[\\s\\S]*?<\\/a>)`, 'g');
   const matches = html.match(iosAnchor);
   if (!matches || matches.length !== 2) {
@@ -89,7 +112,7 @@ function applyPage(html, app) {
   let positionIndex = 0;
   const output = html.replace(iosAnchor, (anchor) => {
     const position = ['hero', 'final'][positionIndex++];
-    return `<div class="flex flex-wrap items-center gap-3">${anchor}\n${androidButton(app, position)}\n      </div>`;
+    return `<div class="flex flex-wrap items-center gap-3">${anchor}\n${androidButton(app, position, locale)}\n      </div>`;
   });
   if (positionIndex !== 2) {
     throw new Error(`${app.slug}: expected two App Store CTAs during replacement`);
@@ -101,23 +124,33 @@ function applyPage(html, app) {
     '"operatingSystem": "iOS, Android"',
     `${app.slug}: structured-data operating system`,
   );
-  enriched = replaceOnceOrFail(
-    enriched,
-    new RegExp(`"downloadUrl": "${escapeRegex(app.iosUrl)}",`),
-    `"downloadUrl": ["${app.iosUrl}", "${googlePlayUrl(app.slug, app.packageName, 'structured-data')}"],`,
-    `${app.slug}: structured-data download URLs`,
-  );
-  enriched = replaceOnceOrFail(
-    enriched,
-    new RegExp(`"sameAs": \\["${escapeRegex(app.iosUrl)}"\\],`),
-    `"sameAs": ["${app.iosUrl}", "${googlePlayUrl(app.slug, app.packageName, 'structured-data')}"],`,
-    `${app.slug}: structured-data sameAs URLs`,
-  );
+  const structuredDataUrl = googlePlayUrl(app.slug, app.packageName, 'structured-data', locale);
+  if (enriched.includes('"downloadUrl":')) {
+    enriched = replaceOnceOrFail(
+      enriched,
+      new RegExp(`"downloadUrl": "${escapeRegex(iosUrl)}",`),
+      `"downloadUrl": ["${iosUrl}", "${structuredDataUrl}"],`,
+      `${app.slug}: structured-data download URLs`,
+    );
+    enriched = replaceOnceOrFail(
+      enriched,
+      new RegExp(`"sameAs": \\["${escapeRegex(iosUrl)}"\\],`),
+      `"sameAs": ["${iosUrl}", "${structuredDataUrl}"],`,
+      `${app.slug}: structured-data sameAs URLs`,
+    );
+  } else {
+    enriched = replaceOnceOrFail(
+      enriched,
+      new RegExp(`"inLanguage": "${escapeRegex(locale)}",`),
+      `"inLanguage": "${locale}",\n    "downloadUrl": ["${iosUrl}", "${structuredDataUrl}"],\n    "sameAs": ["${iosUrl}", "${structuredDataUrl}"],`,
+      `${app.slug}: structured-data store URLs`,
+    );
+  }
   return enriched;
 }
 
-function checkPage(html, app) {
-  const expectedLinks = ['hero', 'final'].map((position) => googlePlayUrl(app.slug, app.packageName, position));
+function checkPage(html, app, locale) {
+  const expectedLinks = ['hero', 'final'].map((position) => googlePlayUrl(app.slug, app.packageName, position, locale));
   const links = [...html.matchAll(/<a\b[^>]*data-platform="android"[^>]*href="([^"]+)"[^>]*>/g)].map(
     (match) => match[1].replaceAll('&amp;', '&'),
   );
@@ -127,7 +160,7 @@ function checkPage(html, app) {
   if (html.match(/"operatingSystem": "iOS, Android"/g)?.length !== 1) {
     throw new Error(`${app.slug}: structured data must advertise both supported platforms`);
   }
-  const structuredDataUrl = googlePlayUrl(app.slug, app.packageName, 'structured-data');
+  const structuredDataUrl = googlePlayUrl(app.slug, app.packageName, 'structured-data', locale);
   if (!html.includes(structuredDataUrl)) {
     throw new Error(`${app.slug}: structured data is missing the Android listing`);
   }
@@ -135,15 +168,17 @@ function checkPage(html, app) {
 
 const apply = process.argv.includes('--apply');
 for (const app of ANDROID_LANDING_PAGES) {
-  const file = path.join(ROOT, 'public/apps', app.slug, 'index.html');
-  let html = readFileSync(file, 'utf8');
-  if (apply && !html.includes(`ANDROID-STORE-LINK:${app.slug}:hero`)) {
-    html = applyPage(html, app);
-    writeFileSync(file, html);
-    console.log(`updated ${path.relative(ROOT, file)}`);
+  for (const locale of app.locales ?? LANDING_LOCALES) {
+    const file = path.join(ROOT, 'public/apps', app.slug, ...(locale ? [locale] : []), 'index.html');
+    let html = readFileSync(file, 'utf8');
+    if (apply && !html.includes(`<!-- ${marker(app, locale, 'hero')} -->`)) {
+      html = applyPage(html, app, locale);
+      writeFileSync(file, html);
+      console.log(`updated ${path.relative(ROOT, file)}`);
+    }
+    checkPage(html, app, locale);
+    console.log(`checked ${path.relative(ROOT, file)}`);
   }
-  checkPage(html, app);
-  console.log(`checked ${path.relative(ROOT, file)}`);
 }
 
 console.log(`Android landing pages: ${apply ? 'updated and checked' : 'checked'}`);
