@@ -74,7 +74,7 @@ test.describe('Download spotlight', () => {
 
   test('exposes direct attributed App Store download links', async ({ page }) => {
     await page.goto('/');
-    const links = page.locator('#download-spotlight > div > div.grid > article a').filter({ hasText: 'Download' });
+    const links = page.getByRole('link', { name: 'Download on the App Store' });
     await expect(links).toHaveCount(7);
     for (let i = 0; i < 7; i += 1) {
       await expect(links.nth(i)).toHaveAttribute('href', /https:\/\/apps\.apple\.com\/gb\/app\/.*\?(?=.*pt=19678800)(?=.*ct=congle-web-spotlight-)/);
