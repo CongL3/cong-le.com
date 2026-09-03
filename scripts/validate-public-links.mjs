@@ -3,7 +3,7 @@
 /** Structural guard for public download links. Live HTTP checks stay outside
  * builds because Apple can rate-limit automated requests. */
 
-import { readFileSync, readdirSync, statSync } from 'fs';
+import { existsSync, readFileSync, readdirSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -12,6 +12,20 @@ const EXCLUDED = [
   { slug: 'docscanner-sign-documents', id: '6769176993' },
   { slug: 'frankly-ai', id: '6766366146' },
   { slug: 'run-run-run', id: '1582701318' },
+];
+
+// These active apps have the strongest recent download signal. Keep their
+// public landing pages honest about the product before a visitor reaches the
+// tracked store CTA: the gallery must use the real synced App Store captures,
+// and every referenced file must ship with the site.
+const PRIORITY_GALLERIES = [
+  { slug: 'anniversary-tracker', id: '1570714816', count: 4 },
+  { slug: 'football-career-quest', id: '6777125671', count: 5 },
+  { slug: 'prime-minister-sim-politics', id: '6787888847', count: 5 },
+  { slug: 'hoop-quest', id: '6775279715', count: 5 },
+  { slug: 'solunar-fishing', id: '6760960543', count: 5 },
+  { slug: 'ollama-connect', id: '6769891596', count: 5 },
+  { slug: 'baby-screen-lock', id: '6761378897', count: 5 },
 ];
 
 function filesUnder(directory) {
@@ -31,6 +45,32 @@ for (const app of EXCLUDED) {
     const html = readFileSync(file, 'utf8');
     if (html.includes(`apps.apple.com`) || html.includes(`app-id=${app.id}`)) {
       errors.push(`${path.relative(ROOT, file)} still contains a retired App Store destination`);
+    }
+  }
+}
+
+for (const gallery of PRIORITY_GALLERIES) {
+  const file = path.join(ROOT, 'public/apps', gallery.slug, 'index.html');
+  if (!existsSync(file)) {
+    errors.push(`missing priority app landing page ${path.relative(ROOT, file)}`);
+    continue;
+  }
+  const html = readFileSync(file, 'utf8');
+  const refs = [...html.matchAll(/<img\b[^>]*src=["'](\/images\/apps\/\d+\/screenshot-\d+\.jpg)["'][^>]*>/gi)].map(
+    (match) => match[1],
+  );
+  if (refs.length !== gallery.count) {
+    errors.push(
+      `${path.relative(ROOT, file)} must expose ${gallery.count} real App Store screenshots (found ${refs.length})`,
+    );
+  }
+  const expectedPrefix = `/images/apps/${gallery.id}/screenshot-`;
+  for (const ref of refs) {
+    if (!ref.startsWith(expectedPrefix)) {
+      errors.push(`${path.relative(ROOT, file)} references the wrong screenshot app id: ${ref}`);
+    }
+    if (!existsSync(path.join(ROOT, 'public', ref.slice(1)))) {
+      errors.push(`${path.relative(ROOT, file)} references missing screenshot asset ${ref}`);
     }
   }
 }
