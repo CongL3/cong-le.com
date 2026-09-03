@@ -781,6 +781,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-purple-500",
     iconUrl: "/images/apps/6790584903/icon.jpg",
     url: "https://apps.apple.com/gb/app/oval-office-president-sim/id6790584903?uo=4",
+    landingPage: "/apps/oval-office-president-sim/",
     screenshots: [
       "/images/apps/6790584903/screenshot-1.jpg",
       "/images/apps/6790584903/screenshot-2.jpg",
@@ -798,6 +799,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-red-400",
     iconUrl: "/images/apps/6797039310/icon.jpg",
     url: "https://apps.apple.com/gb/app/phrasal-verbs-english-trainer/id6797039310?uo=4",
+    landingPage: "/apps/phrasal-verbs-english-trainer/",
     screenshots: [
       "/images/apps/6797039310/screenshot-1.jpg",
       "/images/apps/6797039310/screenshot-2.jpg",
@@ -817,6 +819,7 @@ export const APPS: AppData[] = [
     iconColor: "bg-amber-500",
     iconUrl: "/images/apps/6796102052/icon.jpg",
     url: "https://apps.apple.com/gb/app/coastclock-tide-times-uk/id6796102052?uo=4",
+    landingPage: "/apps/coastclock-tide-times-uk/",
     screenshots: [
       "/images/apps/6796102052/screenshot-1.jpg",
       "/images/apps/6796102052/screenshot-2.jpg",

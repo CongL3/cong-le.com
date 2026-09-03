@@ -245,3 +245,34 @@ test.describe('App grid', () => {
     expect(filteredCount).toBeLessThan(totalCount);
   });
 });
+
+test.describe('New app canonical pages', () => {
+  const apps = [
+    { name: 'Oval Office President Sim', slug: 'oval-office-president-sim', id: '6790584903' },
+    { name: 'Phrasal Verbs: English Trainer', slug: 'phrasal-verbs-english-trainer', id: '6797039310' },
+    { name: 'CoastClock: Tide Times UK', slug: 'coastclock-tide-times-uk', id: '6796102052' },
+  ];
+
+  for (const app of apps) {
+    test(`${app.name} has a working attributed landing page`, async ({ page }) => {
+      const response = await page.goto(`/apps/${app.slug}/`);
+      expect(response?.status()).toBe(200);
+      await expect(page.locator('h1')).toContainText(app.name);
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        `https://www.cong-le.com/apps/${app.slug}/`,
+      );
+      await expect(page.locator('meta[name="description"]')).not.toHaveAttribute('content', '');
+      await expect(page.locator('section[aria-labelledby="screenshots-heading"] img')).toHaveCount(5);
+
+      const downloads = page.getByRole('link', { name: /Download.*App Store/ });
+      await expect(downloads).toHaveCount(2);
+      for (let i = 0; i < 2; i += 1) {
+        await expect(downloads.nth(i)).toHaveAttribute(
+          'href',
+          new RegExp(`apps\\.apple\\.com/app/id${app.id}\\?ct=congle-web-[^&]+&pt=19678800`),
+        );
+      }
+    });
+  }
+});
