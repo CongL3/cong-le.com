@@ -129,7 +129,15 @@ test.describe('Download spotlight', () => {
 
   test('uses app-specific PocketGrove referral links', async ({ page }) => {
     await page.goto('/');
-    const links = page.locator('#download-spotlight > div > div.grid > article a').filter({ hasText: 'Learn more' });
+    const links = page.locator('#download-spotlight > div > div.grid > article a').filter({ hasText: /^Explore / });
+    await expect(links).toHaveCount(7);
+    await expect(links.nth(0)).toHaveText('Explore Anniversary Tracker');
+    await expect(links.nth(1)).toHaveText('Explore Football Career Quest');
+    await expect(links.nth(2)).toHaveText('Explore Hoop Quest: Basketball Sim');
+    await expect(links.nth(3)).toHaveText('Explore Prime Minister Sim: Politics');
+    await expect(links.nth(4)).toHaveText('Explore Ollama Connect');
+    await expect(links.nth(5)).toHaveText('Explore Baby Screen Lock: Kid Safe');
+    await expect(links.nth(6)).toHaveText('Explore Solunar: Best Fishing Times');
     await expect(links.nth(0)).toHaveAttribute('href', /pocketgrove\.com\/anniversary-tracker\/\?utm_source=congle/);
     await expect(links.nth(1)).toHaveAttribute('href', /pocketgrove\.com\/football-career-quest\/\?utm_source=congle/);
     await expect(links.nth(2)).toHaveAttribute('href', /pocketgrove\.com\/hoop-quest\/\?utm_source=congle/);

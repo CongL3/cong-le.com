@@ -96,9 +96,10 @@ const DownloadSpotlight: React.FC = () => {
                     href={`${href}?utm_source=congle&utm_medium=referral&utm_campaign=portfolio_downloads&utm_content=${app.id}`}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Explore ${app.name}`}
                     className="inline-flex items-center gap-1 text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
                   >
-                    Learn more
+                    Explore {app.name}
                     <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                   </a>
                   {storeUrl ? (
