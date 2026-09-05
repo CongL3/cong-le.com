@@ -21,3 +21,6 @@ User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://www.cong-le.com/sitemap.xml
+
+# Machine-readable site summaries for AI assistants and search systems.
+# The full catalogue is linked from /llms.txt.

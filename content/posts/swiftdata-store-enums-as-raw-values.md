@@ -4,9 +4,9 @@ description: "SwiftData can persist Codable enums, but current #Predicate expres
 slug: swiftdata-store-enums-as-raw-values
 keywords: ["swiftdata enum property", "swiftdata predicate enum", "swiftdata codable enum cloudkit", "swiftdata cannot use enum in predicate"]
 queue: 6
-status: queued
+status: published
 approved: true
-publishDate:
+publishDate: 2026-09-05
 ---
 
 > **Quick answer:** SwiftData can persist a `Codable` enum property, as Apple's documentation demonstrates, but current `#Predicate` expressions cannot use an enum case as a query key. If the value needs filtering or sorting, store an explicit raw `String` or `Int` column and expose the enum through a computed property.

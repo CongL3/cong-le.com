@@ -1,5 +1,13 @@
 [
   {
+    "slug": "swiftdata-store-enums-as-raw-values",
+    "title": "SwiftData Enum Predicates: Store a Queryable Raw Value",
+    "description": "SwiftData can persist Codable enums, but current #Predicate expressions cannot compare enum cases. Store a raw value when you need filtering or sorting.",
+    "app": "",
+    "publishDate": "2026-09-05",
+    "updated": ""
+  },
+  {
     "slug": "swiftdata-cloudkit-rejects-unique-attribute",
     "title": "CloudKit Rejects @Attribute(.unique) — Model Around It",
     "description": "SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.",

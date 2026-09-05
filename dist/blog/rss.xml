@@ -6,7 +6,56 @@
     <atom:link href="https://www.cong-le.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Guides, tips, and updates from the apps built by Cong Le.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Jul 2026 22:05:10 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 11:44:38 GMT</lastBuildDate>
+    <item>
+      <title>SwiftData Enum Predicates: Store a Queryable Raw Value</title>
+      <link>https://www.cong-le.com/blog/swiftdata-store-enums-as-raw-values/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/swiftdata-store-enums-as-raw-values/</guid>
+      <description>SwiftData can persist Codable enums, but current #Predicate expressions cannot compare enum cases. Store a raw value when you need filtering or sorting.</description>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CloudKit Rejects @Attribute(.unique) — Model Around It</title>
+      <link>https://www.cong-le.com/blog/swiftdata-cloudkit-rejects-unique-attribute/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/swiftdata-cloudkit-rejects-unique-attribute/</guid>
+      <description>SwiftData's unique constraint is incompatible with CloudKit sync. Why there's no workaround, and how to enforce uniqueness without it.</description>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>SwiftData's String SortDescriptor Isn't Sorting How You Think</title>
+      <link>https://www.cong-le.com/blog/swiftdata-sortdescriptor-string-localized-standard/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/swiftdata-sortdescriptor-string-localized-standard/</guid>
+      <description>A SortDescriptor on a String key path defaults to .localizedStandard, which is numeric-aware and locale-dependent — so it disagrees with Swift's &lt; and changes per user.</description>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>What Locales We Translate To, and Why</title>
+      <link>https://www.cong-le.com/blog/what-locales-we-translate-to-and-why/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/what-locales-we-translate-to-and-why/</guid>
+      <description>Four languages are non-negotiable, another fifteen are nearly free, and English-only leaves most of the App Store unreachable. The reasoning behind the list.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>We Translate Every String As We Write It</title>
+      <link>https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/we-translate-every-string-as-we-write-it/</guid>
+      <description>Why retrofitting localisation into an iOS app always leaks, and the SwiftUI patterns that silently break translation without warning you.</description>
+      <pubDate>Mon, 10 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Every SwiftData Property Needs a Default Value</title>
+      <link>https://www.cong-le.com/blog/swiftdata-properties-need-default-values/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/swiftdata-properties-need-default-values/</guid>
+      <description>If you use SwiftData with CloudKit and a property has no default, the store fails silently and every fetch returns empty. Here's why, and the fix.</description>
+      <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Guided Access on iPhone: Complete Guide (and Its Limits)</title>
+      <link>https://www.cong-le.com/blog/guided-access-iphone-baby/</link>
+      <guid isPermaLink="true">https://www.cong-le.com/blog/guided-access-iphone-baby/</guid>
+      <description>A complete Guided Access iPhone guide for parents: how to set it up, use it with a baby or toddler, and where it falls short.</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>Solunar Theory Explained: Does Fishing by the Moon Actually Work?</title>
       <link>https://www.cong-le.com/blog/solunar-theory-explained/</link>
